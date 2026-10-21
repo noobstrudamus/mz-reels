@@ -1,0 +1,56 @@
+# Publishes queued reels (data/queue.json, filled by `ops/publish.py prepare --live`) when their slot comes.
+# Kill switch: run-due --live still only dry-runs unless config/settings.json "auto_publish" is true.
+name: publish
+
+on:
+  schedule:
+    # Every 15 min from 12:02 to 23:47 UTC. The :02/:17/:32/:47 minutes line up with the 09:47 / 11:47 /
+    # 15:47 New York slots (13:47-20:47 UTC in EDT, 14:47-20:47 UTC in EST) and avoid the busy top of the hour.
+    # GitHub may start scheduled runs several minutes late; run-due publishes anything whose slot has passed.
+    - cron: "2,17,32,47 12-23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:              # never two publishers at once; a queued run waits instead of being cancelled
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  run-due:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Publish due reels
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+          MZ_KILL: ${{ vars.MZ_KILL }}   # set the repo variable MZ_KILL=1 to stop all writes without a commit
+        run: python ops/publish.py run-due --live
+
+      # always(): if publishing succeeded but a later step failed, queue.json/posts.jsonl must still be
+      # committed, otherwise the next run would see the item as pending again.
+      - name: Commit data changes
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -d data ] || { echo "No data/ directory."; exit 0; }   # git keeps no empty dirs: absent until the first write
+          git add data/ ':!data/*.tmp'
+          if git diff --cached --quiet; then echo "No data changes."; exit 0; fi
+          git commit -m "data: publish run-due $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true   # a conflicted rebase would block every later attempt
+            sleep $((i * 10 + RANDOM % 10))
+          done
+          # Not fatal for safety: the next run finds the container PUBLISHED and recovers it without a 2nd post.
+          echo "::error::could not push data/ after 3 tries; the next run recovers the published item from Instagram" >&2
+          exit 1

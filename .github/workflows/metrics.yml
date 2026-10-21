@@ -1,0 +1,50 @@
+# Daily read-only metrics + lead import (ops/metrics.py, ops/leads.py); Sunday weekly report (ops/strategy.py).
+# Nothing here writes to Instagram, so the kill switch does not apply.
+name: metrics
+
+on:
+  schedule:
+    - cron: "13 10 * * *"   # ~06:13 New York: yesterday's numbers are in before the daily reel run
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-writers-metrics
+  cancel-in-progress: false
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: pip install numpy
+      - name: Collect metrics and leads
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: |
+          python ops/metrics.py collect
+          if [ -f data/leads_import.csv ]; then python ops/leads.py import; fi
+      - name: Weekly report (Sundays, New York time)
+        run: |
+          if [ "$(TZ=America/New_York date +%a)" = "Sun" ]; then python ops/strategy.py report; fi
+      - name: Commit data changes
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ reports/ 2>/dev/null || true
+          if git diff --cached --quiet; then echo "No changes."; exit 0; fi
+          git commit -m "data: metrics $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((10 + RANDOM % 20))
+          done
+          exit 1

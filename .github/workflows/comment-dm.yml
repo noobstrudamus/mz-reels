@@ -1,0 +1,58 @@
+# Comment-to-DM (ops/comment_dm.py): anyone who comments the keyword (settings comment_keyword "GAP", plus FINDER on comment_finder reels) on a
+# reel from the last dm_lookback_days days gets ONE private-reply DM with that reel's tracked link.
+# Kill switch: run --live sends nothing unless config/settings.json "auto_publish" is true and the repo
+# variable MZ_KILL is unset. While writes are OFF it only logs each matching comment once as dry_run.
+name: comment-dm
+
+on:
+  schedule:
+    # Every 30 min, all day (the playbook wants replies within 2 h). :07/:37 stay off the busy top of the
+    # hour and off publish.yml's :02/:17/:32/:47. GitHub may start scheduled runs several minutes late.
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:              # never two DM runs at once; a queued run waits instead of being cancelled
+  group: comment-dm
+  cancel-in-progress: false
+
+jobs:
+  comment-dm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: DM the link to keyword comments
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+          MZ_KILL: ${{ vars.MZ_KILL }}   # set the repo variable MZ_KILL=1 to stop all writes without a commit
+        timeout-minutes: 12   # leaves the commit step time to record DMs already sent (logged one by one)
+        run: python ops/comment_dm.py run --live
+
+      # always(): DMs that went out before a later failure must still be recorded in dm_log.jsonl.
+      # If the push is lost anyway, the next run tries those comments again and Instagram refuses a second
+      # private reply to the same comment, so nobody is DMed twice (only the lead counts would be missing).
+      - name: Commit data changes
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -d data ] || { echo "No data/ directory."; exit 0; }   # git keeps no empty dirs: absent until the first write
+          git add data/ ':!data/*.tmp'
+          if git diff --cached --quiet; then echo "No data changes."; exit 0; fi
+          git commit -m "data: comment-dm $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2; do                        # one retry if another workflow pushed in between
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            [ "$i" = 1 ] && sleep $((10 + RANDOM % 20))
+          done
+          echo "::error::could not push data/ after one retry; this run's dm_log.jsonl and leads.jsonl rows are lost" >&2
+          exit 1

@@ -1,0 +1,9 @@
+engine/build/
+engine/stills/
+engine/voice/*.wav
+engine/reel_final.mp4
+__pycache__/
+*.pyc
+.env
+*.mp4
+data/*.tmp

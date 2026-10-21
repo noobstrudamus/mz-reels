@@ -1,0 +1,3 @@
+# data/*.jsonl are append-only logs written by several workflows (publish, comment-dm, metrics). When two
+# runs append at the same time, keep both sides' lines on `git pull --rebase` instead of a conflict.
+data/*.jsonl merge=union

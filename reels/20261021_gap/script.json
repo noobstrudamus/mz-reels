@@ -1,0 +1,161 @@
+{
+  "gap": "The certificate is missing a field the rule requires, or names the wrong importer.",
+  "scenes": [
+    {
+      "type": "stamp",
+      "dur": 5.1,
+      "headline": "Factory says it's certified.",
+      "note": "Say a seller imports KID-24-BLUE with the factory's cert.",
+      "stamp": "BLOCKED",
+      "doc": "Factory certificate"
+    },
+    {
+      "type": "compare",
+      "dur": 4.6,
+      "headline": "Who's named as certifier?",
+      "note": "Say the seller is the importer of record.",
+      "left": {
+        "label": "Certifier",
+        "value": "Factory"
+      },
+      "right": {
+        "label": "Should be",
+        "value": "Importer"
+      }
+    },
+    {
+      "type": "pair",
+      "dur": 4.0,
+      "headline": "A name alone isn't enough.",
+      "note": "Plus street, city, state, country, email and phone.",
+      "bad": {
+        "label": "Name only"
+      },
+      "good": {
+        "label": "Full contact"
+      }
+    },
+    {
+      "type": "checklist",
+      "dur": 4.0,
+      "headline": "Test passed. The cert didn't.",
+      "note": "Required too: when and where it was made.",
+      "items": [
+        {
+          "name": "Lab report",
+          "value": "passed",
+          "ok": true
+        },
+        {
+          "name": "Certifier named",
+          "value": "the factory",
+          "ok": false
+        },
+        {
+          "name": "Certifier contact",
+          "value": "name only",
+          "ok": false
+        },
+        {
+          "name": "Made: month/year",
+          "value": "missing",
+          "ok": false
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "dur": 6.2,
+      "headline": "Blocked right now?",
+      "line1": "Forward the notice.",
+      "line2": "Get your gap list in 24 hours.",
+      "url": "mzconsulting.agency"
+    }
+  ],
+  "vo": [
+    "The factory says it's certified. The PDF doesn't say what you think.",
+    "The certifier? The factory. On imports, it's usually the importer.",
+    "A name isn't enough. Address, email and phone, too.",
+    "Plus when it was made. Test passed. Certificate didn't.",
+    "Blocked right now? Forward the notice. Gap list in twenty-four hours, link in bio."
+  ],
+  "caption": "Your factory sent a certificate. Whose name is on it as the certifier?\nA passing lab report won't fix what the certificate itself is missing.\nOn imports, the certifier is usually the importer of record.\nThe cert also needs the certifier's full address, email and phone, plus when and where it was made, among other fields.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+  "tracking_link": "https://mzconsulting.agency/?src=ig_20261021_gap#contact",
+  "sources": [
+    {
+      "id": "C1",
+      "claim": "On imports, the importer is (absent a specific rule saying otherwise) the party that must issue the certificate, so the importer, not the factory, is usually the one named as certifier.",
+      "used_in": "Scene 2 compare (headline 'Who's named as certifier?', Certifier: Factory vs Should be: Importer); VO2 'The certifier? The factory. On imports, it's usually the importer.'; Scene 4 item 'Certifier named / the factory' (ok:false); caption line 3",
+      "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.7",
+      "section": "16 CFR 1110.7 Who must certify finished products, (a) Imports (current eCFR, Title 16 up to date as of 2026-10-19; section last amended 2026-07-08 by 90 FR 1843, Jan. 8, 2025, the eFiling rule)",
+      "quote": "Except as otherwise provided in a specific rule, ban, standard, or regulation enforced by CPSC, for a finished product manufactured outside of the United States that must be accompanied by a certificate as set forth in § 1110.5, the importer, as defined in this part, is the finished product certifier that must issue a finished product certificate that meets the requirements of this part."
+    },
+    {
+      "id": "C1b",
+      "claim": "In this rule 'importer' means the importer of record (supports the scenario framing 'Say the seller is the importer of record' and caption 'importer of record').",
+      "used_in": "Scene 2 note 'Say the seller is the importer of record.'; caption line 3",
+      "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+      "section": "16 CFR 1110.3 Definitions, (b), definition of 'Importer' (current eCFR, Title 16 up to date as of 2026-10-19; section last amended 2026-07-08 by 90 FR 1843, Jan. 8, 2025, the eFiling rule)",
+      "quote": "Importer, for the purposes of this part, means the Importer of Record (IOR) eligible to make entry for imported finished products under the Tariff Act of 1930"
+    },
+    {
+      "id": "C2",
+      "claim": "The certificate must identify the certifier with name, street address, city, state or province, country, email and phone, so a name alone is not enough.",
+      "used_in": "Scene 3 pair (headline 'A name alone isn't enough.', note 'Plus street, city, state, country, email and phone.', The gap: Name only / The fix: Full contact); VO3 'A name isn't enough. Address, email and phone, too.'; Scene 4 item 'Certifier contact / name only' (ok:false); caption line 4",
+      "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+      "section": "16 CFR 1110.11 Certificate content, (a) Content requirements ('Each finished product certificate must:'), (a)(3) (current eCFR, Title 16 up to date as of 2026-10-19; section last amended 2026-07-08 by 90 FR 1843, Jan. 8, 2025, the eFiling rule)",
+      "quote": "(3) Identify the finished product certifier that is certifying compliance of the finished product(s), as set forth in § 1110.7, including the party's name, street address, city, state or province, country or administrative region, electronic mail (email) address, and telephone number."
+    },
+    {
+      "id": "C3",
+      "claim": "The certificate must state when (month and year at a minimum) and where the product was made.",
+      "used_in": "Scene 4 note 'Required too: when and where it was made.' and item 'Made: month/year / missing' (ok:false); VO4 'Plus when it was made.'; caption line 4",
+      "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+      "section": "16 CFR 1110.11 Certificate content, (a) Content requirements ('Each finished product certificate must:'), (a)(5) (current eCFR, Title 16 up to date as of 2026-10-19; section last amended 2026-07-08 by 90 FR 1843, Jan. 8, 2025, the eFiling rule)",
+      "quote": "(5) Provide the date (month and year, at a minimum) and place (including a manufacturer name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were manufactured, produced, or assembled."
+    },
+    {
+      "id": "C4",
+      "claim": "These content rules apply to every finished product certificate (CPC and GCC), so the reel names neither type and cannot mix them up.",
+      "used_in": "Whole reel and caption: no certificate type named on screen, in VO or in caption",
+      "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+      "section": "16 CFR 1110.3 Definitions, (b), definition of 'Finished product certificate' (current eCFR, Title 16 up to date as of 2026-10-19; section last amended 2026-07-08 by 90 FR 1843, Jan. 8, 2025, the eFiling rule)",
+      "quote": "Finished product certificate means a certificate of compliance for a finished product, as defined in this section, that is required by § 1110.5. There are two types of finished product certificates: Children's Product Certificates (CPCs) and General Certificates of Conformity (GCCs)."
+    },
+    {
+      "id": "S1",
+      "claim": "Gap of the week premise, worded as on M&Z's own site (not a regulatory claim).",
+      "used_in": "Whole reel premise (Wednesday 'Gap of the week' pillar)",
+      "source_url": "https://mzconsulting.agency/",
+      "section": "Home page, section 'It's almost never the product. It's the file.' (common gaps list)",
+      "quote": "The certificate is missing a field the rule requires, or names the wrong importer."
+    },
+    {
+      "id": "S2",
+      "claim": "Hook adapts a customer pain quote from the site/playbook into a fictional 'say a seller' scenario (KID-24-BLUE); not a factual claim or testimonial.",
+      "used_in": "Scene 1 stamp (headline 'Factory says it's certified.', note 'Say a seller imports KID-24-BLUE with the factory's cert.', stamp BLOCKED); VO1",
+      "source_url": "https://mzconsulting.agency/",
+      "section": "Home page, section 'If you've said one of these this month, you're in the right place.'",
+      "quote": "The factory says it's certified. The PDF doesn't say what they think it says."
+    },
+    {
+      "id": "S3",
+      "claim": "M&Z's free offer: forward the notice, get a gap list within 24 hours.",
+      "used_in": "Scene 5 CTA (GAP LIST set); VO5 'Forward the notice. Gap list in twenty-four hours'; caption line 5; pinned comment",
+      "source_url": "https://mzconsulting.agency/#contact",
+      "section": "Home page hero, and contact section heading",
+      "quote": "Forward the notice. Within 24 hours you get back what's wrong, what fixes it and the fixed price."
+    },
+    {
+      "id": "S4",
+      "claim": "Core brand line shown by the template on the CTA plate.",
+      "used_in": "Scene 5 CTA plate (template text, not edited)",
+      "source_url": "https://mzconsulting.agency/",
+      "section": "Home page, section heading above the common gaps list",
+      "quote": "It's almost never the product. It's the file."
+    }
+  ],
+  "limit_check": "$ python3 -I tools/check.py final/reel_final.json\nOK   s1 stamp headline                 28/30  \"Factory says it's certified.\"\nOK   s1 stamp note                     57/60  \"Say a seller imports KID-24-BLUE with the factory's cert.\"\nOK   s1 stamp stamp                     7/8   'BLOCKED'\nOK   s1 stamp doc                      19/24  'Factory certificate'\nOK   s2 compare headline               25/30  \"Who's named as certifier?\"\nOK   s2 compare note                   41/60  'Say the seller is the importer of record.'\nOK   s2 compare left.label              9/14  'Certifier'\nOK   s2 compare left.value              7/11  'Factory'\nOK   s2 compare right.label             9/14  'Should be'\nOK   s2 compare right.value             8/11  'Importer'\nOK   s3 pair headline                  26/30  \"A name alone isn't enough.\"\nOK   s3 pair note                      51/60  'Plus street, city, state, country, email and phone.'\nOK   s3 pair bad.label                  9/12  'Name only'\nOK   s3 pair good.label                12/12  'Full contact'\nOK   s4 checklist headline             29/30  \"Test passed. The cert didn't.\"\nOK   s4 checklist note                 41/60  'Required too: when and where it was made.'\n     s4 checklist items: 4 (need 3-4) -> OK\nOK   s4 checklist item1.name           10/18  'Lab report'\nOK   s4 checklist item1.value           6/14  'passed'\nOK   s4 checklist item2.name           15/18  'Certifier named'\nOK   s4 checklist item2.value          11/14  'the factory'\nOK   s4 checklist item3.name           17/18  'Certifier contact'\nOK   s4 checklist item3.value           9/14  'name only'\nOK   s4 checklist item4.name           16/18  'Made: month/year'\nOK   s4 checklist item4.value           7/14  'missing'\nOK   s5 cta headline                   18/30  'Blocked right now?'\nOK   s5 cta line1                      19/20  'Forward the notice.'\nOK   s5 cta line2                      30/40  'Get your gap list in 24 hours.'\n     CTA GAP LIST set verbatim: True\nscene order stamp,compare,pair,checklist,cta: True\nVO lines: 5 (need 5)\nVO1: 12 words split / 12 spoken  min dur 5.044s -> dur 5.1s OK  digits_in_vo=False  \"The factory says it's certified. The PDF doesn't say what you think.\"\nVO2: 10 words split / 10 spoken  min dur 4.304s -> dur 4.6s OK  digits_in_vo=False  \"The certifier? The factory. On imports, it's usually the importer.\"\nVO3: 9 words split / 9 spoken  min dur 3.933s -> dur 4.0s OK  digits_in_vo=False  \"A name isn't enough. Address, email and phone, too.\"\nVO4: 9 words split / 9 spoken  min dur 3.933s -> dur 4.0s OK  digits_in_vo=False  \"Plus when it was made. Test passed. Certificate didn't.\"\nVO5: 14 words split / 15 spoken  min dur 6.156s -> dur 6.2s OK  digits_in_vo=False  'Blocked right now? Forward the notice. Gap list in twenty-four hours, link in bio.'\nVO words total: 54 split / 55 spoken | total dur: 23.9s (18-24) -> OK | all scene durs OK: True | slack to 24s: 0.1s\nVO5 CTA spoken: forward the notice=True, gap list=True, twenty-four hours=True, link in bio/url=True\nfields over limit: 0\n\n$ python3 -I tools/tts_fit.py final/reel_final.json final/tts   (real edge-tts en-US-AndrewNeural +6%, same silence trim as voice.py, FIT_MARGIN 0.3 s)\ns1 stamp     tts 3.77s  dur 5.1s  spare 1.33s  OK  \"The factory says it's certified. The PDF doesn't say what you think.\"\ns2 compare   tts 4.08s  dur 4.6s  spare 0.52s  OK  \"The certifier? The factory. On imports, it's usually the importer.\"\ns3 pair      tts 3.58s  dur 4.0s  spare 0.42s  OK  \"A name isn't enough. Address, email and phone, too.\"\ns4 checklist tts 3.08s  dur 4.0s  spare 0.92s  OK  \"Plus when it was made. Test passed. Certificate didn't.\"\ns5 cta       tts 4.75s  dur 6.2s  spare 1.45s  OK  'Blocked right now? Forward the notice. Gap list in twenty-four hours, link in bio.'\ntotal dur 23.9s (18-24: OK) | edge-tts en-US-AndrewNeural +6%, voice.py trim | ALL OK\n\n$ python3 render.py --stills 0.5 4 7.5 9 12 15 17 20 23.5   (on a SCRATCH COPY of mz-reel-template with this REEL; the real template was not edited)\nQA  REEL object   : PASS\nQA  safe zone/fit : PASS\nLooked at every still: no overflow or wrap; stamp BLOCKED lands by ~1.6 s; compare highlights Factory/Importer as whole words; pair 'The gap: Name only' (red) / 'The fix: Full contact' (blue, 12/12 fits); checklist header 'FILE CHECK 1/4 OK', all 4 rows visible from ~16.2 s (scene ends 17.7 s); CTA shows url button + 'It's almost never the product. It's the file.' plate; footnote 'Illustrative example. Not legal advice.' on every scene.\n\n$ python3 -I tools/quotes.py final/dl/p1110.txt   (my own fresh fetch: eCFR versioner full XML, Title 16 Part 1110, 2026-10-19, --compressed; byte-identical to the earlier fetch)\nC1 1110.7(a)           FOUND\nC1b 1110.3 Importer    FOUND\nC2 1110.11(a)(3)       FOUND\nC3 1110.11(a)(5)       FOUND\nC4 1110.3 FPC          FOUND\n1110.11(a) lead-in     FOUND\n1110.15 rely           FOUND\n1110.15 responsible    FOUND\nCurrency: titles API Title 16 up_to_date_as_of 2026-10-19; versions API Part 1110 latest_amendment_date 2026-07-08 (1110.3, 1110.7, 1110.11, 1110.15 all 2026-07-08); source note in XML: '90 FR 1843, Jan. 8, 2025'. Site quotes S1-S4 matched verbatim in home.html.txt.",
+  "notes_for_mert": "1) DO NOT POST THE EXISTING FILE. /home/user/mz-reel-template/reel_final.mp4, reel.html (REEL block) and vo.txt still hold the OLD, unverified model-mismatch reel (its VO1 names Amazon). I did not edit the template. To build this reel: paste these 5 scenes into REEL (keep meta: id 20261021_gap, pillar gap, cta gaplist, footnote 'Illustrative example. Not legal advice.'), write the 5 VO lines to vo.txt, then voice.py (must print ALL OK) -> render.py --stills -> render.py -> build_audio.py. A scratch preview with this exact REEL already passed engine QA: /tmp/claude-0/-home-user/b54ab678-dc57-5d6b-94c6-9e69e1a57a40/scratchpad/final/preview/stills/.\n2) Changes vs the verified draft (judges' grafts): stamp FLAGGED -> BLOCKED (fictional scenario label, matches the CTA 'Blocked right now?'); VO4 tightened to 'Plus when it was made. Test passed. Certificate didn't.'; VO5 now says the full CTA; scene 2 raised 4.4 -> 4.6 s for voice margin. No new claims were added.\n3) Timing: total 23.9 s, only 0.1 s under the 24 s cap. Real TTS spare per scene: 1.33 / 0.52 / 0.42 / 0.92 / 1.45 s. If you record the lines yourself and a scene runs long, do NOT let voice.py --fit push the total past 24 s; instead drop ', link in bio' from VO5 (URL is on screen; scene 5 can then go to 5.1 s, freeing 1.1 s). Never cut a claim line.\n4) Still times: with these durations the standard stills 0.5/4/9/15/20 skip scene 3 (pair, 9.7-13.7 s). Add 12 (and 17 for the full checklist). Glance at the compare scene: the template paints BOTH values red-highlighted (diff highlight), including the correct 'Importer' side; the blue bar and 'Should be' label carry the meaning. That is template behavior, not a content issue, but check you are happy with it.\n5) 'Should be: Importer' has no hedge on screen and is accurate only inside the scenario note 'Say the seller is the importer of record.' Keep that note. The rule starts 'Except as otherwise provided in a specific rule...', a customs broker that is IOR may name the owner/purchaser/consignee, and a factory can itself be IOR. Hence 'usually' in VO2 and caption line 3.\n6) Never say or reply 'the factory can't be on the cert'. 1110.11(a)(5) requires the manufacturer's name and address as the place of manufacture. The reel only says who is NAMED AS CERTIFIER. For DMs only (not used in the reel or caption, since it is outside the verified claim set): 1110.15 says a certifier 'may rely on another party to enter data into the Product Registry or to certify finished products on their behalf' but 'remains legally responsible' (verbatim in the fresh eCFR fetch). No legal verdicts in DMs.\n7) The field lists are partial on purpose. 1110.11(a) also requires the product identifier, every applicable rule, the records-keeper contact, the test date and place, and the attestation. The caption says 'among other fields'; keep it that way in replies.\n8) No CPC or GCC is named, which is correct because 1110.11(a) covers both. If anyone asks, KID-24-BLUE implies a children's product, which would be a CPC. Never call it a GCC.\n9) Tracking vs bio: the reel and caption say 'link in bio', but the playbook bio link is the Finder (?src=ig_bio), not the gap list. Clicks would land on the Finder and count as ig_bio. Decide whether to point the bio link (or a story link sticker) to https://mzconsulting.agency/?src=ig_20261021_gap#contact for this reel's run; otherwise this reel's gap-list requests won't be attributable.\n10) Sources: only current eCFR text (post-eFiling numbering, 90 FR 1843). The human eCFR URLs redirected curl to eCFR's bot gate, so I verified the text through the versioner API. Please open the 3 section links in a browser once. Do not cite the cpsc.gov CPC FAQ; it predates the eFiling rules.\n11) Still open before posting: voice.py ALL OK in the real template, final render + audio, QA table, your approval. Post in US Eastern business hours and cross-post to YouTube Shorts."
+}

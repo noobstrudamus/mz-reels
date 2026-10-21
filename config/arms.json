@@ -1,0 +1,44 @@
+{
+  "_doc": "Factorized bandit: each factor is learned independently (Thompson sampling). Calendar pillar is NOT a factor; it follows the playbook calendar.",
+  "factors": {
+    "hook": {
+      "pain_quote": "Open with a customer's own words from the playbook/site pain quotes, reworded as 'say a seller...'.",
+      "question": "Open with a direct yes/no question the target seller would answer 'yes' to.",
+      "myth": "Open by naming a common belief and flipping it (only with a verified source).",
+      "cost": "Open with the cost of waiting (held container, suppressed listing, missed launch). No invented numbers; only prices/dates from the site or verified sources."
+    },
+    "length": {
+      "short": "Total 18-20 s, 45-52 spoken words.",
+      "long": "Total 22-24 s, 55-62 spoken words."
+    },
+    "voice": {
+      "andrew": "en-US-AndrewNeural",
+      "ava": "en-US-AvaNeural"
+    },
+    "cta_mode": {
+      "playbook": "Use the calendar's CTA set (GAP LIST or FINDER) exactly.",
+      "comment": "Use the COMMENT set: viewers comment the keyword and get the link by DM (per-reel tracked)."
+    },
+    "slot": {
+      "0947": "09:47 America/New_York",
+      "1147": "11:47 America/New_York",
+      "1547": "15:47 America/New_York"
+    }
+  },
+  "calendar": {
+    "Mon": {"pillar": "blocked", "cta": "gaplist"},
+    "Tue": {"pillar": "finder", "cta": "finder"},
+    "Wed": {"pillar": "gap", "cta": "gaplist"},
+    "Thu": {"pillar": "deadline", "cta": "finder_or_gaplist", "_note": "Finder for CPSC rule changes, Gap list for FCC"},
+    "Fri": {"pillar": "myth", "cta": "gaplist"},
+    "Sat": {"pillar": "finder", "cta": "finder"},
+    "Sun": {"pillar": "cost", "cta": "gaplist"}
+  },
+  "learning": {
+    "half_life_days": 21,
+    "min_explore": 0.2,
+    "winner_prob": 0.8,
+    "winner_min_n": 4,
+    "min_age_hours": 48
+  }
+}

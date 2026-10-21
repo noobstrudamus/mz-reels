@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M&Z Reel</title>
+<style>
+@font-face { font-family: 'Archivo'; src: url(fonts/archivo-wdth.woff2) format('woff2-variations'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'Public Sans'; src: url(fonts/public-sans.woff2) format('woff2-variations'); font-weight: 100 900; }
+@font-face { font-family: 'JB Mono'; src: url(fonts/jetbrains-mono-800.woff2) format('woff2'); font-weight: 800; }
+
+:root {
+  --paper: #f3f4f1; --surface: #ffffff; --ink: #1c2329; --ink-2: #2e363d; --muted: #3a434c; --muted-2: #4b5560;
+  --accent: #1d3f8f; --red: #a3261b; --tag: #f2c230; --tag-border: #b98e0b;
+  --plate: #cdd1cc; --plate-inner: #d8dbd6; --plate-border: #959b95; --plate-edge: #a7aca6; --plate-ink: #252c32;
+  --plate-label: #454c46; --plate-line: #8c928c; --screw: #b4b9b3; --screw-border: #80867f;
+  --rule: #c9cdc6; --rule-light: #d5d8d2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+#stage { position: absolute; inset: 0; overflow: hidden; background: var(--paper); }
+#grid { position: absolute; inset: 0; opacity: .55;
+  background-image: linear-gradient(var(--rule-light) 1px, transparent 1px), linear-gradient(90deg, var(--rule-light) 1px, transparent 1px);
+  background-size: 72px 72px; background-position: -1px 34px; }
+#grain { position: absolute; inset: 0; opacity: .06; pointer-events: none; background-size: 256px 256px; }
+#shade { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(205,209,204,.55) 0, rgba(243,244,241,0) 230px, rgba(243,244,241,0) 1380px, rgba(205,209,204,.6) 1920px); }
+
+/* header (persistent) */
+#hdr { position: absolute; left: 80px; top: 252px; width: 856px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.wm { display: flex; align-items: baseline; gap: 12px; }
+.wm b { font: 900 46px/1 'Archivo'; font-stretch: 100%; letter-spacing: -1px; color: var(--ink); }
+.wm span { font: 700 21px/1 'Public Sans'; letter-spacing: 5px; color: var(--muted-2); }
+.pill { font: 800 23px/1 'Public Sans'; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink);
+  background: var(--tag); border: 2px solid var(--tag-border); border-radius: 4px; padding: 12px 16px 11px; white-space: nowrap; }
+
+/* progress + footnote (persistent) */
+#prog { position: absolute; left: 80px; top: 1338px; width: 856px; height: 8px; display: flex; gap: 12px; }
+#prog i { flex: 1; background: var(--rule); border-radius: 4px; overflow: hidden; position: relative; }
+#prog i b { position: absolute; inset: 0; width: 0; background: var(--accent); }
+#foot { position: absolute; left: 80px; top: 1294px; width: 856px; font: 500 22px/1.2 'Public Sans'; color: var(--muted-2); letter-spacing: .3px; white-space: nowrap; }
+
+/* scenes */
+.scene { position: absolute; inset: 0; visibility: hidden; }
+.top { position: absolute; left: 80px; top: 352px; width: 856px; display: flex; flex-direction: column; gap: 22px; }
+.hl { font: 800 96px/1.0 'Archivo'; font-stretch: 84%; letter-spacing: -1.5px; color: var(--ink); }
+.nt { font: 500 40px/1.3 'Public Sans'; color: var(--muted-2); }
+.vis { position: absolute; left: 80px; top: 728px; width: 856px; height: 548px; }
+
+/* stamp */
+.doc { position: absolute; left: 56px; top: 8px; width: 744px; height: 520px; background: var(--surface); border: 2px solid var(--rule);
+  box-shadow: 0 18px 40px rgba(28,35,41,.14), 0 2px 0 var(--rule-light); border-radius: 6px; padding: 40px 48px; }
+.doc .dt { font: 800 28px/1 'Public Sans'; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.doc .rule { height: 2px; background: var(--rule-light); margin: 22px 0 26px; }
+.doc .ln { height: 20px; background: #e4e6e1; border-radius: 10px; margin-bottom: 24px; }
+.stamp { position: absolute; left: 50%; top: 50%; padding: 18px 40px 14px; border: 12px solid var(--red); border-radius: 14px; color: var(--red);
+  font: 900 150px/1 'Archivo'; font-stretch: 100%; letter-spacing: 4px; white-space: nowrap; filter: url(#rough); mix-blend-mode: multiply; }
+
+/* compare */
+.card { position: absolute; left: 0; width: 856px; height: 232px; background: var(--surface); border: 2px solid var(--rule); border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(28,35,41,.10); padding: 30px 40px 0 52px; overflow: hidden; }
+.card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--bar); }
+.card .lb { font: 800 28px/1 'Public Sans'; letter-spacing: 3px; text-transform: uppercase; color: var(--muted-2); white-space: nowrap; }
+.card .vl { font: 800 112px/1 'JB Mono'; letter-spacing: -2px; color: var(--ink); white-space: nowrap; margin-top: 30px; }
+.card .vl .d { color: var(--dc); background: rgba(var(--dcrgb),var(--hi,0)); border-radius: 6px; box-shadow: 0 0 0 6px rgba(var(--dcrgb),var(--hi,0)); }
+.card.ca { --dc: var(--red); --dcrgb: 163,38,27; }
+.card.cb { --dc: var(--accent); --dcrgb: 29,63,143; }
+.neq { position: absolute; left: 50%; top: 274px; width: 112px; height: 112px; margin: -56px 0 0 -56px; border-radius: 50%; background: var(--red); color: #fff;
+  font: 800 76px/112px 'Archivo'; text-align: center; box-shadow: 0 0 0 10px var(--paper); }
+
+/* pair */
+.blk { position: absolute; left: 0; width: 856px; height: 228px; border-radius: 10px; color: #fff; display: flex; align-items: center; gap: 36px; padding: 0 44px; }
+.blk.bad { background: var(--red); top: 0; }
+.blk.good { background: var(--accent); top: 320px; }
+.blk .ic { flex: 0 0 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,.16); border: 4px solid rgba(255,255,255,.85);
+  display: flex; align-items: center; justify-content: center; }
+.blk .tx { display: flex; flex-direction: column; gap: 14px; min-width: 0; flex: 1; }
+.blk .tg { font: 800 26px/1 'Public Sans'; letter-spacing: 4px; text-transform: uppercase; opacity: .82; white-space: nowrap; }
+.blk .lv { font: 800 92px/1 'Archivo'; font-stretch: 88%; letter-spacing: -1px; white-space: nowrap; }
+.arrow { position: absolute; left: 50%; top: 232px; width: 80px; height: 84px; margin-left: -40px; }
+
+/* checklist (nameplate) */
+.plate { position: absolute; left: 20px; top: 0; width: 816px; height: 548px; border-radius: 10px; padding: 34px 54px;
+  background: linear-gradient(160deg, var(--plate-inner), var(--plate) 55%, var(--plate-edge)); border: 3px solid var(--plate-border);
+  box-shadow: inset 0 0 0 6px var(--plate), inset 0 0 0 8px var(--plate-line), 0 16px 36px rgba(28,35,41,.16); }
+.screw { position: absolute; width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #d9ddd8, var(--screw) 60%);
+  border: 2px solid var(--screw-border); }
+.screw::after { content: ''; position: absolute; left: 5px; right: 5px; top: 12px; height: 3px; background: var(--screw-border); transform: rotate(-35deg); }
+.plate .ph { display: flex; justify-content: space-between; align-items: baseline; padding: 0 0 18px; border-bottom: 3px solid var(--plate-line); }
+.plate .ph b { font: 800 30px/1 'Archivo'; font-stretch: 112%; letter-spacing: 6px; color: var(--plate-label); }
+.plate .ph span { font: 700 22px/1 'Public Sans'; letter-spacing: 3px; color: var(--plate-label); }
+.row { display: flex; align-items: center; gap: 22px; height: 104px; border-bottom: 2px solid rgba(140,146,140,.55); }
+.row:last-child { border-bottom: 0; }
+.row .nm { flex: 1; font: 700 38px/1 'Public Sans'; color: var(--plate-ink); white-space: nowrap; min-width: 0; }
+.row .vv { font: 800 34px/1 'JB Mono'; color: var(--plate-ink); white-space: nowrap; }
+.row.bad .vv { color: var(--red); }
+.row .st { flex: 0 0 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.row.ok .st { background: var(--accent); }
+.row.bad .st { background: var(--red); }
+
+/* cta */
+.l1 { position: absolute; left: 0; top: 10px; width: 856px; font: 800 88px/1.02 'Archivo'; font-stretch: 86%; letter-spacing: -1px; color: var(--ink); white-space: nowrap; }
+.l2 { position: absolute; left: 0; top: 128px; width: 856px; font: 600 48px/1.25 'Public Sans'; color: var(--muted); }
+.url { position: absolute; left: 0; top: 262px; height: 128px; padding: 0 54px 0 58px; border-radius: 64px; background: var(--accent); color: #fff;
+  display: flex; align-items: center; gap: 26px; box-shadow: 0 16px 34px rgba(29,63,143,.30); }
+.url span { font: 800 58px/1 'Archivo'; font-stretch: 92%; letter-spacing: -.5px; white-space: nowrap; }
+.scene[data-type=cta] .vis { top: 590px; height: 690px; }
+.sig { position: absolute; left: 0; top: 430px; width: 856px; height: 236px; border-radius: 10px; padding: 34px 60px;
+  background: linear-gradient(160deg, var(--plate-inner), var(--plate) 55%, var(--plate-edge)); border: 3px solid var(--plate-border);
+  box-shadow: inset 0 0 0 6px var(--plate), inset 0 0 0 8px var(--plate-line), 0 14px 30px rgba(28,35,41,.14); }
+.sig .sh { font: 800 30px/1 'Archivo'; font-stretch: 112%; letter-spacing: 6px; color: var(--plate-label); padding-bottom: 18px; border-bottom: 3px solid var(--plate-line); white-space: nowrap; }
+.sig .sl { font: 700 40px/1.22 'Public Sans'; color: var(--plate-ink); margin-top: 20px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.15 1.4" result="mask"/>
+    <feComposite in="SourceGraphic" in2="mask" operator="in" result="ink"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="w"/>
+    <feDisplacementMap in="ink" in2="w" scale="5"/>
+  </filter>
+  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11"/><feColorMatrix type="saturate" values="0"/></filter>
+</svg>
+<div id="stage">
+  <div id="grid"></div>
+  <div id="shade"></div>
+  <div id="grain"></div>
+  <div id="hdr"><div class="wm t" data-max="1"><b>M&amp;Z</b><span>CONSULTING</span></div><div class="pill t" id="pill" data-max="1"></div></div>
+  <div id="scenes"></div>
+  <div id="foot" class="t" data-max="1"></div>
+  <div id="prog"></div>
+</div>
+
+<script>
+/* ================================================================
+   REEL — the ONLY part you edit per reel. Scene order is fixed:
+   stamp, compare, pair, checklist, cta. Limits are enforced below.
+   ================================================================ */
+/* REEL:BEGIN */
+const REEL = {
+  "meta": {
+    "id": "20261021_gap",
+    "pillar": "gap",
+    "cta": "gaplist",
+    "footnote": "Illustrative example. Not legal advice."
+  },
+  "scenes": [
+    {
+      "type": "stamp",
+      "dur": 5.1,
+      "headline": "Factory says it's certified.",
+      "note": "Say a seller imports KID-24-BLUE with the factory's cert.",
+      "stamp": "BLOCKED",
+      "doc": "Factory certificate"
+    },
+    {
+      "type": "compare",
+      "dur": 4.6,
+      "headline": "Who's named as certifier?",
+      "note": "Say the seller is the importer of record.",
+      "left": {
+        "label": "Certifier",
+        "value": "Factory"
+      },
+      "right": {
+        "label": "Should be",
+        "value": "Importer"
+      }
+    },
+    {
+      "type": "pair",
+      "dur": 4.0,
+      "headline": "A name alone isn't enough.",
+      "note": "Plus street, city, state, country, email and phone.",
+      "bad": {
+        "label": "Name only"
+      },
+      "good": {
+        "label": "Full contact"
+      }
+    },
+    {
+      "type": "checklist",
+      "dur": 4.0,
+      "headline": "Test passed. The cert didn't.",
+      "note": "Required too: when and where it was made.",
+      "items": [
+        {
+          "name": "Lab report",
+          "value": "passed",
+          "ok": true
+        },
+        {
+          "name": "Certifier named",
+          "value": "the factory",
+          "ok": false
+        },
+        {
+          "name": "Certifier contact",
+          "value": "name only",
+          "ok": false
+        },
+        {
+          "name": "Made: month/year",
+          "value": "missing",
+          "ok": false
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "dur": 6.2,
+      "headline": "Blocked right now?",
+      "line1": "Forward the notice.",
+      "line2": "Get your gap list in 24 hours.",
+      "url": "mzconsulting.agency"
+    }
+  ]
+};
+/* REEL:END */
+</script>
+
+<script>
+/* ================================================================
+   ENGINE — do not edit per reel.
+   Deterministic: every frame is computed from t by seek(t).
+   ================================================================ */
+const W = 1080, H = 1920, FPS = 30;
+const SAFE = { x0: 80, x1: 936, y0: 250, y1: 1360 };
+const ORDER = ['stamp', 'compare', 'pair', 'checklist', 'cta'];
+const LIMITS = { headline: 30, note: 60, stamp: 8, doc: 24, compareLabel: 14, compareValue: 11, pairLabel: 12,
+                 checkName: 18, checkValue: 14, ctaLine1: 20, ctaLine2: 40, footnote: 48 };
+const CTA_SETS = {
+  gaplist: { headline: 'Blocked right now?', line1: 'Forward the notice.', line2: 'Get your gap list in 24 hours.', url: 'mzconsulting.agency' },
+  finder: { headline: 'Not sure which rules apply?', line1: 'Free CPSC finder.', line2: 'See which rules apply. No account needed.', url: 'mzconsulting.agency' },
+  /* experiment arm cta_mode=comment: viewers comment the keyword, ops/comment_dm.py DMs a per-reel tracked link */
+  comment_gaplist: { headline: 'Want your gap list?', line1: 'Comment GAP.', line2: "We'll DM you the link.", url: 'mzconsulting.agency' },
+  comment_finder: { headline: 'Which rules apply to you?', line1: 'Comment FINDER.', line2: "We'll DM you the free CPSC finder.", url: 'mzconsulting.agency' },
+};
+const PILLARS = { blocked: 'Blocked story', finder: 'Free finder demo', gap: 'Gap of the week', deadline: 'Rule change', myth: 'Myth vs fact', cost: 'Cost of waiting' };
+const TOTAL = [18, 24];
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (u, a, b) => clamp((u - a) / (b - a));
+const eOut = x => 1 - Math.pow(1 - x, 3);
+const eIn = x => x * x;
+const eBack = x => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const $ = (sel, root = document) => root.querySelector(sel);
+
+const ICON = {
+  check: '<svg width="64" height="64" viewBox="0 0 64 64"><path d="M14 33 L27 46 L51 19" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  cross: '<svg width="58" height="58" viewBox="0 0 64 64"><path d="M18 18 L46 46 M46 18 L18 46" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/></svg>',
+  checkS: '<svg width="34" height="34" viewBox="0 0 64 64"><path d="M14 33 L27 46 L51 19" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  crossS: '<svg width="30" height="30" viewBox="0 0 64 64"><path d="M16 16 L48 48 M48 16 L16 48" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/></svg>',
+  arrowR: '<svg width="56" height="56" viewBox="0 0 64 64"><path d="M10 32 H50 M34 15 L51 32 L34 49" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  arrowD: '<svg width="80" height="84" viewBox="0 0 80 84"><path d="M40 6 V70 M16 48 L40 72 L64 48" fill="none" stroke="#1d3f8f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+
+/* ---------- validation ---------- */
+function validate() {
+  const errs = [], S = REEL.scenes || [];
+  const L = (v, k, where) => { if (v != null && String(v).length > LIMITS[k]) errs.push(`${where}: "${v}" is ${String(v).length} chars (max ${LIMITS[k]})`); };
+  if (S.map(s => s.type).join() !== ORDER.join()) errs.push(`scene order must be ${ORDER.join(', ')} (got ${S.map(s => s.type).join(', ')})`);
+  S.forEach((s, i) => {
+    const w = `scene ${i + 1} (${s.type})`;
+    if (!s.headline) errs.push(`${w}: headline missing`);
+    L(s.headline, 'headline', w + ' headline'); L(s.note, 'note', w + ' note');
+    if (!(s.dur > 0)) errs.push(`${w}: dur missing`);
+    if (s.type === 'stamp') { L(s.stamp, 'stamp', w + ' stamp'); L(s.doc, 'doc', w + ' doc'); if (!s.stamp) errs.push(`${w}: stamp text missing`); }
+    if (s.type === 'compare') for (const k of ['left', 'right']) { if (!s[k]) { errs.push(`${w}: ${k} missing`); continue; } L(s[k].label, 'compareLabel', `${w} ${k}.label`); L(s[k].value, 'compareValue', `${w} ${k}.value`); }
+    if (s.type === 'pair') for (const k of ['bad', 'good']) { if (!s[k]) { errs.push(`${w}: ${k} missing`); continue; } L(s[k].label, 'pairLabel', `${w} ${k}.label`); }
+    if (s.type === 'checklist') {
+      const it = s.items || [];
+      if (it.length < 3 || it.length > 4) errs.push(`${w}: needs 3 or 4 items (got ${it.length})`);
+      it.forEach((r, j) => { L(r.name, 'checkName', `${w} item ${j + 1} name`); L(r.value, 'checkValue', `${w} item ${j + 1} value`); });
+    }
+    if (s.type === 'cta') {
+      L(s.line1, 'ctaLine1', w + ' line1'); L(s.line2, 'ctaLine2', w + ' line2');
+      const set = CTA_SETS[REEL.meta && REEL.meta.cta];
+      if (!set) errs.push(`meta.cta must be one of ${Object.keys(CTA_SETS).join(', ')}`);
+      else for (const k of Object.keys(set)) if (s[k] !== set[k]) errs.push(`${w}: ${k} must be exactly "${set[k]}" for the ${REEL.meta.cta} CTA (got "${s[k]}")`);
+    }
+  });
+  L(REEL.meta && REEL.meta.footnote, 'footnote', 'meta.footnote');
+  const tot = S.reduce((a, s) => a + (s.dur || 0), 0);
+  if (tot < TOTAL[0] - 1e-6 || tot > TOTAL[1] + 1e-6) errs.push(`total duration ${tot.toFixed(2)} s is outside ${TOTAL[0]}-${TOTAL[1]} s`);
+  return errs;
+}
+
+/* ---------- build ---------- */
+function diffSpans(a, b) {
+  let p = 0; while (p < a.length && p < b.length && a[p] === b[p]) p++;
+  let s = 0; while (s < a.length - p && s < b.length - p && a[a.length - 1 - s] === b[b.length - 1 - s]) s++;
+  const mk = x => esc(x.slice(0, p)) + (x.length - s > p ? `<span class="d">${esc(x.slice(p, x.length - s))}</span>` : '') + esc(x.slice(x.length - s));
+  return [mk(a), mk(b)];
+}
+function topBlock(s) {
+  return `<div class="top"><div class="hl t" data-max="2">${esc(s.headline)}</div>${s.note ? `<div class="nt t" data-max="2">${esc(s.note)}</div>` : ''}</div>`;
+}
+const BUILD = {
+  stamp: s => `${topBlock(s)}<div class="vis"><div class="doc">${s.doc ? `<div class="dt t" data-max="1">${esc(s.doc)}</div>` : '<div class="dt">&nbsp;</div>'}<div class="rule"></div>
+      ${[92, 78, 86, 60, 88, 70, 54, 80].map(w => `<div class="ln" style="width:${w}%"></div>`).join('')}</div>
+      <div class="stamp t fit" data-max="1" data-fitw="700">${esc(s.stamp)}</div></div>`,
+  compare: s => { const [a, b] = diffSpans(s.left.value, s.right.value); return `${topBlock(s)}<div class="vis">
+      <div class="card ca" style="top:0;--bar:var(--red)"><div class="lb t" data-max="1">${esc(s.left.label)}</div><div class="vl t fit" data-max="1" data-fitw="760">${a}</div></div>
+      <div class="card cb" style="top:316px;--bar:var(--accent)"><div class="lb t" data-max="1">${esc(s.right.label)}</div><div class="vl t fit" data-max="1" data-fitw="760">${b}</div></div>
+      <div class="neq">&ne;</div></div>`; },
+  pair: s => `${topBlock(s)}<div class="vis">
+      <div class="blk bad"><div class="ic">${ICON.cross}</div><div class="tx"><div class="tg t" data-max="1">The gap</div><div class="lv t fit" data-max="1" data-fitw="600">${esc(s.bad.label)}</div></div></div>
+      <div class="arrow">${ICON.arrowD}</div>
+      <div class="blk good"><div class="ic">${ICON.check}</div><div class="tx"><div class="tg t" data-max="1">The fix</div><div class="lv t fit" data-max="1" data-fitw="600">${esc(s.good.label)}</div></div></div></div>`,
+  checklist: s => `${topBlock(s)}<div class="vis"><div class="plate">
+      <i class="screw" style="left:14px;top:14px"></i><i class="screw" style="right:14px;top:14px"></i><i class="screw" style="left:14px;bottom:14px"></i><i class="screw" style="right:14px;bottom:14px"></i>
+      <div class="ph"><b class="t" data-max="1">FILE CHECK</b><span class="t" data-max="1">${s.items.filter(r => r.ok).length}/${s.items.length} OK</span></div>
+      ${s.items.map(r => `<div class="row ${r.ok ? 'ok' : 'bad'}"><div class="nm t" data-max="1">${esc(r.name)}</div><div class="vv t" data-max="1">${esc(r.value)}</div><div class="st">${r.ok ? ICON.checkS : ICON.crossS}</div></div>`).join('')}
+      </div></div>`,
+  cta: s => `${topBlock(s)}<div class="vis"><div class="l1 t fit" data-max="1" data-fitw="856">${esc(s.line1)}</div><div class="l2 t" data-max="2">${esc(s.line2)}</div>
+      <div class="url"><span class="t fit" data-max="1" data-fitw="620">${esc(s.url)}</span>${ICON.arrowR}</div>
+      <div class="sig"><i class="screw" style="left:12px;top:12px"></i><i class="screw" style="right:12px;top:12px"></i><i class="screw" style="left:12px;bottom:12px"></i><i class="screw" style="right:12px;bottom:12px"></i>
+        <div class="sh t" data-max="1">M&amp;Z CONSULTING</div><div class="sl t" data-max="2">It's almost never the product.<br>It's the file.</div></div></div>`,
+};
+
+let T0 = [], DUR = 0;
+function build() {
+  const root = $('#scenes'); let t = 0; T0 = [];
+  root.innerHTML = REEL.scenes.map((s, i) => `<section class="scene" id="s${i}" data-type="${s.type}">${BUILD[s.type](s)}</section>`).join('');
+  REEL.scenes.forEach(s => { T0.push(t); t += s.dur; }); DUR = t;
+  $('#pill').textContent = (REEL.meta && (REEL.meta.tag || PILLARS[REEL.meta.pillar])) || '';
+  $('#foot').textContent = (REEL.meta && REEL.meta.footnote) || '';
+  $('#prog').innerHTML = REEL.scenes.map(() => '<i><b></b></i>').join('');
+}
+
+/* shrink single-line text until it fits its box (never grows) */
+function fitAll() {
+  document.querySelectorAll('.fit').forEach(el => {
+    el.style.fontSize = ''; const maxW = +el.dataset.fitw; let fs = parseFloat(getComputedStyle(el).fontSize); const min = fs * 0.6;
+    while (textW(el) > maxW && fs > min) { fs -= 2; el.style.fontSize = fs + 'px'; }
+    el.dataset.natw = textW(el).toFixed(1);
+  });
+  /* headlines: shrink to stay within 2 lines */
+  document.querySelectorAll('.hl').forEach(el => {
+    el.style.fontSize = ''; let fs = 96;
+    while (lines(el) > 2 && fs > 72) { fs -= 2; el.style.fontSize = fs + 'px'; }
+  });
+}
+function textW(el) { const r = document.createRange(); r.selectNodeContents(el); return r.getBoundingClientRect().width; }
+function lines(el) { const lh = parseFloat(getComputedStyle(el).lineHeight); return Math.round(el.getBoundingClientRect().height / lh); }
+
+/* ---------- animation ---------- */
+function show(el, p, dy = 36, sc = 0) {
+  if (!el) return; const q = clamp(p);
+  el.style.opacity = q; el.style.transform = `translateY(${(1 - q) * dy}px)` + (sc ? ` scale(${1 - sc + sc * q})` : '');
+}
+const ANIM = {
+  stamp(el, u, d, first) {
+    const doc = $('.doc', el), st = $('.stamp', el);
+    show(doc, first ? 1 : eOut(prog(u, 0.2, 0.55)), 70);
+    const k = prog(u, 0.9, 1.08);
+    st.style.opacity = k <= 0 ? 0 : 0.96 * Math.min(1, k * 1.6);
+    const sc = 1 + 1.6 * (1 - eIn(k));
+    st.style.transform = `translate(-50%,-50%) rotate(-9deg) scale(${sc})`;
+    const sh = prog(u, 1.08, 1.45), amp = 12 * (1 - sh) * (sh > 0 ? 1 : 0);
+    doc.style.transform += ` translateX(${amp * Math.sin(sh * 22)}px) rotate(1.2deg)`;
+  },
+  compare(el, u) {
+    const a = $('.ca', el), b = $('.cb', el), n = $('.neq', el);
+    const pa = eOut(prog(u, 0.2, 0.55)), pb = eOut(prog(u, 0.45, 0.8));
+    a.style.opacity = pa; a.style.transform = `translateX(${(1 - pa) * -120}px)`;
+    b.style.opacity = pb; b.style.transform = `translateX(${(1 - pb) * 120}px)`;
+    const h = eOut(prog(u, 1.3, 1.6));
+    el.style.setProperty('--hi', (0.14 * h).toFixed(3));
+    el.querySelectorAll('.vl .d').forEach(x => { x.style.color = h > 0 ? 'var(--dc)' : 'inherit'; });
+    const pn = prog(u, 1.3, 1.62); n.style.opacity = pn > 0 ? 1 : 0; n.style.transform = `scale(${pn > 0 ? eBack(pn) : 0})`;
+  },
+  pair(el, u) {
+    const bad = $('.bad', el), good = $('.good', el), ar = $('.arrow', el);
+    show(bad, eBack(prog(u, 0.3, 0.62)), 30, 0.08);
+    const pa = eOut(prog(u, 0.85, 1.1)); ar.style.opacity = pa; ar.style.transform = `translateY(${(1 - pa) * -24}px)`;
+    show(good, eBack(prog(u, 1.1, 1.42)), 30, 0.08);
+  },
+  checklist(el, u) {
+    show($('.plate', el), eOut(prog(u, 0.15, 0.5)), 50);
+    el.querySelectorAll('.row').forEach((r, i) => {
+      const a = 0.55 + i * 0.5; const p = eOut(prog(u, a, a + 0.3));
+      r.style.opacity = p; r.style.transform = `translateX(${(1 - p) * -40}px)`;
+      const s = $('.st', r), q = prog(u, a + 0.15, a + 0.42); s.style.transform = `scale(${q > 0 ? eBack(q) : 0})`;
+    });
+  },
+  cta(el, u, d) {
+    show($('.l1', el), eOut(prog(u, 0.3, 0.6)));
+    show($('.l2', el), eOut(prog(u, 0.5, 0.8)));
+    const url = $('.url', el), p = prog(u, 0.8, 1.15);
+    const pulse = u > 1.6 ? 1 + 0.025 * Math.sin((u - 1.6) * 5.2) : 1;
+    url.style.opacity = p > 0 ? 1 : 0; url.style.transform = `scale(${(p > 0 ? eBack(p) : 0) * pulse})`; url.style.transformOrigin = '30% 50%';
+    show($('.sig', el), eOut(prog(u, 1.25, 1.6)), 30);
+  },
+};
+
+function seek(t) {
+  t = clamp(t, 0, DUR - 1e-4);
+  REEL.scenes.forEach((s, i) => {
+    const el = $('#s' + i), u = t - T0[i], d = s.dur, last = i === REEL.scenes.length - 1, first = i === 0;
+    const on = u >= 0 && u < d;
+    el.style.visibility = on ? 'visible' : 'hidden';
+    if (!on) return;
+    /* headline / note enter (scene 1 starts fully visible so the first frame carries the hook) */
+    const hl = $('.hl', el), nt = $('.nt', el);
+    if (first) { show(hl, 1); show(nt, 1); } else { show(hl, eOut(prog(u, 0, 0.32)), 40); show(nt, eOut(prog(u, 0.12, 0.45)), 30); }
+    ANIM[s.type](el, u, d, first);
+    /* exit */
+    const x = last ? 0 : eIn(prog(u, d - 0.2, d));
+    el.style.opacity = 1 - x; el.style.transform = `translateY(${-x * 40}px)`;
+  });
+  document.querySelectorAll('#prog i b').forEach((b, i) => { b.style.width = (clamp((t - T0[i]) / REEL.scenes[i].dur) * 100) + '%'; });
+}
+
+/* ---------- sound-effect cue sheet (global seconds) ---------- */
+function events() {
+  const ev = [];
+  REEL.scenes.forEach((s, i) => {
+    const t = T0[i], add = (dt, kind, gain = 1) => ev.push({ t: +(t + dt).toFixed(3), kind, gain, scene: i + 1 });
+    if (i > 0) add(0.0, 'swish', 0.7);
+    if (s.type === 'stamp') { add(i === 0 ? 0.02 : 0.2, 'whoosh', 0.6); add(1.08, 'thud'); }
+    if (s.type === 'compare') { add(0.2, 'whoosh', 0.7); add(0.45, 'whoosh', 0.6); add(1.3, 'error'); }
+    if (s.type === 'pair') { add(0.3, 'pop'); add(1.1, 'chime'); }
+    if (s.type === 'checklist') { add(0.15, 'whoosh', 0.5); s.items.forEach((r, j) => add(0.55 + j * 0.5 + 0.15, r.ok ? 'tick' : 'error', r.ok ? 1 : 0.7)); }
+    if (s.type === 'cta') { add(0.8, 'ding'); }
+  });
+  return ev;
+}
+
+/* ---------- QA: safe zone, overflow, line counts ---------- */
+function qa() {
+  const issues = [];
+  REEL.scenes.forEach((s, i) => {
+    seek(T0[i] + s.dur - (i === REEL.scenes.length - 1 ? 0.05 : 0.3));
+    const el = $('#s' + i);
+    el.querySelectorAll('.t').forEach(n => checkNode(n, `scene ${i + 1} (${s.type})`, issues));
+  });
+  seek(T0[0] + 1.5);
+  document.querySelectorAll('#hdr .t, #foot').forEach(n => checkNode(n, 'chrome', issues));
+  return issues;
+}
+function checkNode(n, where, issues) {
+  const r = n.getBoundingClientRect(); const txt = n.textContent.trim().slice(0, 40);
+  if (!txt) return;
+  if (r.left < SAFE.x0 - 0.5 || r.right > SAFE.x1 + 0.5 || r.top < SAFE.y0 - 0.5 || r.bottom > SAFE.y1 + 0.5)
+    issues.push(`${where}: "${txt}" outside safe zone [${Math.round(r.left)},${Math.round(r.top)} - ${Math.round(r.right)},${Math.round(r.bottom)}]`);
+  if (n.scrollWidth > n.clientWidth + 1 && getComputedStyle(n).whiteSpace === 'nowrap') issues.push(`${where}: "${txt}" overflows its box`);
+  if (n.classList.contains('fit') && +n.dataset.natw > +n.dataset.fitw + 1) issues.push(`${where}: "${txt}" too wide even after shrinking`);
+  const mx = +n.dataset.max; if (mx && getComputedStyle(n).whiteSpace !== 'nowrap' && lines(n) > mx) issues.push(`${where}: "${txt}" wraps to ${lines(n)} lines (max ${mx})`);
+}
+
+/* static paper grain, drawn once (a live SVG noise filter would be re-rasterized every frame) */
+function grain() {
+  const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'), im = g.createImageData(256, 256);
+  let seed = 1234567; const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
+  for (let i = 0; i < im.data.length; i += 4) { const v = rnd() * 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }
+  g.putImageData(im, 0, 0); $('#grain').style.backgroundImage = `url(${c.toDataURL()})`;
+}
+
+/* ---------- boot ---------- */
+window.reel = {
+  ready: (async () => {
+    build(); grain(); await document.fonts.ready;
+    await Promise.all(['800 96px Archivo', '500 40px "Public Sans"', '800 100px "JB Mono"'].map(f => document.fonts.load(f)));
+    fitAll(); seek(0);
+    return true;
+  })(),
+  seek, events, qa, validate,
+  info: () => ({ fps: FPS, width: W, height: H, duration: DUR, safe: SAFE, scenes: REEL.scenes.map((s, i) => ({ type: s.type, start: T0[i], dur: s.dur })) }),
+};
+/* preview in a normal browser: ?t=3.2 freezes a frame, otherwise plays in real time */
+if (!navigator.webdriver) window.reel.ready.then(() => {
+  const q = new URLSearchParams(location.search);
+  if (q.has('t')) return seek(+q.get('t'));
+  const st = performance.now(); const loop = () => { seek(((performance.now() - st) / 1000) % DUR); requestAnimationFrame(loop); }; loop();
+});
+</script>
+</body>
+</html>
