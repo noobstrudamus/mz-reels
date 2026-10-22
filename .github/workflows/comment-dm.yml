@@ -21,6 +21,7 @@ concurrency:              # never two DM runs at once; a queued run waits instea
 jobs:
   comment-dm:
     runs-on: ubuntu-latest
+    environment: INSTAGRAM_ACCESS_TOKEN   # secrets live in this GitHub Environment
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5

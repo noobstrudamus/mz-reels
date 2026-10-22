@@ -20,6 +20,7 @@ concurrency:              # never two publishers at once; a queued run waits ins
 jobs:
   run-due:
     runs-on: ubuntu-latest
+    environment: INSTAGRAM_ACCESS_TOKEN   # secrets live in this GitHub Environment
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
