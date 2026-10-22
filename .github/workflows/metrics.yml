@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ reports/ 2>/dev/null || true
+          for d in data reports; do [ -d "$d" ] && git add "$d"; done   # a missing dir must not drop the other
           if git diff --cached --quiet; then echo "No changes."; exit 0; fi
           git commit -m "data: metrics $(date -u +%Y-%m-%d)"
           for i in 1 2 3; do
