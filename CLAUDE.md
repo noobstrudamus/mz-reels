@@ -64,9 +64,9 @@ Text limits (the layout breaks above these):
 ## CTA (exactly one per reel, from these two sets)
 GAP LIST: headline "Blocked right now?" | line1 "Forward the notice." | line2 "Get your gap list in 24 hours." | url "mzconsulting.agency"
 FINDER:   headline "Not sure which rules apply?" | line1 "Free CPSC finder." | line2 "See which rules apply. No account needed." | url "mzconsulting.agency"
-COMMENT (experiment arm cta_mode=comment, approved by Mert 2026-10-21):
-  gap-list days: headline "Want your gap list?" | line1 "Comment GAP." | line2 "We'll DM you the link." | url "mzconsulting.agency"
-  finder days:   headline "Which rules apply to you?" | line1 "Comment FINDER." | line2 "We'll DM you the free CPSC finder." | url "mzconsulting.agency"
+COMMENT (experiment arm cta_mode=comment, approved by Mert 2026-10-21; keyword M&Z since 2026-10-22):
+  gap-list days: headline "Want a free gap list?" | line1 "Comment M&Z." | line2 "We'll DM you the link." | url "mzconsulting.agency"
+  finder days:   headline "Which rules apply to you?" | line1 "Comment M&Z." | line2 "We'll DM you the free CPSC finder." | url "mzconsulting.agency"
   ops/comment_dm.py DMs the per-reel tracked link (src=ig_<YYYYMMDD>_<pillar>_dm). Caption line 5 and pinned comment say the same keyword.
 The last voice line says the same CTA out loud.
 

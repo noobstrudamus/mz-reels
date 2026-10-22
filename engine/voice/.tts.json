@@ -1,0 +1,32 @@
+{
+  "s1": {
+    "text": "The factory says it's certified. The PDF doesn't say what you think.",
+    "voice": "en-US-AndrewNeural",
+    "rate": "+6%",
+    "sha1": "4f525814e4c338bb7d60ca15b91a2c7c2623c3c8"
+  },
+  "s2": {
+    "text": "The certifier? The factory. On imports, it's usually the importer.",
+    "voice": "en-US-AndrewNeural",
+    "rate": "+6%",
+    "sha1": "20899ac1e498af2e9d5243a143daba4ec0390004"
+  },
+  "s3": {
+    "text": "A name isn't enough. Address, email and phone, too.",
+    "voice": "en-US-AndrewNeural",
+    "rate": "+6%",
+    "sha1": "048ced3ca61f81e0ef58fd492ab1e647a27a2799"
+  },
+  "s4": {
+    "text": "Plus when it was made. Test passed. Certificate didn't.",
+    "voice": "en-US-AndrewNeural",
+    "rate": "+6%",
+    "sha1": "a662394efac210ae92794c18bc756ffbcb76f765"
+  },
+  "s5": {
+    "text": "Want a free gap list? Comment M and Z, and we'll DM you the link.",
+    "voice": "en-US-AndrewNeural",
+    "rate": "+6%",
+    "sha1": "2cec38c15e020654dc36dbf1a7d1a7de47d7b803"
+  }
+}

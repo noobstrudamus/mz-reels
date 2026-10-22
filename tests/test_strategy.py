@@ -223,11 +223,11 @@ class PlanTest(Base):
     def test_comment_arm_uses_comment_set_and_family_dm_link_on_finder_days(self):
         arms = {**self.ARMS, "cta_mode": "comment"}
         tue = strategy.build_plan(date(2026, 10, 20), arms, cfg())
-        self.assertEqual((tue["cta"], tue["keyword"]), ("comment_finder", "FINDER"))
+        self.assertEqual((tue["cta"], tue["keyword"]), ("comment_finder", "M&Z"))
         self.assertTrue(tue["dm_link"].startswith("https://mzconsulting.agency/cpsc-compliance-finder?family="))
         self.assertTrue(tue["dm_link"].endswith("&src=ig_20261020_finder_dm"))
         wed = strategy.build_plan(D, arms, cfg())
-        self.assertEqual((wed["cta"], wed["keyword"]), ("comment_gaplist", "GAP"))
+        self.assertEqual((wed["cta"], wed["keyword"]), ("comment_gaplist", "M&Z"))
         self.assertEqual(wed["dm_link"], "https://mzconsulting.agency/?src=ig_20261021_gap_dm#contact")
 
 
@@ -334,7 +334,8 @@ class CommentArmTest(Base):
     def test_days_comment_dm_cannot_serve_are_blocked(self):
         c = cfg(min_explore=1.0)                                                         # explore every day
         self.history(c)
-        gap_only = lambda post, st: strategy.comment_dm.keyword_re("GAP")                # noqa: E731
+        gap_only = lambda post, st: strategy.comment_dm.keyword_re(                     # noqa: E731
+            "NOPE" if post.get("cta") == "comment_finder" else "M&Z")                  # a comment_dm that ignores finder reels
         by_pillar = lambda post: "finder" if post.get("pillar") == "finder" else "gaplist"   # noqa: E731
         with mock.patch.object(strategy.comment_dm, "reel_re", gap_only), \
                 mock.patch.object(strategy.comment_dm, "link_kind", by_pillar):
@@ -343,7 +344,7 @@ class CommentArmTest(Base):
                 d = D + timedelta(days=i)
                 dec = strategy.choose(d, c)
                 wd = strategy.WEEKDAYS[d.weekday()]
-                if wd in ("Tue", "Thu", "Sat"):                                          # FINDER keyword
+                if wd in ("Tue", "Thu", "Sat"):                                          # finder-CTA days
                     self.assertEqual(dec["arms"]["cta_mode"], "playbook", wd)
                     self.assertIn("comment", dec["blocked"]["cta_mode"])
                     self.assertNotEqual(dec["explore_factor"], "cta_mode")

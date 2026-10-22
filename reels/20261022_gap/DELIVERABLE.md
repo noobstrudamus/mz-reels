@@ -1,18 +1,18 @@
-# Reel 20261021_gap — "Gap of the week": certificate names the wrong certifier / missing fields
+# Reel 20261022_gap (published https://www.instagram.com/reel/DezhbOlD0cY/) — "Gap of the week": certificate names the wrong certifier / missing fields
 
 ## Caption
 Your factory sent a certificate. Whose name is on it as the certifier?
 A passing lab report won't fix what the certificate itself is missing.
 On imports, the certifier is usually the importer of record.
 The cert also needs the certifier's full address, email and phone, plus when and where it was made, among other fields.
-Blocked right now? Forward the notice, gap list in 24h: link in bio
+Want a free gap list? Comment M&Z and we'll DM you the link.
 #amazonseller #cpsc #productcompliance #importing #privatelabel
 
 ## First comment (pin manually — the Instagram API cannot pin)
-Blocked right now? Forward the notice, gap list in 24h: link in bio
+Want a free gap list? Comment M&Z and we'll DM you the link.
 
 ## Tracking link
-https://mzconsulting.agency/?src=ig_20261021_gap#contact
+https://mzconsulting.agency/?src=ig_20261022_gap#contact (DM link: ?src=ig_20261022_gap_dm)
 
 ## Sources (current eCFR, Title 16 up to date as of 2026-10-19; Part 1110 as amended by the eFiling rule, 90 FR 1843)
 | claim | source | verbatim quote |
@@ -26,11 +26,11 @@ https://mzconsulting.agency/?src=ig_20261021_gap#contact
 ## QA
 | check | result |
 |---|---|
-| Duration 18–24 s | PASS — 23.9 s |
+| Duration 18–24 s | PASS — 22.5 s |
 | Voice fit (voice.py) | PASS — ALL OK (spare 0.42–1.45 s per scene) |
 | Stills checked | PASS — 10 stills, every scene, viewed; no overflow, colors per rule (red = problem, blue = ok) |
 | Text inside safe zone | PASS — engine QA, all text within x 80–936, y 250–1360 |
-| CTA set used | PASS — GAP LIST, verbatim; last VO line says it aloud |
+| CTA set used | PASS — COMMENT (M&Z) set, verbatim; last VO line says it aloud |
 | Truth rules | PASS — 3 drafts researched, each adversarially re-verified; 2 judges; no invented clients/numbers; fictional SKU; "usually" hedge; no logos |
 | Loudness | PASS — -14.1 LUFS, -1.0 dBTP; music 11 LU under voice |
 | Encode | PASS — H.264 1080×1920 30 fps, AAC 48 kHz, 717/717 frames |

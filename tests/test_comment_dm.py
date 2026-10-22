@@ -37,19 +37,19 @@ def c(cid, text, name, ts, **kw):
 
 def m1_pages(base):
     return [
-        {"data": [c("c5", "GAP please", "bob", "2026-10-21T17:50:00+0000"),
-                  c("c4", "Blocked right now? Forward the notice, gap list in 24h: link in bio", "mzconsulting.llc",
+        {"data": [c("c5", "M&Z please", "bob", "2026-10-21T17:50:00+0000"),
+                  c("c4", "Want a free gap list? Comment M&Z and we'll DM you the link.", "mzconsulting.llc",
                     "2026-10-21T17:00:00+0000", user={"id": "IGID"}),
-                  c("c3", "gaps everywhere, gaping hole", "carol", "2026-10-21T16:30:00+0000")],
+                  c("c3", "amz deals, mzconsulting rocks", "carol", "2026-10-21T16:30:00+0000")],
          "paging": {"next": f"{base}/M1/comments?after=P2"}},
-        {"data": [c("c2", "#gap", "dave", "2026-10-21T16:10:00+0000"),
-                  c("c1", "gap", "bob", "2026-10-21T16:00:00+0000"),
-                  c("c0", "GAP", "erin", "2026-10-21T15:55:00+0000", hidden=True)]},
+        {"data": [c("c2", "#M&Z", "dave", "2026-10-21T16:10:00+0000"),
+                  c("c1", "mz", "bob", "2026-10-21T16:00:00+0000"),
+                  c("c0", "M&Z", "erin", "2026-10-21T15:55:00+0000", hidden=True)]},
     ]
 
 
-M2_PAGE = {"data": [c("f2", "Gap!", "frank", "2026-10-20T12:00:00+0000"),
-                    c("f1", "GAP", "gina", "2026-10-14T12:00:00+0000")],     # older than 7 days: stop here
+M2_PAGE = {"data": [c("f2", "M&Z!", "frank", "2026-10-20T12:00:00+0000"),
+                    c("f1", "M&Z", "gina", "2026-10-14T12:00:00+0000")],     # older than 7 days: stop here
            "paging": {"next": "https://graph.facebook.com/v24.0/M2/comments?after=never"}}
 
 
@@ -340,7 +340,7 @@ class TestLive(Base):
         self.assertIn("3 errors in a row", "\n".join(self.log))
 
     def test_cap_per_run(self):
-        many = [c(f"x{i}", "GAP", f"user{i}", f"2026-10-21T17:{i % 60:02d}:00+0000") for i in range(60)]
+        many = [c(f"x{i}", "M&Z", f"user{i}", f"2026-10-21T17:{i % 60:02d}:00+0000") for i in range(60)]
         fake = self.fake(**{"M1/comments": [{"data": many}], "M2/comments": [{"data": []}]})
         fake.writes.table.update({f"x{i}/replies": {"id": "RP"} for i in range(60)})
         self.run_dm(fake)
@@ -377,14 +377,14 @@ class TestReview(Base):
         self.assertEqual(comment_dm.link_kind(thu), "finder")      # was: gap list (pillar fallback)
         self.assertEqual(comment_dm.link_kind({**thu, "cta": "comment_gaplist", "pillar": "finder"}), "gaplist")
         rx = comment_dm.reel_re(thu, self.settings)
-        self.assertTrue(rx.search("FINDER please") and rx.search("gap"))   # the CTA says 'Comment FINDER'
+        self.assertTrue(rx.search("M & Z please") and rx.search("mz"))   # the CTA says 'Comment FINDER'
         self.assertFalse(rx.search("finders keepers"))
         self.assertFalse(comment_dm.reel_re({**thu, "cta": "finder"}, self.settings).search("finder"))
 
     def test_comment_finder_reel_dms_finder_commenters(self):
         ig.append_jsonl("posts.jsonl", {"id": "20261021_deadline", "pillar": "deadline", "cta": "comment_finder",
                                         "media_id": "M4", "published_at": "2026-10-21T13:47:00Z"})
-        cl = self.fake(**{"M4/comments": {"data": [c("d1", "Finder", "hal", "2026-10-21T14:00:00+0000")]}})
+        cl = self.fake(**{"M4/comments": {"data": [c("d1", "M and Z", "hal", "2026-10-21T14:00:00+0000")]}})
         cl.writes.table["d1/replies"] = {"id": "RP"}
         self.assertEqual(self.run_dm(cl), 0, self.log)
         row = [r for r in self.rows() if r["comment_id"] == "d1"][0]

@@ -82,12 +82,12 @@ PRIOR_N, SIGMA0, SIGMA0_N = 1.0, 0.5, 2.0
 MC_DRAWS = 20000
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 FAMILIES = ["toy", "childrens_product", "battery_product", "apparel", "furniture", "electrical"]
-KEYWORD = {"gaplist": "GAP", "finder": "FINDER"}
+KEYWORD = {"gaplist": "M&Z", "finder": "M&Z"}
 CAPTION_CTA = {
     "gaplist": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
     "finder": "Free CPSC Finder, no account: link in bio",
-    "comment_gaplist": "Blocked right now? Comment GAP and we'll DM you the gap-list link.",
-    "comment_finder": "Not sure which rules apply? Comment FINDER and we'll DM you the free CPSC Finder.",
+    "comment_gaplist": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+    "comment_finder": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
 }
 
 

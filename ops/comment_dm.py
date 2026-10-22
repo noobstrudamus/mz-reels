@@ -74,7 +74,7 @@ FINAL_SUBCODES = {2534022, 2018278, 2018065,   # code 10: sent outside of the al
 STOP_SUBCODES = {2534029}                      # code 100: the business is blocked from IG messaging
 FAMILIES = {"toy", "childrens_product", "battery_product", "apparel", "furniture", "electrical"}
 FIELDS, BASE_FIELDS = "id,text,username,timestamp,user,hidden", "id,text,username,timestamp"
-KEYWORD = {"gaplist": "GAP", "finder": "FINDER"}   # = strategy.KEYWORD: what comment-arm reels ask for
+KEYWORD = {"gaplist": "M&Z", "finder": "M&Z"}   # = strategy.KEYWORD: what comment-arm reels ask for
 
 
 def iso(dt):
@@ -82,11 +82,14 @@ def iso(dt):
 
 
 # ---------- what to send ----------
+VARIANTS = {"M&Z": r"m\s*(?:&|and)\s*z|mz"}   # people also type "M & Z", "mz", "M and Z"
+
+
 def keyword_re(kw=None, *more):
     """Whole word, any case. '#GAP' and 'gap please' match; 'gaps', 'gaping', 'gap_list' do not.
     Extra keywords (a comment-arm reel's own word, e.g. FINDER) match the same way."""
     words = {str(k).strip().lstrip("#") for k in (kw or "GAP", *more) if k and str(k).strip().lstrip("#")}
-    alt = "|".join(re.escape(w) for w in sorted(words))
+    alt = "|".join(VARIANTS.get(w.upper(), re.escape(w)) for w in sorted(words))
     return re.compile(rf"(?<!\w)(?:{alt})(?!\w)", re.I)
 
 

@@ -1,0 +1,15 @@
+{
+  "id": "20261022_gap",
+  "date": "2026-10-22",
+  "pillar": "gap",
+  "cta": "comment_gaplist",
+  "family": null,
+  "arms": {
+    "hook": "pain_quote",
+    "length": "long",
+    "voice": "andrew",
+    "cta_mode": "comment",
+    "slot": "1147"
+  },
+  "note": "First reel; produced before the learner existed. CTA switched to comment M&Z by Mert 2026-10-22."
+}

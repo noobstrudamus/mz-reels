@@ -142,9 +142,10 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261021_gap",
+    "id": "20261022_gap",
     "pillar": "gap",
-    "cta": "gaplist",
+    "cta": "comment_gaplist",
+    "voice": "en-US-AndrewNeural",
     "footnote": "Illustrative example. Not legal advice."
   },
   "scenes": [
@@ -172,7 +173,7 @@ const REEL = {
     },
     {
       "type": "pair",
-      "dur": 4.0,
+      "dur": 4,
       "headline": "A name alone isn't enough.",
       "note": "Plus street, city, state, country, email and phone.",
       "bad": {
@@ -184,7 +185,7 @@ const REEL = {
     },
     {
       "type": "checklist",
-      "dur": 4.0,
+      "dur": 4,
       "headline": "Test passed. The cert didn't.",
       "note": "Required too: when and where it was made.",
       "items": [
@@ -212,10 +213,10 @@ const REEL = {
     },
     {
       "type": "cta",
-      "dur": 6.2,
-      "headline": "Blocked right now?",
-      "line1": "Forward the notice.",
-      "line2": "Get your gap list in 24 hours.",
+      "dur": 4.8,
+      "headline": "Want a free gap list?",
+      "line1": "Comment M&Z.",
+      "line2": "We'll DM you the link.",
       "url": "mzconsulting.agency"
     }
   ]
@@ -237,8 +238,8 @@ const CTA_SETS = {
   gaplist: { headline: 'Blocked right now?', line1: 'Forward the notice.', line2: 'Get your gap list in 24 hours.', url: 'mzconsulting.agency' },
   finder: { headline: 'Not sure which rules apply?', line1: 'Free CPSC finder.', line2: 'See which rules apply. No account needed.', url: 'mzconsulting.agency' },
   /* experiment arm cta_mode=comment: viewers comment the keyword, ops/comment_dm.py DMs a per-reel tracked link */
-  comment_gaplist: { headline: 'Want your gap list?', line1: 'Comment GAP.', line2: "We'll DM you the link.", url: 'mzconsulting.agency' },
-  comment_finder: { headline: 'Which rules apply to you?', line1: 'Comment FINDER.', line2: "We'll DM you the free CPSC finder.", url: 'mzconsulting.agency' },
+  comment_gaplist: { headline: 'Want a free gap list?', line1: 'Comment M&Z.', line2: "We'll DM you the link.", url: 'mzconsulting.agency' },
+  comment_finder: { headline: 'Which rules apply to you?', line1: 'Comment M&Z.', line2: "We'll DM you the free CPSC finder.", url: 'mzconsulting.agency' },
 };
 const PILLARS = { blocked: 'Blocked story', finder: 'Free finder demo', gap: 'Gap of the week', deadline: 'Rule change', myth: 'Myth vs fact', cost: 'Cost of waiting' };
 const TOTAL = [18, 24];
