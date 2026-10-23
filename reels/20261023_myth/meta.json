@@ -1,0 +1,15 @@
+{
+ "id": "20261023_myth",
+ "date": "2026-10-23",
+ "pillar": "myth",
+ "cta": "comment_gaplist",
+ "family": null,
+ "arms": {
+  "hook": "myth",
+  "length": "short",
+  "voice": "andrew",
+  "cta_mode": "comment",
+  "slot": "1147"
+ },
+ "note": "Produced by the 2026-10-23 routine run, which could not push; recovered and queued by the main session."
+}

@@ -1,0 +1,137 @@
+{
+ "gap": "Myth: a passing test report means you're certified.",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.2,
+   "headline": "Myth: a pass = certificate.",
+   "note": "Say a seller has a test report that passed.",
+   "stamp": "MYTH",
+   "doc": "Test report: pass"
+  },
+  {
+   "type": "compare",
+   "dur": 3.9,
+   "headline": "What the certificate lists",
+   "note": "A certificate must list each applicable rule.",
+   "left": {
+    "label": "Test report",
+    "value": "Result"
+   },
+   "right": {
+    "label": "Certificate",
+    "value": "Each rule"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4.2,
+   "headline": "A test is not a certificate.",
+   "note": "Product, rules, certifier, test date and place.",
+   "bad": {
+    "label": "Test only"
+   },
+   "good": {
+    "label": "Certificate"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.5,
+   "headline": "Tested, certificate unfinished",
+   "note": "Say the certificate is missing content.",
+   "items": [
+    {
+     "name": "Product ID",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Rules, separately",
+     "value": "lumped",
+     "ok": false
+    },
+    {
+     "name": "Records contact",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Test date/place",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.9,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Myth: a passing test report means you're certified.",
+  "A certificate has to list each applicable rule, separately.",
+  "It also names the product, certifier, and test date and place.",
+  "The test supports the certificate. It isn't the certificate.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "Passing test report? That's not the same as a finished certificate.\nA finished product certificate has its own required content: each applicable rule listed separately, the product, the certifier, a records contact, and when and where it was made and tested.\nThe test supports the certificate. It isn't the certificate.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261023_myth#contact",
+ "sources": [
+  {
+   "id": "M1",
+   "claim": "Certificate must identify applicable rules separately",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)",
+   "quote": "(2) State each consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any law enforced by the Commission, to which the finished product(s) are being certified. Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "M2",
+   "claim": "Certificate must identify the product",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)",
+   "quote": "(1) Identify the finished product(s) covered by the certificate."
+  },
+  {
+   "id": "M3",
+   "claim": "Certificate must identify the certifier",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)",
+   "quote": "(3) Identify the finished product certifier that is certifying compliance of the finished product(s), as set forth in § 1110.7"
+  },
+  {
+   "id": "M4",
+   "claim": "Certificate needs a records contact",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)",
+   "quote": "(4) Identify and provide contact information (consisting, at a minimum, of the individual's name, street address, city, state or province, country or administrative region, email address, and telephone number) for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier."
+  },
+  {
+   "id": "M5",
+   "claim": "Certificate gives date and place of manufacture",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)",
+   "quote": "(5) Provide the date (month and year, at a minimum) and place (including a manufacturer name, ...) where the finished product(s) were manufactured, produced, or assembled."
+  },
+  {
+   "id": "M6",
+   "claim": "Certificate gives most recent test date and place (not results)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)",
+   "quote": "(6) Provide the most recent date and place(s) (...) where the finished product(s) were tested for compliance with the rule(s), ban(s), standard(s), or regulation(s)"
+  },
+  {
+   "id": "M7",
+   "claim": "Lead-in: each finished product certificate must contain the above",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)",
+   "quote": "(a) Content requirements. Each finished product certificate must:"
+  }
+ ],
+ "verifier_notes": "Routine verifier re-fetched 16 CFR Part 1110 (eCFR 2026-10-19); quotes re-checked verbatim by the main session against eCFR 2026-10-21 before publishing."
+}
