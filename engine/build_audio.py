@@ -127,7 +127,7 @@ def music(total):
     tt = np.arange(L) / SR
     pump = 1 - 0.35 * np.exp(-((tt % beat) / 0.11))
     m = pad * 0.22 * pump + arp * 0.15 + np.vstack([bass, bass]) * 0.20 + np.vstack([drums, drums]) * 0.26
-    m = m[:, :int(total * SR)]
+    m = m[:, :int(round(total * SR))]
     n = m.shape[1]
     fade = np.ones(n)
     fi, fo = int(0.25 * SR), int(1.4 * SR)

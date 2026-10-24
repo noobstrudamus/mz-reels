@@ -1,0 +1,125 @@
+{
+ "topic": "Finder demo (electrical): 120-volt kids' toy -> CPC vs GCC, 16 CFR 1505, package labeling",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.3,
+   "headline": "120-volt kids' toy. Rules?",
+   "note": "Say a factory calls a wall-powered kids' toy certified.",
+   "stamp": "CHECK",
+   "doc": "120-volt kids' toy"
+  },
+  {
+   "type": "compare",
+   "dur": 4.5,
+   "headline": "Who is it made for?",
+   "note": "A cert is needed when a CPSC rule applies.",
+   "left": {
+    "label": "Factory sent",
+    "value": "GCC"
+   },
+   "right": {
+    "label": "Kids' toy",
+    "value": "CPC"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4.1,
+   "headline": "Wall-powered, made for kids?",
+   "note": "Its own CPSC rule: 16 CFR part 1505.",
+   "bad": {
+    "label": "Unchecked"
+   },
+   "good": {
+    "label": "Part 1505"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.2,
+   "headline": "On the package, per 1505",
+   "note": "Say the box for KID-24-BLUE is missing items.",
+   "items": [
+    {
+     "name": "Electrical ratings",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Warnings",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Date or code",
+     "value": "listed",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.1,
+   "headline": "Which rules apply to you?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the free CPSC finder.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Say a seller's factory calls their kids' toy certified.",
+  "Covered kids' products need a CPC, general-use ones a GCC.",
+  "Most wall-powered kids' toys have their own rule, part fifteen-oh-five.",
+  "The package needs ratings, required warnings, and a date or code.",
+  "Comment M and Z, we'll DM you the free CPSC finder."
+ ],
+ "caption": "Your factory says the wall-powered toy is certified. Certified to which rule?\nWho it's made for decides the paperwork: children's products get a CPC, general-use products a GCC, when a CPSC rule applies.\nMost toys for kids that run on 120-volt wall power fall under their own CPSC rule, 16 CFR part 1505 (video games are excluded).\nThat rule also sets what goes on the package: electrical ratings, required warnings, and the month and year it was made (or a date code).\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=electrical&src=ig_20261024_finder",
+ "sources": [
+  {
+   "id": "F1",
+   "claim": "A finished product certificate is required when a CPSC rule, ban, standard or regulation applies",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.5",
+   "section": "16 CFR 1110.5",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate."
+  },
+  {
+   "id": "F2",
+   "claim": "Two certificate types: CPC (children's) and GCC (general use)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "section": "16 CFR 1110.3",
+   "quote": "There are two types of finished product certificates: Children's Product Certificates (CPCs) and General Certificates of Conformity (GCCs)."
+  },
+  {
+   "id": "F3",
+   "claim": "CPC is issued under CPSA 14(a)(2) (children's products); GCC under 14(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "section": "16 CFR 1110.3",
+   "quote": "Children's Product Certificate (CPC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA, 15 U.S.C. 2063, and part 1107 of this chapter. ... General Certificate of Conformity (GCC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(1) of the CPSA, 15 U.S.C. 2063(a)(1)."
+  },
+  {
+   "id": "F4",
+   "claim": "Part 1505 covers kids' toys powered from 120 V branch circuits; excludes <=30 V components, adult articles used incidentally by children, video games",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1505/section-1505.1",
+   "section": "16 CFR 1505.1(a)(1)",
+   "quote": "any toy, game, or other article designed, labeled, advertised, or otherwise intended for use by children which is intended to be powered by electrical current from nominal 120 volt (110-125 v.) branch circuits. ... This definition does not include components which are powered by circuits of 30 volts r.m.s. (42.4 volts peak) or less, articles designed primarily for use by adults which may be used incidentally by children, or video games."
+  },
+  {
+   "id": "F5",
+   "claim": "Part 1505 sets the requirements under which such toys are not banned",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1505/section-1505.2",
+   "section": "16 CFR 1505.2",
+   "quote": "This part sets forth the requirements whereby electrically operated toys and other electrically operated articles intended for use by children (as defined in § 1505.1(a)(1)) are not banned toys or banned articles under § 1500.18(b)(1) of this chapter."
+  },
+  {
+   "id": "F6",
+   "claim": "Package must show date (month/year or codes), electrical ratings, required precautionary statements",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1505/section-1505.3",
+   "section": "16 CFR 1505.3(b)(2)",
+   "quote": "The shelf pack or package of the toy shall be labeled in accordance with the provisions of paragraph (d) of this section to indicate: (i) The date (month and year) of manufacture (or appropriate codes). (ii) The electrical ratings required by paragraph (c) of this section. (iii) Any precautionary statements required by paragraph (e) of this section."
+  }
+ ],
+ "verifier_notes": "Independent adversarial verifier re-fetched 16 CFR 1505, 1500.18 and 1110 (eCFR versioner, Title 16 issue 2026-10-19). Draft FAILED on 3 VO overclaims ('plug-in' scope, unconditional 'kids need a CPC', 'month and year' without codes) and 2 caption lines; all fixes applied, final verdict PASS."
+}

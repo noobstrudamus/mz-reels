@@ -50,5 +50,28 @@
   "media_id": "18017263358956348",
   "published_at": "2026-10-23T15:51:20Z",
   "first_comment_id": "18120514660946696"
+ },
+ {
+  "id": "20261024_finder",
+  "container_id": "17914281129541034",
+  "slot_local": "15:47",
+  "slot_utc": "2026-10-24T19:47:00Z",
+  "caption": "Your factory says the wall-powered toy is certified. Certified to which rule?\nWho it's made for decides the paperwork: children's products get a CPC, general-use products a GCC, when a CPSC rule applies.\nMost toys for kids that run on 120-volt wall power fall under their own CPSC rule, 16 CFR part 1505 (video games are excluded).\nThat rule also sets what goes on the package: electrical ratings, required warnings, and the month and year it was made (or a date code).\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+  "created_at": "2026-10-24T10:55:08Z",
+  "status": "pending",
+  "reel": "reels/20261024_finder",
+  "date": "2026-10-24",
+  "pillar": "finder",
+  "cta": "comment_finder",
+  "arms": {
+   "hook": "pain_quote",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "comment",
+   "slot": "1547"
+  },
+  "src": "ig_20261024_finder",
+  "family": "electrical"
  }
 ]

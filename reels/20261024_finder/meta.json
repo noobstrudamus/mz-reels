@@ -1,0 +1,14 @@
+{
+ "id": "20261024_finder",
+ "date": "2026-10-24",
+ "pillar": "finder",
+ "cta": "comment_finder",
+ "arms": {
+  "hook": "pain_quote",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "comment",
+  "slot": "1547"
+ },
+ "family": "electrical"
+}

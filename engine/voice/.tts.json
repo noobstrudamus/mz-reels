@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "The factory says it's certified. The PDF doesn't say what you think.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Say a seller's factory calls their kids' toy certified.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "4f525814e4c338bb7d60ca15b91a2c7c2623c3c8"
+    "sha1": "0a6d885930d44aae137c36e88d4880584eeb0465"
   },
   "s2": {
-    "text": "The certifier? The factory. On imports, it's usually the importer.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Covered kids' products need a CPC, general-use ones a GCC.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "20899ac1e498af2e9d5243a143daba4ec0390004"
+    "sha1": "b7b39020af447942c0f45c7ae96880981d543085"
   },
   "s3": {
-    "text": "A name isn't enough. Address, email and phone, too.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Most wall-powered kids' toys have their own rule, part fifteen-oh-five.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "048ced3ca61f81e0ef58fd492ab1e647a27a2799"
+    "sha1": "079233adc1c1abae92a3dab11a293672a1702b86"
   },
   "s4": {
-    "text": "Plus when it was made. Test passed. Certificate didn't.",
-    "voice": "en-US-AndrewNeural",
+    "text": "The package needs ratings, required warnings, and a date or code.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "a662394efac210ae92794c18bc756ffbcb76f765"
+    "sha1": "da4c758fb310780e435f599a9d50e1d160994dbf"
   },
   "s5": {
-    "text": "Want a free gap list? Comment M and Z, and we'll DM you the link.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Comment M and Z, we'll DM you the free CPSC finder.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "2cec38c15e020654dc36dbf1a7d1a7de47d7b803"
+    "sha1": "8a5868a74c0403068b37e936a6a2ea8e2d462133"
   }
 }

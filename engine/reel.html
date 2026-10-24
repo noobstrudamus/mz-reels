@@ -142,81 +142,76 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261022_gap",
-    "pillar": "gap",
-    "cta": "comment_gaplist",
-    "voice": "en-US-AndrewNeural",
+    "id": "20261024_finder",
+    "pillar": "finder",
+    "cta": "comment_finder",
+    "voice": "en-US-AvaNeural",
     "footnote": "Illustrative example. Not legal advice."
   },
   "scenes": [
     {
       "type": "stamp",
-      "dur": 5.1,
-      "headline": "Factory says it's certified.",
-      "note": "Say a seller imports KID-24-BLUE with the factory's cert.",
-      "stamp": "BLOCKED",
-      "doc": "Factory certificate"
+      "dur": 3.3,
+      "headline": "120-volt kids' toy. Rules?",
+      "note": "Say a factory calls a wall-powered kids' toy certified.",
+      "stamp": "CHECK",
+      "doc": "120-volt kids' toy"
     },
     {
       "type": "compare",
-      "dur": 4.6,
-      "headline": "Who's named as certifier?",
-      "note": "Say the seller is the importer of record.",
+      "dur": 4.5,
+      "headline": "Who is it made for?",
+      "note": "A cert is needed when a CPSC rule applies.",
       "left": {
-        "label": "Certifier",
-        "value": "Factory"
+        "label": "Factory sent",
+        "value": "GCC"
       },
       "right": {
-        "label": "Should be",
-        "value": "Importer"
+        "label": "Kids' toy",
+        "value": "CPC"
       }
     },
     {
       "type": "pair",
-      "dur": 4,
-      "headline": "A name alone isn't enough.",
-      "note": "Plus street, city, state, country, email and phone.",
+      "dur": 4.1,
+      "headline": "Wall-powered, made for kids?",
+      "note": "Its own CPSC rule: 16 CFR part 1505.",
       "bad": {
-        "label": "Name only"
+        "label": "Unchecked"
       },
       "good": {
-        "label": "Full contact"
+        "label": "Part 1505"
       }
     },
     {
       "type": "checklist",
-      "dur": 4,
-      "headline": "Test passed. The cert didn't.",
-      "note": "Required too: when and where it was made.",
+      "dur": 4.2,
+      "headline": "On the package, per 1505",
+      "note": "Say the box for KID-24-BLUE is missing items.",
       "items": [
         {
-          "name": "Lab report",
-          "value": "passed",
-          "ok": true
-        },
-        {
-          "name": "Certifier named",
-          "value": "the factory",
-          "ok": false
-        },
-        {
-          "name": "Certifier contact",
-          "value": "name only",
-          "ok": false
-        },
-        {
-          "name": "Made: month/year",
+          "name": "Electrical ratings",
           "value": "missing",
           "ok": false
+        },
+        {
+          "name": "Warnings",
+          "value": "missing",
+          "ok": false
+        },
+        {
+          "name": "Date or code",
+          "value": "listed",
+          "ok": true
         }
       ]
     },
     {
       "type": "cta",
-      "dur": 4.8,
-      "headline": "Want a free gap list?",
+      "dur": 4.1,
+      "headline": "Which rules apply to you?",
       "line1": "Comment M&Z.",
-      "line2": "We'll DM you the link.",
+      "line2": "We'll DM you the free CPSC finder.",
       "url": "mzconsulting.agency"
     }
   ]
