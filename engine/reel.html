@@ -57,6 +57,12 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
 .stamp { position: absolute; left: 50%; top: 50%; padding: 18px 40px 14px; border: 12px solid var(--red); border-radius: 14px; color: var(--red);
   font: 900 150px/1 'Archivo'; font-stretch: 100%; letter-spacing: 4px; white-space: nowrap; filter: url(#rough); mix-blend-mode: multiply; }
 
+/* kicker opener (meta.opener = 'kicker'): a 2-4 word card that owns the first second */
+#kick { position: absolute; left: 80px; top: 340px; width: 856px; height: 930px; background: var(--paper); display: none;
+  flex-direction: column; justify-content: center; gap: 34px; }
+#kick .kk { font: 900 150px/0.98 'Archivo'; font-stretch: 88%; letter-spacing: -3px; color: var(--ink); }
+#kick .kb { width: 260px; height: 22px; background: var(--red); border-radius: 4px; }
+
 /* compare */
 .card { position: absolute; left: 0; width: 856px; height: 232px; background: var(--surface); border: 2px solid var(--rule); border-radius: 8px;
   box-shadow: 0 12px 30px rgba(28,35,41,.10); padding: 30px 40px 0 52px; overflow: hidden; }
@@ -130,6 +136,7 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
   <div id="grain"></div>
   <div id="hdr"><div class="wm t" data-max="1"><b>M&amp;Z</b><span>CONSULTING</span></div><div class="pill t" id="pill" data-max="1"></div></div>
   <div id="scenes"></div>
+  <div id="kick"><div class="kk t" data-max="2"></div><div class="kb"></div></div>
   <div id="foot" class="t" data-max="1"></div>
   <div id="prog"></div>
 </div>
@@ -228,7 +235,13 @@ const W = 1080, H = 1920, FPS = 30;
 const SAFE = { x0: 80, x1: 936, y0: 250, y1: 1360 };
 const ORDER = ['stamp', 'compare', 'pair', 'checklist', 'cta'];
 const LIMITS = { headline: 30, note: 60, stamp: 8, doc: 24, compareLabel: 14, compareValue: 11, pairLabel: 12,
-                 checkName: 18, checkValue: 14, ctaLine1: 20, ctaLine2: 40, footnote: 48 };
+                 checkName: 18, checkValue: 14, ctaLine1: 20, ctaLine2: 40, footnote: 48, kicker: 22 };
+/* opener = how the first second is staged (experiment factor 'opener'): classic = headline at frame 0, stamp lands
+   at 0.9 s; slam = stamp lands at 0.15 s with a punch-in; kicker = meta.kicker (2-4 words) fills the screen for 1 s */
+const OPENERS = ['classic', 'slam', 'kicker'];
+const opener = () => (REEL.meta && REEL.meta.opener) || 'classic';
+const STAMP_AT = { classic: 0.9, slam: 0.12, kicker: 1.05 };   /* stamp impact window starts here (scene 1) */
+const KICK_END = 1.0;
 const CTA_SETS = {
   gaplist: { headline: 'Blocked right now?', line1: 'Forward the notice.', line2: 'Get your gap list in 24 hours.', url: 'mzconsulting.agency' },
   finder: { headline: 'Not sure which rules apply?', line1: 'Free CPSC finder.', line2: 'See which rules apply. No account needed.', url: 'mzconsulting.agency' },
@@ -282,6 +295,9 @@ function validate() {
     }
   });
   L(REEL.meta && REEL.meta.footnote, 'footnote', 'meta.footnote');
+  if (!OPENERS.includes(opener())) errs.push(`meta.opener must be one of ${OPENERS.join(', ')} (got "${opener()}")`);
+  if (opener() === 'kicker') { if (!REEL.meta.kicker) errs.push('meta.kicker missing (opener kicker)'); L(REEL.meta.kicker, 'kicker', 'meta.kicker'); }
+  if (S[0] && S[0].dur < KICK_END + 2 && opener() === 'kicker') errs.push(`scene 1 needs >= ${KICK_END + 2} s with the kicker opener`);
   const tot = S.reduce((a, s) => a + (s.dur || 0), 0);
   if (tot < TOTAL[0] - 1e-6 || tot > TOTAL[1] + 1e-6) errs.push(`total duration ${tot.toFixed(2)} s is outside ${TOTAL[0]}-${TOTAL[1]} s`);
   return errs;
@@ -327,6 +343,7 @@ function build() {
   REEL.scenes.forEach(s => { T0.push(t); t += s.dur; }); DUR = t;
   $('#pill').textContent = (REEL.meta && (REEL.meta.tag || PILLARS[REEL.meta.pillar])) || '';
   $('#foot').textContent = (REEL.meta && REEL.meta.footnote) || '';
+  $('#kick .kk').textContent = (REEL.meta && REEL.meta.kicker) || '';
   $('#prog').innerHTML = REEL.scenes.map(() => '<i><b></b></i>').join('');
 }
 
@@ -342,6 +359,13 @@ function fitAll() {
     el.style.fontSize = ''; let fs = 96;
     while (lines(el) > 2 && fs > 72) { fs -= 2; el.style.fontSize = fs + 'px'; }
   });
+  /* kicker: shrink until it is <= 2 lines and no word is wider than the card */
+  const kick = $('#kick'), kk = $('#kick .kk');
+  if (kk.textContent) {
+    kick.style.display = 'flex'; kick.style.transform = ''; kk.style.fontSize = ''; let fs = 150;
+    while ((lines(kk) > 2 || kk.scrollWidth > kk.clientWidth + 1) && fs > 90) { fs -= 4; kk.style.fontSize = fs + 'px'; }
+    kick.style.display = 'none';
+  }
 }
 function textW(el) { const r = document.createRange(); r.selectNodeContents(el); return r.getBoundingClientRect().width; }
 function lines(el) { const lh = parseFloat(getComputedStyle(el).lineHeight); return Math.round(el.getBoundingClientRect().height / lh); }
@@ -355,11 +379,11 @@ const ANIM = {
   stamp(el, u, d, first) {
     const doc = $('.doc', el), st = $('.stamp', el);
     show(doc, first ? 1 : eOut(prog(u, 0.2, 0.55)), 70);
-    const k = prog(u, 0.9, 1.08);
+    const a = first ? STAMP_AT[opener()] : 0.9, k = prog(u, a, a + 0.18);
     st.style.opacity = k <= 0 ? 0 : 0.96 * Math.min(1, k * 1.6);
     const sc = 1 + 1.6 * (1 - eIn(k));
     st.style.transform = `translate(-50%,-50%) rotate(-9deg) scale(${sc})`;
-    const sh = prog(u, 1.08, 1.45), amp = 12 * (1 - sh) * (sh > 0 ? 1 : 0);
+    const sh = prog(u, a + 0.18, a + 0.55), amp = 12 * (1 - sh) * (sh > 0 ? 1 : 0);
     doc.style.transform += ` translateX(${amp * Math.sin(sh * 22)}px) rotate(1.2deg)`;
   },
   compare(el, u) {
@@ -405,12 +429,22 @@ function seek(t) {
     if (!on) return;
     /* headline / note enter (scene 1 starts fully visible so the first frame carries the hook) */
     const hl = $('.hl', el), nt = $('.nt', el);
-    if (first) { show(hl, 1); show(nt, 1); } else { show(hl, eOut(prog(u, 0, 0.32)), 40); show(nt, eOut(prog(u, 0.12, 0.45)), 30); }
+    if (first && opener() === 'kicker') { show(hl, eOut(prog(u, KICK_END - 0.1, KICK_END + 0.2)), 40); show(nt, eOut(prog(u, KICK_END, KICK_END + 0.3)), 30); }
+    else if (first) { show(hl, 1); show(nt, 1); } else { show(hl, eOut(prog(u, 0, 0.32)), 40); show(nt, eOut(prog(u, 0.12, 0.45)), 30); }
     ANIM[s.type](el, u, d, first);
     /* exit */
     const x = last ? 0 : eIn(prog(u, d - 0.2, d));
     el.style.opacity = 1 - x; el.style.transform = `translateY(${-x * 40}px)`;
+    if (first && opener() === 'slam') { const pz = prog(u, 0.3, 0.52); el.style.transform += ` scale(${1 + 0.025 * Math.sin(Math.PI * pz)})`; }   /* punch on impact; frame 0 stays at 1.0 */
   });
+  /* kicker card: punches in at frame 0, leaves at KICK_END */
+  const kick = $('#kick');
+  if (opener() === 'kicker' && t < KICK_END) {
+    /* text is fully legible on frame 0 (mute viewers, thumbnails); only the red bar moves */
+    const bar = eOut(prog(t, 0.05, 0.4)), out = eIn(prog(t, KICK_END - 0.15, KICK_END));
+    kick.style.display = 'flex'; kick.style.opacity = 1 - out; kick.style.transform = `translateY(${-out * 60}px)`;
+    $('#kick .kb').style.width = (40 + 220 * bar) + 'px';
+  } else kick.style.display = 'none';
   document.querySelectorAll('#prog i b').forEach((b, i) => { b.style.width = (clamp((t - T0[i]) / REEL.scenes[i].dur) * 100) + '%'; });
 }
 
@@ -420,7 +454,12 @@ function events() {
   REEL.scenes.forEach((s, i) => {
     const t = T0[i], add = (dt, kind, gain = 1) => ev.push({ t: +(t + dt).toFixed(3), kind, gain, scene: i + 1 });
     if (i > 0) add(0.0, 'swish', 0.7);
-    if (s.type === 'stamp') { add(i === 0 ? 0.02 : 0.2, 'whoosh', 0.6); add(1.08, 'thud'); }
+    if (s.type === 'stamp') {
+      const a = i === 0 ? STAMP_AT[opener()] : 0.9;
+      if (i === 0 && opener() === 'kicker') { add(0.02, 'thud', 0.8); add(KICK_END - 0.1, 'whoosh', 0.6); }
+      else add(i === 0 ? 0.02 : 0.2, 'whoosh', 0.6);
+      add(a + 0.18, 'thud');
+    }
     if (s.type === 'compare') { add(0.2, 'whoosh', 0.7); add(0.45, 'whoosh', 0.6); add(1.3, 'error'); }
     if (s.type === 'pair') { add(0.3, 'pop'); add(1.1, 'chime'); }
     if (s.type === 'checklist') { add(0.15, 'whoosh', 0.5); s.items.forEach((r, j) => add(0.55 + j * 0.5 + 0.15, r.ok ? 'tick' : 'error', r.ok ? 1 : 0.7)); }
@@ -437,6 +476,7 @@ function qa() {
     const el = $('#s' + i);
     el.querySelectorAll('.t').forEach(n => checkNode(n, `scene ${i + 1} (${s.type})`, issues));
   });
+  if (opener() === 'kicker') { seek(0); checkNode($('#kick .kk'), 'kicker (frame 0)', issues); }
   seek(T0[0] + 1.5);
   document.querySelectorAll('#hdr .t, #foot').forEach(n => checkNode(n, 'chrome', issues));
   return issues;

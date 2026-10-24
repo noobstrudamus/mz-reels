@@ -21,13 +21,14 @@ SETTINGS = {"timezone": "America/New_York", "site": "https://mzconsulting.agency
             "finder_url": "https://mzconsulting.agency/cpsc-compliance-finder"}
 CFG = strategy.load_cfg()                         # real factors and calendar; learning pinned below
 LEARNING = {"half_life_days": 21, "min_explore": 0.2, "winner_prob": 0.8, "winner_min_n": 4, "min_age_hours": 48}
-HOOKS, SLOTS = list(CFG["factors"]["hook"]), list(CFG["factors"]["slot"])
+HOOKS, SLOTS = list(CFG["factors"]["hook"])[:4], list(CFG["factors"]["slot"])   # fixtures rotate these 4 hooks
 D = date(2026, 10, 21)                            # Wednesday
 
 
 def cfg(**learning):
     c = copy.deepcopy(CFG)
     c["learning"] = {**LEARNING, **learning}
+    c["factors"]["hook"] = {h: c["factors"]["hook"][h] for h in HOOKS}   # arms with no fixture data would block winners
     return c
 
 
@@ -87,7 +88,7 @@ class RewardTest(Base):
         a = reel(D - timedelta(days=6), cyc(0), saved=10, shares=10, watch_ms=0)    # r=10 -> 0.5 each, watch 0
         b = reel(D - timedelta(days=5), cyc(1), snap=False)
         r = self.by_id(D)
-        self.assertAlmostEqual(r[a]["proxy"], (0.2 * 0.5 + 0.2 * 0.5) / 0.55)       # profile_visits/follows null
+        self.assertAlmostEqual(r[a]["proxy"], (0.15 * 0.5 + 0.15 * 0.5) / 0.45)     # profile_visits/follows/skip null
         self.assertTrue(r[b]["imputed"])
         self.assertAlmostEqual(r[b]["reward"], r[a]["proxy"])
 
@@ -361,3 +362,15 @@ class CommentArmTest(Base):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SkipRateTest(Base):
+    def test_skip_rate_scores_as_share_not_skipped_and_reels_default_to_classic_opener(self):
+        a = reel(D - timedelta(days=6), cyc(0), saved=0, shares=0, watch_ms=0)
+        rows = ig.read_jsonl("metrics.jsonl")
+        for r in rows:
+            r["skip_rate"] = 25.0
+        (ig.DATA / "metrics.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
+        r = self.by_id(D)[a]
+        self.assertAlmostEqual(r["proxy"], 0.20 * 0.75 / 0.65)                      # saved/shares/watch 0, skip .75
+        self.assertEqual(r["arms"]["opener"], "classic")

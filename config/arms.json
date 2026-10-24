@@ -5,7 +5,13 @@
       "pain_quote": "Open with a customer's own words from the playbook/site pain quotes, reworded as 'say a seller...'.",
       "question": "Open with a direct yes/no question the target seller would answer 'yes' to.",
       "myth": "Open by naming a common belief and flipping it (only with a verified source).",
-      "cost": "Open with the cost of waiting (held container, suppressed listing, missed launch). No invented numbers; only prices/dates from the site or verified sources."
+      "cost": "Open with the cost of waiting (held container, suppressed listing, missed launch). No invented numbers; only prices/dates from the site or verified sources.",
+      "callout": "First three spoken words name the viewer ('Amazon seller importing toys?', 'Shipping kids' products into the US?'), then the problem. See ops/HOOKS.md.",
+      "consequence": "Open on the end state first ('Listing suppressed.', 'Container on hold.'), then rewind to the one file gap that caused it ('Say a seller...'). See ops/HOOKS.md."
+    },
+    "opener": {
+      "slam": "Engine meta.opener 'slam': stamp lands at 0.15 s with a punch; stamp word = the hook's verdict (BLOCKED, ON HOLD, MYTH, WRONG). First VO line <= 7 words.",
+      "kicker": "Engine meta.opener 'kicker': meta.kicker (2-4 words, <= 22 chars) fills the screen for the first second and the first VO words say it; scene 1 dur >= 3 s."
     },
     "length": {
       "short": "Total 18-20 s, 45-52 spoken words.",

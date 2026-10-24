@@ -19,6 +19,8 @@ python3 build_audio.py      # reel_final.mp4: voice + music + sound effects, -14
 ## What the engine enforces
 
 - Scene order is stamp → compare → pair → checklist → cta.
+- `meta.opener` stages the first second: `slam` (stamp hits at 0.15 s) or `kicker` (`meta.kicker`, 2–4 words,
+  fills the screen for 1 s); `classic` (stamp at 0.9 s) is the default for old reels. Frame 0 is QA-checked.
 - Text limits: headline ≤30, note ≤60, stamp ≤8, compare value ≤11 (label ≤14), pair label ≤12,
   checklist name ≤18 and value ≤14 (3–4 items), cta line1 ≤20 and line2 ≤40.
 - The CTA scene must match the GAP LIST or FINDER set word for word (`meta.cta`).

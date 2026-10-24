@@ -17,7 +17,9 @@ with {id, date, pillar, cta, arms, family}.
 
 ## 2. Script (2 agents max: one writer, one adversarial verifier)
 - Read CLAUDE.md (playbook). Re-read mzconsulting.agency on Mondays. Check `reels/*/script.json` from the last 14 days: no repeated topic.
-- Writer: draft the 5 scenes + 5 VO lines for the pillar using hook_rule and length_rule, the CTA set for `cta`
+- Writer: read ops/HOOKS.md first. Build the opening from plan.hook + plan.opener (mute test: frame 0
+  readable without sound; first VO line <= 7 words). Then draft the 5 scenes + 5 VO lines for the pillar
+  using hook_rule, opener_rule and length_rule, the CTA set for `cta`
   (gaplist / finder / comment_gaplist / comment_finder, exactly as in engine/reel.html CTA_SETS), and only claims with a
   verbatim quote from current ecfr.gov (versioner API, --compressed, latest issue date) / cpsc.gov / fcc.gov.
 - Verifier (fresh agent): re-fetch every source, refute overclaims, enforce limits. Anything unverifiable is removed.
@@ -25,14 +27,17 @@ with {id, date, pillar, cta, arms, family}.
   pinned comment = plan.caption_cta for comment arms, otherwise the playbook CTA line.
 
 ## 3. Render
-In engine/: put the scenes into the REEL object (meta: id, pillar, cta, voice = plan.voice_name, footnote
-"Illustrative example. Not legal advice."), write vo.txt, then:
+In engine/: put the scenes into the REEL object (meta: id, pillar, cta, voice = plan.voice_name,
+opener = plan.opener, kicker (kicker opener only), footnote "Illustrative example. Not legal advice."),
+write vo.txt, then:
 ```bash
 python3 voice.py --fit          # must print ALL OK; total must stay within the length_rule range
-python3 render.py --stills <one mid-point per scene + last frame>   # LOOK at every PNG, fix, repeat
+python3 render.py --stills 0 0.5 <one mid-point per scene + last frame>   # LOOK at every PNG, fix, repeat
+# frame 0 and 0.5 s are the hook: would a muted seller scrolling past stop? If not, rewrite the opening.
 python3 render.py && python3 build_audio.py
 ```
-Write `reels/<id>/DELIVERABLE.md` with the QA table.
+Write `reels/<id>/DELIVERABLE.md` with the QA table (add rows: opener + hook used, mute test PASS/FAIL,
+first VO line word count). Add the opener to meta.json arms (plan.arms already has it).
 
 ## 4. Gates → queue
 All of: truth gate passed, render QA PASS, voice ALL OK, stills looked at, no repeated topic.
