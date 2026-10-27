@@ -149,76 +149,77 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261024_finder",
+    "id": "20261027_finder",
     "pillar": "finder",
-    "cta": "comment_finder",
+    "cta": "finder",
     "voice": "en-US-AvaNeural",
+    "opener": "slam",
     "footnote": "Illustrative example. Not legal advice."
   },
   "scenes": [
     {
       "type": "stamp",
-      "dur": 3.3,
-      "headline": "120-volt kids' toy. Rules?",
-      "note": "Say a factory calls a wall-powered kids' toy certified.",
-      "stamp": "CHECK",
-      "doc": "120-volt kids' toy"
+      "dur": 2.2,
+      "headline": "Toy cert lists one rule?",
+      "note": "Say a seller's toy shipment is held at the port.",
+      "stamp": "ON HOLD",
+      "doc": "Toy certificate"
     },
     {
       "type": "compare",
-      "dur": 4.5,
-      "headline": "Who is it made for?",
-      "note": "A cert is needed when a CPSC rule applies.",
+      "dur": 4.0,
+      "headline": "Which rules apply?",
+      "note": "Every applicable rule must be listed separately.",
       "left": {
-        "label": "Factory sent",
-        "value": "GCC"
+        "label": "Cert lists",
+        "value": "1250 only"
       },
       "right": {
-        "label": "Kids' toy",
-        "value": "CPC"
+        "label": "Painted, <3?",
+        "value": "+1303 +1501"
       }
     },
     {
       "type": "pair",
-      "dur": 4.1,
-      "headline": "Wall-powered, made for kids?",
-      "note": "Its own CPSC rule: 16 CFR part 1505.",
+      "dur": 5.3,
+      "headline": "Paint or under 3? More rules",
+      "note": "Paint: lead paint ban, 1303. Under 3: small parts, 1501.",
       "bad": {
-        "label": "Unchecked"
+        "label": "One rule"
       },
       "good": {
-        "label": "Part 1505"
+        "label": "Every rule"
       }
     },
     {
       "type": "checklist",
-      "dur": 4.2,
-      "headline": "On the package, per 1505",
-      "note": "Say the box for KID-24-BLUE is missing items.",
+      "dur": 3.9,
+      "headline": "Painted toy, ages 2+",
+      "note": "Say KID-24-BLUE is painted and for ages two and up.",
       "items": [
         {
-          "name": "Electrical ratings",
-          "value": "missing",
-          "ok": false
-        },
-        {
-          "name": "Warnings",
-          "value": "missing",
-          "ok": false
-        },
-        {
-          "name": "Date or code",
+          "name": "Part 1250 (toys)",
           "value": "listed",
           "ok": true
+        },
+        {
+          "name": "Part 1303 (paint)",
+          "value": "missing",
+          "ok": false
+        },
+        {
+          "name": "Part 1501 (<3)",
+          "value": "missing",
+          "ok": false
         }
       ]
     },
     {
       "type": "cta",
-      "dur": 4.1,
-      "headline": "Which rules apply to you?",
-      "line1": "Comment M&Z.",
-      "line2": "We'll DM you the free CPSC finder.",
+      "dur": 4.5,
+      "headline": "Not sure which rules apply?",
+      "line1": "Free CPSC finder.",
+      "line2": "See which rules apply. No account needed.",
       "url": "mzconsulting.agency"
     }
   ]
@@ -235,7 +236,7 @@ const W = 1080, H = 1920, FPS = 30;
 const SAFE = { x0: 80, x1: 936, y0: 250, y1: 1360 };
 const ORDER = ['stamp', 'compare', 'pair', 'checklist', 'cta'];
 const LIMITS = { headline: 30, note: 60, stamp: 8, doc: 24, compareLabel: 14, compareValue: 11, pairLabel: 12,
-                 checkName: 18, checkValue: 14, ctaLine1: 20, ctaLine2: 40, footnote: 48, kicker: 22 };
+                 checkName: 18, checkValue: 14, ctaLine1: 20, ctaLine2: 41,   /* 41: the playbook FINDER line2 itself */ footnote: 48, kicker: 22 };
 /* opener = how the first second is staged (experiment factor 'opener'): classic = headline at frame 0, stamp lands
    at 0.9 s; slam = stamp lands at 0.15 s with a punch-in; kicker = meta.kicker (2-4 words) fills the screen for 1 s */
 const OPENERS = ['classic', 'slam', 'kicker'];

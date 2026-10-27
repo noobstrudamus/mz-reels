@@ -1,0 +1,125 @@
+{
+ "topic": "Finder demo (toy): toy CPC citing only part 1250; paint (1303) and under-3 small parts (1501) are separate rules",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 2.2,
+   "headline": "Toy cert lists one rule?",
+   "note": "Say a seller's toy shipment is held at the port.",
+   "stamp": "ON HOLD",
+   "doc": "Toy certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 4,
+   "headline": "Which rules apply?",
+   "note": "Every applicable rule must be listed separately.",
+   "left": {
+    "label": "Cert lists",
+    "value": "1250 only"
+   },
+   "right": {
+    "label": "Painted, <3?",
+    "value": "+1303 +1501"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 5.3,
+   "headline": "Paint or under 3? More rules",
+   "note": "Paint: lead paint ban, 1303. Under 3: small parts, 1501.",
+   "bad": {
+    "label": "One rule"
+   },
+   "good": {
+    "label": "Every rule"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.9,
+   "headline": "Painted toy, ages 2+",
+   "note": "Say KID-24-BLUE is painted and for ages two and up.",
+   "items": [
+    {
+     "name": "Part 1250 (toys)",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Part 1303 (paint)",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Part 1501 (<3)",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.5,
+   "headline": "Not sure which rules apply?",
+   "line1": "Free CPSC finder.",
+   "line2": "See which rules apply. No account needed.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Say a seller's toys sit on hold.",
+  "Its certificate cites only the toy standard, part twelve-fifty.",
+  "Painted? Usually add thirteen-oh-three. Under three? Fifteen-oh-one too.",
+  "Say yours is painted, for toddlers. At least two are missing.",
+  "Not sure which rules apply? Free CPSC finder, no account needed."
+ ],
+ "caption": "Toys stuck on hold, and the certificate cites one rule?\nA children's toy certificate (CPC) has to list every applicable rule separately, not just the toy standard.\n16 CFR part 1250 makes the applicable parts of ASTM F963-23 mandatory for toys. A painted toy for kids usually also falls under the lead paint ban, 16 CFR 1303.\nA toy for children under 3 also falls under the small parts rule, 16 CFR 1501.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=toy&src=ig_20261027_finder",
+ "sources": [
+  {
+   "id": "T1",
+   "claim": "Certificates must list every applicable rule separately",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "section": "16 CFR 1110.11(a)(2)",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "T2",
+   "claim": "Part 1250 is the toy standard; ASTM F963-23 mandatory",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1250",
+   "section": "16 CFR 1250.1, 1250.2(a)",
+   "quote": "This part establishes a consumer product safety standard for toys. ... (a) Each toy must comply with all applicable provisions of ASTM F963-23"
+  },
+  {
+   "id": "T3",
+   "claim": "Provisions restating existing bans are not part of 1250 (so 1303/1501 are cited on their own)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1250/section-1250.2",
+   "section": "16 CFR 1250.2(b)",
+   "quote": "any provision of ASTM F963 that restates or incorporates an existing mandatory standard or ban promulgated by the Commission or by statute ... are not part of the mandatory standard incorporated in paragraph (a) of this section."
+  },
+  {
+   "id": "T4",
+   "claim": "Lead paint ban covers children's toys bearing lead-containing paint",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1303",
+   "section": "16 CFR 1303.1(a)(1)",
+   "quote": "(1) Toys and other articles intended for use by children that bear “lead-containing paint”."
+  },
+  {
+   "id": "T5",
+   "claim": "Small parts rule covers toys for children under 3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1501/section-1501.2",
+   "section": "16 CFR 1501.2(a)",
+   "quote": "applies to all toys and other articles intended for use by children under 3 years (36 months) of age"
+  },
+  {
+   "id": "T6",
+   "claim": "Children's product = 12 or younger (so CPC, not GCC)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1200/section-1200.2",
+   "section": "16 CFR 1200.2(a)(1)",
+   "quote": "a children's product means a consumer product designed or intended primarily for children 12 years of age or younger."
+  }
+ ],
+ "verifier_notes": "Independent adversarial verifier re-fetched 16 CFR 1250, 1303, 1501, 1500.18, 1110, 1200.2 (eCFR issue 2026-10-19): PASS conditional on 2 fixes, both applied ('Two rules are missing' -> 'At least two are missing'; 'Add 1303' -> 'Usually add 1303'; caption 'applicable parts of ASTM F963-23', 'usually')."
+}

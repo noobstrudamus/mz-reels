@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Say a seller's factory calls their kids' toy certified.",
+    "text": "Say a seller's toys sit on hold.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "0a6d885930d44aae137c36e88d4880584eeb0465"
+    "sha1": "7233f510a51888d45d0f9399321d8da24921ed5c"
   },
   "s2": {
-    "text": "Covered kids' products need a CPC, general-use ones a GCC.",
+    "text": "Its certificate cites only the toy standard, part twelve-fifty.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "b7b39020af447942c0f45c7ae96880981d543085"
+    "sha1": "66b75bb9c143d4d7db70185e35b793b64d16d1d9"
   },
   "s3": {
-    "text": "Most wall-powered kids' toys have their own rule, part fifteen-oh-five.",
+    "text": "Painted? Usually add thirteen-oh-three. Under three? Fifteen-oh-one too.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "079233adc1c1abae92a3dab11a293672a1702b86"
+    "sha1": "47582b7da63b0ca8365a11b72aaf01ac512c2cb9"
   },
   "s4": {
-    "text": "The package needs ratings, required warnings, and a date or code.",
+    "text": "Say yours is painted, for toddlers. At least two are missing.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "da4c758fb310780e435f599a9d50e1d160994dbf"
+    "sha1": "68ed83e2df8045b76e57cf3f3edc73c1a2b57cde"
   },
   "s5": {
-    "text": "Comment M and Z, we'll DM you the free CPSC finder.",
+    "text": "Not sure which rules apply? Free CPSC finder, no account needed.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "8a5868a74c0403068b37e936a6a2ea8e2d462133"
+    "sha1": "7a7c8a14e347a2fadd3325a42af60eb72b402b4f"
   }
 }

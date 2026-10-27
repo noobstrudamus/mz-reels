@@ -76,5 +76,29 @@
   "media_id": "18180220075434523",
   "published_at": "2026-10-24T19:50:30Z",
   "first_comment_id": "18121383806063426"
+ },
+ {
+  "id": "20261027_finder",
+  "container_id": "17914907298541034",
+  "slot_local": "09:47",
+  "slot_utc": "2026-10-27T13:47:00Z",
+  "caption": "Toys stuck on hold, and the certificate cites one rule?\nA children's toy certificate (CPC) has to list every applicable rule separately, not just the toy standard.\n16 CFR part 1250 makes the applicable parts of ASTM F963-23 mandatory for toys. A painted toy for kids usually also falls under the lead paint ban, 16 CFR 1303.\nA toy for children under 3 also falls under the small parts rule, 16 CFR 1501.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-10-27T10:53:43Z",
+  "status": "pending",
+  "reel": "reels/20261027_finder",
+  "date": "2026-10-27",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "cost",
+   "opener": "slam",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "0947"
+  },
+  "src": "ig_20261027_finder",
+  "family": "toy"
  }
 ]
