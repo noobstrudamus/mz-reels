@@ -19,7 +19,9 @@ first frame and the first voice line.
    - No "Amazon will approve".
    - No Amazon, CPSC or UL logos, and no screens that look like Amazon.
    - The scenario has to be framed as "say a seller…" somewhere in scene 1 (VO or on-screen note). The
-     punch can come first and the framing second.
+     punch comes first and the framing second: **the first spoken words are never "Say a seller"**.
+     hookscore.py rates every "Say a seller…" opener WEAK (30/100), because the framing pushes the
+     claim out of the first two seconds. Put the framing in the scene 1 note or VO sentence 2.
    - Never offer a "free test report". We are not a lab.
 6. **The hook headline does not repeat the caption's first line.** The caption rewords it.
 
@@ -88,3 +90,40 @@ These work best with the `kicker` opener: the quote is the kicker.
   differently, still inside the plan's arms.
 - Sunday report: list skip rate and average watch time per reel next to its hook and opener. Retire a
   bank line after 2 reels above 85% skip.
+
+## Scoring with the instagram-agent pack (installed 2026-10-27, `.claude/skills/ig-*`)
+
+The pack ([Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill),
+MIT) adds 26 hook formulas (`.claude/skills/ig-reel/hooks.json`) and local scoring tools. Our TRUTH RULES and
+CTA sets override the pack wherever they disagree. One difference: the pack ends at "the user posts it"; our
+routine publishes automatically behind the hard gates in CLAUDE.md.
+
+**Hook arm → formulas to draft from** (write 3 candidates from different formulas, then score):
+
+| plan.hook | formulas (hooks.json id) | M&Z-safe example (score) |
+|---|---|---|
+| pain_quote | #12 The Objection, #16 Verbatim Question | "\"We sent the lab report twice.\" Here's the line that was missing." (49.8, add stakes) |
+| question | #10 If This Then Watch, #16 Verbatim Question | "Kids' product on a general certificate? That's the wrong form." (51.0) |
+| myth | #2 Negative Command, #20 Permission, #22 Contrarian Flip | "Stop sending Seller Support the lab report. Send the certificate." (81.8) / "You usually don't need another lab test. You need the right certificate." (76.4) |
+| cost | #19 The Deadline (real dates only), #7 Wrong Way Right Way | "Lab report passed. Certificate failed." (56.0) |
+| callout | #14 The Callout | "Amazon sellers importing kids' products: check line three of your certificate." (46.8, add stakes) |
+| consequence | #13 Before And After, #21 Mid-Sentence Start | "...and that's when the broker asked for the certificate." |
+| (any) | #17 Head To Head | "Lab report versus certificate. Only one of them gets you unblocked." (85.6) |
+
+**Off limits for us until real, publishable proof exists** (config/voice.md): #1 Cost Confession, #5 Time
+Collapse, #6 The Receipt, #15 The Flop Record, #25 Someone Else's Result. #23 The Statistic only with a
+number quoted from cpsc.gov / ecfr.gov / fcc.gov.
+
+**Measured on our first four reels** (2026-10-27): every "Say a seller…" opener 30.0 WEAK; "The factory says
+it's certified. The PDF doesn't say what you think." 60.8 OK. Skip rates were 87–93%.
+
+**Required tool runs per reel** (record the numbers in DELIVERABLE.md):
+- `python3 .claude/skills/ig-reel/hookscore.py hooks.txt`: 3 candidates. **The chosen first VO line must
+  score ≥ 50**, or rewrite. Prefer the top one unless it breaks a truth rule.
+- `python3 .claude/skills/ig-reel/beats.py engine/vo.txt --target <seconds> --wpm 165`: fix the hook >3 s
+  flag and the "no loop" flag (the last line echoes one word from line 1, e.g. "certificate").
+- `python3 .claude/skills/ig-human/humanize.py caption.txt -o clean.txt --report`, then `detect.py`: the
+  caption and VO should reach PASS (≥ 70). Rewrite flagged structures by hand. Never change a quoted rule.
+- `python3 .claude/skills/ig-caption/caption.py caption.txt --keywords "<2 search phrases>"`: no FAIL. Put
+  the phrases a seller would type (e.g. "children's product certificate", "Amazon CPC") into the caption body
+  as plain words. Line 1 should hold one concrete name or number (a rule number counts).

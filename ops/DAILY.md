@@ -7,7 +7,9 @@ Goal: one verified reel queued for today's slot. GitHub Actions (publish.yml) pu
 ```bash
 pip install -q -r requirements.txt
 python3 -c "import sys; sys.path.insert(0,'ops'); from ig import IG; print(IG().check_token())"   # must print mzconsulting.llc
+mkdir -p ~/.claude/instagram && cp config/voice.md ~/.claude/instagram/voice.md   # voice profile for .claude/skills/ig-*
 ```
+
 If the token check fails (TokenExpired): stop, write `reels/HOLD_<date>.md`, commit, notify Mert. Do not continue.
 
 ## 1. Plan
@@ -17,7 +19,9 @@ with {id, date, pillar, cta, arms, family}.
 
 ## 2. Script (2 agents max: one writer, one adversarial verifier)
 - Read CLAUDE.md (playbook). Re-read mzconsulting.agency on Mondays. Check `reels/*/script.json` from the last 14 days: no repeated topic.
-- Writer: read ops/HOOKS.md first. Build the opening from plan.hook + plan.opener (mute test: frame 0
+- Writer: read ops/HOOKS.md first (including "Scoring with the instagram-agent pack"). Draft 3 hook
+  candidates from different formulas in `.claude/skills/ig-reel/hooks.json` that fit plan.hook, score them
+  with `hookscore.py`, and use one scoring >= 50 as the first VO line. Build the opening from plan.hook + plan.opener (mute test: frame 0
   readable without sound; first VO line <= 7 words). Then draft the 5 scenes + 5 VO lines for the pillar
   using hook_rule, opener_rule and length_rule, the CTA set for `cta`
   (gaplist / finder / comment_gaplist / comment_finder, exactly as in engine/reel.html CTA_SETS), and only claims with a
@@ -34,9 +38,13 @@ write vo.txt, then:
 python3 voice.py --fit          # must print ALL OK; total must stay within the length_rule range
 python3 render.py --stills 0 0.5 <one mid-point per scene + last frame>   # LOOK at every PNG, fix, repeat
 # frame 0 and 0.5 s are the hook: would a muted seller scrolling past stop? If not, rewrite the opening.
+python3 ../.claude/skills/ig-reel/beats.py vo.txt --target <total s> --wpm 165   # fix hook>3s / no-loop flags
 python3 render.py && python3 build_audio.py
 ```
-Write `reels/<id>/DELIVERABLE.md` with the QA table (add rows: opener + hook used, mute test PASS/FAIL,
+Caption: run `.claude/skills/ig-human/humanize.py` + `detect.py` (target PASS) and
+`.claude/skills/ig-caption/caption.py --keywords "<2 search phrases>"` (no FAIL).
+Write `reels/<id>/DELIVERABLE.md` with the QA table (add rows: hook score + formula, beats flags, human
+score, caption lint verdict, opener + hook used, mute test PASS/FAIL,
 first VO line word count). Add the opener to meta.json arms (plan.arms already has it).
 
 ## 4. Gates → queue
