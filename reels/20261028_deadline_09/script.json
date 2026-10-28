@@ -1,0 +1,106 @@
+{
+ "topic": "Water bead toys have had their own section of the toy rule since March 12, 2026.",
+ "hook_formula": "#19 The Deadline",
+ "kicker": "Water bead toys?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.4,
+   "headline": "Water bead toys: new rules",
+   "note": "Say a seller imports a water bead craft kit.",
+   "stamp": "CHECK",
+   "doc": "Water bead kit"
+  },
+  {
+   "type": "compare",
+   "dur": 4.7,
+   "headline": "Since March 12, 2026",
+   "note": "16 CFR 1250.4 adds requirements for water bead toys.",
+   "left": {
+    "label": "Cert cites",
+    "value": "1250.2"
+   },
+   "right": {
+    "label": "Now add",
+    "value": "1250.4"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4.2,
+   "headline": "On top of the toy standard",
+   "note": "Performance and labeling requirements, plus 1250.2.",
+   "bad": {
+    "label": "1250.2 only"
+   },
+   "good": {
+    "label": "Plus 1250.4"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.5,
+   "headline": "Water bead kit check",
+   "note": "Say KID-24-BLUE is a water bead art kit.",
+   "items": [
+    {
+     "name": "Part 1250.2",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Part 1250.4",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Bead size test",
+     "value": "not done",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.1,
+   "headline": "Which rules apply to you?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the free CPSC finder.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Water beads? Check your cert for twelve-fifty point four.",
+  "Since March twelfth, twenty twenty-six, part twelve-fifty point four applies.",
+  "It adds performance and labeling requirements on top of the toy standard.",
+  "Say the kit's cert still cites only twelve-fifty point two.",
+  "Comment M and Z, we'll DM you the free CPSC finder."
+ ],
+ "caption": "Water bead toys have had their own section of the toy rule since March 12, 2026.\n16 CFR 1250.4 adds performance and labeling requirements for water bead toys and toys containing water beads, on top of the toy standard in 1250.2, including a size test for the beads.\nA certificate written before that date may cite only 1250.2.\nCheck that each applicable section is listed.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?src=ig_20261028_deadline_09",
+ "search_keywords": "water bead toys,CPSC toy rule",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Water bead toys: added performance + labeling requirements",
+   "section": "16 CFR 1250.4(a), (c)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1250/section-1250.4",
+   "quote": "This section establishes performance and labeling requirements for water bead toys and toys containing water beads ... This section adds requirements for water bead toys in addition to the requirements of § 1250.2. ... (1) Size limit requirements."
+  },
+  {
+   "id": "S2",
+   "claim": "Water bead section in the eCFR since March 12, 2026",
+   "section": "16 CFR 1250.4, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1250",
+   "quote": "§ 1250.4 'Requirements for water beads.' amendment_date 2026-03-12"
+  },
+  {
+   "id": "S3",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}
