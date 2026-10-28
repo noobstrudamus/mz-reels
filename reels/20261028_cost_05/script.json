@@ -1,0 +1,99 @@
+{
+ "topic": "If CBP asked for your certificate today, could you send it by tomorrow?",
+ "hook_formula": "#19 Deadline (24 h)",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 2.8,
+   "headline": "Can you send it in 24 hours?",
+   "note": "Say CBP asks for KID-24-BLUE's certificate.",
+   "stamp": "24 HOURS",
+   "doc": "Request: certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 5.4,
+   "headline": "How fast is immediately?",
+   "note": "On request by CPSC or CBP: within 24 hours.",
+   "left": {
+    "label": "Seller plan",
+    "value": "Ask factory"
+   },
+   "right": {
+    "label": "Rule says",
+    "value": "24 hours"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4,
+   "headline": "Have it before they ask",
+   "note": "16 CFR 1110.13(c): available within 24 hours.",
+   "bad": {
+    "label": "Ask factory"
+   },
+   "good": {
+    "label": "On file now"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.3,
+   "headline": "Ready when they ask?",
+   "note": "Say the importer has only the factory's email.",
+   "items": [
+    {
+     "name": "Certificate",
+     "value": "at factory",
+     "ok": false
+    },
+    {
+     "name": "Test reports",
+     "value": "at factory",
+     "ok": false
+    },
+    {
+     "name": "Records contact",
+     "value": "named",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.4,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "CBP asks. You have twenty-four hours.",
+  "If CPSC or CBP asks, the certificate is due within twenty-four hours.",
+  "Immediately means within twenty-four hours, in the rule's own words.",
+  "Say yours sits with the factory. That's the gap to close now.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "If CBP asked for your certificate today, could you send it by tomorrow?\nUnder 16 CFR 1110.13(c), certifiers make certificates available immediately, meaning within 24 hours, when CPSC or CBP asks.\n\"Let me ask the factory\" can take longer than that.\nKeep the CPSC certificate and its records on file before a certificate request comes in.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261028_cost_05#contact",
+ "search_keywords": "CPSC certificate,certificate request",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Available within 24 hours on request by CPSC or CBP",
+   "section": "16 CFR 1110.13(c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "Finished product certifiers must make finished product certificates available for inspection immediately, meaning within 24 hours, upon request by CPSC or CBP."
+  },
+  {
+   "id": "S2",
+   "claim": "Certifiers keep certificates and supporting test records 5+ years",
+   "section": "16 CFR 1110.17",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.17",
+   "quote": "Finished product certifiers are required to maintain finished product certificates and the following records supporting such certificates for at least five years from the certificate creation date: (a) Records of test results on which a GCC is based ... (b) Records of test results and other records on which a CPC is based"
+  }
+ ]
+}
