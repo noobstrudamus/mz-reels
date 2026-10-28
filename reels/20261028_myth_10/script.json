@@ -1,0 +1,99 @@
+{
+ "topic": "\"The parts are certified\" doesn't mean the finished toy is.",
+ "hook_formula": "#12 The Objection",
+ "kicker": "\"Parts are certified.\"",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Certified parts, finished toy?",
+   "note": "Say the factory sends component certificates only.",
+   "stamp": "MYTH",
+   "doc": "Component certificates"
+  },
+  {
+   "type": "compare",
+   "dur": 4.1,
+   "headline": "Who certifies the product?",
+   "note": "Component certificates support yours. They don't replace it.",
+   "left": {
+    "label": "Factory sent",
+    "value": "Parts certs"
+   },
+   "right": {
+    "label": "Still needed",
+    "value": "Your cert"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3,
+   "headline": "Parts support your cert",
+   "note": "16 CFR 1110.19: relied on, not eFiled at entry.",
+   "bad": {
+    "label": "Parts only"
+   },
+   "good": {
+    "label": "Your cert"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.7,
+   "headline": "What the file holds",
+   "note": "Say KID-24-BLUE's file has parts certificates only.",
+   "items": [
+    {
+     "name": "Paint cert",
+     "value": "on file",
+     "ok": true
+    },
+    {
+     "name": "Plastic cert",
+     "value": "on file",
+     "ok": true
+    },
+    {
+     "name": "Finished cert",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 5.1,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "\"The parts are certified.\" You still certify.",
+  "Component certificates are voluntary. They can support your certificate.",
+  "They don't replace it, and they're not eFiled at entry.",
+  "Say the file holds parts certs, but no finished product cert.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "\"The parts are certified\" doesn't mean the finished toy is.\nUnder 16 CFR 1110.19, component part certificates are voluntary. A finished product certifier may rely on them to issue its own certificate.\nComponent certificates are not eFiled at entry. The finished product certificate is the one that's required (16 CFR 1110.5).\nKeep both: the parts certificates and your own.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261028_myth_10#contact",
+ "search_keywords": "component part certificate,CPSC certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Component certificates: voluntary support, not eFiled",
+   "section": "16 CFR 1110.19",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.19",
+   "quote": "Pursuant to part 1109 of this chapter, component part certificates are voluntary, but may be relied upon by a finished product certifier to issue a finished product certificate. Component part certificates must not be eFiled in ACE upon importation of a component part."
+  },
+  {
+   "id": "S2",
+   "claim": "A certificate is needed when a rule applies",
+   "section": "16 CFR 1110.5",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.5",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate."
+  }
+ ]
+}
