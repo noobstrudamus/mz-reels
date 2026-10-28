@@ -1,0 +1,92 @@
+{
+ "topic": "A certificate only in Chinese is a gap, even if every test passed.",
+ "hook_formula": "#2 Negative Command",
+ "kicker": "Not in English?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Factory cert in Chinese only?",
+   "note": "Say a seller's certificate came only in Chinese.",
+   "stamp": "CHECK",
+   "doc": "Certificate (Chinese)"
+  },
+  {
+   "type": "compare",
+   "dur": 3.4,
+   "headline": "What language counts?",
+   "note": "Certificates must be in English. Others can be added.",
+   "left": {
+    "label": "Cert is in",
+    "value": "Chinese"
+   },
+   "right": {
+    "label": "Rule says",
+    "value": "English"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.3,
+   "headline": "English, plus any other",
+   "note": "16 CFR 1110.9(a): English; other languages optional.",
+   "bad": {
+    "label": "Chinese only"
+   },
+   "good": {
+    "label": "English too"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.6,
+   "headline": "Same content, in English",
+   "note": "Say KID-24-BLUE's cert has no English version.",
+   "items": [
+    {
+     "name": "English version",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Chinese version",
+     "value": "fine",
+     "ok": true
+    },
+    {
+     "name": "Same content",
+     "value": "not checked",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.1,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Stop sending certificates that aren't in English.",
+  "The rule says certificates must be in the English language.",
+  "Another language can be added, with the same content.",
+  "Say yours came only in Chinese. That's a gap to fix before the next shipment.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "A certificate only in Chinese is a gap, even if every test passed.\nUnder 16 CFR 1110.9(a), certificates must be in English, and eFiled certificates must be in English.\nYou can add another language, with the same content.\nAsk the factory for the English version of the CPSC certificate before the next shipment.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261028_gap_08#contact",
+ "search_keywords": "CPSC certificate,English",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Certificates in English; other languages may be added with the same content",
+   "section": "16 CFR 1110.9(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.9",
+   "quote": "An eFiled finished product certificate must be in the English language. All other certificates, including hard copy and electronic certificates, must be in the English language and may also contain the same content in any other language."
+  }
+ ]
+}

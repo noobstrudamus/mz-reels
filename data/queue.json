@@ -229,5 +229,30 @@
   },
   "src": "ig_20261028_blocked_06",
   "family": null
+ },
+ {
+  "id": "20261028_gap_08",
+  "kind": "reel",
+  "container_id": "17915109927541034",
+  "slot_local": "10:47",
+  "slot_utc": "2026-10-28T14:47:00Z",
+  "caption": "A certificate only in Chinese is a gap, even if every test passed.\nUnder 16 CFR 1110.9(a), certificates must be in English, and eFiled certificates must be in English.\nYou can add another language, with the same content.\nAsk the factory for the English version of the CPSC certificate before the next shipment.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+  "created_at": "2026-10-28T11:05:59Z",
+  "status": "pending",
+  "reel": "reels/20261028_gap_08",
+  "date": "2026-10-28",
+  "pillar": "gap",
+  "cta": "comment_gaplist",
+  "arms": {
+   "hook": "callout",
+   "opener": "kicker",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "comment",
+   "slot": "1047"
+  },
+  "src": "ig_20261028_gap_08",
+  "family": null
  }
 ]
