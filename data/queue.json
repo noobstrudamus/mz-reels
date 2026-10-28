@@ -136,7 +136,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-10-28T11:02:18Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261028_story_02",
   "date": "2026-10-28",
   "pillar": "story_02",
@@ -145,7 +145,9 @@
    "slot": "1117"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18098749961449327",
+  "published_at": "2026-10-28T15:55:00Z"
  },
  {
   "id": "20261028_story_03",
@@ -400,7 +402,7 @@
   "caption": "Five products on one certificate? That's one of the quietest gaps in a CPSC file.\nUnder 16 CFR 1110.13(a), each finished product certificate must describe only one product.\nFive products usually means five certificates, each with its own product identifier, like a SKU or UPC.\nCheck that each CPSC certificate, a children's product certificate or a GCC, names one product and its own identifier.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
   "created_at": "2026-10-28T11:11:13Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261028_gap_01",
   "date": "2026-10-28",
   "pillar": "gap",
@@ -414,7 +416,10 @@
    "slot": "1147"
   },
   "src": "ig_20261028_gap_01",
-  "family": null
+  "family": null,
+  "media_id": "18133893070747221",
+  "published_at": "2026-10-28T15:55:00Z",
+  "first_comment_id": "17932857627166787"
  },
  {
   "id": "20261028_finder_07",
