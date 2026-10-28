@@ -202,7 +202,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-10-28T11:03:28Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261028_story_05",
   "date": "2026-10-28",
   "pillar": "story_05",
@@ -211,7 +211,9 @@
    "slot": "1717"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18011734733996169",
+  "published_at": "2026-10-28T21:54:23Z"
  },
  {
   "id": "20261028_blocked_06",
@@ -362,7 +364,7 @@
   "caption": "If CBP asked for your certificate today, could you send it by tomorrow?\nUnder 16 CFR 1110.13(c), certifiers make certificates available immediately, meaning within 24 hours, when CPSC or CBP asks.\n\"Let me ask the factory\" can take longer than that.\nKeep the CPSC certificate and its records on file before a certificate request comes in.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
   "created_at": "2026-10-28T11:07:39Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261028_cost_05",
   "date": "2026-10-28",
   "pillar": "cost",
@@ -376,7 +378,10 @@
    "slot": "1747"
   },
   "src": "ig_20261028_cost_05",
-  "family": null
+  "family": null,
+  "media_id": "18120139729946731",
+  "published_at": "2026-10-28T21:54:23Z",
+  "first_comment_id": "17866997115678040"
  },
  {
   "id": "20261028_deadline_02",
