@@ -180,7 +180,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-10-28T11:03:04Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261028_story_04",
   "date": "2026-10-28",
   "pillar": "story_04",
@@ -189,7 +189,9 @@
    "slot": "1517"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "17965668420240652",
+  "published_at": "2026-10-28T19:53:39Z"
  },
  {
   "id": "20261028_story_05",
@@ -332,7 +334,7 @@
   "caption": "A GCC on a kids' product is usually the wrong certificate.\nUnder 16 CFR 1200.2, a children's product is one designed or intended primarily for children 12 and under, judged by four factors: the label, the marketing, how buyers see it, and the age guidelines.\nChildren's products subject to a CPSC rule get a Children's Product Certificate (CPC), not a GCC.\nThe free CPSC Finder asks for the intended age group, for this reason.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
   "created_at": "2026-10-28T11:07:15Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261028_finder_04",
   "date": "2026-10-28",
   "pillar": "finder",
@@ -346,7 +348,10 @@
    "slot": "1547"
   },
   "src": "ig_20261028_finder_04",
-  "family": "childrens_product"
+  "family": "childrens_product",
+  "media_id": "18119570966066935",
+  "published_at": "2026-10-28T19:53:39Z",
+  "first_comment_id": "17923809558442686"
  },
  {
   "id": "20261028_cost_05",
