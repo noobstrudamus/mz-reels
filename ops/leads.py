@@ -32,7 +32,7 @@ import ig  # noqa: E402
 KINDS = ("gap_list", "finder", "dm_link_sent", "dm_thread")
 SOURCES = ("panel", "comment_dm", "conversations", "manual")
 KIND_ALIASES = {"gaplist": "gap_list", "gap": "gap_list", "dm_link": "dm_link_sent", "dm": "dm_thread"}
-SRC_RE = re.compile(r"^ig_(\d{8})_([a-z]+?)(_dm)?$")
+SRC_RE = re.compile(r"^ig_(\d{8})_([a-z]+?)(?:_(\d{2}))?(_dm)?$")   # _NN: reel k+1 of a multi-reel day
 
 
 def tz():
@@ -67,12 +67,14 @@ def src_for(reel_id, dm=False):
 
 def parse_src(src):
     """'ig_20261021_gap_dm' -> {'reel_id': '20261021_gap', 'date': '2026-10-21', 'pillar': 'gap', 'dm': True};
-    None for tags that are not tied to one reel (ig_bio, ig_dm, ...)."""
+    'ig_20261028_gap_01' -> reel_id '20261028_gap_01' (multi-reel days). None for tags that are not tied to one
+    reel (ig_bio, ig_dm, ...)."""
     m = SRC_RE.match(src or "")
     if not m:
         return None
-    d, pillar, dm = m.groups()
-    return {"reel_id": f"{d}_{pillar}", "date": f"{d[:4]}-{d[4:6]}-{d[6:]}", "pillar": pillar, "dm": bool(dm)}
+    d, pillar, nn, dm = m.groups()
+    return {"reel_id": f"{d}_{pillar}" + (f"_{nn}" if nn else ""), "date": f"{d[:4]}-{d[4:6]}-{d[6:]}",
+            "pillar": pillar, "dm": bool(dm)}
 
 
 def num(v):

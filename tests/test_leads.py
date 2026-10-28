@@ -129,6 +129,9 @@ class LeadsTest(unittest.TestCase):
                          {"reel_id": "20261021_gap", "date": "2026-10-21", "pillar": "gap", "dm": True})
         self.assertEqual(leads.parse_src("ig_20261022_finder")["pillar"], "finder")
         self.assertIsNone(leads.parse_src("ig_bio"))
+        self.assertEqual(leads.parse_src("ig_20261028_gap_01_dm"),
+                         {"reel_id": "20261028_gap_01", "date": "2026-10-28", "pillar": "gap", "dm": True})
+        self.assertEqual(leads.parse_src("ig_20261028_deadline_10")["reel_id"], "20261028_deadline_10")
 
 
 if __name__ == "__main__":
