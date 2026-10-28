@@ -430,7 +430,7 @@
   "caption": "Coin battery inside? That's usually a rule your certificate has to list.\n16 CFR part 1263 (Reese's Law) sets performance and labeling requirements for consumer products with button cell or coin batteries, to keep the batteries away from kids.\nExceptions exist, like toys that meet the battery rules in part 1250, and zinc-air cells.\nThe free CPSC Finder has a battery product family for this.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
   "created_at": "2026-10-28T11:11:36Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261028_finder_07",
   "date": "2026-10-28",
   "pillar": "finder",
@@ -444,7 +444,10 @@
    "slot": "1247"
   },
   "src": "ig_20261028_finder_07",
-  "family": "battery_product"
+  "family": "battery_product",
+  "media_id": "18470677303142230",
+  "published_at": "2026-10-28T16:54:33Z",
+  "first_comment_id": "18119440858972659"
  },
  {
   "id": "20261028_myth_03",
