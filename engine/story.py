@@ -1,6 +1,6 @@
 """Render one Instagram story frame (stories/<id>/script.json) to a still and a 6 s mp4.
 
-  python3 story.py ../stories/20261028_story_01            -> stills/story_<id>.png + build/story_<id>.mp4
+  python3 story.py ../stories/20261028_story_01            -> build/story_stills/story_<id>.png + build/story_<id>.mp4
   python3 story.py ../stories/20261028_story_01 --still    -> the PNG only (LOOK at it)
 
 script.json: {"frame": {...story.html frame...}, "from_reel": "reels/<id>", "sources": [...]}.
@@ -57,8 +57,8 @@ def main(argv=None):
     errs = check_sources(script, d.parent.parent)
 
     from playwright.sync_api import sync_playwright
-    png = ROOT / "stills" / f"story_{sid}.png"
-    png.parent.mkdir(exist_ok=True)
+    png = ROOT / "build" / "story_stills" / f"story_{sid}.png"
+    png.parent.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
         kw = {"args": ["--no-sandbox", "--font-render-hinting=none", "--disable-lcd-text"]}
         if os.path.exists(CHROMIUM):

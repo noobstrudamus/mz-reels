@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Say a seller's toys sit on hold.",
+    "text": "Five years. Keep your own test records.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "7233f510a51888d45d0f9399321d8da24921ed5c"
+    "sha1": "8c6f50d44bf07cdf9c372b5621f971c5331cfaac"
   },
   "s2": {
-    "text": "Its certificate cites only the toy standard, part twelve-fifty.",
+    "text": "Myth: the factory keeps them. The certifier does, usually the importer.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "66b75bb9c143d4d7db70185e35b793b64d16d1d9"
+    "sha1": "95105d99415a3459eda40817231a56a0ebb604ff"
   },
   "s3": {
-    "text": "Painted? Usually add thirteen-oh-three. Under three? Fifteen-oh-one too.",
+    "text": "Certificates and the test records behind them, for at least five years.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "47582b7da63b0ca8365a11b72aaf01ac512c2cb9"
+    "sha1": "d13db51eadc6025396e27fbee21c79c5b7f40ae9"
   },
   "s4": {
-    "text": "Say yours is painted, for toddlers. At least two are missing.",
+    "text": "Say the certifier only has the PDF. The test records sit at the factory.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "68ed83e2df8045b76e57cf3f3edc73c1a2b57cde"
+    "sha1": "554a10e81fe9ae5cfdda520d5c515acec38946d9"
   },
   "s5": {
-    "text": "Not sure which rules apply? Free CPSC finder, no account needed.",
+    "text": "Blocked right now? Forward the notice. Get your gap list in twenty-four hours.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "7a7c8a14e347a2fadd3325a42af60eb72b402b4f"
+    "sha1": "947faa6991d0294fb1433e7087f4dddc7287842a"
   }
 }

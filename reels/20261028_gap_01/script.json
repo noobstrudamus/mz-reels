@@ -1,0 +1,99 @@
+{
+ "topic": "Five products on one certificate? That's one of the quietest gaps in a CPSC file.",
+ "hook_formula": "#2 Negative Command",
+ "kicker": "5 products, 1 cert?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Five products, one cert?",
+   "note": "Say a seller lists five different toys on one certificate.",
+   "stamp": "CHECK",
+   "doc": "One certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 2.7,
+   "headline": "How many per certificate?",
+   "note": "Each certificate must describe only one product.",
+   "left": {
+    "label": "Cert covers",
+    "value": "5 products"
+   },
+   "right": {
+    "label": "Rule allows",
+    "value": "1 product"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.6,
+   "headline": "One product, one certificate",
+   "note": "16 CFR 1110.13(a): only one product per certificate.",
+   "bad": {
+    "label": "One for all"
+   },
+   "good": {
+    "label": "One each"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.6,
+   "headline": "Five toys, one certificate",
+   "note": "Say KID-24-BLUE's cert also lists four other toys.",
+   "items": [
+    {
+     "name": "KID-24-BLUE",
+     "value": "covered",
+     "ok": true
+    },
+    {
+     "name": "KID-31-RACE",
+     "value": "shared cert",
+     "ok": false
+    },
+    {
+     "name": "KID-07-BLOCK",
+     "value": "shared cert",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.4,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "You can't put five products on one cert.",
+  "A certificate can describe only one product.",
+  "Five products means five certificates, one for each product.",
+  "Say the file shares one certificate across five different toys. That's the gap.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "Five products on one certificate? That's one of the quietest gaps in a CPSC file.\nUnder 16 CFR 1110.13(a), each finished product certificate must describe only one product.\nFive products usually means five certificates, each with its own product identifier, like a SKU or UPC.\nCheck that each CPSC certificate, a children's product certificate or a GCC, names one product and its own identifier.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261028_gap_01#contact",
+ "search_keywords": "children's product certificate,CPSC certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Each certificate describes only one product",
+   "section": "16 CFR 1110.13(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "A finished product certificate must accompany each finished product or finished product shipment required to be certified pursuant to § 1110.5. Each finished product certificate must describe only one product."
+  },
+  {
+   "id": "S2",
+   "claim": "Each certificate carries a product identifier",
+   "section": "16 CFR 1110.11(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier"
+  }
+ ]
+}

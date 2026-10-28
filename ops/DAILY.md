@@ -79,7 +79,7 @@ rule (a quote copied word for word from the reel's sources + its section; story.
 reel's checklist), myth (myth/fact from a myth reel), cta (Finder or gap-list set; "link in bio"). A day's five:
 promo, rule, check, myth or a second rule, cta. Stickers (poll, link) cannot be added through the API.
 ```bash
-cd engine && python3 story.py ../stories/<id> --still   # LOOK at stills/story_<id>.png; QA must PASS
+cd engine && python3 story.py ../stories/<id> --still   # LOOK at engine/build/story_stills/story_<id>.png; QA must PASS
 python3 story.py ../stories/<id>                         # build/story_<id>.mp4 (6 s)
 cd .. && python3 ops/publish.py prepare --story stories/<id> --video engine/build/story_<id>.mp4 --live
 ```

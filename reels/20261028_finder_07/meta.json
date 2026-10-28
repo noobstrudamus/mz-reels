@@ -1,0 +1,15 @@
+{
+ "id": "20261028_finder_07",
+ "date": "2026-10-28",
+ "pillar": "finder",
+ "cta": "comment_finder",
+ "arms": {
+  "hook": "pain_quote",
+  "opener": "kicker",
+  "length": "short",
+  "voice": "andrew",
+  "cta_mode": "comment",
+  "slot": "1247"
+ },
+ "family": "battery_product"
+}

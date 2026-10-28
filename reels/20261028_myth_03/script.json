@@ -1,0 +1,99 @@
+{
+ "topic": "\"The factory keeps all that\" is not a records plan.",
+ "hook_formula": "#20 Permission (inverted) / myth",
+ "kicker": "5 years. Your records.",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Who keeps the records?",
+   "note": "Say a seller's factory holds every test record.",
+   "stamp": "MYTH",
+   "doc": "Test records"
+  },
+  {
+   "type": "compare",
+   "dur": 5,
+   "headline": "Who must keep them?",
+   "note": "Certifiers keep certificates and test records.",
+   "left": {
+    "label": "Seller says",
+    "value": "Factory"
+   },
+   "right": {
+    "label": "Rule says",
+    "value": "Certifier"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4,
+   "headline": "At least five years",
+   "note": "16 CFR 1110.17: five years from certificate creation.",
+   "bad": {
+    "label": "At factory"
+   },
+   "good": {
+    "label": "On file"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 5.1,
+   "headline": "What to keep on file",
+   "note": "Say KID-24-BLUE's certifier has only the PDF.",
+   "items": [
+    {
+     "name": "Certificate",
+     "value": "kept",
+     "ok": true
+    },
+    {
+     "name": "Test results",
+     "value": "at factory",
+     "ok": false
+    },
+    {
+     "name": "Kept 5+ years",
+     "value": "no plan",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 5.1,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Five years. Keep your own test records.",
+  "Myth: the factory keeps them. The certifier does, usually the importer.",
+  "Certificates and the test records behind them, for at least five years.",
+  "Say the certifier only has the PDF. The test records sit at the factory.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "\"The factory keeps all that\" is not a records plan.\nUnder 16 CFR 1110.17, certifiers keep certificates and the test records behind them for at least five years from the certificate creation date.\nOn imports, the certifier is usually the importer (16 CFR 1110.7(a)).\nIf the test records behind your children's product certificate live only with the factory, that's a gap worth closing.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261028_myth_03#contact",
+ "search_keywords": "test records,children's product certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Certifiers keep certificates and supporting test records 5+ years",
+   "section": "16 CFR 1110.17",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.17",
+   "quote": "Finished product certifiers are required to maintain finished product certificates and the following records supporting such certificates for at least five years from the certificate creation date: (a) Records of test results on which a GCC is based ... (b) Records of test results and other records on which a CPC is based"
+  },
+  {
+   "id": "S2",
+   "claim": "On imports the importer is the certifier",
+   "section": "16 CFR 1110.7(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.7",
+   "quote": "Except as otherwise provided in a specific rule, ban, standard, or regulation enforced by CPSC, for a finished product manufactured outside of the United States that must be accompanied by a certificate as set forth in § 1110.5, the importer, as defined in this part, is the finished product certifier"
+  }
+ ]
+}

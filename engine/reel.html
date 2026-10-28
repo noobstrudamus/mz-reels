@@ -149,77 +149,78 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261027_finder",
-    "pillar": "finder",
-    "cta": "finder",
+    "id": "20261028_myth_03",
+    "pillar": "myth",
+    "cta": "gaplist",
     "voice": "en-US-AvaNeural",
-    "opener": "slam",
-    "footnote": "Illustrative example. Not legal advice."
+    "opener": "kicker",
+    "footnote": "Illustrative example. Not legal advice.",
+    "kicker": "5 years. Your records."
   },
   "scenes": [
     {
       "type": "stamp",
-      "dur": 2.2,
-      "headline": "Toy cert lists one rule?",
-      "note": "Say a seller's toy shipment is held at the port.",
-      "stamp": "ON HOLD",
-      "doc": "Toy certificate"
+      "dur": 3,
+      "headline": "Who keeps the records?",
+      "note": "Say a seller's factory holds every test record.",
+      "stamp": "MYTH",
+      "doc": "Test records"
     },
     {
       "type": "compare",
-      "dur": 4.0,
-      "headline": "Which rules apply?",
-      "note": "Every applicable rule must be listed separately.",
+      "dur": 5,
+      "headline": "Who must keep them?",
+      "note": "Certifiers keep certificates and test records.",
       "left": {
-        "label": "Cert lists",
-        "value": "1250 only"
+        "label": "Seller says",
+        "value": "Factory"
       },
       "right": {
-        "label": "Painted, <3?",
-        "value": "+1303 +1501"
+        "label": "Rule says",
+        "value": "Certifier"
       }
     },
     {
       "type": "pair",
-      "dur": 5.3,
-      "headline": "Paint or under 3? More rules",
-      "note": "Paint: lead paint ban, 1303. Under 3: small parts, 1501.",
+      "dur": 4,
+      "headline": "At least five years",
+      "note": "16 CFR 1110.17: five years from certificate creation.",
       "bad": {
-        "label": "One rule"
+        "label": "At factory"
       },
       "good": {
-        "label": "Every rule"
+        "label": "On file"
       }
     },
     {
       "type": "checklist",
-      "dur": 3.9,
-      "headline": "Painted toy, ages 2+",
-      "note": "Say KID-24-BLUE is painted and for ages two and up.",
+      "dur": 5.1,
+      "headline": "What to keep on file",
+      "note": "Say KID-24-BLUE's certifier has only the PDF.",
       "items": [
         {
-          "name": "Part 1250 (toys)",
-          "value": "listed",
+          "name": "Certificate",
+          "value": "kept",
           "ok": true
         },
         {
-          "name": "Part 1303 (paint)",
-          "value": "missing",
+          "name": "Test results",
+          "value": "at factory",
           "ok": false
         },
         {
-          "name": "Part 1501 (<3)",
-          "value": "missing",
+          "name": "Kept 5+ years",
+          "value": "no plan",
           "ok": false
         }
       ]
     },
     {
       "type": "cta",
-      "dur": 4.5,
-      "headline": "Not sure which rules apply?",
-      "line1": "Free CPSC finder.",
-      "line2": "See which rules apply. No account needed.",
+      "dur": 5.1,
+      "headline": "Blocked right now?",
+      "line1": "Forward the notice.",
+      "line2": "Get your gap list in 24 hours.",
       "url": "mzconsulting.agency"
     }
   ]

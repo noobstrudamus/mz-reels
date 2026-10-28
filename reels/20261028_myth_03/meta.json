@@ -1,0 +1,15 @@
+{
+ "id": "20261028_myth_03",
+ "date": "2026-10-28",
+ "pillar": "myth",
+ "cta": "gaplist",
+ "arms": {
+  "hook": "pain_quote",
+  "opener": "kicker",
+  "length": "long",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "1647"
+ },
+ "family": null
+}

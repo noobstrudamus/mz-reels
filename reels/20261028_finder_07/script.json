@@ -1,0 +1,99 @@
+{
+ "topic": "Coin battery inside? That's usually a rule your certificate has to list.",
+ "hook_formula": "#10 If This Then Watch",
+ "kicker": "Coin battery inside?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.6,
+   "headline": "Coin battery inside?",
+   "note": "Say a seller's TV remote takes a coin battery.",
+   "stamp": "CHECK",
+   "doc": "Remote, coin cell"
+  },
+  {
+   "type": "compare",
+   "dur": 2.5,
+   "headline": "Which rule applies?",
+   "note": "Button or coin battery products: 16 CFR part 1263.",
+   "left": {
+    "label": "Cert lists",
+    "value": "No 1263"
+   },
+   "right": {
+    "label": "Should list",
+    "value": "Part 1263"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 5,
+   "headline": "Reese's Law: part 1263",
+   "note": "Performance and warning label requirements.",
+   "bad": {
+    "label": "Not checked"
+   },
+   "good": {
+    "label": "Part 1263"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.5,
+   "headline": "What 1263 covers",
+   "note": "Say the TV remote KID-24-BLUE has a coin cell.",
+   "items": [
+    {
+     "name": "Battery access",
+     "value": "not tested",
+     "ok": false
+    },
+    {
+     "name": "Warning labels",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Product ID",
+     "value": "listed",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 3.9,
+   "headline": "Which rules apply to you?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the free CPSC finder.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Coin battery in your remote? Check twelve sixty-three.",
+  "Does the product hold a button or coin battery?",
+  "Then part twelve sixty-three usually applies: battery access and warning labels.",
+  "Say the remote's certificate never lists it. That's the gap.",
+  "Comment M and Z, we'll DM you the free CPSC finder."
+ ],
+ "caption": "Coin battery inside? That's usually a rule your certificate has to list.\n16 CFR part 1263 (Reese's Law) sets performance and labeling requirements for consumer products with button cell or coin batteries, to keep the batteries away from kids.\nExceptions exist, like toys that meet the battery rules in part 1250, and zinc-air cells.\nThe free CPSC Finder has a battery product family for this.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=battery_product&src=ig_20261028_finder_07",
+ "search_keywords": "coin battery rule,Reese's Law",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Part 1263: performance + labeling for coin/button battery products; toy and zinc-air exemptions",
+   "section": "16 CFR 1263.1(a), (c), (d)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1263/section-1263.1",
+   "quote": "this part establishes performance and labeling requirements for consumer products containing button cell or coin batteries to prevent child access to batteries ... (c) Exemption for toy products. Any object designed, manufactured, or marketed as a plaything for children under 14 years of age that is in compliance with the battery accessibility and labeling requirements of 16 CFR part 1250 is exempt ... (d) ... zinc-air button cell or coin batteries."
+  },
+  {
+   "id": "S2",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}
