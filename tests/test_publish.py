@@ -553,3 +553,49 @@ class TestCli(Base):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestStories(Base):
+    def setUp(self):
+        super().setUp()
+        self.story = self.tmp / "stories" / "20261021_story_01"
+        self.story.mkdir(parents=True)
+        (self.story / "script.json").write_text(json.dumps({"frames": ["A test report is not a certificate."],
+                                                            "sources": SCRIPT["sources"]}))
+        (self.story / "meta.json").write_text(json.dumps({"id": "20261021_story_01", "date": "2026-10-21", "slot": "1017"}))
+
+    def test_story_container_has_no_caption_and_is_queued_as_story(self):
+        uri = "https://rupload.facebook.com/ig-api-upload/v24.0/S1"
+        fake = Fake(gets={"S1": {"status_code": "FINISHED"}},
+                    writes={"IGID/media": {"id": "S1", "uri": uri}, uri: {"success": True}})
+        rc = publish.prepare(fake, str(self.story), str(self.video), now=PREP, sleep=lambda s: None,
+                             out=self.out, kind="story")
+        self.assertEqual(rc, 0, self.log)
+        create = [c for c in fake.calls if c[0] == "POST"][0]
+        self.assertEqual(create[2], {"media_type": "STORIES", "upload_type": "resumable"})
+        (it,) = self.queue()
+        self.assertEqual((it["kind"], it["caption"], it["first_comment"], it["slot_local"]), ("story", "", "", "10:17"))
+
+    def test_story_needs_sources(self):
+        (self.story / "script.json").write_text(json.dumps({"frames": ["x"]}))
+        self.assertEqual(publish.prepare(Fake(), str(self.story), str(self.video), now=PREP, out=self.out, kind="story"), 1)
+        self.assertTrue(any("sources" in line for line in self.log))
+
+    def test_story_is_logged_apart_and_has_its_own_daily_limit(self):
+        self.put_item(id="20261021_story_01", kind="story", caption="", first_comment="", container_id="C1")
+        fake = Fake(gets={"C1": {"status_code": "FINISHED"}, "IGID/content_publishing_limit": QUOTA,
+                          "M1": {"permalink": "https://www.instagram.com/stories/x/1"}},
+                    writes={"IGID/media_publish": {"id": "M1"}})
+        ig.append_jsonl("posts.jsonl", {"id": "20261021_gap", "media_id": "R1", "published_at": "2026-10-21T14:00:00Z"})
+        self.assertEqual(publish.run_due(fake, now=NOW, dry=False, out=self.out), 0, self.log)   # a reel today does not block it
+        self.assertEqual([c[1] for c in fake.calls if c[0] == "POST"], ["IGID/media_publish"])  # no first comment
+        self.assertEqual([p["id"] for p in ig.read_jsonl("stories.jsonl")], ["20261021_story_01"])
+        self.assertEqual(len(ig.read_jsonl("posts.jsonl")), 1)
+
+    def test_max_posts_per_day_counts_reels_only(self):
+        ig.append_jsonl("stories.jsonl", {"id": "s", "media_id": "S9", "published_at": "2026-10-21T14:00:00Z"})
+        self.put_item()
+        fake = Fake(gets={"C1": {"status_code": "FINISHED"}, "IGID/content_publishing_limit": QUOTA,
+                          "M1": {"permalink": "p"}}, writes={"IGID/media_publish": {"id": "M1"}, "M1/comments": {"id": "K1"}})
+        self.assertEqual(publish.run_due(fake, now=NOW, dry=False, out=self.out), 0, self.log)
+        self.assertEqual(self.queue()[0]["status"], "published")

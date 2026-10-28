@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M&Z Story</title>
+<style>
+@font-face { font-family: 'Archivo'; src: url(fonts/archivo-wdth.woff2) format('woff2-variations'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'Public Sans'; src: url(fonts/public-sans.woff2) format('woff2-variations'); font-weight: 100 900; }
+@font-face { font-family: 'JB Mono'; src: url(fonts/jetbrains-mono-800.woff2) format('woff2'); font-weight: 800; }
+
+:root {
+  --paper: #f3f4f1; --surface: #ffffff; --ink: #1c2329; --muted-2: #4b5560;
+  --accent: #1d3f8f; --red: #a3261b; --tag: #f2c230; --tag-border: #b98e0b; --rule: #c9cdc6; --rule-light: #d5d8d2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: absolute; inset: 0; background: var(--paper); overflow: hidden; }
+#grid { position: absolute; inset: 0; opacity: .55;
+  background-image: linear-gradient(var(--rule-light) 1px, transparent 1px), linear-gradient(90deg, var(--rule-light) 1px, transparent 1px);
+  background-size: 72px 72px; background-position: -1px 34px; }
+
+/* story safe zone: the profile bar covers the top ~250 px, the reply bar the bottom ~340 px */
+#hdr { position: absolute; left: 80px; top: 280px; width: 856px; display: flex; align-items: center; justify-content: space-between; }
+.wm { display: flex; align-items: baseline; gap: 12px; }
+.wm b { font: 900 46px/1 'Archivo'; letter-spacing: -1px; }
+.wm span { font: 700 21px/1 'Public Sans'; letter-spacing: 5px; color: var(--muted-2); }
+.pill { font: 800 23px/1 'Public Sans'; letter-spacing: 2.5px; text-transform: uppercase;
+  background: var(--tag); border: 2px solid var(--tag-border); border-radius: 4px; padding: 12px 16px 11px; white-space: nowrap; }
+#body { position: absolute; left: 80px; top: 400px; width: 856px; height: 1120px; display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+.hl { font: 800 104px/1.0 'Archivo'; font-stretch: 84%; letter-spacing: -1.5px; }
+.ln { font: 600 46px/1.3 'Public Sans'; color: var(--muted-2); }
+.quote { background: var(--surface); border: 2px solid var(--rule); border-left: 16px solid var(--accent); border-radius: 8px;
+  padding: 44px 48px; font: 500 44px/1.38 'Public Sans'; box-shadow: 0 14px 34px rgba(28,35,41,.10); }
+.cite { font: 800 30px/1 'JB Mono'; color: var(--accent); letter-spacing: .5px; }
+.stamp { align-self: flex-start; border: 12px solid var(--red); border-radius: 14px; color: var(--red); padding: 14px 34px 10px;
+  font: 900 120px/1 'Archivo'; letter-spacing: 4px; transform: rotate(-6deg); white-space: nowrap; margin-left: 24px; }
+.row { display: flex; align-items: center; gap: 26px; font: 700 50px/1.15 'Public Sans'; }
+.dot { flex: 0 0 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: #fff; font: 900 40px/1 'Public Sans'; }
+.dot.ok { background: var(--accent); } .dot.no { background: var(--red); }
+.mf { display: flex; flex-direction: column; gap: 18px; }
+.mf .k { font: 800 30px/1 'Public Sans'; letter-spacing: 4px; text-transform: uppercase; }
+.mf .v { font: 800 72px/1.05 'Archivo'; font-stretch: 86%; }
+.mf.myth .k { color: var(--red); } .mf.myth .v { color: var(--muted-2); text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 6px; }
+.mf.fact .k { color: var(--accent); }
+.url { align-self: flex-start; background: var(--accent); color: #fff; border-radius: 999px; padding: 26px 52px; font: 800 52px/1 'Archivo'; }
+#foot { position: absolute; left: 80px; top: 1540px; font: 500 24px/1.2 'Public Sans'; color: var(--muted-2); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="grid"></div>
+  <div id="hdr"><div class="wm"><b>M&amp;Z</b><span>CONSULTING</span></div><div class="pill t" id="pill"></div></div>
+  <div id="body"></div>
+  <div id="foot" class="t">Illustrative example. Not legal advice.</div>
+</div>
+<script>
+/* One story frame. story.py calls story.build(FRAME) and story.qa().
+   Types: promo {tag, headline, stamp?, line} | rule {tag, quote, cite, line?} | check {tag, headline, items:[{name, ok}]}
+          | myth {tag, myth, fact} | cta {tag, headline, line1, line2}
+   Every claim must be copied from a verified reel script (reels/<id>/script.json); story.py checks that. */
+const SAFE = { x0: 80, x1: 936, y0: 260, y1: 1580 };
+const LIMITS = { tag: 18, headline: 44, stamp: 9, line: 80, quote: 240, cite: 30, name: 30, myth: 60, fact: 60, line1: 30, line2: 40 };
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const $ = s => document.querySelector(s);
+const T = {
+  promo: f => `<div class="hl t">${esc(f.headline)}</div>${f.stamp ? `<div class="stamp t">${esc(f.stamp)}</div>` : ''}<div class="ln t">${esc(f.line)}</div>`,
+  rule: f => `<div class="quote t">&ldquo;${esc(f.quote)}&rdquo;</div><div class="cite t">${esc(f.cite)}</div>${f.line ? `<div class="ln t">${esc(f.line)}</div>` : ''}`,
+  check: f => `<div class="hl t" style="font-size:88px">${esc(f.headline)}</div>` +
+    f.items.map(r => `<div class="row t"><div class="dot ${r.ok ? 'ok' : 'no'}">${r.ok ? '&#10003;' : '&#10005;'}</div><div>${esc(r.name)}</div></div>`).join(''),
+  myth: f => `<div class="mf myth"><div class="k">Myth</div><div class="v t">${esc(f.myth)}</div></div><div class="mf fact"><div class="k">Fact</div><div class="v t">${esc(f.fact)}</div></div>`,
+  cta: f => `<div class="hl t">${esc(f.headline)}</div><div class="ln t" style="font-size:58px;color:var(--ink);font-weight:800">${esc(f.line1)}</div><div class="ln t">${esc(f.line2)}</div><div class="url t">mzconsulting.agency</div>`,
+};
+window.story = {
+  ready: document.fonts.ready,
+  validate(f) {
+    const errs = [];
+    if (!T[f.type]) return [`type must be one of ${Object.keys(T).join(', ')}`];
+    for (const [k, max] of Object.entries(LIMITS)) if (f[k] != null && String(f[k]).length > max) errs.push(`${k} is ${String(f[k]).length} chars (max ${max})`);
+    (f.items || []).forEach((r, i) => { if (String(r.name).length > LIMITS.name) errs.push(`item ${i + 1} is over ${LIMITS.name} chars`); });
+    if (f.type === 'check' && !((f.items || []).length >= 2 && f.items.length <= 4)) errs.push('check needs 2-4 items');
+    return errs;
+  },
+  async build(f) {
+    $('#pill').textContent = f.tag || '';
+    $('#body').innerHTML = T[f.type](f);
+    await document.fonts.ready;
+    document.querySelectorAll('.hl').forEach(el => {          // shrink headlines to <= 3 lines
+      let fs = parseFloat(getComputedStyle(el).fontSize);
+      while (el.getBoundingClientRect().height > fs * 1.0 * 3 + 2 && fs > 64) { fs -= 2; el.style.fontSize = fs + 'px'; }
+    });
+    return true;
+  },
+  qa() {
+    const issues = [];
+    const b = $('#body');
+    if (b.scrollHeight > b.clientHeight + 1) issues.push('content taller than the story body');
+    document.querySelectorAll('.t').forEach(n => {
+      const r = n.getBoundingClientRect(), txt = n.textContent.trim().slice(0, 40);
+      if (!txt) return;
+      if (r.left < SAFE.x0 - .5 || r.right > SAFE.x1 + .5 || r.top < SAFE.y0 - .5 || r.bottom > SAFE.y1 + .5)
+        issues.push(`"${txt}" outside safe zone [${Math.round(r.left)},${Math.round(r.top)} - ${Math.round(r.right)},${Math.round(r.bottom)}]`);
+      if (n.scrollWidth > n.clientWidth + 1) issues.push(`"${txt}" overflows its box`);
+    });
+    return issues;
+  },
+};
+</script>
+</body>
+</html>

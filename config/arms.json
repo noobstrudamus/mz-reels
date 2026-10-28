@@ -26,9 +26,16 @@
       "comment": "Use the COMMENT set: viewers comment the keyword and get the link by DM (per-reel tracked)."
     },
     "slot": {
+      "0847": "08:47 America/New_York",
       "0947": "09:47 America/New_York",
+      "1047": "10:47 America/New_York",
       "1147": "11:47 America/New_York",
-      "1547": "15:47 America/New_York"
+      "1247": "12:47 America/New_York",
+      "1347": "13:47 America/New_York",
+      "1447": "14:47 America/New_York",
+      "1547": "15:47 America/New_York",
+      "1647": "16:47 America/New_York",
+      "1747": "17:47 America/New_York"
     }
   },
   "calendar": {

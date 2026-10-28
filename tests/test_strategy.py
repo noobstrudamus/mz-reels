@@ -21,7 +21,8 @@ SETTINGS = {"timezone": "America/New_York", "site": "https://mzconsulting.agency
             "finder_url": "https://mzconsulting.agency/cpsc-compliance-finder"}
 CFG = strategy.load_cfg()                         # real factors and calendar; learning pinned below
 LEARNING = {"half_life_days": 21, "min_explore": 0.2, "winner_prob": 0.8, "winner_min_n": 4, "min_age_hours": 48}
-HOOKS, SLOTS = list(CFG["factors"]["hook"])[:4], list(CFG["factors"]["slot"])   # fixtures rotate these 4 hooks
+HOOKS = list(CFG["factors"]["hook"])[:4]          # fixtures rotate these 4 hooks
+SLOTS = ["0947", "1147", "1547"]                   # ... and these 3 slots
 D = date(2026, 10, 21)                            # Wednesday
 
 
@@ -29,6 +30,7 @@ def cfg(**learning):
     c = copy.deepcopy(CFG)
     c["learning"] = {**LEARNING, **learning}
     c["factors"]["hook"] = {h: c["factors"]["hook"][h] for h in HOOKS}   # arms with no fixture data would block winners
+    c["factors"]["slot"] = {x: c["factors"]["slot"][x] for x in SLOTS}
     return c
 
 
@@ -374,3 +376,37 @@ class SkipRateTest(Base):
         r = self.by_id(D)[a]
         self.assertAlmostEqual(r["proxy"], 0.20 * 0.75 / 0.65)                      # saved/shares/watch 0, skip .75
         self.assertEqual(r["arms"]["opener"], "classic")
+
+
+class MultiReelTest(Base):
+    def test_ten_reels_rotate_pillars_with_unique_ids_srcs_and_slots(self):
+        st = {**SETTINGS, "reels_per_day": 10}
+        with mock.patch.object(ig, "settings", lambda: dict(st)):
+            plans = strategy.plan_day(D, cfg())
+        self.assertEqual(len(plans), 10)
+        self.assertEqual(len({p["id"] for p in plans}), 10)
+        self.assertEqual(len({p["slot_local"] for p in plans}), 10)
+        self.assertEqual(plans[0]["id"], "20261021_gap_01")                         # Wed calendar first
+        self.assertEqual([p["pillar"] for p in plans[:7]],
+                         ["gap", "deadline", "myth", "finder", "cost", "blocked", "finder"])
+        srcs = [p["src"] for p in plans]
+        self.assertFalse(any(a != b and b.startswith(a + "_") for a in srcs for b in srcs))   # no cross-credit
+        self.assertEqual(len([r for r in ig.read_jsonl("decisions.jsonl") if r.get("k") is not None]), 10)
+        with mock.patch.object(ig, "settings", lambda: dict(st)):
+            self.assertEqual(strategy.plan_day(D, cfg()), plans)                     # idempotent per (date, k)
+
+    def test_brake_halves_the_count_when_reach_per_reel_collapses(self):
+        for k in range(5, 12):
+            reel(D - timedelta(days=k), cyc(k), reach=1000, snap_age_h=20)
+        for k in range(2, 5):
+            reel(D - timedelta(days=k), cyc(k), reach=100, snap_age_h=20)
+        reel(D - timedelta(days=1), cyc(1), reach=5, snap_age_h=5)                 # too young to count
+        with mock.patch.object(ig, "settings", lambda: {**SETTINGS, "reels_per_day": 10}):
+            n, note = strategy.daily_count(D)
+        self.assertEqual(n, 5)
+        self.assertIn("10 -> 5", note)
+
+    def test_single_reel_days_are_unchanged(self):
+        (p,) = strategy.plan_day(D, cfg())
+        self.assertEqual(p["id"], "20261021_gap")
+        self.assertIsNone(p["k"])

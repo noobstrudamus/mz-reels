@@ -12,5 +12,28 @@
   "comment_reply": "Sent you a DM 👋",
   "dm_lookback_days": 7,
   "container_max_age_hours": 23,
-  "metrics_window_days": 30
+  "metrics_window_days": 30,
+  "reels_per_day": 10,
+  "stories_per_day": 5,
+  "max_posts_per_day": 10,
+  "max_stories_per_day": 5,
+  "slots": [
+    "0847",
+    "0947",
+    "1047",
+    "1147",
+    "1247",
+    "1347",
+    "1447",
+    "1547",
+    "1647",
+    "1747"
+  ],
+  "story_slots": [
+    "0917",
+    "1117",
+    "1317",
+    "1517",
+    "1717"
+  ]
 }

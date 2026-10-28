@@ -1,6 +1,7 @@
 """Publish M&Z reels to Instagram with the resumable (rupload) Reels flow. No public video URL needed.
 
   python3 ops/publish.py prepare --reel 20261021_gap --video engine/reel_final.mp4 --slot 1147 [--live]
+  python3 ops/publish.py prepare --story stories/20261028_story_01 --video engine/story_final.mp4 --slot 1017 [--live]
   python3 ops/publish.py run-due [--live]
   python3 ops/publish.py status [--check]
 
@@ -22,6 +23,12 @@ run-due  steps 4-6 for pending items whose slot_utc <= now. Expired instead of p
          pin the first comment by hand in the app. A container found PUBLISHED while the queue still
          says pending (a lost run or a lost commit) is recovered, never published or commented twice.
 status   the queue and the last posts; --check also checks the token and the quota (read-only GETs).
+
+STORIES (--story <dir>): the same flow with media_type=STORIES (resumable video upload, no caption, no first
+comment; the API cannot add stickers). The dir holds script.json (frames text + sources: a story may only
+repeat claims already verified for a reel) and meta.json (id, date, slot). Queue items carry kind=story; they
+count against settings.max_stories_per_day (default 5), not max_posts_per_day, and are logged to
+data/stories.jsonl instead of posts.jsonl, so comment_dm, metrics and the strategy learner only see reels.
 
 Without --live, or while config/settings.json auto_publish is false or MZ_KILL is set, every write is
 a dry run (see ig.py) and nothing in data/ changes. Exit codes: 0 ok, 1 refused/failed/needs a look
@@ -119,7 +126,10 @@ def save_queue(q):
 
 def load_reel(reel):
     """-> (dir, script, meta, warnings). meta falls back to the folder name (YYYYMMDD_pillar)."""
-    d = (Path(reel) if Path(reel).is_dir() else ig.ROOT / "reels" / Path(reel).name).resolve()
+    d = Path(reel) if Path(reel).is_dir() else next(
+        (ig.ROOT / sub / Path(reel).name for sub in ("reels", "stories") if (ig.ROOT / sub / Path(reel).name).is_dir()),
+        ig.ROOT / "reels" / Path(reel).name)
+    d = d.resolve()
     if not (d / "script.json").exists():
         raise SystemExit(f"no script.json in {d}")
     script = json.loads((d / "script.json").read_text(encoding="utf-8"))
@@ -149,6 +159,32 @@ def reel_day(meta):
         return date.fromisoformat(meta.get("date") or "")
     except ValueError:
         return None
+
+
+def check_story(script, meta, video, today):
+    """-> (hard, soft, warnings) for a story: sources, date and the video; no caption rules."""
+    hard, warns = [], []
+    if not script.get("sources"):
+        hard.append("no sources: a story repeats verified claims and lists their sources")
+    day = reel_day(meta)
+    if not day:
+        hard.append("meta.json needs id and date (YYYY-MM-DD)")
+    elif day < today:
+        warns.append(f"story date {day} is before today ({today}) in New York: it is scheduled for today")
+    v = Path(video)
+    if not v.is_file() or v.stat().st_size == 0:
+        hard.append(f"video {video} is missing or empty")
+    elif v.stat().st_size > VIDEO_MAX_BYTES:
+        hard.append(f"video is {v.stat().st_size / 2**20:.0f} MB (max 300 MB)")
+    return hard, [], warns
+
+
+def kind_of(it):
+    return it.get("kind") or "reel"
+
+
+def log_file(kind):
+    return "stories.jsonl" if kind == "story" else "posts.jsonl"
 
 
 def check_reel(script, meta, video, today):
@@ -211,7 +247,7 @@ def quota(client):
 
 
 def create_container(client, rid, params, out):
-    what = f"create REELS container for {rid}"
+    what = f"create {params.get('media_type', 'REELS')} container for {rid}"
     try:
         return client.post(f"{client.ig_id}/media", what=what, params=params)
     except ig.TokenExpired:
@@ -226,16 +262,16 @@ def create_container(client, rid, params, out):
 
 # ---------- prepare: steps 1-3 ----------
 def prepare(client, reel, video, slot=None, thumb_offset=None, now=None, force=False,
-            sleep=time.sleep, out=print):
+            sleep=time.sleep, out=print, kind="reel"):
     now = now or utcnow()
     rdir, script, meta, warns = load_reel(reel)
-    slot_local = parse_slot(slot or meta["arms"].get("slot"))
+    slot_local = parse_slot(slot or meta.get("slot") or meta["arms"].get("slot"))
     today = ny_day(now)
-    hard, soft, more = check_reel(script, meta, video, today)
+    hard, soft, more = (check_story if kind == "story" else check_reel)(script, meta, video, today)
     warns += more
     rid, q = meta["id"], load_queue()
     if any(it["id"] == rid and it["status"] in ("pending", "published") for it in q) \
-            or any(p.get("id") == rid for p in ig.read_jsonl("posts.jsonl")):
+            or any(p.get("id") == rid for p in ig.read_jsonl(log_file(kind))):
         hard.append(f"{rid} is already queued or published")
     due = slot_utc(slot_local, now, max(today, reel_day(meta) or today))
     max_age = float(ig.settings().get("container_max_age_hours", 23))
@@ -254,8 +290,9 @@ def prepare(client, reel, video, slot=None, thumb_offset=None, now=None, force=F
         if now > datetime.combine(now.astimezone(UTC).date(), LAST_RUN_UTC, tzinfo=UTC) or ny_day(now) != now.astimezone(UTC).date():
             out("WARN  no publish run (publish.yml) is left today in New York: run `run-due --live` by hand now, "
                 "or the item expires at midnight ET")
-    item = {"id": rid, "container_id": None, "slot_local": slot_local, "slot_utc": iso(due),
-            "caption": script["caption"].strip(), "first_comment": (script.get("pinned_comment") or "").strip(),
+    item = {"id": rid, "kind": kind, "container_id": None, "slot_local": slot_local, "slot_utc": iso(due),
+            "caption": (script.get("caption") or "").strip() if kind == "reel" else "",
+            "first_comment": (script.get("pinned_comment") or "").strip() if kind == "reel" else "",
             "created_at": iso(now), "status": "pending",
             "reel": str(rdir.relative_to(ig.ROOT)) if rdir.is_relative_to(ig.ROOT) else str(rdir),
             "date": meta.get("date"), "pillar": meta.get("pillar"), "cta": meta.get("cta"),
@@ -265,7 +302,9 @@ def prepare(client, reel, video, slot=None, thumb_offset=None, now=None, force=F
 
     params = {"media_type": "REELS", "upload_type": "resumable", "caption": item["caption"],
               "share_to_feed": "true"}
-    if thumb_offset is not None:
+    if kind == "story":
+        params = {"media_type": "STORIES", "upload_type": "resumable"}
+    if thumb_offset is not None and kind == "reel":
         params["thumb_offset"] = int(thumb_offset)
     r = create_container(client, rid, params, out)
     body = Path(video).read_bytes()
@@ -310,11 +349,12 @@ def due_items(q, now):
     return [it for it in q if it.get("status") == "pending" and parse_iso(it["slot_utc"]) <= now]
 
 
-def posted_on(day, posts, q=()):
-    """Posts published on New York `day`: posts.jsonl plus published queue items missing from it
-    (e.g. a recovered post whose media could not be found)."""
+def posted_on(day, posts, q=(), kind="reel"):
+    """Items of `kind` published on New York `day`: its log (posts.jsonl / stories.jsonl) plus published queue
+    items of that kind missing from it (e.g. a recovered post whose media could not be found)."""
     known = {p.get("id") for p in posts}
-    recs = list(posts) + [it for it in q if it.get("status") == "published" and it.get("id") not in known]
+    recs = list(posts) + [it for it in q if it.get("status") == "published" and kind_of(it) == kind
+                          and it.get("id") not in known]
     return [p for p in recs if p.get("published_at") and ny_day(parse_iso(p["published_at"])) == day]
 
 
@@ -323,7 +363,8 @@ def run_due(client, now=None, dry=None, out=print):
     now = now or utcnow()
     dry = (not client.live) if dry is None else dry
     s, q, today = ig.settings(), load_queue(), ny_day(now)
-    max_age, per_day = float(s.get("container_max_age_hours", 23)), int(s.get("max_posts_per_day", 1))
+    max_age = float(s.get("container_max_age_hours", 23))
+    limit = {"reel": int(s.get("max_posts_per_day", 1)), "story": int(s.get("max_stories_per_day", 5))}
     rc = 0
 
     def close(it, status, error):
@@ -366,13 +407,15 @@ def run_due(client, now=None, dry=None, out=print):
         if code != "FINISHED":
             out(f"WAIT    {rid}: container {cid} is {code}; trying again next run")
             continue
-        posts = ig.read_jsonl("posts.jsonl")
+        kind = kind_of(it)
+        posts = ig.read_jsonl(log_file(kind))
         if any(p.get("id") == rid for p in posts):
-            close(it, "failed", f"{rid} is already in posts.jsonl; not publishing it twice")
+            close(it, "failed", f"{rid} is already in {log_file(kind)}; not publishing it twice")
             rc = 1
             continue
-        if len(posted_on(today, posts, q)) >= per_day:
-            out(f"HOLD    {rid}: already {per_day} post(s) today in New York (max_posts_per_day); left pending")
+        if len(posted_on(today, posts, q, kind)) >= limit[kind]:
+            out(f"HOLD    {rid}: already {limit[kind]} {kind}(s) today in New York "
+                f"({'max_stories_per_day' if kind == 'story' else 'max_posts_per_day'}); left pending")
             continue
         try:
             used, total = quota(client)
@@ -432,12 +475,18 @@ def publish_one(client, q, it, now, out):
 def finish(client, q, it, out, recovered=False):
     """Steps 5-6: permalink, posts.jsonl, first comment (not pinnable through the API). False if the
     first comment could not be posted."""
-    media_id, ok = it["media_id"], True
+    media_id, ok, kind = it["media_id"], True, kind_of(it)
     try:
         permalink = client.get(media_id, fields="permalink").get("permalink")
     except (ig.GraphError, OSError) as e:
         permalink = None
         out(f"WARN    {it['id']}: could not read the permalink: {e}")
+    if kind == "story":
+        if not any(p.get("media_id") == media_id for p in ig.read_jsonl("stories.jsonl")):
+            ig.append_jsonl("stories.jsonl", {"id": it["id"], "date": it.get("date"), "media_id": media_id,
+                                              "permalink": permalink, "published_at": it["published_at"]})
+        out(f"PUBLISHED story {it['id']} -> {permalink or media_id}")
+        return ok
     if not any(p.get("media_id") == media_id for p in ig.read_jsonl("posts.jsonl")):
         ig.append_jsonl("posts.jsonl", {
             "id": it["id"], "date": it.get("date"), "pillar": it.get("pillar"), "cta": it.get("cta"),
@@ -467,9 +516,15 @@ def recover(client, q, it, now, dry, out):
     """The container is PUBLISHED but the queue says pending (an earlier run's data never got committed).
     Finds the media among the last 10 by caption, posted no earlier than the container was created."""
     head, since = it["caption"].strip()[:60], parse_iso(it["created_at"])
-    hit = next((m for m in client.paginate(f"{client.ig_id}/media", limit=10, fields="id,caption,permalink,timestamp")
-                if (m.get("caption") or "").strip()[:60] == head
-                and (not m.get("timestamp") or parse_iso(m["timestamp"]) >= since)), None)
+    if kind_of(it) == "story":     # stories have no caption: the newest live story posted after the container
+        taken = {p.get("media_id") for p in ig.read_jsonl("stories.jsonl")}
+        cands = [m for m in client.paginate(f"{client.ig_id}/stories", limit=25, fields="id,permalink,timestamp")
+                 if m.get("id") not in taken and m.get("timestamp") and parse_iso(m["timestamp"]) >= since]
+        hit = min(cands, key=lambda m: m["timestamp"]) if cands else None
+    else:
+        hit = next((m for m in client.paginate(f"{client.ig_id}/media", limit=10, fields="id,caption,permalink,timestamp")
+                    if (m.get("caption") or "").strip()[:60] == head
+                    and (not m.get("timestamp") or parse_iso(m["timestamp"]) >= since)), None)
     out(f"RECOVER {it['id']}: container already PUBLISHED; media {hit['id'] if hit else 'not found in the last 10 posts'}")
     if dry:
         return True
@@ -517,7 +572,9 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("prepare", help="create + upload the container and queue it (steps 1-3)")
-    p.add_argument("--reel", required=True, help="reel dir under reels/, e.g. 20261021_gap")
+    g = p.add_mutually_exclusive_group(required=True)
+    g.add_argument("--reel", help="reel dir under reels/, e.g. 20261021_gap")
+    g.add_argument("--story", help="story dir, e.g. stories/20261028_story_01")
     p.add_argument("--video", required=True, help="final mp4")
     p.add_argument("--slot", help="HHMM New York time; default meta.json arms.slot")
     p.add_argument("--thumb-offset", type=int, help="cover frame in ms")
@@ -532,7 +589,8 @@ def main(argv=None):
         if a.cmd == "prepare":
             client = ig.IG(live=a.live)
             banner(client, a.live)
-            return prepare(client, a.reel, a.video, a.slot, a.thumb_offset, force=a.force)
+            return prepare(client, a.reel or a.story, a.video, a.slot, a.thumb_offset, force=a.force,
+                           kind="story" if a.story else "reel")
         if a.cmd == "run-due":
             if not due_items(load_queue(), utcnow()):
                 print("run-due: nothing due")

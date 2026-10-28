@@ -50,6 +50,12 @@ the CTA's own word (FINDER) on comment-arm reels, and links by the cta, so today
 day cannot be, cta_mode is restricted to playbook (decision field "blocked"), so the comment arm is not scored as
 failing.
 
+MULTI-REEL DAYS (settings.reels_per_day > 1, `plan --all`): reel k (0-based) follows the calendar of day d+k,
+so ten reels rotate through all seven pillars and their CTAs; its id is <YYYYMMDD>_<pillar>_<NN> (NN = k+1),
+which keeps every src unique. Each reel draws its own arms (seed salted with k) from the same posterior,
+except the slot: the day's n slots (settings.slots) are dealt out in a seeded random order. A decision is
+logged per (date, k). daily_count() halves the count (floor 2) when reach per reel collapses (BRAKE_*).
+
 DATA HYGIENE: all files are read with leads.rows (a malformed line is skipped with a warning); rows with an
 unparseable date/timestamp are ignored; counts that are not numbers count 0; a snapshot without age_h gets
 its age from the reel's published_at, and a post without date gets the New York day of published_at.
@@ -83,6 +89,9 @@ PROXY = [("profile_visits", 0.25, 10.0), ("saved", 0.15, 10.0), ("shares", 0.15,
 NOMINAL_LEN_S = {"short": 19.0, "long": 23.0}
 PRIOR_N, SIGMA0, SIGMA0_N = 1.0, 0.5, 2.0
 MC_DRAWS = 20000
+BRAKE_RECENT, BRAKE_BASE, BRAKE_MIN, BRAKE_RATIO, BRAKE_FLOOR = 3, 7, 3, 0.5, 2
+BRAKE_AGE_H = (12, 48)            # day-one reach window
+DEFAULT_SLOTS = ["0847", "0947", "1047", "1147", "1247", "1347", "1447", "1547", "1647", "1747"]
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 FAMILIES = ["toy", "childrens_product", "battery_product", "apparel", "furniture", "electrical"]
 KEYWORD = {"gaplist": "M&Z", "finder": "M&Z"}
@@ -283,35 +292,44 @@ def analyze(d, cfg):
 
 
 def blocked_arms(d, cfg, st=None):
-    """{factor: {arm: reason}} for arms that cannot be served on day d (see CALENDAR in the docstring)."""
+    """{factor: {arm: reason}} for arms that cannot be served on (calendar) day d (see CALENDAR in the docstring)."""
     reason = comment_block_reason(d, cfg, st)
     if reason and "comment" in cfg["factors"].get("cta_mode", {}) and "playbook" in cfg["factors"]["cta_mode"]:
         return {"cta_mode": {"comment": reason}}
     return {}
 
 
-def choose(d, cfg):
-    """-> decision record {date, id, pillar, cta, arms, probs, winners, explore, explore_factor, n_obs, blocked}."""
-    a, blocked = analyze(d, cfg), blocked_arms(d, cfg)
+def choose(d, cfg, k=None, slot=None, a=None):
+    """-> decision record {date, id, pillar, cta, arms, probs, winners, explore, explore_factor, n_obs, blocked}.
+    k: index of the reel in a multi-reel day (None = the single daily reel). Each k draws its own arms
+    (different seeds), uses the calendar of day d+k (pillar rotation) and the given slot."""
+    salt = () if k is None else (1000 + k,)
+    a = a or analyze(d, cfg)
+    blocked = blocked_arms(cal_day(d, k), cfg)
     pick, allowed = {}, {f: [x for x in arms if x not in blocked.get(f, {})] for f, arms in cfg["factors"].items()}
     for i, (f, arms) in enumerate(a["post"].items()):
         if a["winners"][f] in allowed[f]:
             pick[f] = a["winners"][f]
             continue
         names = allowed[f]
-        draw = rng(d, i, 1).normal([arms[x]["mean"] for x in names], [arms[x]["sd"] for x in names])
+        draw = rng(d, i, 1, *salt).normal([arms[x]["mean"] for x in names], [arms[x]["sd"] for x in names])
         pick[f] = names[int(np.argmax(draw))]
-    g, explore, factor = rng(d, 99), False, None
+    g, explore, factor = rng(d, 99, *salt), False, None
     if g.random() < cfg["learning"]["min_explore"]:
-        cands = [f for f in pick if len(allowed[f]) > 1]
+        cands = [f for f in pick if len(allowed[f]) > 1 and not (slot and f == "slot")]
         if cands:
             factor = cands[int(g.integers(len(cands)))]
             others = [x for x in allowed[factor] if x != pick[factor]]
             pick[factor], explore = others[int(g.integers(len(others)))], True
-    plan = build_plan(d, pick, cfg)
-    return {"date": d.isoformat(), "id": plan["id"], "pillar": plan["pillar"], "cta": plan["cta"], "arms": pick,
-            "probs": a["probs"], "winners": a["winners"], "explore": explore, "explore_factor": factor,
-            "n_obs": a["stats"]["n"], "blocked": blocked}
+    if slot:
+        pick["slot"] = slot_key(slot)
+    plan = build_plan(d, pick, cfg, k)
+    rec = {"date": d.isoformat(), "id": plan["id"], "pillar": plan["pillar"], "cta": plan["cta"], "arms": pick,
+           "probs": a["probs"], "winners": a["winners"], "explore": explore, "explore_factor": factor,
+           "n_obs": a["stats"]["n"], "blocked": blocked}
+    if k is not None:
+        rec["k"] = k
+    return rec
 
 
 # ---------- plan ----------
@@ -340,17 +358,26 @@ def comment_block_reason(d, cfg, st=None):
     return None
 
 
-def build_plan(d, arms, cfg):
-    """The full plan for day d with the chosen arms (pure: no data, no randomness)."""
+def cal_day(d, k=None):
+    """The calendar day reel k of day d follows: multi-reel days rotate through the week's pillars."""
+    return d if not k else d + timedelta(days=k)
+
+
+def build_plan(d, arms, cfg, k=None):
+    """The full plan for day d with the chosen arms (pure: no data, no randomness). k: reel index on a
+    multi-reel day; its pillar/CTA/family follow the calendar of day d+k and its id gets a _NN suffix
+    (unique src, so leads never cross-credit two reels of one day)."""
     st = ig.settings()
-    cal = cfg["calendar"][WEEKDAYS[d.weekday()]]
+    cd = cal_day(d, k)
+    cal = cfg["calendar"][WEEKDAYS[cd.weekday()]]
     pillar, default = cal["pillar"], cal["cta"]
     base = "finder" if default == "finder_or_gaplist" else default
     mode = arms.get("cta_mode", "playbook")
     cta = base if mode == "playbook" else f"comment_{base}"
-    rid = f"{d:%Y%m%d}_{pillar}"
+    rid = f"{d:%Y%m%d}_{pillar}" + ("" if k is None else f"_{k + 1:02d}")
     src = leads.src_for(rid)
-    family = FAMILIES[((d.toordinal() - 1) // 7 * 2 + (d.weekday() == 5)) % len(FAMILIES)] if pillar == "finder" else None
+    family = FAMILIES[((cd.toordinal() - 1) // 7 * 2 + (cd.weekday() == 5) + 3 * ((k or 0) // 7)) % len(FAMILIES)] \
+        if pillar == "finder" else None
     slot = slot_key(arms.get("slot", "1147"))
     at = datetime.combine(d, time(int(slot[:2]), int(slot[2:])), leads.tz())
     f = cfg["factors"]
@@ -360,12 +387,12 @@ def build_plan(d, arms, cfg):
                      "(CPSC); for an FCC change use gaplist and the gap-list link with the same src.")
     if family:
         notes.append(f"Finder demo family '{family}' is a rotation suggestion; another family is fine, keep the src.")
-    if mode == "comment" and comment_block_reason(d, cfg, st):
-        notes.append(f"WARNING: do not use the comment CTA today: {comment_block_reason(d, cfg, st)}.")
+    if mode == "comment" and comment_block_reason(cd, cfg, st):
+        notes.append(f"WARNING: do not use the comment CTA today: {comment_block_reason(cd, cfg, st)}.")
     if mode == "comment":
         notes.append(f"Comment arm: the {cta} set (engine CTA_SETS) is outside the playbook's two CTA sets; the "
                      f"pinned comment and the last voice line say 'comment {KEYWORD[base]}'.")
-    plan = {"date": d.isoformat(), "weekday": WEEKDAYS[d.weekday()], "id": rid, "pillar": pillar, "cta": cta,
+    plan = {"date": d.isoformat(), "weekday": WEEKDAYS[d.weekday()], "id": rid, "k": k, "pillar": pillar, "cta": cta,
             "cta_default": default, "cta_mode": mode, "arms": dict(arms),
             "voice_name": f["voice"].get(arms.get("voice"), f["voice"].get("andrew")),
             "length_rule": f["length"].get(arms.get("length")), "hook_rule": f["hook"].get(arms.get("hook")),
@@ -378,18 +405,78 @@ def build_plan(d, arms, cfg):
     return plan
 
 
-def plan(d, cfg=None, save=True):
-    """Idempotent: an existing decision for d is returned as is (rebuilt into a plan)."""
+def plan(d, cfg=None, save=True, k=None, slot=None, a=None):
+    """Idempotent: an existing decision for (d, k) is returned as is (rebuilt into a plan)."""
     cfg = cfg or load_cfg()
     rec = next((r for r in leads.rows("decisions.jsonl")
-                if r.get("date") == d.isoformat() and isinstance(r.get("arms"), dict)), None)
+                if r.get("date") == d.isoformat() and r.get("k") == k and isinstance(r.get("arms"), dict)), None)
     if rec is None:
-        rec = choose(d, cfg)
+        rec = choose(d, cfg, k, slot, a)
         if save:
             ig.append_jsonl("decisions.jsonl", rec)
-    out = build_plan(d, rec["arms"], cfg)
-    out.update({k: rec.get(k) for k in ("explore", "explore_factor", "winners", "probs", "n_obs", "blocked")})
+    out = build_plan(d, rec["arms"], cfg, k)
+    out.update({x: rec.get(x) for x in ("explore", "explore_factor", "winners", "probs", "n_obs", "blocked")})
     return out
+
+
+# ---------- multi-reel days ----------
+def reach_by_day(as_of):
+    """{New York day: [day-one reach of each reel published that day]}: per reel the earliest snapshot taken by
+    as_of at an age of BRAKE_AGE_H hours, so reels of different ages are compared at the same age."""
+    ps, first = posts(as_of), {}
+    for r in leads.rows("metrics.jsonl"):
+        t, rid, age, reach = to_dt(r.get("taken_at")), str(r.get("id")), r.get("age_h"), r.get("reach")
+        if (r.get("kind") != "media" or rid not in ps or not t or t > as_of or not isinstance(age, (int, float))
+                or not BRAKE_AGE_H[0] <= age <= BRAKE_AGE_H[1] or not isinstance(reach, (int, float))
+                or isinstance(reach, bool)):
+            continue
+        if rid not in first or age < first[rid][0]:
+            first[rid] = (age, reach)
+    out = defaultdict(list)
+    for rid, (_, reach) in first.items():
+        out[date.fromisoformat(ps[rid]["date"])].append(reach)
+    return out
+
+
+def daily_count(d, st=None):
+    """-> (reels to make on day d, brake note or None). settings.reels_per_day (default 1). BRAKE: when the
+    median day-one reach per reel of the last BRAKE_RECENT days falls below BRAKE_RATIO x the median of the
+    BRAKE_BASE days before (both with >= BRAKE_MIN reels), the count is halved (never below BRAKE_FLOOR):
+    more reels that each reach fewer people is cannibalisation, not growth."""
+    st = st if st is not None else ig.settings()
+    n = max(1, int(st.get("reels_per_day", 1)))
+    if n <= BRAKE_FLOOR:
+        return n, None
+    by = reach_by_day(day_start(d))
+    # yesterday's reels have no day-one snapshot yet at 00:00, so the recent window starts two days back
+    recent = [r for i in range(2, BRAKE_RECENT + 2) for r in by.get(d - timedelta(days=i), [])]
+    base = [r for i in range(BRAKE_RECENT + 2, BRAKE_RECENT + BRAKE_BASE + 2) for r in by.get(d - timedelta(days=i), [])]
+    if len(recent) >= BRAKE_MIN and len(base) >= BRAKE_MIN:
+        mr, mb = float(np.median(recent)), float(np.median(base))
+        if mb > 0 and mr < BRAKE_RATIO * mb:
+            return max(BRAKE_FLOOR, n // 2), (f"reach per reel fell to {mr:.0f} (median day-one reach, {BRAKE_RECENT} days before yesterday) "
+                                              f"from {mb:.0f}: {n} -> {max(BRAKE_FLOOR, n // 2)} reels today")
+    return n, None
+
+
+def day_slots(d, n, st=None):
+    """n distinct posting slots for day d: settings.slots (HHMM, New York), the first n of them, assigned to
+    reels 0..n-1 in a seeded random order so that hour and reel position are not confounded."""
+    st = st if st is not None else ig.settings()
+    slots = sorted(slot_key(x) for x in (st.get("slots") or DEFAULT_SLOTS))[:n]
+    if len(slots) < n:
+        raise SystemExit(f"settings.slots has {len(slots)} slots, {n} reels need {n}")
+    return [slots[i] for i in rng(d, 777).permutation(n)]
+
+
+def plan_day(d, cfg=None, save=True):
+    """All of day d's reel plans. One reel a day keeps the original single plan (id without suffix)."""
+    cfg = cfg or load_cfg()
+    n, brake = daily_count(d)
+    if n == 1:
+        return [{**plan(d, cfg, save), "brake": brake}]
+    a, slots = analyze(d, cfg), day_slots(d, n)
+    return [{**plan(d, cfg, save, k=k, slot=slots[k], a=a), "brake": brake} for k in range(n)]
 
 
 # ---------- status ----------
@@ -546,13 +633,16 @@ def main(argv=None):
     p = sub.add_parser("plan", help="today's plan as JSON (logged once per date in data/decisions.jsonl)")
     p.add_argument("--date", type=_date, help="New York date, default today")
     p.add_argument("--no-save", action="store_true", help="do not append data/decisions.jsonl")
+    p.add_argument("--all", action="store_true", help="every reel of the day (settings.reels_per_day) as a JSON list")
     s = sub.add_parser("status", help="per-factor posterior, P(best) and winners")
     s.add_argument("--date", type=_date, help="evaluate as of 00:00 New York on this date, default today")
     r = sub.add_parser("report", help="weekly markdown report (also written to reports/<date>.md)")
     r.add_argument("--week-ending", type=_date, help="last day of the week, default the latest Sunday")
     a = ap.parse_args(argv)
     if a.cmd == "plan":
-        print(json.dumps(plan(a.date or today(), save=not a.no_save), indent=1, ensure_ascii=False))
+        d = a.date or today()
+        out = plan_day(d, save=not a.no_save) if a.all else plan(d, save=not a.no_save)
+        print(json.dumps(out, indent=1, ensure_ascii=False))
     elif a.cmd == "status":
         status(a.date or today())
     else:
