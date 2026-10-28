@@ -1,0 +1,99 @@
+{
+ "topic": "The retailer won't set the item, and the launch date keeps slipping.",
+ "hook_formula": "#13 consequence / cost",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 2.8,
+   "headline": "Retailer asked for the cert?",
+   "note": "Say a retailer holds KID-24-BLUE until it gets the cert.",
+   "stamp": "BLOCKED",
+   "doc": "Retailer setup"
+  },
+  {
+   "type": "compare",
+   "dur": 3.3,
+   "headline": "Who sends the certificate?",
+   "note": "The certifier furnishes it to each retailer.",
+   "left": {
+    "label": "Seller sent",
+    "value": "Lab report"
+   },
+   "right": {
+    "label": "Rule says",
+    "value": "Certificate"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.5,
+   "headline": "Retailers get a copy",
+   "note": "16 CFR 1110.13(b): to each distributor or retailer.",
+   "bad": {
+    "label": "Lab report"
+   },
+   "good": {
+    "label": "Certificate"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.4,
+   "headline": "What the retailer asked for",
+   "note": "Say the seller sent a lab report instead.",
+   "items": [
+    {
+     "name": "Lab report",
+     "value": "sent",
+     "ok": true
+    },
+    {
+     "name": "Certificate",
+     "value": "not sent",
+     "ok": false
+    },
+    {
+     "name": "Certifier named",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 5.1,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Retailer won't set it. Launch slips.",
+  "The certifier furnishes the certificate to each retailer.",
+  "A lab report isn't that certificate, even if it passed.",
+  "Say you sent the report, not the cert. That's the gap.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "The retailer won't set the item, and the launch date keeps slipping.\nUnder 16 CFR 1110.13(b), the certifier must furnish the finished product certificate to each distributor or retailer.\nA lab report supports a certificate. It doesn't replace it, and it doesn't name a certifier.\nSend the retailer the CPSC certificate itself, with every applicable rule listed.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261028_blocked_06#contact",
+ "search_keywords": "CPSC certificate,retailer",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Certificate furnished to each distributor or retailer",
+   "section": "16 CFR 1110.13(b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "A finished product certifier must furnish the required finished product certificate to each distributor or retailer of the finished product."
+  },
+  {
+   "id": "S2",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}
