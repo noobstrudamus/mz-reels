@@ -364,7 +364,7 @@
   "caption": "For most imports, July 8, 2026 moved certificate data from a folder to the customs entry.\nUnder 16 CFR 1110.13(a)(1), the certifier of an imported product eFiles the certificate data elements in ACE when the entry is filed. On imports, that's usually the importer.\nThose elements come from the certificate itself: the product ID, each rule, the test lab and date, a records contact and more.\nMail imports go a different route: the data goes into CPSC's Product Registry before arrival.\nCheck the certificate before the entry, not after.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Free CPSC Finder, no account: link in bio",
   "created_at": "2026-10-28T11:10:50Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261028_deadline_02",
   "date": "2026-10-28",
   "pillar": "deadline",
@@ -378,7 +378,10 @@
    "slot": "0847"
   },
   "src": "ig_20261028_deadline_02",
-  "family": null
+  "family": null,
+  "media_id": "17939385690122188",
+  "published_at": "2026-10-28T13:02:16Z",
+  "first_comment_id": "18040228865850160"
  },
  {
   "id": "20261028_gap_01",
