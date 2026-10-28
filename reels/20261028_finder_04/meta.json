@@ -1,0 +1,15 @@
+{
+ "id": "20261028_finder_04",
+ "date": "2026-10-28",
+ "pillar": "finder",
+ "cta": "comment_finder",
+ "arms": {
+  "hook": "consequence",
+  "opener": "slam",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "comment",
+  "slot": "1547"
+ },
+ "family": "childrens_product"
+}

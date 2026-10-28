@@ -1,0 +1,106 @@
+{
+ "topic": "A GCC on a kids' product is the wrong certificate.",
+ "hook_formula": "#13 Before/After (consequence)",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 2.6,
+   "headline": "Made for kids 12 and under?",
+   "note": "Say a seller ships a product made for kids on a GCC.",
+   "stamp": "WRONG",
+   "doc": "Certificate: GCC"
+  },
+  {
+   "type": "compare",
+   "dur": 3.7,
+   "headline": "12 and under? Usually a CPC",
+   "note": "A children's product is mainly for kids 12 and under.",
+   "left": {
+    "label": "Seller used",
+    "value": "GCC"
+   },
+   "right": {
+    "label": "Kids' product",
+    "value": "CPC"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4.7,
+   "headline": "Four factors decide it",
+   "note": "Label, marketing, how buyers see it, age guidelines.",
+   "bad": {
+    "label": "Guessing"
+   },
+   "good": {
+    "label": "Four factors"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.8,
+   "headline": "Check the age signals",
+   "note": "Say KID-24-BLUE's box says ages five to nine.",
+   "items": [
+    {
+     "name": "Box: ages 5-9",
+     "value": "kids",
+     "ok": true
+    },
+    {
+     "name": "Ads: kids",
+     "value": "kids",
+     "ok": true
+    },
+    {
+     "name": "Certificate",
+     "value": "GCC",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.1,
+   "headline": "Which rules apply to you?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the free CPSC finder.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Wrong certificate. Wrong age group.",
+  "Made mainly for kids twelve and under? That's a children's product.",
+  "Covered children's products get a CPC. The label and marketing count.",
+  "Say the box says ages five to nine, but the certificate is a GCC.",
+  "Comment M and Z, we'll DM you the free CPSC finder."
+ ],
+ "caption": "A GCC on a kids' product is usually the wrong certificate.\nUnder 16 CFR 1200.2, a children's product is one designed or intended primarily for children 12 and under, judged by four factors: the label, the marketing, how buyers see it, and the age guidelines.\nChildren's products subject to a CPSC rule get a Children's Product Certificate (CPC), not a GCC.\nThe free CPSC Finder asks for the intended age group, for this reason.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=childrens_product&src=ig_20261028_finder_04",
+ "search_keywords": "children's product certificate,CPC vs GCC",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Children's product = 12 and under; four factors",
+   "section": "16 CFR 1200.2(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1200/section-1200.2",
+   "quote": "a children's product means a consumer product designed or intended primarily for children 12 years of age or younger. ... These factors are: (i) A statement by a manufacturer about the intended use of such product, including a label on such product if such statement is reasonable. (ii) Whether the product is represented in its packaging, display, promotion, or advertising as appropriate for use by children 12 years of age or younger. (iii) Whether the product is commonly recognized by consumers as being intended for use by a child 12 years of age or younger. (iv) The Age Determination Guidelines"
+  },
+  {
+   "id": "S2",
+   "claim": "CPC vs GCC",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "quote": "Children's Product Certificate (CPC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA ... General Certificate of Conformity (GCC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(1)"
+  },
+  {
+   "id": "S3",
+   "claim": "A certificate is needed when a rule applies",
+   "section": "16 CFR 1110.5",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.5",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate."
+  }
+ ]
+}
