@@ -1,0 +1,26 @@
+{
+ "frame": {
+  "type": "cta",
+  "tag": "Free gap list",
+  "headline": "Blocked right now?",
+  "line1": "Forward the notice.",
+  "line2": "Gap list in 24 hours. Link in bio."
+ },
+ "from_reel": "reels/20261028_blocked_06",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Certificate furnished to each distributor or retailer",
+   "section": "16 CFR 1110.13(b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "A finished product certifier must furnish the required finished product certificate to each distributor or retailer of the finished product."
+  },
+  {
+   "id": "S2",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

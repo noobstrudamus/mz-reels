@@ -1,0 +1,25 @@
+{
+ "frame": {
+  "type": "myth",
+  "tag": "Myth vs fact",
+  "myth": "Certified parts make a certified toy.",
+  "fact": "Parts certs support yours. They don't replace it."
+ },
+ "from_reel": "reels/20261028_myth_10",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Component certificates: voluntary support, not eFiled",
+   "section": "16 CFR 1110.19",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.19",
+   "quote": "Pursuant to part 1109 of this chapter, component part certificates are voluntary, but may be relied upon by a finished product certifier to issue a finished product certificate. Component part certificates must not be eFiled in ACE upon importation of a component part."
+  },
+  {
+   "id": "S2",
+   "claim": "A certificate is needed when a rule applies",
+   "section": "16 CFR 1110.5",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.5",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate."
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "One certificate, one product",
+  "items": [
+   {
+    "name": "KID-24-BLUE: covered",
+    "ok": true
+   },
+   {
+    "name": "KID-31-RACE: shared cert",
+    "ok": false
+   },
+   {
+    "name": "KID-07-BLOCK: shared cert",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261028_gap_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Each certificate describes only one product",
+   "section": "16 CFR 1110.13(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "A finished product certificate must accompany each finished product or finished product shipment required to be certified pursuant to § 1110.5. Each finished product certificate must describe only one product."
+  },
+  {
+   "id": "S2",
+   "claim": "Each certificate carries a product identifier",
+   "section": "16 CFR 1110.11(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier"
+  }
+ ]
+}

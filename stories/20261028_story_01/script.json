@@ -1,0 +1,61 @@
+{
+ "frame": {
+  "type": "promo",
+  "tag": "New reel",
+  "headline": "Cert data at entry?",
+  "stamp": "MISSING",
+  "line": "For most imports, cert data is now eFiled at entry. New reel on our profile."
+ },
+ "from_reel": "reels/20261028_deadline_02",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Imports: certificate data eFiled in ACE at entry",
+   "section": "16 CFR 1110.13(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "the finished product certifier must eFile the finished product certificate data elements required in § 1110.11 at the time of filing the entry, or the time of filing the entry and entry summary, if both are filed together, in ACE"
+  },
+  {
+   "id": "S2",
+   "claim": "Part 1110's eFiling text took effect July 8, 2026 (most imports; hedged 'most' because some entries, e.g. from Foreign Trade Zones, follow later)",
+   "section": "16 CFR part 1110, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1110",
+   "quote": "amendment_date 2026-07-08 for § 1110.13 'Certificate availability.' (and §§ 1110.1-1110.19)"
+  },
+  {
+   "id": "S3",
+   "claim": "On imports the importer is the certifier",
+   "section": "16 CFR 1110.7(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.7",
+   "quote": "Except as otherwise provided in a specific rule, ban, standard, or regulation enforced by CPSC, for a finished product manufactured outside of the United States that must be accompanied by a certificate as set forth in § 1110.5, the importer, as defined in this part, is the finished product certifier"
+  },
+  {
+   "id": "S4",
+   "claim": "Each certificate carries a product identifier",
+   "section": "16 CFR 1110.11(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier"
+  },
+  {
+   "id": "S5",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "S6",
+   "claim": "Certificate data: records contact, manufacture, test date and lab",
+   "section": "16 CFR 1110.11(a)(4)-(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(4) Identify and provide contact information ... for the individual maintaining records ... (5) Provide the date (month and year, at a minimum) and place ... where the finished product(s) were manufactured ... (6) Provide the most recent date and place(s) (including for each third party conformity assessment body ...) where the finished product(s) were tested"
+  },
+  {
+   "id": "S7",
+   "claim": "Mail imports: Product Registry before arrival",
+   "section": "16 CFR 1110.13(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "In the case of finished products that are manufactured outside of the United States and imported by mail, the finished product certifier must enter the finished product certificate data elements required in § 1110.11 into CPSC's Product Registry before arrival of the product or substance in the United States."
+  }
+ ]
+}

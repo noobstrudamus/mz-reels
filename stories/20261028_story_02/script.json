@@ -1,0 +1,26 @@
+{
+ "frame": {
+  "type": "rule",
+  "tag": "The rule",
+  "quote": "Finished product certifiers must make finished product certificates available for inspection immediately, meaning within 24 hours, upon request by CPSC or CBP.",
+  "cite": "16 CFR 1110.13(c)",
+  "line": "Could you send yours by tomorrow?"
+ },
+ "from_reel": "reels/20261028_cost_05",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Available within 24 hours on request by CPSC or CBP",
+   "section": "16 CFR 1110.13(c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "Finished product certifiers must make finished product certificates available for inspection immediately, meaning within 24 hours, upon request by CPSC or CBP."
+  },
+  {
+   "id": "S2",
+   "claim": "Certifiers keep certificates and supporting test records 5+ years",
+   "section": "16 CFR 1110.17",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.17",
+   "quote": "Finished product certifiers are required to maintain finished product certificates and the following records supporting such certificates for at least five years from the certificate creation date: (a) Records of test results on which a GCC is based ... (b) Records of test results and other records on which a CPC is based"
+  }
+ ]
+}
