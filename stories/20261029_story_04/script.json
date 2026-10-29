@@ -1,0 +1,18 @@
+{
+ "frame": {
+  "type": "myth",
+  "tag": "Myth vs fact",
+  "myth": "No test needed, so leave the rule off.",
+  "fact": "List the rule. Name the exclusion."
+ },
+ "from_reel": "reels/20261029_myth_09",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Testing exclusion: rule still listed, exclusion named instead of test date/place",
+   "section": "16 CFR 1110.11(c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "if a finished product certifier is claiming a statutory or regulatory testing exclusion to an applicable consumer product safety rule or similar rule, ban, standard, or regulation, then in addition to listing all applicable rules, bans, standards, and regulations as required under § 1110.11(a)(2), and in lieu of providing the date and place where testing was conducted for that regulation under § 1110.11(a)(6), a finished product certificate shall identify the applicable testing exclusion."
+  }
+ ]
+}

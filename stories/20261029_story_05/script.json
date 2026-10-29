@@ -1,0 +1,19 @@
+{
+ "frame": {
+  "type": "cta",
+  "tag": "Free gap list",
+  "headline": "Blocked right now?",
+  "line1": "Forward the notice.",
+  "line2": "Gap list in 24 hours. Link in bio."
+ },
+ "from_reel": "reels/20261029_blocked_05",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Paper and electronic certificates include the certifier's attestation",
+   "section": "16 CFR 1110.11(a)(7)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Paper and electronic finished product certificates described in § 1110.9(b) and (c), and required in §§ 1110.13(a)(2), (b), and (c), must include the following attestation by the finished product certifier: I hereby certify that the finished product(s) covered by this certificate comply with the rules, bans, standards, and regulations stated herein, and that the information in this certificate is true and accurate to the best of my knowledge, information, and belief."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "The testing line on your cert",
+  "items": [
+   {
+    "name": "Lab name",
+    "ok": true
+   },
+   {
+    "name": "Most recent test date",
+    "ok": false
+   },
+   {
+    "name": "Lab address, email, phone",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261029_gap_07",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Most recent test date and full details of each lab",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested"
+  }
+ ]
+}

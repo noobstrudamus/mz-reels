@@ -1,0 +1,26 @@
+{
+ "frame": {
+  "type": "promo",
+  "tag": "New reel",
+  "headline": "Selling baby rattles?",
+  "stamp": "CHECK",
+  "line": "Rattles have their own rule: 16 CFR 1510. New reel on our profile."
+ },
+ "from_reel": "reels/20261029_finder_10",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Rattles: fixture test before and after use and abuse tests",
+   "section": "16 CFR 1510.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1510/section-1510.3",
+   "quote": "No portion of a rattle, when tested in accordance with the procedure of § 1510.4 below, shall be capable of entering and penetrating to the full depth of a cavity in a test fixture with dimensions shown in figure 1. ... Rattles shall meet this requirement both before and after performing the use and abuse tests of § 1500.51 of this chapter (excluding the bite and flexure tests of paragraphs (c) and (d))."
+  },
+  {
+   "id": "S2",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}
