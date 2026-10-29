@@ -560,7 +560,7 @@
   "caption": "Selling coin or button batteries on their own? Look at the package first.\n16 CFR 1263.4 sets labeling rules for button cell and coin battery packaging: a warning label on the principal display panel (if space is tight, the icon there and the text on a secondary panel), in English, clearly visible and legible.\nThe signal word WARNING and the safety alert symbol are black on orange, unless only one color is present or that would hurt visibility.\nThe free CPSC Finder has a battery product family.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
   "created_at": "2026-10-29T11:11:22Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261029_finder_06",
   "date": "2026-10-29",
   "pillar": "finder",
@@ -574,7 +574,10 @@
    "slot": "1047"
   },
   "src": "ig_20261029_finder_06",
-  "family": "battery_product"
+  "family": "battery_product",
+  "media_id": "18134598226668578",
+  "published_at": "2026-10-29T14:55:26Z",
+  "first_comment_id": "18099602462547709"
  },
  {
   "id": "20261029_deadline_01",
