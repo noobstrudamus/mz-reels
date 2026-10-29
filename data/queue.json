@@ -588,7 +588,7 @@
   "caption": "Full-size crib sellers: 16 CFR 1219.2 changed on August 1, 2026.\nIt now requires each full-size baby crib to comply with ASTM F1169-25. Before that date, the rule cited ASTM F1169-19.\nIf your test reports and certificate file still point only to the 2019 version, check them against the current rule.\nThe certificate still lists each applicable rule separately (16 CFR 1110.11(a)(2)).\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
   "created_at": "2026-10-29T11:11:46Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261029_deadline_01",
   "date": "2026-10-29",
   "pillar": "deadline",
@@ -602,7 +602,10 @@
    "slot": "1147"
   },
   "src": "ig_20261029_deadline_01",
-  "family": null
+  "family": null,
+  "media_id": "18036122105885934",
+  "published_at": "2026-10-29T15:55:32Z",
+  "first_comment_id": "18098248502448267"
  },
  {
   "id": "20261029_deadline_08",
@@ -785,7 +788,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-10-29T11:19:06Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261029_story_02",
   "date": "2026-10-29",
   "pillar": "story_02",
@@ -794,7 +797,9 @@
    "slot": "1117"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18118154578805016",
+  "published_at": "2026-10-29T15:55:32Z"
  },
  {
   "id": "20261029_story_03",
