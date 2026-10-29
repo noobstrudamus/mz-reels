@@ -1,0 +1,15 @@
+{
+ "id": "20261029_cost_04",
+ "date": "2026-10-29",
+ "pillar": "cost",
+ "cta": "comment_gaplist",
+ "arms": {
+  "hook": "question",
+  "opener": "slam",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "comment",
+  "slot": "1647"
+ },
+ "family": null
+}

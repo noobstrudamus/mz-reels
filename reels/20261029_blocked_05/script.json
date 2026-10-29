@@ -1,0 +1,92 @@
+{
+ "topic": "Seller Support sent the same template again? Read the last lines of the certificate.",
+ "hook_formula": "#12 The Objection (pain quote)",
+ "kicker": "\"Sent it twice.\"",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Same template answer again?",
+   "note": "Say Seller Support keeps rejecting a seller's certificate.",
+   "stamp": "BLOCKED",
+   "doc": "Certificate PDF"
+  },
+  {
+   "type": "compare",
+   "dur": 5.1,
+   "headline": "What's on the last lines?",
+   "note": "Paper and electronic certs need the attestation.",
+   "left": {
+    "label": "Cert has",
+    "value": "No line"
+   },
+   "right": {
+    "label": "Rule wants",
+    "value": "Attestation"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.32,
+   "headline": "The attestation sentence",
+   "note": "16 CFR 1110.11(a)(7): wording set by the rule.",
+   "bad": {
+    "label": "Missing"
+   },
+   "good": {
+    "label": "Included"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 2.4,
+   "headline": "Certificate check",
+   "note": "Say KID-24-BLUE's PDF ends at the test results.",
+   "items": [
+    {
+     "name": "Rules cited",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Lab and date",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Attestation",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.67,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "\"Sent it twice.\" Check the attestation.",
+  "Paper and electronic certs need the certifier's attestation, worded as in the rule.",
+  "It says the product complies and the info is true.",
+  "Say yours ends at the test results.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "Seller Support sent the same template again? Read the last lines of your children's product certificate.\nUnder 16 CFR 1110.11(a)(7), paper and electronic certificates must include the certifier's attestation, in the words the rule sets out, including that the products comply, that the information is true and accurate to the best of the certifier's knowledge, and that knowingly false statements are a federal crime.\nA template reply may not say what's missing. The rule lists what a certificate must include.\nIf yours ends at the test results, that's a gap to close.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261029_blocked_05#contact",
+ "search_keywords": "Seller Support,children's product certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Paper and electronic certificates include the certifier's attestation",
+   "section": "16 CFR 1110.11(a)(7)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Paper and electronic finished product certificates described in § 1110.9(b) and (c), and required in §§ 1110.13(a)(2), (b), and (c), must include the following attestation by the finished product certifier: I hereby certify that the finished product(s) covered by this certificate comply with the rules, bans, standards, and regulations stated herein, and that the information in this certificate is true and accurate to the best of my knowledge, information, and belief."
+  }
+ ]
+}

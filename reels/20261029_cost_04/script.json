@@ -1,0 +1,92 @@
+{
+ "topic": "Does your certificate say who keeps the records?",
+ "hook_formula": "#10 If This Then Watch (question)",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 2,
+   "headline": "Records contact on the cert?",
+   "note": "Say a seller's cert names no one for the records.",
+   "stamp": "MISSING",
+   "doc": "Certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 4.4,
+   "headline": "Who keeps the records?",
+   "note": "The cert names the person keeping them.",
+   "left": {
+    "label": "Cert names",
+    "value": "No one"
+   },
+   "right": {
+    "label": "Rule wants",
+    "value": "A contact"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.17,
+   "headline": "A name, or a staffed title",
+   "note": "16 CFR 1110.11(a)(4): always staffed and responsive.",
+   "bad": {
+    "label": "No one"
+   },
+   "good": {
+    "label": "Named"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.61,
+   "headline": "Records contact check",
+   "note": "Say KID-24-BLUE's cert lists only the factory.",
+   "items": [
+    {
+     "name": "Product ID",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Name or title",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Email + phone",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.31,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "No records contact on your cert?",
+  "Every certificate names who keeps the records, with email and phone.",
+  "A position title works, if it's always staffed.",
+  "Say yours names no one. That's a gap to fix before anyone asks.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "Does your children's product certificate say who keeps the records?\nUnder 16 CFR 1110.11(a)(4), each finished product certificate names the person who maintains the supporting records for the certifier, with street address, email and phone.\nA position title can work, if the position is always staffed and responds to CPSC's requests.\nA blank there is a gap, even when every test passed.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261029_cost_04#contact",
+ "search_keywords": "children's product certificate,records",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Certificate names the records contact; a staffed position title is allowed",
+   "section": "16 CFR 1110.11(a)(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(4) Identify and provide contact information (consisting, at a minimum, of the individual's name, street address, city, state or province, country or administrative region, email address, and telephone number) for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier. The individual can be a position title, provided that the position is always staffed and responsive to CPSC's requests."
+  }
+ ]
+}

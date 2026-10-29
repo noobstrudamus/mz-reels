@@ -1,0 +1,92 @@
+{
+ "topic": "No test needed doesn't mean the rule comes off the certificate.",
+ "hook_formula": "#13 Before And After (consequence)",
+ "kicker": "No test? Still listed.",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "\"No test, so leave it off\"",
+   "note": "Say a seller leaves off a rule with a testing exclusion.",
+   "stamp": "MYTH",
+   "doc": "Certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 4.5,
+   "headline": "Excluded rules stay listed",
+   "note": "List the rule, then name the testing exclusion.",
+   "left": {
+    "label": "Seller did",
+    "value": "Left it off"
+   },
+   "right": {
+    "label": "Rule says",
+    "value": "List it"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 5.53,
+   "headline": "Exclusion instead of a date",
+   "note": "16 CFR 1110.11(c): exclusion replaces date, place.",
+   "bad": {
+    "label": "Left off"
+   },
+   "good": {
+    "label": "Listed"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.68,
+   "headline": "Certificate check",
+   "note": "Say KID-24-BLUE has a testing exclusion for one rule.",
+   "items": [
+    {
+     "name": "Tested rules",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Excluded rule",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Exclusion named",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.79,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Excluded from testing. Still on the cert.",
+  "Myth: if a testing exclusion applies, the rule comes off the certificate.",
+  "It stays listed. In place of the test date and place, the cert names the exclusion.",
+  "Say yours just drops the rule. That's a gap, even with no test needed.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "No test needed doesn't mean the rule comes off the certificate.\nUnder 16 CFR 1110.11(c), when a certifier claims a statutory or regulatory testing exclusion, the certificate still lists every applicable rule.\nFor that rule, it identifies the exclusion in place of the date and place of testing.\nLeaving the rule off is a gap, even when no test was required.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261029_myth_09#contact",
+ "search_keywords": "testing exclusion,certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Testing exclusion: rule still listed, exclusion named instead of test date/place",
+   "section": "16 CFR 1110.11(c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "if a finished product certifier is claiming a statutory or regulatory testing exclusion to an applicable consumer product safety rule or similar rule, ban, standard, or regulation, then in addition to listing all applicable rules, bans, standards, and regulations as required under § 1110.11(a)(2), and in lieu of providing the date and place where testing was conducted for that regulation under § 1110.11(a)(6), a finished product certificate shall identify the applicable testing exclusion."
+  }
+ ]
+}
