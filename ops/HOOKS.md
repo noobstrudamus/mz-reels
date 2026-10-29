@@ -91,6 +91,27 @@ These work best with the `kicker` opener: the quote is the kicker.
 - Sunday report: list skip rate and average watch time per reel next to its hook and opener. Retire a
   bank line after 2 reels above 85% skip.
 
+## What our data says (2026-10-29, 14 reels with ≥ 15 views) — Mert: 2 reels/day, cut skip rate
+
+| skip | reel | first words |
+|---|---|---|
+| 51.8% | 20261029_myth_02 | "Stop paying for the same test twice." |
+| 72.2% | 20261028_deadline_09 | "Water bead toys? …" |
+| 76.1% | 20261028_finder_07 | "Coin battery inside? …" |
+| 77.8% | 20261024_finder | 120-volt kids' toy |
+| 92–98% | gap_08, deadline_02, cost_05, blocked_06 | certificate language, eFiling data, CBP 24 h, retailer |
+
+Rules that follow from it (writer, every reel, inside the plan's arms):
+1. **The first two spoken words name a physical product or the viewer's money/test** (water beads, coin
+   battery, crib, rattle, "same test twice"). Paperwork-only openings (certificate fields, data elements, dates,
+   agencies) skipped at 92–98%; keep that material for scenes 2–4.
+2. **Topic choice: product-specific rules first** (a product family the viewer sells), certificate mechanics
+   second. With 2 reels a day, pick the two topics most likely to stop a seller of that product.
+3. Kicker frame 0 = the product name + "?" (kicker 82% avg skip vs slam 92%, small sample; the strategy keeps
+   testing both).
+4. Realistic target: skip rate under 60% (best so far 51.8%). 0% is not reachable on Reels; a viewer who scrolls
+   past in 1 s still counts.
+
 ## Scoring with the instagram-agent pack (installed 2026-10-27, `.claude/skills/ig-*`)
 
 The pack ([Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill),

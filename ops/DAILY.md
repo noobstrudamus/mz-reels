@@ -1,7 +1,7 @@
 # Daily reel run (the scheduled routine follows this exactly)
 
 Runs every day at 06:47 America/New_York (catch-up firings later in the day continue it).
-Goal: settings.reels_per_day verified reels (10 since 2026-10-28, halved automatically by the strategy's
+Goal: settings.reels_per_day verified reels (2 since 2026-10-29, was 10 on 2026-10-28; halved automatically by the strategy's
 brake when reach per reel collapses) and settings.stories_per_day stories (5), each queued for its own slot.
 GitHub Actions (publish.yml) publishes them; the session's safety-net trigger dispatches it hourly.
 

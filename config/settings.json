@@ -13,9 +13,9 @@
   "dm_lookback_days": 7,
   "container_max_age_hours": 23,
   "metrics_window_days": 30,
-  "reels_per_day": 10,
+  "reels_per_day": 2,
   "stories_per_day": 5,
-  "max_posts_per_day": 10,
+  "max_posts_per_day": 2,
   "max_stories_per_day": 5,
   "slots": [
     "0847",
