@@ -1,0 +1,15 @@
+{
+ "id": "20261029_finder_10",
+ "date": "2026-10-29",
+ "pillar": "finder",
+ "cta": "finder",
+ "arms": {
+  "hook": "callout",
+  "opener": "kicker",
+  "length": "short",
+  "voice": "andrew",
+  "cta_mode": "playbook",
+  "slot": "0847"
+ },
+ "family": "toy"
+}

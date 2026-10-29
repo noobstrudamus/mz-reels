@@ -1,0 +1,99 @@
+{
+ "topic": "Baby rattle on your list? There's a rule just for rattles.",
+ "hook_formula": "#14 The Callout",
+ "kicker": "Baby rattles?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Selling baby rattles?",
+   "note": "Say a seller imports a plastic baby rattle.",
+   "stamp": "CHECK",
+   "doc": "Rattle certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 3.15,
+   "headline": "Rattles have their own rule",
+   "note": "16 CFR 1510: no part may reach the fixture's full depth.",
+   "left": {
+    "label": "Cert lists",
+    "value": "1250 only"
+   },
+   "right": {
+    "label": "Also needs",
+    "value": "Part 1510"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 5.2,
+   "headline": "Before and after abuse tests",
+   "note": "16 CFR 1510.3: tested again after use and abuse.",
+   "bad": {
+    "label": "Not listed"
+   },
+   "good": {
+    "label": "Part 1510"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 2.65,
+   "headline": "Rattle file check",
+   "note": "Say KID-24-BLUE is a baby rattle.",
+   "items": [
+    {
+     "name": "Part 1250",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Part 1510",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Fixture test",
+     "value": "not shown",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.6,
+   "headline": "Not sure which rules apply?",
+   "line1": "Free CPSC finder.",
+   "line2": "See which rules apply. No account needed.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Baby rattles? Is fifteen-ten on your cert?",
+  "Rattles have their own rule, part fifteen-ten.",
+  "No part may go all the way into the test fixture, before and after abuse tests.",
+  "Say your cert lists the toy standard only.",
+  "Not sure which rules apply? Free CPSC finder. No account needed."
+ ],
+ "caption": "Baby rattle on your list? There's a rule just for rattles.\nUnder 16 CFR 1510.3, no portion of a rattle may enter and penetrate to the full depth of the cavity in the test fixture, both before and after the use and abuse tests.\nIt's its own rule, so the certificate lists it separately (16 CFR 1110.11(a)(2)).\nThe free Finder shows which rules apply to a toy.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=toy&src=ig_20261029_finder_10",
+ "search_keywords": "baby rattle,certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Rattles: fixture test before and after use and abuse tests",
+   "section": "16 CFR 1510.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1510/section-1510.3",
+   "quote": "No portion of a rattle, when tested in accordance with the procedure of § 1510.4 below, shall be capable of entering and penetrating to the full depth of a cavity in a test fixture with dimensions shown in figure 1. ... Rattles shall meet this requirement both before and after performing the use and abuse tests of § 1500.51 of this chapter (excluding the bite and flexure tests of paragraphs (c) and (d))."
+  },
+  {
+   "id": "S2",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

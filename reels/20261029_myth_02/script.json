@@ -1,0 +1,92 @@
+{
+ "topic": "More rules on a certificate doesn't always mean more lab tests.",
+ "hook_formula": "#2 Negative Command",
+ "kicker": "Same test, twice?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "More rules, more tests?",
+   "note": "Say a seller's certificate lists rules that overlap.",
+   "stamp": "MYTH",
+   "doc": "Lab quote: 2 tests"
+  },
+  {
+   "type": "compare",
+   "dur": 3.2,
+   "headline": "Same requirement? Test once.",
+   "note": "Same requirement, fully incorporated: no repeat test.",
+   "left": {
+    "label": "Cert lists",
+    "value": "Each rule"
+   },
+   "right": {
+    "label": "Same test",
+    "value": "Run once"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 5.22,
+   "headline": "Overlap: no repeat test",
+   "note": "16 CFR 1110.11(d): duplicative testing not required.",
+   "bad": {
+    "label": "Same test x2"
+   },
+   "good": {
+    "label": "Test once"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 6.42,
+   "headline": "Before you pay the lab",
+   "note": "Say KID-24-BLUE's rules overlap on one test.",
+   "items": [
+    {
+     "name": "Rules listed",
+     "value": "separately",
+     "ok": true
+    },
+    {
+     "name": "Overlap checked",
+     "value": "not yet",
+     "ok": false
+    },
+    {
+     "name": "Lab quote",
+     "value": "2x same test",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.75,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Stop paying for the same test twice.",
+  "Myth: every rule on your cert means another lab test.",
+  "Each rule is listed separately. But the same test isn't required twice,",
+  "when one rule fully incorporates another with the same requirement. Say your lab quote repeats it.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "More rules on a certificate doesn't always mean more lab tests.\nUnder 16 CFR 1110.11(d), the certificate still lists each applicable rule separately. But certifiers aren't required to run the same third party test on a sample more than once when one rule references or fully incorporates another with the same requirement.\nIf a lab quote repeats the same test for overlapping rules, it's fair to ask why.\nAsk before you pay twice.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261029_myth_02#contact",
+ "search_keywords": "third party test,lab test",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Same third party test not required twice when one rule fully incorporates another",
+   "section": "16 CFR 1110.11(d)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(d) Duplicative testing not required. Although finished product certificates must list each applicable rule, ban, standard, or regulation separately, finished product certifiers are not required to conduct the same third party test on each sample more than once when a rule references, or incorporates fully, another applicable consumer product safety rule or similar rule, ban, standard, or regulation under any other law enforced by the Commission with the same requirement."
+  }
+ ]
+}
