@@ -1,0 +1,113 @@
+{
+ "topic": "Full-size crib sellers: 16 CFR 1219.2 changed on August 1, 2026.",
+ "hook_formula": "#19 The Deadline / myth",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 2.8,
+   "headline": "\"The crib rule never changes\"",
+   "note": "Say a seller's crib file still cites ASTM F1169-19.",
+   "stamp": "MYTH",
+   "doc": "Crib test report"
+  },
+  {
+   "type": "compare",
+   "dur": 8.6,
+   "headline": "Since August 1, 2026",
+   "note": "16 CFR 1219.2 now points to ASTM F1169-25.",
+   "left": {
+    "label": "Before",
+    "value": "F1169-19"
+   },
+   "right": {
+    "label": "Now",
+    "value": "F1169-25"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.9,
+   "headline": "Check the version cited",
+   "note": "Each full-size crib must meet ASTM F1169-25.",
+   "bad": {
+    "label": "F1169-19"
+   },
+   "good": {
+    "label": "F1169-25"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.1,
+   "headline": "Crib file check",
+   "note": "Say KID-24-BLUE is a full-size crib.",
+   "items": [
+    {
+     "name": "Part 1219",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "ASTM version",
+     "value": "F1169-19",
+     "ok": false
+    },
+    {
+     "name": "Cites F1169-25",
+     "value": "not yet",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 3.9,
+   "headline": "Which rules apply to you?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the free CPSC finder.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Your full-size crib rule changed August first.",
+  "Myth: the crib standard stays put. Since August first, twenty twenty-six, part twelve-nineteen cites the twenty twenty-five ASTM version.",
+  "Each full-size crib must meet it. Before, it was twenty nineteen.",
+  "Say your crib file still shows only the twenty nineteen standard. Check it.",
+  "Comment M and Z, we'll DM you the free CPSC finder."
+ ],
+ "caption": "Full-size crib sellers: 16 CFR 1219.2 changed on August 1, 2026.\nIt now requires each full-size baby crib to comply with ASTM F1169-25. Before that date, the rule cited ASTM F1169-19.\nIf your test reports and certificate file still point only to the 2019 version, check them against the current rule.\nThe certificate still lists each applicable rule separately (16 CFR 1110.11(a)(2)).\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?src=ig_20261029_deadline_01",
+ "search_keywords": "full-size crib,ASTM F1169-25",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Full-size cribs: ASTM F1169-25 now",
+   "section": "16 CFR 1219.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1219/section-1219.2",
+   "quote": "Each full-size baby crib must comply with all applicable provisions of ASTM F1169-25, Standard Consumer Safety Specification for Full-Size Baby Cribs, approved December 15, 2025."
+  },
+  {
+   "id": "S2",
+   "claim": "Before the change: ASTM F1169-19",
+   "section": "16 CFR 1219.2 as of 2026-07-31 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-31/title-16.xml?section=1219.2",
+   "quote": "Link to an amendment published at 91 FR 23913, May 4, 2026. Each full-size baby crib must comply with all applicable provisions of ASTM F1169-19, Standard Consumer Safety Specification for Full-Size Baby Cribs approved March 15, 2019."
+  },
+  {
+   "id": "S3",
+   "claim": "Crib rule changed August 1, 2026",
+   "section": "16 CFR 1219.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1219",
+   "quote": "§ 1219.2 'Requirements for full-size baby cribs.' amendment_date 2026-08-01"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

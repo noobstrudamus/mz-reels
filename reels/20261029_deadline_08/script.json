@@ -1,0 +1,106 @@
+{
+ "topic": "Toddler bed sellers: 16 CFR 1217.2 changed on August 29, 2026.",
+ "hook_formula": "#19 The Deadline",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 2.7,
+   "headline": "Toddler bed rule changed",
+   "note": "Say a seller's toddler bed report cites F1821-19ε1.",
+   "stamp": "CHECK",
+   "doc": "Test report"
+  },
+  {
+   "type": "compare",
+   "dur": 5.4,
+   "headline": "Since August 29, 2026",
+   "note": "16 CFR 1217.2 now cites ASTM F1821-26.",
+   "left": {
+    "label": "Before",
+    "value": "F1821-19ε1"
+   },
+   "right": {
+    "label": "Now",
+    "value": "F1821-26"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 2.72,
+   "headline": "Check the version cited",
+   "note": "Each toddler bed must meet ASTM F1821-26.",
+   "bad": {
+    "label": "F1821-19ε1"
+   },
+   "good": {
+    "label": "F1821-26"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.1,
+   "headline": "Toddler bed file",
+   "note": "Say KID-24-BLUE is a toddler bed.",
+   "items": [
+    {
+     "name": "Part 1217",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "ASTM version",
+     "value": "F1821-19ε1",
+     "ok": false
+    },
+    {
+     "name": "Cites F1821-26",
+     "value": "not yet",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.57,
+   "headline": "Not sure which rules apply?",
+   "line1": "Free CPSC finder.",
+   "line2": "See which rules apply. No account needed.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Toddler bed report still citing twenty nineteen?",
+  "Since August twenty-ninth, the toddler bed rule cites the twenty twenty-six ASTM version.",
+  "Before, it cited the twenty nineteen one.",
+  "Say your file still shows only twenty nineteen.",
+  "Not sure which rules apply? Free CPSC finder. No account needed."
+ ],
+ "caption": "Toddler bed sellers: 16 CFR 1217.2 changed on August 29, 2026.\nIt now requires each toddler bed to comply with ASTM F1821-26. Before that date, it cited ASTM F1821-19ε1.\nIf your test reports and certificate file only point to the 2019 version, check them against the current rule.\nThe free Finder shows which rules apply to a product.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?src=ig_20261029_deadline_08",
+ "search_keywords": "toddler bed,ASTM F1821-26",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Toddler beds: ASTM F1821-26 now",
+   "section": "16 CFR 1217.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1217/section-1217.2",
+   "quote": "Each toddler bed must comply with all applicable provisions of ASTM F1821-26, Standard Consumer Safety Specification for Toddler Beds, approved on February 1, 2026."
+  },
+  {
+   "id": "S2",
+   "claim": "Before the change: ASTM F1821-19ε1",
+   "section": "16 CFR 1217.2 as of 2026-08-28 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-08-28/title-16.xml?section=1217.2",
+   "quote": "Link to an amendment published at 91 FR 27203, May 14, 2026. Each toddler bed shall comply with all applicable provisions of ASTM F1821-19 ε 1 , Standard Consumer Safety Specification for Toddler Beds, approved June 1, 2019."
+  },
+  {
+   "id": "S3",
+   "claim": "Toddler bed rule changed August 29, 2026",
+   "section": "16 CFR 1217.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1217",
+   "quote": "§ 1217.2 'Requirements for toddler beds.' amendment_date 2026-08-29"
+  }
+ ]
+}

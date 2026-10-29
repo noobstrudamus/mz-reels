@@ -1,0 +1,92 @@
+{
+ "topic": "A lab name alone doesn't complete the testing line on a certificate.",
+ "hook_formula": "#7 Wrong Way Right Way",
+ "kicker": "Lab name only?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Lab name only?",
+   "note": "Say a seller's cert names the lab and nothing else.",
+   "stamp": "CHECK",
+   "doc": "Certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 5,
+   "headline": "What the test line needs",
+   "note": "Date, plus each lab's address, email and phone.",
+   "left": {
+    "label": "Cert shows",
+    "value": "Lab name"
+   },
+   "right": {
+    "label": "Rule wants",
+    "value": "Full line"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 2.52,
+   "headline": "Every lab it relies on",
+   "note": "16 CFR 1110.11(a)(6): most recent date and place.",
+   "bad": {
+    "label": "Name only"
+   },
+   "good": {
+    "label": "Full details"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.46,
+   "headline": "Testing line check",
+   "note": "Say KID-24-BLUE's cert lists the lab's name only.",
+   "items": [
+    {
+     "name": "Lab name",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Test date",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Address, phone",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.51,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Lab name only? That's half the line.",
+  "The cert needs the most recent test date, and each lab's address, email and phone.",
+  "Every lab the certificate depends on.",
+  "Say yours shows only the name. That's a gap.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "A lab name alone doesn't complete the testing line on a certificate.\nUnder 16 CFR 1110.11(a)(6), the certificate gives the most recent date and place of testing, including for each third party lab it depends on: name, street address, city, country, email and phone.\nMissing details there leave the certificate incomplete.\nCheck it before the next shipment.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261029_gap_07#contact",
+ "search_keywords": "third party lab,certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Most recent test date and full details of each lab",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested"
+  }
+ ]
+}

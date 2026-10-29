@@ -1,0 +1,15 @@
+{
+ "id": "20261029_deadline_08",
+ "date": "2026-10-29",
+ "pillar": "deadline",
+ "cta": "finder",
+ "arms": {
+  "hook": "cost",
+  "opener": "slam",
+  "length": "short",
+  "voice": "andrew",
+  "cta_mode": "playbook",
+  "slot": "1247"
+ },
+ "family": null
+}

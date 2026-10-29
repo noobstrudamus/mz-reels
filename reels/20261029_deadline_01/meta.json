@@ -1,0 +1,15 @@
+{
+ "id": "20261029_deadline_01",
+ "date": "2026-10-29",
+ "pillar": "deadline",
+ "cta": "comment_finder",
+ "arms": {
+  "hook": "myth",
+  "opener": "slam",
+  "length": "long",
+  "voice": "andrew",
+  "cta_mode": "comment",
+  "slot": "1147"
+ },
+ "family": null
+}
