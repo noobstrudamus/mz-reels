@@ -532,7 +532,7 @@
   "caption": "More rules on a certificate doesn't always mean more lab tests.\nUnder 16 CFR 1110.11(d), the certificate still lists each applicable rule separately. But certifiers aren't required to run the same third party test on a sample more than once when one rule references or fully incorporates another with the same requirement.\nIf a lab quote repeats the same test for overlapping rules, it's fair to ask why.\nAsk before you pay twice.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
   "created_at": "2026-10-29T11:07:52Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261029_myth_02",
   "date": "2026-10-29",
   "pillar": "myth",
@@ -546,7 +546,10 @@
    "slot": "0947"
   },
   "src": "ig_20261029_myth_02",
-  "family": null
+  "family": null,
+  "media_id": "18056856437584611",
+  "published_at": "2026-10-29T13:53:52Z",
+  "first_comment_id": "18010602080779109"
  },
  {
   "id": "20261029_finder_06",
@@ -757,7 +760,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-10-29T11:18:42Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261029_story_01",
   "date": "2026-10-29",
   "pillar": "story_01",
@@ -766,7 +769,9 @@
    "slot": "0917"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18117703979107421",
+  "published_at": "2026-10-29T13:53:52Z"
  },
  {
   "id": "20261029_story_02",
