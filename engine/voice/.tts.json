@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Five years. Keep your own test records.",
+    "text": "Baby gate on your cert? Check twelve thirty-nine.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "8c6f50d44bf07cdf9c372b5621f971c5331cfaac"
+    "sha1": "7fa6a0f9245e7c2aa92ed80e10ae1329d9cb4652"
   },
   "s2": {
-    "text": "Myth: the factory keeps them. The certifier does, usually the importer.",
+    "text": "Myth: baby gates aren't a regulated product. Part twelve thirty-nine says each gate and enclosure must meet an ASTM standard.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "95105d99415a3459eda40817231a56a0ebb604ff"
+    "sha1": "9c5f5a6064a05fcc4447abd0a69659cc92a585fc"
   },
   "s3": {
-    "text": "Certificates and the test records behind them, for at least five years.",
+    "text": "Since July twentieth, twenty twenty-six, that's the twenty twenty-five version.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "d13db51eadc6025396e27fbee21c79c5b7f40ae9"
+    "sha1": "c647e9ef5fba5a48a54036f981b5b28e06b94870"
   },
   "s4": {
-    "text": "Say the certifier only has the PDF. The test records sit at the factory.",
+    "text": "Say your cert skips twelve thirty-nine.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "554a10e81fe9ae5cfdda520d5c515acec38946d9"
+    "sha1": "6655bc63a55f4eae1c55d6afb5d11c3db81a9f1d"
   },
   "s5": {
-    "text": "Blocked right now? Forward the notice. Get your gap list in twenty-four hours.",
+    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "947faa6991d0294fb1433e7087f4dddc7287842a"
+    "sha1": "14dd01717cf2ca653fba77b5a591fc72f2ec84a4"
   }
 }

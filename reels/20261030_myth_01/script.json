@@ -1,0 +1,113 @@
+{
+ "topic": "Selling baby gates? There's a CPSC rule just for them: 16 CFR part 1239.",
+ "hook_formula": "#16 Verbatim Question / myth",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "\"Baby gates aren't regulated\"",
+   "note": "Say a seller imports a pressure-mounted baby gate.",
+   "stamp": "MYTH",
+   "doc": "Gate certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 8,
+   "headline": "Part 1239 covers gates",
+   "note": "Each gate and enclosure must meet ASTM F1004.",
+   "left": {
+    "label": "Seller says",
+    "value": "Not covered"
+   },
+   "right": {
+    "label": "Rule says",
+    "value": "Part 1239"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4.7,
+   "headline": "F1004-25 since July 20, 2026",
+   "note": "16 CFR 1239.2: it cited F1004-22 until then.",
+   "bad": {
+    "label": "F1004-22"
+   },
+   "good": {
+    "label": "F1004-25"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 2.58,
+   "headline": "Gate file check",
+   "note": "Say KID-24-BLUE is a baby gate.",
+   "items": [
+    {
+     "name": "Product ID",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Part 1239",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Cites F1004-25",
+     "value": "not yet",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.22,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Baby gate on your cert? Check twelve thirty-nine.",
+  "Myth: baby gates aren't a regulated product. Part twelve thirty-nine says each gate and enclosure must meet an ASTM standard.",
+  "Since July twentieth, twenty twenty-six, that's the twenty twenty-five version.",
+  "Say your cert skips twelve thirty-nine.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "Selling baby gates? There's a CPSC rule just for them: 16 CFR part 1239.\nIt says each gate and enclosure must comply with ASTM F1004. Since July 20, 2026, the rule cites the 2025 version, F1004-25. Before that, it cited F1004-22.\nThe certificate lists each applicable rule separately (16 CFR 1110.11(a)(2)).\nIf 1239 isn't on yours, that's a gap to close.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261030_myth_01#contact",
+ "search_keywords": "baby gate,ASTM F1004",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Gates and enclosures: ASTM F1004-25",
+   "section": "16 CFR 1239.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1239/section-1239.2",
+   "quote": "Each gate and enclosure must comply with all applicable provisions of ASTM F1004-25, Standard Consumer Safety Specification for Expansion Gates and Expandable Enclosures, approved on December 1, 2025."
+  },
+  {
+   "id": "S2",
+   "claim": "Before: ASTM F1004-22",
+   "section": "16 CFR 1239.2 as of 2026-07-19 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-19/title-16.xml?section=1239.2",
+   "quote": "Link to an amendment published at 91 FR 16166, Apr. 1, 2026. Each gate and enclosure must comply with all applicable provisions of ASTM F1004-22, Standard Consumer Safety Specification for Expansion Gates and Expandable Enclosures, approved on June 1, 2022."
+  },
+  {
+   "id": "S3",
+   "claim": "Gate rule changed July 20, 2026",
+   "section": "16 CFR 1239.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1239",
+   "quote": "§ 1239.2 'Requirements for gates and enclosures.' amendment_date 2026-07-20"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

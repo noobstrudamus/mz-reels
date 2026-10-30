@@ -1,0 +1,113 @@
+{
+ "topic": "Neck floats for babies got their own section of the US toy rule on June 15, 2026.",
+ "hook_formula": "#22 Contrarian Flip",
+ "kicker": "Neck float a pool toy?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3,
+   "headline": "Baby neck float?",
+   "note": "Say a seller imports an inflatable baby neck float.",
+   "stamp": "CHECK",
+   "doc": "Neck float"
+  },
+  {
+   "type": "compare",
+   "dur": 5.1,
+   "headline": "Since June 15, 2026",
+   "note": "16 CFR 1250.5 adds rules for neck floats.",
+   "left": {
+    "label": "Cert lists",
+    "value": "1250.2 only"
+   },
+   "right": {
+    "label": "Now add",
+    "value": "1250.5"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.7,
+   "headline": "Tests plus warning labels",
+   "note": "Performance and labeling, on top of the toy rule.",
+   "bad": {
+    "label": "Toy std only"
+   },
+   "good": {
+    "label": "Plus 1250.5"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 2.4,
+   "headline": "Neck float check",
+   "note": "Say KID-24-BLUE is a neck float for babies.",
+   "items": [
+    {
+     "name": "Part 1250.2",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Part 1250.5",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Warning label",
+     "value": "not updated",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.8,
+   "headline": "Not sure which rules apply?",
+   "line1": "Free CPSC finder.",
+   "line2": "See which rules apply. No account needed.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Neck float a pool toy? Not anymore.",
+  "Since June fifteenth, twenty twenty-six, neck floats have their own section of the toy rule.",
+  "Twelve-fifty point five adds performance tests and warning labels.",
+  "Say your cert lists only the toy standard.",
+  "Not sure which rules apply? Free CPSC finder. No account needed."
+ ],
+ "caption": "Neck floats for babies got their own section of the US toy rule on June 15, 2026.\n16 CFR 1250.5 adds performance and labeling requirements for neck floats, on top of the toy standard in 1250.1 and 1250.2. It covers neck floats for children up to 4 years old, used in sinks, baths and pools.\nThe float and its packaging carry a set warning, in English, on the principal display panel.\nA certificate written before June may cite only the toy standard.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=childrens_product&src=ig_20261030_finder_02",
+ "search_keywords": "neck float,toy rule",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Neck floats: performance + labeling requirements on top of 1250.1/1250.2; up to age 4",
+   "section": "16 CFR 1250.5(a), (b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1250/section-1250.5",
+   "quote": "This section establishes performance and labeling requirements for neck floats to reduce the risk of children drowning while using a neck float. ... This section adds requirements for neck float in addition to the requirements of §§ 1250.1 and 1250.2. ... Neck float means an article, whether inflatable or not, that encircles the neck, supports the weight of the child by being secured around the neck ... and is intended for use by children up to and including 4 years of age in water environments including sinks, baths, paddling pools, and swimming pools."
+  },
+  {
+   "id": "S2",
+   "claim": "Neck float + packaging warnings, English, on the principal display panel",
+   "section": "16 CFR 1250.5(d)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1250/section-1250.5",
+   "quote": "(d) Labeling requirements. All neck floats and the packaging of neck floats must meet the marking, labeling, and instructional literature requirements in this section ... warnings shall be in the English language at a minimum. (iii) The warnings shall be conspicuous and permanent on the principal display panel"
+  },
+  {
+   "id": "S3",
+   "claim": "Neck float section in effect since June 15, 2026",
+   "section": "16 CFR 1250.5, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1250",
+   "quote": "§ 1250.5 'Requirements for neck floats.' amendment_date 2026-06-15 (as of 2026-06-14 the eCFR shows only: 'Link to an amendment published at 90 FR 58134, Dec. 15, 2025.')"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

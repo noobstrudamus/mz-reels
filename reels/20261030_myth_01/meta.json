@@ -1,0 +1,15 @@
+{
+ "id": "20261030_myth_01",
+ "date": "2026-10-30",
+ "pillar": "myth",
+ "cta": "comment_gaplist",
+ "arms": {
+  "hook": "question",
+  "opener": "slam",
+  "length": "long",
+  "voice": "ava",
+  "cta_mode": "comment",
+  "slot": "0947"
+ },
+ "family": null
+}

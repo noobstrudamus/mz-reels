@@ -149,78 +149,77 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261028_myth_03",
+    "id": "20261030_myth_01",
     "pillar": "myth",
-    "cta": "gaplist",
+    "cta": "comment_gaplist",
     "voice": "en-US-AvaNeural",
-    "opener": "kicker",
-    "footnote": "Illustrative example. Not legal advice.",
-    "kicker": "5 years. Your records."
+    "opener": "slam",
+    "footnote": "Illustrative example. Not legal advice."
   },
   "scenes": [
     {
       "type": "stamp",
       "dur": 3,
-      "headline": "Who keeps the records?",
-      "note": "Say a seller's factory holds every test record.",
+      "headline": "\"Baby gates aren't regulated\"",
+      "note": "Say a seller imports a pressure-mounted baby gate.",
       "stamp": "MYTH",
-      "doc": "Test records"
+      "doc": "Gate certificate"
     },
     {
       "type": "compare",
-      "dur": 5,
-      "headline": "Who must keep them?",
-      "note": "Certifiers keep certificates and test records.",
+      "dur": 8,
+      "headline": "Part 1239 covers gates",
+      "note": "Each gate and enclosure must meet ASTM F1004.",
       "left": {
         "label": "Seller says",
-        "value": "Factory"
+        "value": "Not covered"
       },
       "right": {
         "label": "Rule says",
-        "value": "Certifier"
+        "value": "Part 1239"
       }
     },
     {
       "type": "pair",
-      "dur": 4,
-      "headline": "At least five years",
-      "note": "16 CFR 1110.17: five years from certificate creation.",
+      "dur": 4.7,
+      "headline": "F1004-25 since July 20, 2026",
+      "note": "16 CFR 1239.2: it cited F1004-22 until then.",
       "bad": {
-        "label": "At factory"
+        "label": "F1004-22"
       },
       "good": {
-        "label": "On file"
+        "label": "F1004-25"
       }
     },
     {
       "type": "checklist",
-      "dur": 5.1,
-      "headline": "What to keep on file",
-      "note": "Say KID-24-BLUE's certifier has only the PDF.",
+      "dur": 2.58,
+      "headline": "Gate file check",
+      "note": "Say KID-24-BLUE is a baby gate.",
       "items": [
         {
-          "name": "Certificate",
-          "value": "kept",
+          "name": "Product ID",
+          "value": "listed",
           "ok": true
         },
         {
-          "name": "Test results",
-          "value": "at factory",
+          "name": "Part 1239",
+          "value": "missing",
           "ok": false
         },
         {
-          "name": "Kept 5+ years",
-          "value": "no plan",
+          "name": "Cites F1004-25",
+          "value": "not yet",
           "ok": false
         }
       ]
     },
     {
       "type": "cta",
-      "dur": 5.1,
-      "headline": "Blocked right now?",
-      "line1": "Forward the notice.",
-      "line2": "Get your gap list in 24 hours.",
+      "dur": 4.22,
+      "headline": "Want a free gap list?",
+      "line1": "Comment M&Z.",
+      "line2": "We'll DM you the link.",
       "url": "mzconsulting.agency"
     }
   ]
