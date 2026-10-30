@@ -1,0 +1,40 @@
+{
+ "frame": {
+  "type": "rule",
+  "tag": "The rule",
+  "quote": "Each gate and enclosure must comply with all applicable provisions of ASTM F1004-25",
+  "cite": "16 CFR 1239.2",
+  "line": "Selling baby gates? Check your cert."
+ },
+ "from_reel": "reels/20261030_myth_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Gates and enclosures: ASTM F1004-25",
+   "section": "16 CFR 1239.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1239/section-1239.2",
+   "quote": "Each gate and enclosure must comply with all applicable provisions of ASTM F1004-25, Standard Consumer Safety Specification for Expansion Gates and Expandable Enclosures, approved on December 1, 2025."
+  },
+  {
+   "id": "S2",
+   "claim": "Before: ASTM F1004-22",
+   "section": "16 CFR 1239.2 as of 2026-07-19 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-19/title-16.xml?section=1239.2",
+   "quote": "Link to an amendment published at 91 FR 16166, Apr. 1, 2026. Each gate and enclosure must comply with all applicable provisions of ASTM F1004-22, Standard Consumer Safety Specification for Expansion Gates and Expandable Enclosures, approved on June 1, 2022."
+  },
+  {
+   "id": "S3",
+   "claim": "Gate rule changed July 20, 2026",
+   "section": "16 CFR 1239.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1239",
+   "quote": "§ 1239.2 'Requirements for gates and enclosures.' amendment_date 2026-07-20"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

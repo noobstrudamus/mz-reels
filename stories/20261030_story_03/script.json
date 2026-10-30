@@ -1,0 +1,52 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "Neck float file",
+  "items": [
+   {
+    "name": "16 CFR 1250.2 listed",
+    "ok": true
+   },
+   {
+    "name": "16 CFR 1250.5 missing",
+    "ok": false
+   },
+   {
+    "name": "Warning label not updated",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261030_finder_02",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Neck floats: performance + labeling requirements on top of 1250.1/1250.2; up to age 4",
+   "section": "16 CFR 1250.5(a), (b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1250/section-1250.5",
+   "quote": "This section establishes performance and labeling requirements for neck floats to reduce the risk of children drowning while using a neck float. ... This section adds requirements for neck float in addition to the requirements of §§ 1250.1 and 1250.2. ... Neck float means an article, whether inflatable or not, that encircles the neck, supports the weight of the child by being secured around the neck ... and is intended for use by children up to and including 4 years of age in water environments including sinks, baths, paddling pools, and swimming pools."
+  },
+  {
+   "id": "S2",
+   "claim": "Neck float + packaging warnings, English, on the principal display panel",
+   "section": "16 CFR 1250.5(d)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1250/section-1250.5",
+   "quote": "(d) Labeling requirements. All neck floats and the packaging of neck floats must meet the marking, labeling, and instructional literature requirements in this section ... warnings shall be in the English language at a minimum. (iii) The warnings shall be conspicuous and permanent on the principal display panel"
+  },
+  {
+   "id": "S3",
+   "claim": "Neck float section in effect since June 15, 2026",
+   "section": "16 CFR 1250.5, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1250",
+   "quote": "§ 1250.5 'Requirements for neck floats.' amendment_date 2026-06-15 (as of 2026-06-14 the eCFR shows only: 'Link to an amendment published at 90 FR 58134, Dec. 15, 2025.')"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}
