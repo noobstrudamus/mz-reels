@@ -1,0 +1,113 @@
+{
+ "topic": "Shipping baby swings for Q4? Check 16 CFR part 1223 first.",
+ "hook_formula": "#14 The Callout + #19 The Deadline",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 4,
+   "headline": "Baby swings for Q4?",
+   "note": "Say a seller ships baby swings for the holiday season.",
+   "stamp": "CHECK",
+   "doc": "Swing test report"
+  },
+  {
+   "type": "compare",
+   "dur": 6.4,
+   "headline": "Since July 25, 2026",
+   "note": "16 CFR 1223.2 now cites ASTM F2088-25.",
+   "left": {
+    "label": "Before",
+    "value": "F2088-24"
+   },
+   "right": {
+    "label": "Now",
+    "value": "F2088-25"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 5,
+   "headline": "Check the edition cited",
+   "note": "Infant, cradle and combination swings are covered.",
+   "bad": {
+    "label": "F2088-24"
+   },
+   "good": {
+    "label": "F2088-25"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4,
+   "headline": "Q4 swing file",
+   "note": "Say KID-24-BLUE is an infant swing.",
+   "items": [
+    {
+     "name": "Part 1223",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Edition cited",
+     "value": "F2088-24",
+     "ok": false
+    },
+    {
+     "name": "Checked pre-ship",
+     "value": "not yet",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.1,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Selling baby swings? Check twelve twenty-three before the holidays.",
+  "Since July twenty-fifth, twenty twenty-six, the swing rule cites the twenty twenty-five ASTM version.",
+  "Before that, it cited the twenty twenty-four one. Combination swings count too.",
+  "Say your holiday shipment's file still shows only twenty twenty-four.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "Shipping baby swings for the holidays? Check 16 CFR part 1223 first.\nSince July 25, 2026, the rule says each infant and cradle swing, including combination swings, must comply with ASTM F2088-25. Before that date, it cited F2088-24.\nIf your test reports and certificate file only point to the 2024 version, check them against the current rule before the holiday shipment.\nThe certificate lists each applicable rule separately (16 CFR 1110.11(a)(2)).\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261031_cost_02#contact",
+ "search_keywords": "baby swing,ASTM F2088",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Infant and cradle swings: ASTM F2088-25",
+   "section": "16 CFR 1223.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1223/section-1223.2",
+   "quote": "Each infant and cradle swing (including combination swings) must comply with all applicable provisions of ASTM F2088-25, Standard Consumer Safety Specification for Infant and Cradle Swings, approved on November 15, 2025."
+  },
+  {
+   "id": "S2",
+   "claim": "Before: ASTM F2088-24",
+   "section": "16 CFR 1223.2 as of 2026-07-24 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-24/title-16.xml?section=1223.2",
+   "quote": "Link to an amendment published at 91 FR 20880, Apr. 20, 2026. Each infant and cradle swing (including combination swings) must comply with all applicable provisions of ASTM F2088-24, Standard Consumer Safety Specification for Infant and Cradle Swings"
+  },
+  {
+   "id": "S3",
+   "claim": "Swing rule changed July 25, 2026",
+   "section": "16 CFR 1223.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1223",
+   "quote": "§ 1223.2 'Requirements for infant and cradle swings.' amendment_date 2026-07-25"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

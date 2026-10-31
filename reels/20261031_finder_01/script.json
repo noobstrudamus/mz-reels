@@ -1,0 +1,106 @@
+{
+ "topic": "Is 16 CFR part 1307 on your kids' product certificate?",
+ "hook_formula": "#16 Verbatim Question",
+ "kicker": "Vinyl bath toy?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.2,
+   "headline": "Phthalates: is 1307 listed?",
+   "note": "Say a seller imports a soft vinyl bath toy.",
+   "stamp": "CHECK",
+   "doc": "Bath toy certificate"
+  },
+  {
+   "type": "compare",
+   "dur": 6.9,
+   "headline": "Over 0.1% is prohibited",
+   "note": "Eight listed phthalates, in kids' toys and child care items.",
+   "left": {
+    "label": "Cert lists",
+    "value": "No 1307"
+   },
+   "right": {
+    "label": "Should list",
+    "value": "Part 1307"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 3.45,
+   "headline": "Plasticized parts count",
+   "note": "16 CFR 1307.3(c): any plasticized component part.",
+   "bad": {
+    "label": "Not listed"
+   },
+   "good": {
+    "label": "Part 1307"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.67,
+   "headline": "Bath toy check",
+   "note": "Say KID-24-BLUE is a vinyl bath toy.",
+   "items": [
+    {
+     "name": "Part 1250",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Part 1307",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Vinyl parts",
+     "value": "not tested",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.28,
+   "headline": "Which rules apply to you?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the free CPSC finder.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Vinyl bath toy on your cert? Check thirteen-oh-seven.",
+  "Children's toys and child care articles can't be sold or imported with over point one percent of eight listed phthalates.",
+  "That covers plasticized parts, like soft vinyl.",
+  "Say your bath toy's cert lists the toy standard, but not thirteen-oh-seven.",
+  "Comment M and Z, we'll DM you the free CPSC finder."
+ ],
+ "caption": "Is 16 CFR part 1307 on your kids' product certificate?\nUnder 16 CFR 1307.3, children's toys and child care articles can't be made for sale, offered for sale, distributed or imported with more than 0.1 percent of eight listed phthalates, including DEHP, DBP and DINP.\nIt applies to plasticized component parts too, like soft vinyl.\nRun your product through the Finder to see which rules apply.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=childrens_product&src=ig_20261031_finder_01",
+ "search_keywords": "phthalates,children's toys",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Eight phthalates over 0.1% prohibited in children's toys and child care articles, incl. plasticized parts",
+   "section": "16 CFR 1307.3(a)-(c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1307/section-1307.3",
+   "quote": "(a) ... the manufacture for sale, offer for sale, distribution in commerce, or importation into the United States of any children's toy or child care article that contains concentrations of more than 0.1 percent of di-(2-ethylhexyl) phthalate (DEHP) , dibutyl phthalate (DBP), or benzyl butyl phthalate (BBP) is prohibited. (b) ... more than 0.1 percent of diisononyl phthalate (DINP), diisobutyl phthalate (DIBP), di- n -pentyl phthalate (DPENP), di- n -hexyl phthalate (DHEXP), or dicyclohexyl phthalate (DCHP) is prohibited. (c) ... the restrictions stated in paragraphs (a) and (b) of this section apply to any plasticized component part of a children's toy or child care article"
+  },
+  {
+   "id": "S2",
+   "claim": "Children's toy definition",
+   "section": "16 CFR 1307.2(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1307/section-1307.2",
+   "quote": "Children's toy means a consumer product designed or intended by the manufacturer for a child 12 years of age or younger for use by the child when the child plays."
+  },
+  {
+   "id": "S3",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Baby gate on your cert? Check twelve thirty-nine.",
+    "text": "Selling baby swings? Check twelve twenty-three before the holidays.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "633e4489ada12158cb6cccc1f694410705963f93"
+    "sha1": "2076f46629b97744a98f34e2f7191dce9ec162b3"
   },
   "s2": {
-    "text": "Myth: baby gates aren't a regulated product. Part twelve thirty-nine says each gate and enclosure must meet an ASTM standard.",
+    "text": "Since July twenty-fifth, twenty twenty-six, the swing rule cites the twenty twenty-five ASTM version.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "5ebbe5326270ff17b51b782b06dc2060229069f9"
+    "sha1": "41dde82afb708cf608df785143c65fe5d7d48b5d"
   },
   "s3": {
-    "text": "Since July twentieth, twenty twenty-six, that's the twenty twenty-five version.",
+    "text": "Before that, it cited the twenty twenty-four one. Combination swings count too.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "cfb7182f3eb2a0ae97b3cfbfbf2894191aebe0ca"
+    "sha1": "d422d822279a02fa559a239152668e0ec23c996c"
   },
   "s4": {
-    "text": "Say your cert skips twelve thirty-nine.",
+    "text": "Say your holiday shipment's file still shows only twenty twenty-four.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "7ba72b332e460d2df114ee54c4f41e2c0d03416f"
+    "sha1": "6327623e270ad95449de5da13c15ef6d174f9ae7"
   },
   "s5": {
     "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "3be23d0f5cc67b27d05d78588646a7593909775f"
+    "sha1": "e576fcb348259c822c40d9debf4b223109920358"
   }
 }
