@@ -13,7 +13,7 @@
   },
   {
    "type": "compare",
-   "dur": 6.9,
+   "dur": 7.5,
    "headline": "Over 0.1% is prohibited",
    "note": "Eight listed phthalates, in kids' toys and child care items.",
    "left": {
@@ -27,7 +27,7 @@
   },
   {
    "type": "pair",
-   "dur": 3.45,
+   "dur": 3.5,
    "headline": "Plasticized parts count",
    "note": "16 CFR 1307.3(c): any plasticized component part.",
    "bad": {
@@ -39,7 +39,7 @@
   },
   {
    "type": "checklist",
-   "dur": 4.67,
+   "dur": 4.4,
    "headline": "Bath toy check",
    "note": "Say KID-24-BLUE is a vinyl bath toy.",
    "items": [
@@ -55,14 +55,14 @@
     },
     {
      "name": "Vinyl parts",
-     "value": "not tested",
+     "value": "not covered",
      "ok": false
     }
    ]
   },
   {
    "type": "cta",
-   "dur": 4.28,
+   "dur": 4.1,
    "headline": "Which rules apply to you?",
    "line1": "Comment M&Z.",
    "line2": "We'll DM you the free CPSC finder.",
@@ -71,12 +71,12 @@
  ],
  "vo": [
   "Vinyl bath toy on your cert? Check thirteen-oh-seven.",
-  "Children's toys and child care articles can't be sold or imported with over point one percent of eight listed phthalates.",
-  "That covers plasticized parts, like soft vinyl.",
+  "Children's toys and child care articles can't be sold or imported with over point one percent of any of eight listed phthalates.",
+  "That covers plasticized parts, like most soft vinyl.",
   "Say your bath toy's cert lists the toy standard, but not thirteen-oh-seven.",
   "Comment M and Z, we'll DM you the free CPSC finder."
  ],
- "caption": "Is 16 CFR part 1307 on your kids' product certificate?\nUnder 16 CFR 1307.3, children's toys and child care articles can't be made for sale, offered for sale, distributed or imported with more than 0.1 percent of eight listed phthalates, including DEHP, DBP and DINP.\nIt applies to plasticized component parts too, like soft vinyl.\nRun your product through the Finder to see which rules apply.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "Is 16 CFR part 1307 on your kids' product certificate?\nUnder 16 CFR 1307.3, children's toys and child care articles can't be made for sale, offered for sale, distributed or imported with more than 0.1 percent of any of eight listed phthalates, including DEHP, DBP and DINP.\nIt applies to plasticized component parts too, such as most soft vinyl.\nThe certificate must list part 1307 separately (16 CFR 1110.11(a)(2)).\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
  "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=childrens_product&src=ig_20261031_finder_01",
  "search_keywords": "phthalates,children's toys",

@@ -6,7 +6,7 @@
   {
    "type": "stamp",
    "dur": 4,
-   "headline": "Baby swings for Q4?",
+   "headline": "Baby swings for holidays?",
    "note": "Say a seller ships baby swings for the holiday season.",
    "stamp": "CHECK",
    "doc": "Swing test report"
@@ -27,11 +27,11 @@
   },
   {
    "type": "pair",
-   "dur": 5,
+   "dur": 2.9,
    "headline": "Check the edition cited",
    "note": "Infant, cradle and combination swings are covered.",
    "bad": {
-    "label": "F2088-24"
+    "label": "Unchecked"
    },
    "good": {
     "label": "F2088-25"
@@ -39,8 +39,8 @@
   },
   {
    "type": "checklist",
-   "dur": 4,
-   "headline": "Q4 swing file",
+   "dur": 5.2,
+   "headline": "Holiday swing file",
    "note": "Say KID-24-BLUE is an infant swing.",
    "items": [
     {
@@ -49,8 +49,8 @@
      "ok": true
     },
     {
-     "name": "Edition cited",
-     "value": "F2088-24",
+     "name": "Edition in file",
+     "value": "check vs -25",
      "ok": false
     },
     {
@@ -72,11 +72,11 @@
  "vo": [
   "Selling baby swings? Check twelve twenty-three before the holidays.",
   "Since July twenty-fifth, twenty twenty-six, the swing rule cites the twenty twenty-five ASTM version.",
-  "Before that, it cited the twenty twenty-four one. Combination swings count too.",
-  "Say your holiday shipment's file still shows only twenty twenty-four.",
+  "Before, it cited the twenty twenty-four one.",
+  "Say your swing file shows only the twenty twenty-four edition. Check it against the current rule.",
   "Free gap list? Comment M and Z, and we'll DM you the link."
  ],
- "caption": "Shipping baby swings for the holidays? Check 16 CFR part 1223 first.\nSince July 25, 2026, the rule says each infant and cradle swing, including combination swings, must comply with ASTM F2088-25. Before that date, it cited F2088-24.\nIf your test reports and certificate file only point to the 2024 version, check them against the current rule before the holiday shipment.\nThe certificate lists each applicable rule separately (16 CFR 1110.11(a)(2)).\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "Shipping baby swings for the holidays? Check 16 CFR part 1223 first.\nSince July 25, 2026, the rule says each infant and cradle swing, including combination swings, must comply with ASTM F2088-25. Before that date, it cited F2088-24.\nIf your test reports and certificate file only point to the 2024 version, check them against the current rule before the holiday shipment.\nYour certificate must list each applicable rule, like part 1223, separately (16 CFR 1110.11(a)(2)).\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
  "tracking_link": "https://mzconsulting.agency/?src=ig_20261031_cost_02#contact",
  "search_keywords": "baby swing,ASTM F2088",

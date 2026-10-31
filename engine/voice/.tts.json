@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Selling baby swings? Check twelve twenty-three before the holidays.",
+    "text": "Vinyl bath toy on your cert? Check thirteen-oh-seven.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "2076f46629b97744a98f34e2f7191dce9ec162b3"
+    "sha1": "1e0e891b09c8fe2db04ccf9d43f9944ec9bc01de"
   },
   "s2": {
-    "text": "Since July twenty-fifth, twenty twenty-six, the swing rule cites the twenty twenty-five ASTM version.",
+    "text": "Children's toys and child care articles can't be sold or imported with over point one percent of any of eight listed phthalates.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "41dde82afb708cf608df785143c65fe5d7d48b5d"
+    "sha1": "2cb68a96800b601015e414148c75786913dc0fd5"
   },
   "s3": {
-    "text": "Before that, it cited the twenty twenty-four one. Combination swings count too.",
+    "text": "That covers plasticized parts, like most soft vinyl.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "d422d822279a02fa559a239152668e0ec23c996c"
+    "sha1": "c540e9d35f77fb299acf792b66c6bb6594091773"
   },
   "s4": {
-    "text": "Say your holiday shipment's file still shows only twenty twenty-four.",
+    "text": "Say your bath toy's cert lists the toy standard, but not thirteen-oh-seven.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "6327623e270ad95449de5da13c15ef6d174f9ae7"
+    "sha1": "27c3c1390f812349e0ed91da518d6b9633f7d710"
   },
   "s5": {
-    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
+    "text": "Comment M and Z, we'll DM you the free CPSC finder.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "e576fcb348259c822c40d9debf4b223109920358"
+    "sha1": "a5130eff3d9ab5dcea58839145b7d4ed9ccf6d18"
   }
 }
