@@ -1,0 +1,32 @@
+{
+ "frame": {
+  "type": "myth",
+  "tag": "Myth vs fact",
+  "myth": "Phthalates only matter in teethers.",
+  "fact": "Part 1307 covers children's toys too."
+ },
+ "from_reel": "reels/20261031_finder_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Eight phthalates over 0.1% prohibited in children's toys and child care articles, incl. plasticized parts",
+   "section": "16 CFR 1307.3(a)-(c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1307/section-1307.3",
+   "quote": "(a) ... the manufacture for sale, offer for sale, distribution in commerce, or importation into the United States of any children's toy or child care article that contains concentrations of more than 0.1 percent of di-(2-ethylhexyl) phthalate (DEHP) , dibutyl phthalate (DBP), or benzyl butyl phthalate (BBP) is prohibited. (b) ... more than 0.1 percent of diisononyl phthalate (DINP), diisobutyl phthalate (DIBP), di- n -pentyl phthalate (DPENP), di- n -hexyl phthalate (DHEXP), or dicyclohexyl phthalate (DCHP) is prohibited. (c) ... the restrictions stated in paragraphs (a) and (b) of this section apply to any plasticized component part of a children's toy or child care article"
+  },
+  {
+   "id": "S2",
+   "claim": "Children's toy definition",
+   "section": "16 CFR 1307.2(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1307/section-1307.2",
+   "quote": "Children's toy means a consumer product designed or intended by the manufacturer for a child 12 years of age or younger for use by the child when the child plays."
+  },
+  {
+   "id": "S3",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

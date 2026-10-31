@@ -1,0 +1,40 @@
+{
+ "frame": {
+  "type": "cta",
+  "tag": "Free gap list",
+  "headline": "Blocked right now?",
+  "line1": "Forward the notice.",
+  "line2": "Gap list in 24 hours. Link in bio."
+ },
+ "from_reel": "reels/20261031_cost_02",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Infant and cradle swings: ASTM F2088-25",
+   "section": "16 CFR 1223.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1223/section-1223.2",
+   "quote": "Each infant and cradle swing (including combination swings) must comply with all applicable provisions of ASTM F2088-25, Standard Consumer Safety Specification for Infant and Cradle Swings, approved on November 15, 2025."
+  },
+  {
+   "id": "S2",
+   "claim": "Before: ASTM F2088-24",
+   "section": "16 CFR 1223.2 as of 2026-07-24 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-24/title-16.xml?section=1223.2",
+   "quote": "Link to an amendment published at 91 FR 20880, Apr. 20, 2026. Each infant and cradle swing (including combination swings) must comply with all applicable provisions of ASTM F2088-24, Standard Consumer Safety Specification for Infant and Cradle Swings"
+  },
+  {
+   "id": "S3",
+   "claim": "Swing rule changed July 25, 2026",
+   "section": "16 CFR 1223.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1223",
+   "quote": "§ 1223.2 'Requirements for infant and cradle swings.' amendment_date 2026-07-25"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}
