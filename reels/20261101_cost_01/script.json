@@ -1,0 +1,113 @@
+{
+ "topic": "Reordering crib mattresses? Check 16 CFR part 1241 first.",
+ "hook_formula": "#16 Verbatim Question",
+ "kicker": "Crib mattress?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.1,
+   "headline": "Crib mattress file?",
+   "note": "Say a seller reorders crib mattresses for next month.",
+   "stamp": "CHECK",
+   "doc": "Mattress test report"
+  },
+  {
+   "type": "compare",
+   "dur": 4.4,
+   "headline": "Since May 4, 2026",
+   "note": "16 CFR 1241.2 now cites ASTM F2933-25.",
+   "left": {
+    "label": "Before",
+    "value": "F2933-21"
+   },
+   "right": {
+    "label": "Now",
+    "value": "F2933-25"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4.3,
+   "headline": "Plus CPSC's own changes",
+   "note": "The rule adds to and excludes parts of F2933-25.",
+   "bad": {
+    "label": "Unchecked"
+   },
+   "good": {
+    "label": "F2933-25"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.5,
+   "headline": "Mattress file check",
+   "note": "Say KID-24-BLUE is a crib mattress.",
+   "items": [
+    {
+     "name": "Part 1241",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Edition in file",
+     "value": "check vs -25",
+     "ok": false
+    },
+    {
+     "name": "Checked pre-order",
+     "value": "not yet",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.1,
+   "headline": "Want a free gap list?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the link.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Crib mattress on your cert? Check twelve forty-one.",
+  "Since May fourth, the rule cites the twenty twenty-five ASTM edition.",
+  "With CPSC's own changes. Before, twenty twenty-one.",
+  "Say your file shows only twenty twenty-one. Check it.",
+  "Free gap list? Comment M and Z, and we'll DM you the link."
+ ],
+ "caption": "Reordering crib mattresses? Check 16 CFR part 1241 first.\nSince May 4, 2026, the rule says each crib mattress must comply with ASTM F2933-25, with additions and exclusions written into the rule itself. Before that date, it cited F2933-21.\nIf your test reports and certificate file only point to the 2021 version, check them against the current rule before the next order.\nYour certificate must list each applicable rule, like part 1241, separately (16 CFR 1110.11(a)(2)).\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261101_cost_01#contact",
+ "search_keywords": "crib mattress,ASTM F2933",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Crib mattresses: ASTM F2933-25 with CPSC additions/exclusions",
+   "section": "16 CFR 1241.2(a), (b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1241/section-1241.2",
+   "quote": "(a) Except as provided in paragraph (b) of this section, each crib mattress must comply with all applicable provisions of ASTM F2933-25 (incorporated by reference, see § 1241.3). (b) Comply with ASTM F2933-25 with the following additions or exclusions:"
+  },
+  {
+   "id": "S2",
+   "claim": "Before: ASTM F2933-21",
+   "section": "16 CFR 1241.2 as of 2026-05-03 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-05-03/title-16.xml?section=1241.2",
+   "quote": "Link to an amendment published at 91 FR 6515, Feb. 12, 2026. (a) Except as provided in paragraph (b) of this section, each crib mattress must comply with all applicable provisions of ASTM F2933-21, Standard Consumer Safety Specification for Crib Mattresses (approved on June 15, 2021)."
+  },
+  {
+   "id": "S3",
+   "claim": "Crib mattress rule changed May 4, 2026",
+   "section": "16 CFR 1241.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1241",
+   "quote": "§ 1241.2 'Requirements for crib mattresses.' amendment_date 2026-05-04"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

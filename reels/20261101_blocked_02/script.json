@@ -1,0 +1,113 @@
+{
+ "topic": "Hook-on chair listing keeps coming back? Look at the edition in your file.",
+ "hook_formula": "#12 The Objection (pain quote)",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.2,
+   "headline": "Hook-on chair on hold?",
+   "note": "Say a seller's hook-on chair listing keeps getting flagged.",
+   "stamp": "BLOCKED",
+   "doc": "Chair test report"
+  },
+  {
+   "type": "compare",
+   "dur": 4.8,
+   "headline": "Since July 20, 2026",
+   "note": "16 CFR 1233.2 now cites ASTM F1235-25.",
+   "left": {
+    "label": "Before",
+    "value": "F1235-18"
+   },
+   "right": {
+    "label": "Now",
+    "value": "F1235-25"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 2,
+   "headline": "Check the edition cited",
+   "note": "Portable hook-on chairs: part 1233.",
+   "bad": {
+    "label": "Unchecked"
+   },
+   "good": {
+    "label": "F1235-25"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 4.4,
+   "headline": "Chair file check",
+   "note": "Say KID-24-BLUE is a hook-on chair.",
+   "items": [
+    {
+     "name": "Part 1233",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Edition in file",
+     "value": "check vs -25",
+     "ok": false
+    },
+    {
+     "name": "Notice reread",
+     "value": "not yet",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 5.1,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "\"We sent it twice.\" Hook-on chair rule changed.",
+  "Since July twentieth, the rule cites the twenty twenty-five ASTM edition.",
+  "Before, it was twenty eighteen.",
+  "Say your file shows only twenty eighteen. Check it against the current rule.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "Hook-on chair listing keeps coming back? Look at the edition in your file.\nSince July 20, 2026, 16 CFR 1233.2 says each portable hook-on chair must comply with ASTM F1235-25. Before that date, it cited F1235-18.\nIf your test reports only point to the 2018 version, check them against the current rule before you resend anything.\nYour certificate must list each applicable rule, like part 1233, separately (16 CFR 1110.11(a)(2)).\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261101_blocked_02#contact",
+ "search_keywords": "hook-on chair,ASTM F1235",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Hook-on chairs: ASTM F1235-25",
+   "section": "16 CFR 1233.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1233/section-1233.2",
+   "quote": "Each portable hook-on chair must comply with all applicable provisions of ASTM F1235-25, Standard Consumer Safety Specification for Portable Hook-On Chairs, approved November 15, 2025."
+  },
+  {
+   "id": "S2",
+   "claim": "Before: ASTM F1235-18",
+   "section": "16 CFR 1233.2 as of 2026-07-19 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-19/title-16.xml?section=1233.2",
+   "quote": "Link to an amendment published at 91 FR 15540, Mar. 30, 2026. Each portable hook-on chair must comply with all applicable provisions of ASTM F1235-18, Standard Consumer Safety Specification for Portable Hook-On Chairs, approved May 1, 2018."
+  },
+  {
+   "id": "S3",
+   "claim": "Hook-on chair rule changed July 20, 2026",
+   "section": "16 CFR 1233.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1233",
+   "quote": "§ 1233.2 'Requirements for portable hook-on chairs.' amendment_date 2026-07-20"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}

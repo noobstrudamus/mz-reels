@@ -1,0 +1,15 @@
+{
+ "id": "20261101_blocked_02",
+ "date": "2026-11-01",
+ "pillar": "blocked",
+ "cta": "gaplist",
+ "arms": {
+  "hook": "pain_quote",
+  "opener": "slam",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "0847"
+ },
+ "family": null
+}

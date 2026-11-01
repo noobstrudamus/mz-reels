@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Vinyl bath toy on your cert? Check thirteen-oh-seven.",
+    "text": "Crib mattress on your cert? Check twelve forty-one.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "1e0e891b09c8fe2db04ccf9d43f9944ec9bc01de"
+    "sha1": "7e77aa4a46a8a6c1d01626b47696f50b09d8fe32"
   },
   "s2": {
-    "text": "Children's toys and child care articles can't be sold or imported with over point one percent of any of eight listed phthalates.",
+    "text": "Since May fourth, the rule cites the twenty twenty-five ASTM edition.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "2cb68a96800b601015e414148c75786913dc0fd5"
+    "sha1": "0505f6836a2174e0bf6d33a2c94c72926348deba"
   },
   "s3": {
-    "text": "That covers plasticized parts, like most soft vinyl.",
+    "text": "With CPSC's own changes. Before, twenty twenty-one.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "c540e9d35f77fb299acf792b66c6bb6594091773"
+    "sha1": "dc17af8346a0c4664ba1bd076fb18115434f0b85"
   },
   "s4": {
-    "text": "Say your bath toy's cert lists the toy standard, but not thirteen-oh-seven.",
+    "text": "Say your file shows only twenty twenty-one. Check it.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "27c3c1390f812349e0ed91da518d6b9633f7d710"
+    "sha1": "8e227663a7c096f57cc1730c32f26480f623004c"
   },
   "s5": {
-    "text": "Comment M and Z, we'll DM you the free CPSC finder.",
+    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "a5130eff3d9ab5dcea58839145b7d4ed9ccf6d18"
+    "sha1": "0d612bd7d98f33923ac919029a2b8115c11e8727"
   }
 }
