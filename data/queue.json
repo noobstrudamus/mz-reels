@@ -1316,7 +1316,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-01T11:55:47Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261101_story_03",
   "date": "2026-11-01",
   "pillar": "story_03",
@@ -1325,7 +1325,9 @@
    "slot": "1447"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18170203669415236",
+  "published_at": "2026-11-01T19:54:00Z"
  },
  {
   "id": "20261101_story_04",
