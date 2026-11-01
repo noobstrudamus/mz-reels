@@ -1,0 +1,52 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "Crib mattress file",
+  "items": [
+   {
+    "name": "Part 1241 listed",
+    "ok": true
+   },
+   {
+    "name": "Edition checked vs F2933-25",
+    "ok": false
+   },
+   {
+    "name": "Checked before the reorder",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261101_cost_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Crib mattresses: ASTM F2933-25 with CPSC additions/exclusions",
+   "section": "16 CFR 1241.2(a), (b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1241/section-1241.2",
+   "quote": "(a) Except as provided in paragraph (b) of this section, each crib mattress must comply with all applicable provisions of ASTM F2933-25 (incorporated by reference, see § 1241.3). (b) Comply with ASTM F2933-25 with the following additions or exclusions:"
+  },
+  {
+   "id": "S2",
+   "claim": "Before: ASTM F2933-21",
+   "section": "16 CFR 1241.2 as of 2026-05-03 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-05-03/title-16.xml?section=1241.2",
+   "quote": "Link to an amendment published at 91 FR 6515, Feb. 12, 2026. (a) Except as provided in paragraph (b) of this section, each crib mattress must comply with all applicable provisions of ASTM F2933-21, Standard Consumer Safety Specification for Crib Mattresses (approved on June 15, 2021)."
+  },
+  {
+   "id": "S3",
+   "claim": "Crib mattress rule changed May 4, 2026",
+   "section": "16 CFR 1241.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1241",
+   "quote": "§ 1241.2 'Requirements for crib mattresses.' amendment_date 2026-05-04"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  }
+ ]
+}
