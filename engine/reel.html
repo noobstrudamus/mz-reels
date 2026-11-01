@@ -165,6 +165,15 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 .dossier .l1 { font-weight: 900; text-shadow: 7px 7px 0 var(--ov); }
 .dossier .url { border: 5px solid var(--ink); box-shadow: 12px 12px 0 var(--ink); }
 .dossier #kick { background: transparent !important; }
+/* avatar (meta.avatar): an illustrated presenter drawn in the dossier style, on screen for the opening scene */
+#ava { position: absolute; left: 436px; top: 580px; width: 510px; height: 680px; display: none; pointer-events: none; overflow: visible; }
+.ava #ava { display: block; }
+.ava #kick { justify-content: flex-start; padding-top: 24px; }
+.ava #kick .kk { font-size: 124px; max-width: 640px; }
+.ava .scene[data-type=stamp] .doc { left: 0; top: 70px; width: 380px; height: 420px; padding: 28px 30px; }
+.ava .scene[data-type=stamp] .doc .dt { font-size: 19px; letter-spacing: 2px; }
+.ava .scene[data-type=stamp] .doc .ln { margin-bottom: 18px; }
+.ava .scene[data-type=stamp] .stamp { left: 214px; top: 290px; font-size: 76px; padding: 14px 26px 10px; border-width: 8px; }
 .dossier #kick .kk { font-stretch: 80%; text-shadow: 10px 10px 0 var(--ov); }
 .dossier #prog i { background: rgba(27,35,64,.18); border-radius: 0; }
 .dossier #prog i b { background: var(--ink); }
@@ -190,6 +199,45 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
   <div id="hdr"><div class="wm t" data-max="1"><b>M&amp;Z</b><span>CONSULTING</span></div><div class="pill t" id="pill" data-max="1"></div></div>
   <div id="scenes"></div>
   <div id="kick"><div class="kk t" data-max="2"></div><div class="kb"></div></div>
+  <svg id="ava" viewBox="0 0 420 560" width="420" height="560">
+    <defs>
+      <pattern id="htd" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="4.5" cy="4.5" r="2.3" fill="#1b2340"/></pattern>
+      <pattern id="htp" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="4" cy="4" r="2.4" fill="#e0707a"/></pattern>
+      <pattern id="hty" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(60)"><circle cx="4.5" cy="4.5" r="2.4" fill="#c99a2e"/></pattern>
+    </defs>
+    <g id="avaBody">
+      <path d="M118 150 C 92 232 88 336 100 424 L 320 424 C 332 336 328 232 302 150 C 280 64 140 64 118 150 Z" fill="#f2cf6b" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/>
+      <path d="M262 120 C 300 170 318 300 320 424 L 282 424 C 290 320 286 200 262 120 Z" fill="url(#hty)" opacity=".85"/>
+      <path d="M34 560 C 34 468 66 408 140 382 L 210 402 L 280 382 C 354 408 386 468 386 560 Z" fill="#1f2d5c" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/>
+      <path d="M306 400 C 352 424 378 474 384 560 L 326 560 C 326 500 320 450 306 400 Z" fill="url(#htd)" opacity=".55"/>
+      <path d="M182 288 L 182 384 L 210 404 L 238 384 L 238 288 Z" fill="#f4cbb2" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/>
+      <path d="M184 298 C 200 328 220 328 236 298 L 236 336 C 220 354 200 354 184 336 Z" fill="url(#htd)" opacity=".3"/>
+      <path d="M156 390 L 210 474 L 264 390 L 238 382 L 210 400 L 182 382 Z" fill="#f8f0dd" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+      <path d="M140 382 L 182 382 L 210 474 L 168 528 L 148 432 Z" fill="#2346a0" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+      <path d="M280 382 L 238 382 L 210 474 L 252 528 L 272 432 Z" fill="#2346a0" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+      <circle cx="262" cy="452" r="9" fill="#f2c230" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/>
+      <ellipse cx="124" cy="212" rx="14" ry="22" fill="#f4cbb2" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+      <ellipse cx="296" cy="212" rx="14" ry="22" fill="#f4cbb2" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+      <ellipse cx="210" cy="200" rx="88" ry="106" fill="#f7d6c0" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/>
+      <circle cx="156" cy="240" r="25" fill="url(#htp)"/>
+      <circle cx="264" cy="240" r="25" fill="url(#htp)"/>
+      <g fill="#c98a5c"><circle cx="190" cy="232" r="2"/><circle cx="198" cy="238" r="1.6"/><circle cx="184" cy="240" r="1.6"/><circle cx="226" cy="232" r="2"/><circle cx="234" cy="239" r="1.6"/><circle cx="220" cy="240" r="1.6"/></g>
+      <g id="avaEyes">
+        <g transform="translate(172 206)"><ellipse rx="21" ry="15" fill="#fff" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="4"/><circle r="11.5" fill="#3a7fd8"/><circle r="11.5" fill="none" stroke="#1f4fa0" stroke-width="3"/><circle r="5" fill="#1b2340"/><circle cx="4.5" cy="-4.5" r="3.6" fill="#fff"/><circle cx="-4" cy="4" r="1.8" fill="#fff"/><path d="M-24 -6 Q 0 -22 24 -6" fill="none" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/><path d="M-21 -9 L -28 -15 M -17 -12 L -22 -19" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/></g>
+        <g transform="translate(248 206)"><ellipse rx="21" ry="15" fill="#fff" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="4"/><circle r="11.5" fill="#3a7fd8"/><circle r="11.5" fill="none" stroke="#1f4fa0" stroke-width="3"/><circle r="5" fill="#1b2340"/><circle cx="4.5" cy="-4.5" r="3.6" fill="#fff"/><circle cx="-4" cy="4" r="1.8" fill="#fff"/><path d="M-24 -6 Q 0 -22 24 -6" fill="none" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/><path d="M21 -9 L 28 -15 M 17 -12 L 22 -19" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/></g>
+      </g>
+      <path d="M150 174 Q 172 162 194 170 M 226 170 Q 248 162 270 174" fill="none" stroke="#b07d2c" stroke-width="6" stroke-linecap="round"/>
+      <path d="M210 216 Q 204 240 214 245" fill="none" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="4"/>
+      <path d="M182 262 Q 210 290 238 262 Q 210 278 182 262 Z" fill="#c8565f" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="4"/>
+      <path d="M189 265 Q 210 276 231 265 Q 210 271 189 265 Z" fill="#fff"/>
+      <path d="M116 172 C 122 92 212 66 292 108 C 308 124 310 150 304 178 C 272 130 222 118 176 140 C 150 152 130 166 116 172 Z" fill="#f2cf6b" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/>
+      <path d="M150 116 C 190 92 240 92 278 112" fill="none" stroke="#fbe7a6" stroke-width="6" stroke-linecap="round"/>
+      <path d="M116 176 C 98 252 102 332 128 404 C 140 362 138 292 134 224 Z" fill="#f2cf6b" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/>
+      <path d="M304 178 C 324 252 320 332 292 408 C 282 362 284 292 288 224 Z" fill="#f2cf6b" stroke="#1b2340" stroke-linejoin="round" stroke-linecap="round" stroke-width="6"/>
+      <path d="M296 230 C 306 280 304 340 292 396" fill="none" stroke="#c99a2e" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+    </g>
+  </svg>
+
   <div id="foot" class="t" data-max="1"></div>
   <div id="prog"></div>
   <div id="hud" class="t" data-max="1"></div>
@@ -211,6 +259,7 @@ const REEL = {
     "opener": "kicker",
     "footnote": "Illustrative example. Not legal advice.",
     "look": "dossier",
+    "avatar": true,
     "kicker": "Crib mattress?"
   },
   "scenes": [
@@ -398,6 +447,7 @@ const BUILD = {
 const LOOKS = ['classic', 'dossier'];
 const look = () => (REEL.meta && REEL.meta.look) || 'classic';
 const DOS = look() === 'dossier';
+const AVA = !!(REEL.meta && REEL.meta.avatar) && DOS;
 let T0 = [], DUR = 0;
 function build() {
   const root = $('#scenes'); let t = 0; T0 = [];
@@ -408,6 +458,7 @@ function build() {
   $('#kick .kk').textContent = (REEL.meta && REEL.meta.kicker) || '';
   $('#prog').innerHTML = REEL.scenes.map(() => '<i><b></b></i>').join('');
   if (DOS) { document.body.classList.add('dossier'); dossier(); }
+  if (AVA) document.body.classList.add('ava');
 }
 
 /* ---------- dossier look: printed paper, halftone dots, dot-wipe cuts (deterministic, drawn once) ---------- */
@@ -485,7 +536,7 @@ function fitAll() {
   /* kicker: shrink until it is <= 2 lines and no word is wider than the card */
   const kick = $('#kick'), kk = $('#kick .kk');
   if (kk.textContent) {
-    kick.style.display = 'flex'; kick.style.transform = ''; kk.style.fontSize = ''; let fs = 150;
+    kick.style.display = 'flex'; kick.style.transform = ''; kk.style.fontSize = ''; let fs = parseFloat(getComputedStyle(kk).fontSize);
     while ((lines(kk) > 2 || kk.scrollWidth > kk.clientWidth + 1) && fs > 90) { fs -= 4; kk.style.fontSize = fs + 'px'; }
     kick.style.display = 'none';
   }
@@ -568,6 +619,16 @@ function seek(t) {
     kick.style.display = 'flex'; kick.style.opacity = 1 - out; kick.style.transform = `translateY(${-out * 60}px)`;
     $('#kick .kb').style.width = (40 + 220 * bar) + 'px';
   } else kick.style.display = 'none';
+  if (AVA) {   /* presenter: fully drawn on frame 0 (mute test), breathes and blinks, leaves with the first cut */
+    const ava = $('#ava'), on = t < T0[1];
+    ava.style.display = on ? 'block' : 'none';
+    if (on) {
+      const br = Math.sin(t * 2.4), sw = Math.sin(t * 1.3);
+      $('#avaBody').setAttribute('transform', `translate(210 560) scale(1 ${(1 + 0.008 * br).toFixed(4)}) rotate(${(0.9 * sw).toFixed(3)}) translate(-210 -560)`);
+      const bl = [1.6, 3.9, 6.2].some(b => t > b && t < b + 0.12);
+      $('#avaEyes').setAttribute('transform', bl ? 'translate(0 206) scale(1 0.12) translate(0 -206)' : '');
+    }
+  }
   if (DOS) {
     const k = T0.findIndex((s, i) => t >= s && t < s + REEL.scenes[i].dur);
     $('#hud').textContent = `CASE ${String((REEL.meta && REEL.meta.id) || '').slice(0, 8)} / EXHIBIT ${String(k + 1).padStart(2, '0')} OF ${String(REEL.scenes.length).padStart(2, '0')}`;

@@ -55,3 +55,10 @@ verification.
   Lemo-Opuscar's Halftone Dossier (MIT, see THIRD_PARTY.md): printed paper, halftone dots, misregistered headlines,
   manila folders, rough stamps, dot-wipe cuts and a CASE / EXHIBIT line. Same scenes, limits, safe zone and QA.
 - `classic`: the original clean template (old reels re-render unchanged).
+
+## Presenter (`meta.avatar`, default on since 2026-11-01, `config/settings.json` `reel_avatar`)
+
+An illustrated presenter (Mert's brief: Scandinavian look, early 30s, blonde, blue eyes, full figure, navy blazer)
+drawn as SVG in the dossier style. She is on screen from frame 0 through the opening scene (kicker + stamp), breathes
+and blinks, and leaves with the first dot-wipe cut. Illustration, not a photoreal person; she is never named or
+presented as an M&Z expert (truth rules). Dossier look only.
