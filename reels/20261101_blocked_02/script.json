@@ -1,19 +1,19 @@
 {
- "topic": "Hook-on chair listing keeps coming back? Look at the edition in your file.",
+ "topic": "Hook-on chair listing flagged again? One thing to check: the edition your file cites.",
  "hook_formula": "#12 The Objection (pain quote)",
  "kicker": null,
  "scenes": [
   {
    "type": "stamp",
-   "dur": 3.2,
-   "headline": "Hook-on chair on hold?",
+   "dur": 2.8,
+   "headline": "Hook-on chair flagged?",
    "note": "Say a seller's hook-on chair listing keeps getting flagged.",
    "stamp": "BLOCKED",
    "doc": "Chair test report"
   },
   {
    "type": "compare",
-   "dur": 4.8,
+   "dur": 5.6,
    "headline": "Since July 20, 2026",
    "note": "16 CFR 1233.2 now cites ASTM F1235-25.",
    "left": {
@@ -34,12 +34,12 @@
     "label": "Unchecked"
    },
    "good": {
-    "label": "F1235-25"
+    "label": "Part 1233"
    }
   },
   {
    "type": "checklist",
-   "dur": 4.4,
+   "dur": 3.4,
    "headline": "Chair file check",
    "note": "Say KID-24-BLUE is a hook-on chair.",
    "items": [
@@ -70,13 +70,13 @@
   }
  ],
  "vo": [
-  "\"We sent it twice.\" Hook-on chair rule changed.",
-  "Since July twentieth, the rule cites the twenty twenty-five ASTM edition.",
+  "\"We sent it twice.\" One thing to check first.",
+  "Since July twentieth, the hook-on chair rule cites the twenty twenty-five ASTM edition.",
   "Before, it was twenty eighteen.",
-  "Say your file shows only twenty eighteen. Check it against the current rule.",
+  "Say your file shows only twenty eighteen. Check it.",
   "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
  ],
- "caption": "Hook-on chair listing keeps coming back? Look at the edition in your file.\nSince July 20, 2026, 16 CFR 1233.2 says each portable hook-on chair must comply with ASTM F1235-25. Before that date, it cited F1235-18.\nIf your test reports only point to the 2018 version, check them against the current rule before you resend anything.\nYour certificate must list each applicable rule, like part 1233, separately (16 CFR 1110.11(a)(2)).\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "Hook-on chair listing flagged again? One thing to check: the edition your file cites.\nSince July 20, 2026, 16 CFR 1233.2 says each portable hook-on chair must comply with ASTM F1235-25. Before that date, it cited F1235-18.\nIf your test reports only point to the 2018 version, check them against the current rule before you resend anything. The notice itself says what was flagged.\nYour certificate must list each applicable rule, like part 1233, separately (16 CFR 1110.11(a)(2)).\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
  "tracking_link": "https://mzconsulting.agency/?src=ig_20261101_blocked_02#contact",
  "search_keywords": "hook-on chair,ASTM F1235",

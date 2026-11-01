@@ -5,7 +5,7 @@
  "scenes": [
   {
    "type": "stamp",
-   "dur": 3.1,
+   "dur": 3.3,
    "headline": "Crib mattress file?",
    "note": "Say a seller reorders crib mattresses for next month.",
    "stamp": "CHECK",
@@ -34,7 +34,7 @@
     "label": "Unchecked"
    },
    "good": {
-    "label": "F2933-25"
+    "label": "Part 1241"
    }
   },
   {
@@ -70,7 +70,7 @@
   }
  ],
  "vo": [
-  "Crib mattress on your cert? Check twelve forty-one.",
+  "Crib mattress on your cert? Check part twelve forty-one.",
   "Since May fourth, the rule cites the twenty twenty-five ASTM edition.",
   "With CPSC's own changes. Before, twenty twenty-one.",
   "Say your file shows only twenty twenty-one. Check it.",
