@@ -30,7 +30,8 @@ def main(argv):
     script, meta = json.loads((d / "script.json").read_text()), json.loads((d / "meta.json").read_text())
     voices = json.loads((REPO / "config" / "arms.json").read_text())["factors"]["voice"]
     m = {"id": rid, "pillar": meta["pillar"], "cta": meta["cta"], "voice": voices[meta["arms"]["voice"]],
-         "opener": meta["arms"].get("opener", "classic"), "footnote": "Illustrative example. Not legal advice."}
+         "opener": meta["arms"].get("opener", "classic"), "footnote": "Illustrative example. Not legal advice.",
+         "look": meta.get("look") or json.loads((REPO / "config" / "settings.json").read_text()).get("reel_look", "classic")}
     if m["opener"] == "kicker" and script.get("kicker"):
         m["kicker"] = script["kicker"]
     save_reel({"meta": m, "scenes": script["scenes"]})

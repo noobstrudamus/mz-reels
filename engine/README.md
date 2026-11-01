@@ -48,3 +48,10 @@ Chromium (`/opt/pw-browsers/chromium` in the cloud container).
 The cloud container runs behind a TLS-inspecting proxy. `voice.py` points edge-tts at
 `/root/.ccr/ca-bundle.crt`, or at `$SSL_CERT_FILE` if that is set. It never disables certificate
 verification.
+
+## Looks (`meta.look`)
+
+- `dossier` (default since 2026-11-01, `config/settings.json` `reel_look`): halftone case-file look adapted from
+  Lemo-Opuscar's Halftone Dossier (MIT, see THIRD_PARTY.md): printed paper, halftone dots, misregistered headlines,
+  manila folders, rough stamps, dot-wipe cuts and a CASE / EXHIBIT line. Same scenes, limits, safe zone and QA.
+- `classic`: the original clean template (old reels re-render unchanged).

@@ -44,7 +44,7 @@ the calendar of day+k), each with its own hook, opener, voice, CTA mode and slot
 
 ## 3. Render
 In engine/: put the scenes into the REEL object (meta: id, pillar, cta, voice = plan.voice_name,
-opener = plan.opener, kicker (kicker opener only), footnote "Illustrative example. Not legal advice."),
+opener = plan.opener, kicker (kicker opener only), look = settings.reel_look (batch_render.py sets it; `dossier` since 2026-11-01), footnote "Illustrative example. Not legal advice."),
 write vo.txt, then:
 ```bash
 python3 voice.py --fit          # must print ALL OK; total must stay within the length_rule range

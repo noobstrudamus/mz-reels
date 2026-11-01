@@ -117,6 +117,57 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
   box-shadow: inset 0 0 0 6px var(--plate), inset 0 0 0 8px var(--plate-line), 0 14px 30px rgba(28,35,41,.14); }
 .sig .sh { font: 800 30px/1 'Archivo'; font-stretch: 112%; letter-spacing: 6px; color: var(--plate-label); padding-bottom: 18px; border-bottom: 3px solid var(--plate-line); white-space: nowrap; }
 .sig .sl { font: 700 40px/1.22 'Public Sans'; color: var(--plate-ink); margin-top: 20px; }
+
+/* ---------- look: dossier (meta.look = 'dossier') ----------
+   Halftone case-file look, adapted from the "Halftone Dossier" style of Lemo-Opuscar
+   (github.com/lemomo-ai/lemo-opuscar, MIT, (c) 2026 LemoLab; see engine/THIRD_PARTY.md). Re-implemented here:
+   printed paper, halftone dots that overprint, hard offset shadows instead of blur, misregistered headlines,
+   flat inks with heavy ink outlines, dot-wipe cuts. */
+body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1b2340; --muted: #262f52; --muted-2: #343d62;
+  --accent: #2346a0; --red: #c0392b; --tag: #f2c230; --tag-border: #1b2340; --rule: #1b2340; --rule-light: #cdbf9d;
+  --ov: rgba(47,111,208,.42); --manila: #ead39b; --manila-2: #dcc184; }
+.dossier #grid, .dossier #shade { display: none; }
+#paper, #dots, #wipe { position: absolute; inset: 0; pointer-events: none; display: none; }
+.dossier #paper, .dossier #dots, .dossier #wipe { display: block; }
+.dossier #paper { background-size: 1080px 1920px; }
+.dossier #dots { mix-blend-mode: multiply; }
+.dossier #grain { opacity: .05; mix-blend-mode: multiply; }
+.dossier .wm b { font-weight: 900; text-shadow: 4px 4px 0 var(--ov); }
+.dossier .pill { border: 3px solid var(--ink); border-radius: 3px; box-shadow: 5px 5px 0 var(--ink); }
+.dossier #hud { display: block; }
+#hud { display: none; position: absolute; left: 80px; top: 318px; font: 800 22px/1 'JB Mono'; letter-spacing: 3px; color: var(--muted-2); white-space: nowrap; }
+.dossier .hl { font-weight: 900; font-stretch: 80%; color: var(--ink); text-shadow: 8px 8px 0 var(--ov); }
+.dossier .nt { font-weight: 600; color: var(--muted); }
+.dossier .doc { background: var(--surface); border: 5px solid var(--ink); border-radius: 4px; box-shadow: 14px 14px 0 var(--ov); }
+.dossier .doc .dt { color: var(--ink); }
+.dossier .doc .rule { background: var(--ink); height: 4px; }
+.dossier .doc .ln { border-radius: 0; height: 18px;
+  background: radial-gradient(circle, rgba(27,35,64,.55) 36%, transparent 40%) 0 50% / 13px 13px repeat-x; }
+.dossier .stamp { border-width: 9px; border-radius: 10px; box-shadow: inset 0 0 0 7px transparent, inset 0 0 0 11px var(--red); padding: 22px 46px 16px; }
+.dossier .card { background: var(--surface); border: 5px solid var(--ink); border-radius: 6px; box-shadow: 14px 14px 0 var(--ov); }
+.dossier .card .lb { color: var(--ink); }
+.dossier .neq { background: var(--red); border: 5px solid var(--ink); box-shadow: 0 0 0 9px var(--paper); line-height: 102px; }
+.dossier .blk { border: 5px solid var(--ink); border-radius: 6px; box-shadow: 14px 14px 0 var(--ink); overflow: hidden; }
+.dossier .blk::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .22;
+  background: radial-gradient(circle, #fff 30%, transparent 34%) 0 0 / 22px 22px;
+  -webkit-mask-image: linear-gradient(105deg, transparent 35%, #000 100%); mask-image: linear-gradient(105deg, transparent 35%, #000 100%); }
+.dossier .blk .ic { border-color: #fff; background: rgba(0,0,0,.14); }
+.dossier .plate, .dossier .sig { background: var(--manila); border: 5px solid var(--ink); border-radius: 4px 14px 6px 6px; box-shadow: 14px 14px 0 var(--ov); }
+.dossier .plate::before, .dossier .sig::before { content: ''; position: absolute; left: 34px; top: -34px; width: 230px; height: 34px; background: var(--manila-2);
+  border: 5px solid var(--ink); border-bottom: 0; border-radius: 10px 10px 0 0; }
+.dossier .screw { display: none; }
+.dossier .plate .ph, .dossier .sig .sh { border-bottom: 4px solid var(--ink); }
+.dossier .plate .ph b, .dossier .plate .ph span, .dossier .sig .sh { color: var(--ink); }
+.dossier .row { border-bottom: 3px dashed rgba(27,35,64,.45); }
+.dossier .row .nm, .dossier .row .vv, .dossier .sig .sl { color: var(--ink); }
+.dossier .row.bad .vv { color: var(--red); }
+.dossier .row .st { border: 4px solid var(--ink); }
+.dossier .l1 { font-weight: 900; text-shadow: 7px 7px 0 var(--ov); }
+.dossier .url { border: 5px solid var(--ink); box-shadow: 12px 12px 0 var(--ink); }
+.dossier #kick { background: transparent !important; }
+.dossier #kick .kk { font-stretch: 80%; text-shadow: 10px 10px 0 var(--ov); }
+.dossier #prog i { background: rgba(27,35,64,.18); border-radius: 0; }
+.dossier #prog i b { background: var(--ink); }
 </style>
 </head>
 <body>
@@ -132,6 +183,8 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
 </svg>
 <div id="stage">
   <div id="grid"></div>
+  <div id="paper"></div>
+  <svg id="dots" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
   <div id="shade"></div>
   <div id="grain"></div>
   <div id="hdr"><div class="wm t" data-max="1"><b>M&amp;Z</b><span>CONSULTING</span></div><div class="pill t" id="pill" data-max="1"></div></div>
@@ -139,6 +192,8 @@ body { font-family: 'Public Sans', system-ui, sans-serif; color: var(--ink); -we
   <div id="kick"><div class="kk t" data-max="2"></div><div class="kb"></div></div>
   <div id="foot" class="t" data-max="1"></div>
   <div id="prog"></div>
+  <div id="hud" class="t" data-max="1"></div>
+  <svg id="wipe" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
 </div>
 
 <script>
@@ -155,6 +210,7 @@ const REEL = {
     "voice": "en-US-AvaNeural",
     "opener": "kicker",
     "footnote": "Illustrative example. Not legal advice.",
+    "look": "dossier",
     "kicker": "Vinyl bath toy?"
   },
   "scenes": [
@@ -297,6 +353,7 @@ function validate() {
     }
   });
   L(REEL.meta && REEL.meta.footnote, 'footnote', 'meta.footnote');
+  if (!LOOKS.includes(look())) errs.push(`meta.look must be one of ${LOOKS.join(', ')} (got "${look()}")`);
   if (!OPENERS.includes(opener())) errs.push(`meta.opener must be one of ${OPENERS.join(', ')} (got "${opener()}")`);
   if (opener() === 'kicker') { if (!REEL.meta.kicker) errs.push('meta.kicker missing (opener kicker)'); L(REEL.meta.kicker, 'kicker', 'meta.kicker'); }
   if (S[0] && S[0].dur < KICK_END + 2 && opener() === 'kicker') errs.push(`scene 1 needs >= ${KICK_END + 2} s with the kicker opener`);
@@ -338,6 +395,9 @@ const BUILD = {
         <div class="sh t" data-max="1">M&amp;Z CONSULTING</div><div class="sl t" data-max="2">It's almost never the product.<br>It's the file.</div></div></div>`,
 };
 
+const LOOKS = ['classic', 'dossier'];
+const look = () => (REEL.meta && REEL.meta.look) || 'classic';
+const DOS = look() === 'dossier';
 let T0 = [], DUR = 0;
 function build() {
   const root = $('#scenes'); let t = 0; T0 = [];
@@ -347,6 +407,67 @@ function build() {
   $('#foot').textContent = (REEL.meta && REEL.meta.footnote) || '';
   $('#kick .kk').textContent = (REEL.meta && REEL.meta.kicker) || '';
   $('#prog').innerHTML = REEL.scenes.map(() => '<i><b></b></i>').join('');
+  if (DOS) { document.body.classList.add('dossier'); dossier(); }
+}
+
+/* ---------- dossier look: printed paper, halftone dots, dot-wipe cuts (deterministic, drawn once) ---------- */
+function rng(seed) { return () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648; }
+function paperURL() {
+  const c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d'), R = rng(9137);
+  g.fillStyle = '#efe4cb'; g.fillRect(0, 0, W, H);
+  const m = document.createElement('canvas'); m.width = 27; m.height = 48; const mg = m.getContext('2d');   /* low-frequency mottling */
+  for (let y = 0; y < 48; y++) for (let x = 0; x < 27; x++) { const v = R(); mg.fillStyle = v < 0.5 ? `rgba(120,90,40,${(0.5 - v) * 0.16})` : `rgba(255,252,240,${(v - 0.5) * 0.18})`; mg.fillRect(x, y, 1, 1); }
+  g.imageSmoothingEnabled = true; g.drawImage(m, 0, 0, W, H);
+  const im = g.getImageData(0, 0, W, H), d = im.data;                                                   /* fine warm grain */
+  for (let i = 0; i < d.length; i += 4) { const n = (R() - 0.5) * 14; d[i] += n; d[i + 1] += n * 0.94; d[i + 2] += n * 0.8; }
+  g.putImageData(im, 0, 0);
+  const v = g.createRadialGradient(W / 2, H * 0.46, H * 0.28, W / 2, H / 2, H * 0.72);                  /* vignette */
+  v.addColorStop(0, 'rgba(90,60,20,0)'); v.addColorStop(1, 'rgba(90,60,20,.20)'); g.fillStyle = v; g.fillRect(0, 0, W, H);
+  g.fillStyle = 'rgba(90,60,20,.07)'; g.fillRect(0, 958, W, 3); g.fillStyle = 'rgba(255,255,255,.22)'; g.fillRect(0, 961, W, 2);   /* centre fold */
+  return c.toDataURL('image/jpeg', 0.9);
+}
+/* halftone: rotated grid of circles as one path, radius = density(x,y) * step * k */
+function halftone(svg, { step = 24, angle = 20, color, f, k = 0.68, cls = '' }) {
+  const a = angle * Math.PI / 180, ca = Math.cos(a), sa = Math.sin(a), R = Math.hypot(W, H);
+  let dpath = '';
+  for (let v = -R; v < R; v += step) for (let u = -R; u < R; u += step) {
+    const x = W / 2 + u * ca - v * sa, y = H / 2 + u * sa + v * ca;
+    if (x < -step || x > W + step || y < -step || y > H + step) continue;
+    const r = clamp(f(x, y)) * step * k; if (r < 0.6) continue;
+    dpath += `M${(x - r).toFixed(1)} ${y.toFixed(1)}a${r.toFixed(1)} ${r.toFixed(1)} 0 1 0 ${(2 * r).toFixed(1)} 0a${r.toFixed(1)} ${r.toFixed(1)} 0 1 0 ${(-2 * r).toFixed(1)} 0`;
+  }
+  svg.insertAdjacentHTML('beforeend', `<path class="${cls}" d="${dpath}" fill="${color}"/>`);
+}
+const edgeF = (wx, wy, p) => (x, y) => Math.pow(clamp(Math.max(1 - Math.min(x, W - x) / wx, 1 - Math.min(y, H - y) / wy)), p);
+const radF = (cx, cy, r, p) => (x, y) => Math.pow(clamp(1 - Math.hypot(x - cx, y - cy) / r), p);
+let WIPE = [];
+function dossier() {
+  const url = paperURL();
+  $('#paper').style.backgroundImage = `url(${url})`; $('#kick').style.backgroundImage = `url(${url})`;
+  const dots = $('#dots');
+  halftone(dots, { step: 24, angle: 20, color: '#1b2340', f: edgeF(64, 200, 1.5), k: 0.62 });                 /* dots crowd the frame edge */
+  halftone(dots, { step: 22, angle: 70, color: '#f2c230', f: radF(1080, 0, 620, 1.2), k: 0.66 });          /* yellow glow, top right */
+  halftone(dots, { step: 22, angle: 45, color: '#2f6fd0', f: radF(0, 1920, 760, 1.25), k: 0.6 });          /* cobalt glow, bottom left */
+  const wipe = $('#wipe'), STEP = 90; WIPE = [];
+  const cols = ['#1b2340', '#2346a0', '#f2c230', '#c0392b'];
+  for (let i = 1; i < REEL.scenes.length; i++) {
+    let g = `<g id="w${i}" fill="${cols[(i - 1) % cols.length]}" style="display:none">`;
+    for (let y = STEP / 2; y < H + STEP; y += STEP) for (let x = STEP / 2; x < W + STEP; x += STEP) g += `<circle cx="${x}" cy="${y}" r="0"/>`;
+    wipe.insertAdjacentHTML('beforeend', g + '</g>'); WIPE.push({ i, g: $('#w' + i, wipe), step: STEP });
+  }
+}
+const WIPE_HALF = 0.22, WIPE_DIAG = 0.12;
+function wipeSeek(t) {
+  WIPE.forEach(({ i, g, step }) => {
+    const c = T0[i], a = c - WIPE_HALF - WIPE_DIAG, b = c + WIPE_HALF + WIPE_DIAG;
+    if (t < a || t > b) { g.style.display = 'none'; return; }
+    g.style.display = '';
+    g.querySelectorAll('circle').forEach(el => {
+      const x = +el.getAttribute('cx'), y = +el.getAttribute('cy'), dl = WIPE_DIAG * ((x + y) / (W + H) - 0.5);
+      const u = t - c - dl, cov = u < 0 ? eIn(prog(u, -WIPE_HALF, 0)) : 1 - eOut(prog(u, 0, WIPE_HALF));
+      el.setAttribute('r', (cov * step * 0.75).toFixed(1));
+    });
+  });
 }
 
 /* shrink single-line text until it fits its box (never grows) */
@@ -426,7 +547,7 @@ function seek(t) {
   t = clamp(t, 0, DUR - 1e-4);
   REEL.scenes.forEach((s, i) => {
     const el = $('#s' + i), u = t - T0[i], d = s.dur, last = i === REEL.scenes.length - 1, first = i === 0;
-    const on = u >= 0 && u < d;
+    const on = u >= 0 && u < d && !(DOS && first && opener() === 'kicker' && t < KICK_END);
     el.style.visibility = on ? 'visible' : 'hidden';
     if (!on) return;
     /* headline / note enter (scene 1 starts fully visible so the first frame carries the hook) */
@@ -435,7 +556,7 @@ function seek(t) {
     else if (first) { show(hl, 1); show(nt, 1); } else { show(hl, eOut(prog(u, 0, 0.32)), 40); show(nt, eOut(prog(u, 0.12, 0.45)), 30); }
     ANIM[s.type](el, u, d, first);
     /* exit */
-    const x = last ? 0 : eIn(prog(u, d - 0.2, d));
+    const x = last || DOS ? 0 : eIn(prog(u, d - 0.2, d));
     el.style.opacity = 1 - x; el.style.transform = `translateY(${-x * 40}px)`;
     if (first && opener() === 'slam') { const pz = prog(u, 0.3, 0.52); el.style.transform += ` scale(${1 + 0.025 * Math.sin(Math.PI * pz)})`; }   /* punch on impact; frame 0 stays at 1.0 */
   });
@@ -447,6 +568,11 @@ function seek(t) {
     kick.style.display = 'flex'; kick.style.opacity = 1 - out; kick.style.transform = `translateY(${-out * 60}px)`;
     $('#kick .kb').style.width = (40 + 220 * bar) + 'px';
   } else kick.style.display = 'none';
+  if (DOS) {
+    const k = T0.findIndex((s, i) => t >= s && t < s + REEL.scenes[i].dur);
+    $('#hud').textContent = `CASE ${String((REEL.meta && REEL.meta.id) || '').slice(0, 8)} / EXHIBIT ${String(k + 1).padStart(2, '0')} OF ${String(REEL.scenes.length).padStart(2, '0')}`;
+    wipeSeek(t);
+  }
   document.querySelectorAll('#prog i b').forEach((b, i) => { b.style.width = (clamp((t - T0[i]) / REEL.scenes[i].dur) * 100) + '%'; });
 }
 
@@ -480,7 +606,7 @@ function qa() {
   });
   if (opener() === 'kicker') { seek(0); checkNode($('#kick .kk'), 'kicker (frame 0)', issues); }
   seek(T0[0] + 1.5);
-  document.querySelectorAll('#hdr .t, #foot').forEach(n => checkNode(n, 'chrome', issues));
+  document.querySelectorAll('#hdr .t, #foot' + (DOS ? ', #hud' : '')).forEach(n => checkNode(n, 'chrome', issues));
   return issues;
 }
 function checkNode(n, where, issues) {
