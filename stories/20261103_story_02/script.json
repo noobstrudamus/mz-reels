@@ -1,0 +1,61 @@
+{
+ "frame": {
+  "type": "rule",
+  "tag": "The rule",
+  "quote": "Clothing storage unit means any free-standing furniture item manufactured in the United States or imported for use in the United States that is intended for the storage of clothing, typical of bedroom furniture.",
+  "cite": "16 CFR 1261.1",
+  "line": "Selling dressers? Check your certificate."
+ },
+ "from_reel": "reels/20261103_finder_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Part 1261 covers any free-standing clothing storage unit made after Sept 1, 2023; aims to protect kids up to 72 months from tip-overs",
+   "section": "16 CFR 1261.1",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1261/section-1261.1",
+   "quote": "The requirements in this part are intended to protect children up to 72 months of age from tip-over-related death or injury. ... (b) Application. Clothing storage unit means any free-standing furniture item manufactured in the United States or imported for use in the United States that is intended for the storage of clothing, typical of bedroom furniture. All clothing storage units that are manufactured after September 1, 2023, are subject to the requirements of this part."
+  },
+  {
+   "id": "S2",
+   "claim": "Units subject to ASTM F2057-23 must comply with it",
+   "section": "16 CFR 1261.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1261/section-1261.2",
+   "quote": "Each clothing storage unit that is subject to ASTM F2057-23, Standard Safety Specification for Clothing Storage Units, approved on February 1, 2023, shall comply with ASTM F2057-23."
+  },
+  {
+   "id": "S3",
+   "claim": "Products subject to a CPSC rule need a finished product certificate",
+   "section": "16 CFR 1110.5",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.5",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate."
+  },
+  {
+   "id": "S4",
+   "claim": "CPC vs GCC",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "quote": "There are two types of finished product certificates: Children's Product Certificates (CPCs) and General Certificates of Conformity (GCCs)."
+  },
+  {
+   "id": "S5",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "S6",
+   "claim": "CPC = children's products (14(a)(2)); GCC = general-use (14(a)(1))",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "quote": "Children's Product Certificate (CPC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA, 15 U.S.C. 2063, and part 1107 of this chapter. ... General Certificate of Conformity (GCC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(1) of the CPSA, 15 U.S.C. 2063(a)(1)."
+  },
+  {
+   "id": "S7",
+   "claim": "Most recent test date and full details of each lab",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested"
+  }
+ ]
+}
