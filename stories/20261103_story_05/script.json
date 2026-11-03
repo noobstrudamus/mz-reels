@@ -1,0 +1,19 @@
+{
+ "frame": {
+  "type": "cta",
+  "tag": "Free gap list",
+  "headline": "Blocked right now?",
+  "line1": "Forward the notice.",
+  "line2": "Gap list in 24 hours. Link in bio."
+ },
+ "from_reel": "reels/20261103_gap_02",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Most recent test date and full details of each lab",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested"
+  }
+ ]
+}
