@@ -1,0 +1,92 @@
+{
+ "topic": "Your toy passed every test, but the lab line on the CPC can still be a gap.",
+ "hook_formula": "#10 If This Then Watch (question)",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.4,
+   "headline": "Toy CPC: lab details?",
+   "note": "Say a seller's toy passed every third party test.",
+   "stamp": "MISSING",
+   "doc": "Toy CPC"
+  },
+  {
+   "type": "compare",
+   "dur": 5.6,
+   "headline": "The lab line on a CPC",
+   "note": "16 CFR 1110.11(a)(6): each lab the certificate relies on.",
+   "left": {
+    "label": "Often",
+    "value": "Lab name"
+   },
+   "right": {
+    "label": "Required",
+    "value": "7 details"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 2.4,
+   "headline": "Plus date and place",
+   "note": "The most recent date and place it was tested.",
+   "bad": {
+    "label": "Name only"
+   },
+   "good": {
+    "label": "Full details"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.1,
+   "headline": "CPC lab line check",
+   "note": "Say KID-24-BLUE is a toy.",
+   "items": [
+    {
+     "name": "Lab name",
+     "value": "listed",
+     "ok": true
+    },
+    {
+     "name": "Street + city",
+     "value": "missing",
+     "ok": false
+    },
+    {
+     "name": "Email + phone",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 5.1,
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Toy passed? CPC needs seven lab details.",
+  "Not just its name. Street, city, state, country, email, phone.",
+  "Plus the most recent test date and place.",
+  "Only the name on your CPC? That's usually a gap.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caption": "Your toy passed every test, but the lab line on the CPC can still be a gap.\n16 CFR 1110.11(a)(6) asks for the most recent test date and place, and for each lab the certificate depends on: name, street address, city, state or province, country or region, email and phone.\nA lab name alone usually doesn't cover it.\nCheck the lab line on your children's product certificate before you send it again.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261103_gap_02#contact",
+ "search_keywords": "children's product certificate,CPC",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Most recent test date and full details of each lab",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested"
+  }
+ ]
+}

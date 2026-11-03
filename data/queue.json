@@ -1372,5 +1372,30 @@
   "family": null,
   "media_id": "18127433371963436",
   "published_at": "2026-11-01T21:56:45Z"
+ },
+ {
+  "id": "20261103_gap_02",
+  "kind": "reel",
+  "container_id": "17916208227541034",
+  "slot_local": "08:47",
+  "slot_utc": "2026-11-03T13:47:00Z",
+  "caption": "Your toy passed every test, but the lab line on the CPC can still be a gap.\n16 CFR 1110.11(a)(6) asks for the most recent test date and place, and for each lab the certificate depends on: name, street address, city, state or province, country or region, email and phone.\nA lab name alone usually doesn't cover it.\nCheck the lab line on your children's product certificate before you send it again.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+  "created_at": "2026-11-03T11:56:27Z",
+  "status": "pending",
+  "reel": "reels/20261103_gap_02",
+  "date": "2026-11-03",
+  "pillar": "gap",
+  "cta": "gaplist",
+  "arms": {
+   "hook": "question",
+   "opener": "slam",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "0847"
+  },
+  "src": "ig_20261103_gap_02",
+  "family": null
  }
 ]

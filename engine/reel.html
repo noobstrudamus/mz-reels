@@ -173,7 +173,7 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 .ava .scene[data-type=stamp] .doc { left: 0; top: 70px; width: 380px; height: 420px; padding: 28px 30px; }
 .ava .scene[data-type=stamp] .doc .dt { font-size: 19px; letter-spacing: 2px; }
 .ava .scene[data-type=stamp] .doc .ln { margin-bottom: 18px; }
-.ava .scene[data-type=stamp] .stamp { left: 214px; top: 290px; font-size: 76px; padding: 14px 26px 10px; border-width: 8px; }
+.ava .scene[data-type=stamp] .stamp { left: 224px; top: 290px; font-size: 70px; padding: 14px 26px 10px; border-width: 8px; }
 .dossier #kick .kk { font-stretch: 80%; text-shadow: 10px 10px 0 var(--ov); }
 .dossier #prog i { background: rgba(27,35,64,.18); border-radius: 0; }
 .dossier #prog i b { background: var(--ink); }
@@ -310,80 +310,79 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261101_cost_01",
-    "pillar": "cost",
-    "cta": "comment_gaplist",
+    "id": "20261103_gap_02",
+    "pillar": "gap",
+    "cta": "gaplist",
     "voice": "en-US-AvaNeural",
-    "opener": "kicker",
+    "opener": "slam",
     "footnote": "Illustrative example. Not legal advice.",
     "look": "dossier",
-    "avatar": true,
-    "kicker": "Crib mattress?"
+    "avatar": true
   },
   "scenes": [
     {
       "type": "stamp",
-      "dur": 3.3,
-      "headline": "Crib mattress file?",
-      "note": "Say a seller reorders crib mattresses for next month.",
-      "stamp": "CHECK",
-      "doc": "Mattress test report"
+      "dur": 3.4,
+      "headline": "Toy CPC: lab details?",
+      "note": "Say a seller's toy passed every third party test.",
+      "stamp": "MISSING",
+      "doc": "Toy CPC"
     },
     {
       "type": "compare",
-      "dur": 4.4,
-      "headline": "Since May 4, 2026",
-      "note": "16 CFR 1241.2 now cites ASTM F2933-25.",
+      "dur": 5.6,
+      "headline": "The lab line on a CPC",
+      "note": "16 CFR 1110.11(a)(6): each lab the certificate relies on.",
       "left": {
-        "label": "Before",
-        "value": "F2933-21"
+        "label": "Often",
+        "value": "Lab name"
       },
       "right": {
-        "label": "Now",
-        "value": "F2933-25"
+        "label": "Required",
+        "value": "7 details"
       }
     },
     {
       "type": "pair",
-      "dur": 4.3,
-      "headline": "Plus CPSC's own changes",
-      "note": "The rule adds to and excludes parts of F2933-25.",
+      "dur": 2.4,
+      "headline": "Plus date and place",
+      "note": "The most recent date and place it was tested.",
       "bad": {
-        "label": "Unchecked"
+        "label": "Name only"
       },
       "good": {
-        "label": "Part 1241"
+        "label": "Full details"
       }
     },
     {
       "type": "checklist",
-      "dur": 3.5,
-      "headline": "Mattress file check",
-      "note": "Say KID-24-BLUE is a crib mattress.",
+      "dur": 3.1,
+      "headline": "CPC lab line check",
+      "note": "Say KID-24-BLUE is a toy.",
       "items": [
         {
-          "name": "Part 1241",
+          "name": "Lab name",
           "value": "listed",
           "ok": true
         },
         {
-          "name": "Edition in file",
-          "value": "check vs -25",
+          "name": "Street + city",
+          "value": "missing",
           "ok": false
         },
         {
-          "name": "Checked pre-order",
-          "value": "not yet",
+          "name": "Email + phone",
+          "value": "missing",
           "ok": false
         }
       ]
     },
     {
       "type": "cta",
-      "dur": 4.1,
-      "headline": "Want a free gap list?",
-      "line1": "Comment M&Z.",
-      "line2": "We'll DM you the link.",
+      "dur": 5.1,
+      "headline": "Blocked right now?",
+      "line1": "Forward the notice.",
+      "line2": "Get your gap list in 24 hours.",
       "url": "mzconsulting.agency"
     }
   ]
