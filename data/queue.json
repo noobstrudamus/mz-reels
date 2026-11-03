@@ -1422,5 +1422,25 @@
   },
   "src": "ig_20261103_finder_01",
   "family": "furniture"
+ },
+ {
+  "id": "20261103_story_01",
+  "kind": "story",
+  "container_id": "17916209097541034",
+  "slot_local": "10:47",
+  "slot_utc": "2026-11-03T15:47:00Z",
+  "caption": "",
+  "first_comment": "",
+  "created_at": "2026-11-03T11:58:53Z",
+  "status": "pending",
+  "reel": "stories/20261103_story_01",
+  "date": "2026-11-03",
+  "pillar": "story_01",
+  "cta": null,
+  "arms": {
+   "slot": "1047"
+  },
+  "src": null,
+  "family": null
  }
 ]
