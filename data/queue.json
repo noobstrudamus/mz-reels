@@ -1397,5 +1397,30 @@
   },
   "src": "ig_20261103_gap_02",
   "family": null
+ },
+ {
+  "id": "20261103_finder_01",
+  "kind": "reel",
+  "container_id": "17916208896541034",
+  "slot_local": "09:47",
+  "slot_utc": "2026-11-03T14:47:00Z",
+  "caption": "Selling dressers for adults? The CPSC tip-over rule still covers them.\n16 CFR part 1261 applies to any free-standing clothing storage unit made after September 1, 2023, typical of bedroom furniture, not only kids' furniture.\nIt points to ASTM F2057-23 and aims to protect kids up to 72 months old from dresser tip-over.\nYour GCC must list part 1261 separately (16 CFR 1110.11(a)(2)).\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-11-03T11:57:55Z",
+  "status": "pending",
+  "reel": "reels/20261103_finder_01",
+  "date": "2026-11-03",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "myth",
+   "opener": "kicker",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "0947"
+  },
+  "src": "ig_20261103_finder_01",
+  "family": "furniture"
  }
 ]

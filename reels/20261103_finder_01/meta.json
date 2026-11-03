@@ -1,0 +1,15 @@
+{
+ "id": "20261103_finder_01",
+ "date": "2026-11-03",
+ "pillar": "finder",
+ "cta": "finder",
+ "arms": {
+  "hook": "myth",
+  "opener": "kicker",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "0947"
+ },
+ "family": "furniture"
+}

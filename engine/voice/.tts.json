@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Crib mattress on your cert? Check part twelve forty-one.",
+    "text": "Adult dresser? Part twelve sixty-one still applies.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "4f0a9ddab7b61d2644eddf8561a53232d61118cb"
+    "sha1": "9ebb6d4bdbca1c2488e9053f669824e6f9bed946"
   },
   "s2": {
-    "text": "Since May fourth, the rule cites the twenty twenty-five ASTM edition.",
+    "text": "It covers free-standing clothing storage units made after September first, twenty twenty-three.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "05ebd1ab89c72986ffda99aa5357d1daeb893e1e"
+    "sha1": "042826a69238dd5d2383225f96a65ebc53f49897"
   },
   "s3": {
-    "text": "With CPSC's own changes. Before, twenty twenty-one.",
+    "text": "It's meant to protect young kids from tip-overs.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "8c362d9e6984a58cbf9e1425820385c7ff66f357"
+    "sha1": "c16bf886f0b43d0997188c15c619deb3045e8053"
   },
   "s4": {
-    "text": "Say your file shows only twenty twenty-one. Check it.",
+    "text": "Say your GCC skips twelve sixty-one. List it.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "ec7b6007356d11411ae79d0b1eaf2a0de3018355"
+    "sha1": "c47d26eb70737358dedbec5181b3becc6321e354"
   },
   "s5": {
-    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
+    "text": "Not sure which rules apply? Free CPSC finder. No account needed.",
     "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "5ad318d05ec317252e612fff391e4b93e7a8a618"
+    "sha1": "5c5482077210748743b6c7b3553eec41f7576d94"
   }
 }

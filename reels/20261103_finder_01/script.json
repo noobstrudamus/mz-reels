@@ -1,0 +1,134 @@
+{
+ "topic": "Selling dressers for adults? The CPSC tip-over rule still covers them.",
+ "hook_formula": "#22 Contrarian Flip (myth)",
+ "kicker": "Adult dresser?",
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 3.5,
+   "headline": "Adult dresser, no rule?",
+   "note": "Say a seller imports dressers for adult bedrooms.",
+   "stamp": "MYTH",
+   "doc": "Dresser listing"
+  },
+  {
+   "type": "compare",
+   "dur": 5.7,
+   "headline": "16 CFR part 1261",
+   "note": "Free-standing clothing storage units made after 9/1/2023.",
+   "left": {
+    "label": "Myth",
+    "value": "Kids only"
+   },
+   "right": {
+    "label": "Fact",
+    "value": "Adults too"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 2.6,
+   "headline": "Who it protects",
+   "note": "It aims to protect kids up to 72 months from tip-overs.",
+   "bad": {
+    "label": "Kids only"
+   },
+   "good": {
+    "label": "Part 1261"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.5,
+   "headline": "Dresser file check",
+   "note": "Say DRS-24-OAK is an adult dresser.",
+   "items": [
+    {
+     "name": "Certificate type",
+     "value": "GCC",
+     "ok": true
+    },
+    {
+     "name": "Part 1261",
+     "value": "not listed",
+     "ok": false
+    },
+    {
+     "name": "Test date + place",
+     "value": "missing",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.8,
+   "headline": "Not sure which rules apply?",
+   "line1": "Free CPSC finder.",
+   "line2": "See which rules apply. No account needed.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Adult dresser? Part twelve sixty-one still applies.",
+  "It covers free-standing clothing storage units made after September first, twenty twenty-three.",
+  "It's meant to protect young kids from tip-overs.",
+  "Say your GCC skips twelve sixty-one. List it.",
+  "Not sure which rules apply? Free CPSC finder. No account needed."
+ ],
+ "caption": "Selling dressers for adults? The CPSC tip-over rule still covers them.\n16 CFR part 1261 applies to any free-standing clothing storage unit made after September 1, 2023, typical of bedroom furniture, not only kids' furniture.\nIt points to ASTM F2057-23 and aims to protect kids up to 72 months old from dresser tip-over.\nYour GCC must list part 1261 separately (16 CFR 1110.11(a)(2)).\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=furniture&src=ig_20261103_finder_01",
+ "search_keywords": "dresser tip-over,clothing storage unit",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Part 1261 covers any free-standing clothing storage unit made after Sept 1, 2023; aims to protect kids up to 72 months from tip-overs",
+   "section": "16 CFR 1261.1",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1261/section-1261.1",
+   "quote": "The requirements in this part are intended to protect children up to 72 months of age from tip-over-related death or injury. ... (b) Application. Clothing storage unit means any free-standing furniture item manufactured in the United States or imported for use in the United States that is intended for the storage of clothing, typical of bedroom furniture. All clothing storage units that are manufactured after September 1, 2023, are subject to the requirements of this part."
+  },
+  {
+   "id": "S2",
+   "claim": "Units subject to ASTM F2057-23 must comply with it",
+   "section": "16 CFR 1261.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1261/section-1261.2",
+   "quote": "Each clothing storage unit that is subject to ASTM F2057-23, Standard Safety Specification for Clothing Storage Units, approved on February 1, 2023, shall comply with ASTM F2057-23."
+  },
+  {
+   "id": "S3",
+   "claim": "Products subject to a CPSC rule need a finished product certificate",
+   "section": "16 CFR 1110.5",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.5",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate."
+  },
+  {
+   "id": "S4",
+   "claim": "CPC vs GCC",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "quote": "There are two types of finished product certificates: Children's Product Certificates (CPCs) and General Certificates of Conformity (GCCs)."
+  },
+  {
+   "id": "S5",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "S6",
+   "claim": "CPC = children's products (14(a)(2)); GCC = general-use (14(a)(1))",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "quote": "Children's Product Certificate (CPC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA, 15 U.S.C. 2063, and part 1107 of this chapter. ... General Certificate of Conformity (GCC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(1) of the CPSA, 15 U.S.C. 2063(a)(1)."
+  },
+  {
+   "id": "S7",
+   "claim": "Most recent test date and full details of each lab",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested"
+  }
+ ]
+}

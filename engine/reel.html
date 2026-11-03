@@ -310,68 +310,69 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261103_gap_02",
-    "pillar": "gap",
-    "cta": "gaplist",
+    "id": "20261103_finder_01",
+    "pillar": "finder",
+    "cta": "finder",
     "voice": "en-US-AvaNeural",
-    "opener": "slam",
+    "opener": "kicker",
     "footnote": "Illustrative example. Not legal advice.",
     "look": "dossier",
-    "avatar": true
+    "avatar": true,
+    "kicker": "Adult dresser?"
   },
   "scenes": [
     {
       "type": "stamp",
-      "dur": 3.4,
-      "headline": "Toy CPC: lab details?",
-      "note": "Say a seller's toy passed every third party test.",
-      "stamp": "MISSING",
-      "doc": "Toy CPC"
+      "dur": 3.5,
+      "headline": "Adult dresser, no rule?",
+      "note": "Say a seller imports dressers for adult bedrooms.",
+      "stamp": "MYTH",
+      "doc": "Dresser listing"
     },
     {
       "type": "compare",
-      "dur": 5.6,
-      "headline": "The lab line on a CPC",
-      "note": "16 CFR 1110.11(a)(6): each lab the certificate relies on.",
+      "dur": 5.7,
+      "headline": "16 CFR part 1261",
+      "note": "Free-standing clothing storage units made after 9/1/2023.",
       "left": {
-        "label": "Often",
-        "value": "Lab name"
+        "label": "Myth",
+        "value": "Kids only"
       },
       "right": {
-        "label": "Required",
-        "value": "7 details"
+        "label": "Fact",
+        "value": "Adults too"
       }
     },
     {
       "type": "pair",
-      "dur": 2.4,
-      "headline": "Plus date and place",
-      "note": "The most recent date and place it was tested.",
+      "dur": 2.6,
+      "headline": "Who it protects",
+      "note": "It aims to protect kids up to 72 months from tip-overs.",
       "bad": {
-        "label": "Name only"
+        "label": "Kids only"
       },
       "good": {
-        "label": "Full details"
+        "label": "Part 1261"
       }
     },
     {
       "type": "checklist",
-      "dur": 3.1,
-      "headline": "CPC lab line check",
-      "note": "Say KID-24-BLUE is a toy.",
+      "dur": 3.5,
+      "headline": "Dresser file check",
+      "note": "Say DRS-24-OAK is an adult dresser.",
       "items": [
         {
-          "name": "Lab name",
-          "value": "listed",
+          "name": "Certificate type",
+          "value": "GCC",
           "ok": true
         },
         {
-          "name": "Street + city",
-          "value": "missing",
+          "name": "Part 1261",
+          "value": "not listed",
           "ok": false
         },
         {
-          "name": "Email + phone",
+          "name": "Test date + place",
           "value": "missing",
           "ok": false
         }
@@ -379,10 +380,10 @@ const REEL = {
     },
     {
       "type": "cta",
-      "dur": 5.1,
-      "headline": "Blocked right now?",
-      "line1": "Forward the notice.",
-      "line2": "Get your gap list in 24 hours.",
+      "dur": 4.8,
+      "headline": "Not sure which rules apply?",
+      "line1": "Free CPSC finder.",
+      "line2": "See which rules apply. No account needed.",
       "url": "mzconsulting.agency"
     }
   ]
