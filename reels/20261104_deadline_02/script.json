@@ -1,47 +1,46 @@
 {
- "topic": "Selling a fuel stabilizer? The gas can rule usually isn't the one to check.",
+ "topic": "Say a seller lists a fuel stabilizer and assumes the gas can rule covers it. Then she reads it.",
  "hook_formula": "#22 Contrarian Flip (myth)",
  "kicker": null,
  "scenes": [
   {
    "type": "stamp",
-   "dur": 4.2,
    "headline": "Fuel additive = gas can?",
-   "note": "Say a seller lists a fuel stabilizer bottle.",
+   "note": "Say a seller lists a fuel stabilizer and worries.",
    "stamp": "MYTH",
-   "doc": "Additive listing"
+   "doc": "Additive listing",
+   "dur": 4.2
   },
   {
    "type": "compare",
-   "dur": 3.6,
-   "headline": "Updated Oct 19, 2026",
-   "note": "16 CFR 1461.2: portable fuel container definition.",
+   "headline": "Then she reads 1461.2",
+   "note": "The portable fuel container definition.",
    "left": {
     "label": "Fuel can",
     "value": "≤5 gal can"
    },
    "right": {
     "label": "Additive",
-    "value": "Not fuel"
-   }
+    "value": "Excluded"
+   },
+   "dur": 2.4
   },
   {
    "type": "pair",
-   "dur": 4.2,
-   "headline": "Not flammable fuel",
-   "note": "Stabilizers and engine additives, per 1461.2(b).",
+   "headline": "Changed Oct 19, 2026",
+   "note": "1461.2(b): stabilizers aren't flammable liquid fuels.",
    "bad": {
     "label": "Gas can rule"
    },
    "good": {
     "label": "Other rules"
-   }
+   },
+   "dur": 6.3
   },
   {
    "type": "checklist",
-   "dur": 3.9,
-   "headline": "Additive file check",
-   "note": "Say FUEL-24-STAB is a fuel stabilizer.",
+   "headline": "Her file check",
+   "note": "Say FUEL-24-STAB is her stabilizer.",
    "items": [
     {
      "name": "Product type",
@@ -58,7 +57,8 @@
      "value": "not checked",
      "ok": false
     }
-   ]
+   ],
+   "dur": 2.2
   },
   {
    "type": "cta",
@@ -71,12 +71,12 @@
  ],
  "vo": [
   "Fuel stabilizer? Part fourteen sixty-one usually isn't your rule.",
-  "The definition changed October nineteenth, twenty twenty-six.",
-  "CPSC doesn't read flammable liquid fuels to include stabilizers.",
-  "Other CPSC rules can still apply. Check which ones.",
+  "She thinks the gas can rule covers her.",
+  "Since October nineteenth, CPSC doesn't count stabilizers as flammable liquid fuels in that rule.",
+  "So she checks which other rules apply.",
   "Comment M and Z, we'll DM you the free CPSC finder."
  ],
- "caption": "Selling a fuel stabilizer? The gas can rule usually isn't the one to check.\n16 CFR 1461.2 was updated on October 19, 2026.\nIt says CPSC does not read flammable liquid fuels to include additives used only to improve engine performance, clean engine parts, extend engine life or stabilize fuel.\nOther rules can still apply, so check the product before you list it.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "Say a seller lists a fuel stabilizer and assumes the gas can rule covers it. Then she reads it.\n16 CFR 1461.2 changed on October 19, 2026.\nIt now says CPSC does not read \"flammable liquid fuels\" in the portable fuel container definition to include fuel additives meant only to improve engine performance, clean engine parts, extend engine life or stabilize fuel.\nOther rules can still apply, so she checks the product before she lists it.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
  "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?src=ig_20261104_deadline_02",
  "search_keywords": "fuel stabilizer,portable fuel container",
