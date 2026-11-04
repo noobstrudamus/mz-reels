@@ -1,0 +1,15 @@
+{
+ "id": "20261104_gap_01",
+ "date": "2026-11-04",
+ "pillar": "gap",
+ "cta": "comment_gaplist",
+ "arms": {
+  "hook": "callout",
+  "opener": "kicker",
+  "length": "short",
+  "voice": "andrew",
+  "cta_mode": "comment",
+  "slot": "0847"
+ },
+ "family": null
+}

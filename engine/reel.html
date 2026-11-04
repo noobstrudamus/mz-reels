@@ -310,80 +310,80 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261103_finder_01",
-    "pillar": "finder",
-    "cta": "finder",
-    "voice": "en-US-AvaNeural",
+    "id": "20261104_gap_01",
+    "pillar": "gap",
+    "cta": "comment_gaplist",
+    "voice": "en-US-AndrewNeural",
     "opener": "kicker",
     "footnote": "Illustrative example. Not legal advice.",
     "look": "dossier",
     "avatar": true,
-    "kicker": "Adult dresser?"
+    "kicker": "Toy importers?"
   },
   "scenes": [
     {
       "type": "stamp",
-      "dur": 3.5,
-      "headline": "Adult dresser, no rule?",
-      "note": "Say a seller imports dressers for adult bedrooms.",
-      "stamp": "MYTH",
-      "doc": "Dresser listing"
+      "dur": 3.6,
+      "headline": "Toy CPC: factory line?",
+      "note": "Say a seller imports toys from one factory.",
+      "stamp": "CHECK",
+      "doc": "Toy CPC"
     },
     {
       "type": "compare",
-      "dur": 5.7,
-      "headline": "16 CFR part 1261",
-      "note": "Free-standing clothing storage units made after 9/1/2023.",
+      "dur": 3,
+      "headline": "16 CFR 1110.11(a)(5)",
+      "note": "When and where it was made.",
       "left": {
-        "label": "Myth",
-        "value": "Kids only"
+        "label": "Detail 1",
+        "value": "Month+year"
       },
       "right": {
-        "label": "Fact",
-        "value": "Adults too"
+        "label": "Detail 2",
+        "value": "Factory"
       }
     },
     {
       "type": "pair",
-      "dur": 2.6,
-      "headline": "Who it protects",
-      "note": "It aims to protect kids up to 72 months from tip-overs.",
+      "dur": 4,
+      "headline": "Where it was made",
+      "note": "Name, street, city, state, country, email, phone.",
       "bad": {
-        "label": "Kids only"
+        "label": "Country only"
       },
       "good": {
-        "label": "Part 1261"
+        "label": "Full address"
       }
     },
     {
       "type": "checklist",
-      "dur": 3.5,
-      "headline": "Dresser file check",
-      "note": "Say DRS-24-OAK is an adult dresser.",
+      "dur": 3.8,
+      "headline": "CPC factory check",
+      "note": "Say KID-24-BLUE ships from one factory.",
       "items": [
         {
-          "name": "Certificate type",
-          "value": "GCC",
+          "name": "Factory name",
+          "value": "listed",
           "ok": true
         },
         {
-          "name": "Part 1261",
-          "value": "not listed",
+          "name": "Month + year",
+          "value": "missing",
           "ok": false
         },
         {
-          "name": "Test date + place",
-          "value": "missing",
+          "name": "Factory address",
+          "value": "country only",
           "ok": false
         }
       ]
     },
     {
       "type": "cta",
-      "dur": 4.8,
-      "headline": "Not sure which rules apply?",
-      "line1": "Free CPSC finder.",
-      "line2": "See which rules apply. No account needed.",
+      "dur": 4,
+      "headline": "Want a free gap list?",
+      "line1": "Comment M&Z.",
+      "line2": "We'll DM you the link.",
       "url": "mzconsulting.agency"
     }
   ]

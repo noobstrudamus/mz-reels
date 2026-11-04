@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Adult dresser? Part twelve sixty-one still applies.",
-    "voice": "en-US-AvaNeural",
+    "text": "Toy importers: CPC needs two factory details.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "9ebb6d4bdbca1c2488e9053f669824e6f9bed946"
+    "sha1": "d226492cb2650242c78fd580934e5ece73cd8130"
   },
   "s2": {
-    "text": "It covers free-standing clothing storage units made after September first, twenty twenty-three.",
-    "voice": "en-US-AvaNeural",
+    "text": "First, when it was made. Month and year at least.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "042826a69238dd5d2383225f96a65ebc53f49897"
+    "sha1": "e1518d34c537a43e9f1c2405124acff9d5dec265"
   },
   "s3": {
-    "text": "It's meant to protect young kids from tip-overs.",
-    "voice": "en-US-AvaNeural",
+    "text": "Second, where. The maker's name and full contact details.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "c16bf886f0b43d0997188c15c619deb3045e8053"
+    "sha1": "2334676cde3815c53ccbc868549637bbdc12dfd6"
   },
   "s4": {
-    "text": "Say your GCC skips twelve sixty-one. List it.",
-    "voice": "en-US-AvaNeural",
+    "text": "Say your CPC just says made in China. That's usually a gap.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "c47d26eb70737358dedbec5181b3becc6321e354"
+    "sha1": "9700fdc916a1483f51d6cf86fc002031ea365cef"
   },
   "s5": {
-    "text": "Not sure which rules apply? Free CPSC finder. No account needed.",
-    "voice": "en-US-AvaNeural",
+    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "5c5482077210748743b6c7b3553eec41f7576d94"
+    "sha1": "893552e679bf2d458edb051523858656086fa1cc"
   }
 }
