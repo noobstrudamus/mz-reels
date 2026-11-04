@@ -1548,7 +1548,7 @@
   "caption": "Importing toys? Look at the factory line on your children's product certificate.\n16 CFR 1110.11(a)(5) asks for the date (month and year at a minimum) and the place it was made: manufacturer name, street address, city, state or province, country, email and phone.\nFor a run over several days, it's the first date of manufacture.\nA CPC that only says made in China usually doesn't cover it.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
   "created_at": "2026-11-04T11:54:56Z",
-  "status": "pending",
+  "status": "cancelled",
   "reel": "reels/20261104_gap_01",
   "date": "2026-11-04",
   "pillar": "gap",
@@ -1562,7 +1562,8 @@
    "slot": "0847"
   },
   "src": "ig_20261104_gap_01",
-  "family": null
+  "family": null,
+  "note": "Mert 2026-11-04: pulled before publishing, rebuilt as a story (HOOKS.md storytelling arc)"
  },
  {
   "id": "20261104_deadline_02",
@@ -1573,7 +1574,7 @@
   "caption": "Selling a fuel stabilizer? The gas can rule usually isn't the one to check.\n16 CFR 1461.2 was updated on October 19, 2026.\nIt says CPSC does not read flammable liquid fuels to include additives used only to improve engine performance, clean engine parts, extend engine life or stabilize fuel.\nOther rules can still apply, so check the product before you list it.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
   "created_at": "2026-11-04T11:56:10Z",
-  "status": "pending",
+  "status": "cancelled",
   "reel": "reels/20261104_deadline_02",
   "date": "2026-11-04",
   "pillar": "deadline",
@@ -1587,7 +1588,8 @@
    "slot": "0947"
   },
   "src": "ig_20261104_deadline_02",
-  "family": null
+  "family": null,
+  "note": "Mert 2026-11-04: pulled before publishing, rebuilt as a story (HOOKS.md storytelling arc)"
  },
  {
   "id": "20261104_story_01",
