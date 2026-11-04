@@ -310,79 +310,80 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261104_deadline_02",
-    "pillar": "deadline",
-    "cta": "comment_finder",
-    "voice": "en-US-AvaNeural",
-    "opener": "slam",
+    "id": "20261104_gap_01",
+    "pillar": "gap",
+    "cta": "comment_gaplist",
+    "voice": "en-US-AndrewNeural",
+    "opener": "kicker",
     "footnote": "Illustrative example. Not legal advice.",
     "look": "dossier",
-    "avatar": true
+    "avatar": true,
+    "kicker": "Toy importers?"
   },
   "scenes": [
     {
       "type": "stamp",
-      "dur": 4.2,
-      "headline": "Fuel additive = gas can?",
-      "note": "Say a seller lists a fuel stabilizer bottle.",
-      "stamp": "MYTH",
-      "doc": "Additive listing"
+      "headline": "CPC says: Made in China",
+      "note": "Say a seller imports a toy and fills in her CPC.",
+      "stamp": "CHECK",
+      "doc": "Toy CPC",
+      "dur": 3.4
     },
     {
       "type": "compare",
-      "dur": 3.6,
-      "headline": "Updated Oct 19, 2026",
-      "note": "16 CFR 1461.2: portable fuel container definition.",
+      "headline": "The catch",
+      "note": "16 CFR 1110.11(a)(5): when and where it was made.",
       "left": {
-        "label": "Fuel can",
-        "value": "≤5 gal can"
+        "label": "Her CPC",
+        "value": "China"
       },
       "right": {
-        "label": "Additive",
-        "value": "Not fuel"
-      }
+        "label": "The rule",
+        "value": "Full place"
+      },
+      "dur": 3.4
     },
     {
       "type": "pair",
-      "dur": 4.2,
-      "headline": "Not flammable fuel",
-      "note": "Stabilizers and engine additives, per 1461.2(b).",
+      "headline": "The rule wants two things",
+      "note": "Month and year, plus factory name, address, email, phone.",
       "bad": {
-        "label": "Gas can rule"
+        "label": "Country only"
       },
       "good": {
-        "label": "Other rules"
-      }
+        "label": "Date + place"
+      },
+      "dur": 5.3
     },
     {
       "type": "checklist",
-      "dur": 3.9,
-      "headline": "Additive file check",
-      "note": "Say FUEL-24-STAB is a fuel stabilizer.",
+      "headline": "Her file fix",
+      "note": "Say KID-24-BLUE is her toy.",
       "items": [
         {
-          "name": "Product type",
-          "value": "fuel additive",
+          "name": "Factory name",
+          "value": "listed",
           "ok": true
         },
         {
-          "name": "Part 1461",
-          "value": "usually not",
-          "ok": true
+          "name": "Month + year",
+          "value": "missing",
+          "ok": false
         },
         {
-          "name": "Other rules",
-          "value": "not checked",
+          "name": "Factory address",
+          "value": "country only",
           "ok": false
         }
-      ]
+      ],
+      "dur": 2.3
     },
     {
       "type": "cta",
-      "dur": 4.1,
-      "headline": "Which rules apply to you?",
+      "dur": 4,
+      "headline": "Want a free gap list?",
       "line1": "Comment M&Z.",
-      "line2": "We'll DM you the free CPSC finder.",
+      "line2": "We'll DM you the link.",
       "url": "mzconsulting.agency"
     }
   ]

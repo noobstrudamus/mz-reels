@@ -1,47 +1,46 @@
 {
- "topic": "Importing toys? Look at the factory line on your children's product certificate.",
+ "topic": "Say a seller imports a toy, and her CPC just says \"Made in China.\" Here's the catch.",
  "hook_formula": "#14 The Callout",
  "kicker": "Toy importers?",
  "scenes": [
   {
    "type": "stamp",
-   "dur": 3.6,
-   "headline": "Toy CPC: factory line?",
-   "note": "Say a seller imports toys from one factory.",
+   "headline": "CPC says: Made in China",
+   "note": "Say a seller imports a toy and fills in her CPC.",
    "stamp": "CHECK",
-   "doc": "Toy CPC"
+   "doc": "Toy CPC",
+   "dur": 3.4
   },
   {
    "type": "compare",
-   "dur": 3,
-   "headline": "16 CFR 1110.11(a)(5)",
-   "note": "When and where it was made.",
+   "headline": "The catch",
+   "note": "16 CFR 1110.11(a)(5): when and where it was made.",
    "left": {
-    "label": "Detail 1",
-    "value": "Month+year"
+    "label": "Her CPC",
+    "value": "China"
    },
    "right": {
-    "label": "Detail 2",
-    "value": "Factory"
-   }
+    "label": "The rule",
+    "value": "Full place"
+   },
+   "dur": 3.4
   },
   {
    "type": "pair",
-   "dur": 4,
-   "headline": "Where it was made",
-   "note": "Name, street, city, state, country, email, phone.",
+   "headline": "The rule wants two things",
+   "note": "Month and year, plus factory name, address, email, phone.",
    "bad": {
     "label": "Country only"
    },
    "good": {
-    "label": "Full address"
-   }
+    "label": "Date + place"
+   },
+   "dur": 5.3
   },
   {
    "type": "checklist",
-   "dur": 3.8,
-   "headline": "CPC factory check",
-   "note": "Say KID-24-BLUE ships from one factory.",
+   "headline": "Her file fix",
+   "note": "Say KID-24-BLUE is her toy.",
    "items": [
     {
      "name": "Factory name",
@@ -58,7 +57,8 @@
      "value": "country only",
      "ok": false
     }
-   ]
+   ],
+   "dur": 2.3
   },
   {
    "type": "cta",
@@ -70,13 +70,13 @@
   }
  ],
  "vo": [
-  "Toy importers: CPC needs two factory details.",
-  "First, when it was made. Month and year at least.",
-  "Second, where. The maker's name and full contact details.",
-  "Say your CPC just says made in China. That's usually a gap.",
+  "Toy importers: Made in China won't cover a CPC.",
+  "Say her CPC lists only the country. The catch?",
+  "The rule wants month and year, plus factory name, address, email, phone.",
+  "So she adds both before the next shipment.",
   "Free gap list? Comment M and Z, and we'll DM you the link."
  ],
- "caption": "Importing toys? Look at the factory line on your children's product certificate.\n16 CFR 1110.11(a)(5) asks for the date (month and year at a minimum) and the place it was made: manufacturer name, street address, city, state or province, country, email and phone.\nFor a run over several days, it's the first date of manufacture.\nA CPC that only says made in China usually doesn't cover it.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "Say a seller imports a toy, and her CPC just says \"Made in China.\" Here's the catch.\n16 CFR 1110.11(a)(5) asks for the date (month and year at a minimum) and the place it was made: manufacturer name, street address, city, state or province, country, email and phone.\nFor a run over several days, it's the first date of manufacture.\nA children's product certificate that only names the country usually doesn't cover it.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
  "tracking_link": "https://mzconsulting.agency/?src=ig_20261104_gap_01#contact",
  "search_keywords": "children's product certificate,toy",

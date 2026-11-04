@@ -1,12 +1,12 @@
-# Reel 20261104_gap_01: Importing toys? Look at the factory line on your children's product certificate.
+# Reel 20261104_gap_01: Say a seller imports a toy, and her CPC just says "Made in China." Here's the catch.
 
 Slot 08:47 America/New_York. Arms: hook callout, opener kicker, length short, voice andrew, cta_mode comment.
 
 ## Caption
-Importing toys? Look at the factory line on your children's product certificate.
+Say a seller imports a toy, and her CPC just says "Made in China." Here's the catch.
 16 CFR 1110.11(a)(5) asks for the date (month and year at a minimum) and the place it was made: manufacturer name, street address, city, state or province, country, email and phone.
 For a run over several days, it's the first date of manufacture.
-A CPC that only says made in China usually doesn't cover it.
+A children's product certificate that only names the country usually doesn't cover it.
 Want a free gap list? Comment M&Z and we'll DM you the link.
 #amazonseller #cpsc #productcompliance #importing #privatelabel
 
@@ -29,11 +29,11 @@ https://mzconsulting.agency/?src=ig_20261104_gap_01#contact
 | Stills | PASS — frames 0, 0.5, each scene, last frame viewed (contact sheet) |
 | Safe zone / limits | PASS — render.py QA |
 | CTA set | PASS — comment_gaplist set verbatim; last VO line says it |
-| Truth gate | PASS (optional fixes applied: state in pair note, one factory) (batch adversarial verifier, eCFR 2026-10-30) |
+| Truth gate | PASS after fixes (rewritten as story 2026-11-04; second verifier: VO1, VO3 and pair note fixed) (batch adversarial verifier, eCFR 2026-10-30) |
 | Topic not repeated (14 days + today) | PASS |
 | Opener / hook | kicker / callout (#14 The Callout) |
-| Hook score | PASS — 51.8 for "Toy importers: your CPC needs 2 factory details." (scored with digits; VO spells numbers out: "Toy importers: CPC needs two factory details.") |
-| First VO line | 7 words |
-| beats.py flags | Beat 1 has no number and no name in it. Hooks without something checkable are the ones that get scrolled.; Beat(s) 4, 5 run past 4s. Either split the line or change what is on screen inside it. A static frame is where people leave.; No loop. The last beat shares no word with the hook, so the video e |
+| Hook score | PASS — 59.0 for "Toy importers: Made in China won't cover a CPC." (scored with digits; VO spells numbers out: "Toy importers: Made in China won't cover a CPC.") |
+| First VO line | 9 words |
+| beats.py flags | Beat 1 takes 3.3s to say. Cut it to 8 words or fewer, or the hook lands after the decision has been made.; Beat(s) 3, 5 run past 4s. Either split the line or change what is on screen inside it. A static frame is where people leave.; No loop. The last beat shares no word with the hook, so the video e |
 | Caption lint | REVIEW (search terms: children's product certificate,toy) |
-| Human score (caption) | 82.1 PASS |
+| Human score (caption) | 81.5 PASS |

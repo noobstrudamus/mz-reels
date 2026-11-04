@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Fuel stabilizer? Part fourteen sixty-one usually isn't your rule.",
-    "voice": "en-US-AvaNeural",
+    "text": "Toy importers: Made in China won't cover a CPC.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "f3cd34d07ec06a5dbd155b4b568117a09a3915e9"
+    "sha1": "23d682b01d75ed56ce728d266847c472b793babc"
   },
   "s2": {
-    "text": "The definition changed October nineteenth, twenty twenty-six.",
-    "voice": "en-US-AvaNeural",
+    "text": "Say her CPC lists only the country. The catch?",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "2d7a5a9923a1c7f6c76d614da196c095b29efb20"
+    "sha1": "91bed93f53bf1d25bf8650231cc0791fb76e5426"
   },
   "s3": {
-    "text": "CPSC doesn't read flammable liquid fuels to include stabilizers.",
-    "voice": "en-US-AvaNeural",
+    "text": "The rule wants month and year, plus factory name, address, email, phone.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "55a680e053ce630c0c835e5e30e9f18e1bd24cec"
+    "sha1": "65970d97b4d0691e4b1ae8223982f2226b0209f7"
   },
   "s4": {
-    "text": "Other CPSC rules can still apply. Check which ones.",
-    "voice": "en-US-AvaNeural",
+    "text": "So she adds both before the next shipment.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "155f55e72adbe6811a6f6436f660e43315b06dcd"
+    "sha1": "3ec4c4518d783e20e245ba433336e5464910efc8"
   },
   "s5": {
-    "text": "Comment M and Z, we'll DM you the free CPSC finder.",
-    "voice": "en-US-AvaNeural",
+    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
+    "voice": "en-US-AndrewNeural",
     "rate": "+6%",
-    "sha1": "a708743582beeb5880b98aedbee500a2e50ebce0"
+    "sha1": "b81a35bf2188b16e516535b476e125fafeaf4ce6"
   }
 }

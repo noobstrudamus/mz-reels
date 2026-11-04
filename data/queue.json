@@ -1690,5 +1690,30 @@
   },
   "src": null,
   "family": null
+ },
+ {
+  "id": "20261104_gap_01",
+  "kind": "reel",
+  "container_id": "17916378513541034",
+  "slot_local": "08:47",
+  "slot_utc": "2026-11-04T13:47:00Z",
+  "caption": "Say a seller imports a toy, and her CPC just says \"Made in China.\" Here's the catch.\n16 CFR 1110.11(a)(5) asks for the date (month and year at a minimum) and the place it was made: manufacturer name, street address, city, state or province, country, email and phone.\nFor a run over several days, it's the first date of manufacture.\nA children's product certificate that only names the country usually doesn't cover it.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
+  "created_at": "2026-11-04T12:58:14Z",
+  "status": "pending",
+  "reel": "reels/20261104_gap_01",
+  "date": "2026-11-04",
+  "pillar": "gap",
+  "cta": "comment_gaplist",
+  "arms": {
+   "hook": "callout",
+   "opener": "kicker",
+   "length": "short",
+   "voice": "andrew",
+   "cta_mode": "comment",
+   "slot": "0847"
+  },
+  "src": "ig_20261104_gap_01",
+  "family": null
  }
 ]
