@@ -1644,7 +1644,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-04T11:58:00Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261104_story_03",
   "date": "2026-11-04",
   "pillar": "story_03",
@@ -1653,7 +1653,9 @@
    "slot": "1447"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18449792968122457",
+  "published_at": "2026-11-04T21:53:46Z"
  },
  {
   "id": "20261104_story_04",
@@ -1664,7 +1666,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-04T11:58:28Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261104_story_04",
   "date": "2026-11-04",
   "pillar": "story_04",
@@ -1673,7 +1675,9 @@
    "slot": "1547"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18129662636481896",
+  "published_at": "2026-11-04T21:53:46Z"
  },
  {
   "id": "20261104_story_05",
@@ -1684,7 +1688,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-04T11:58:56Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261104_story_05",
   "date": "2026-11-04",
   "pillar": "story_05",
@@ -1693,7 +1697,9 @@
    "slot": "1647"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18653528761051145",
+  "published_at": "2026-11-04T21:53:46Z"
  },
  {
   "id": "20261104_gap_01",
