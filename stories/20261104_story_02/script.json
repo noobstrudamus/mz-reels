@@ -1,0 +1,33 @@
+{
+ "frame": {
+  "type": "rule",
+  "tag": "The rule",
+  "quote": "The Commission does not interpret the phrase “flammable liquid fuels” in the statutory definition of portable fuel container in paragraph (a) of this section to include fuel additives",
+  "cite": "16 CFR 1461.2",
+  "line": "Selling fuel stabilizer? Check which rules apply."
+ },
+ "from_reel": "reels/20261104_deadline_02",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Fuel additives (e.g. stabilizers) are not 'flammable liquid fuels' under the PFC definition; amended Oct 19, 2026",
+   "section": "16 CFR 1461.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1461/section-1461.2",
+   "quote": "(b) The Commission does not interpret the phrase “flammable liquid fuels” in the statutory definition of portable fuel container in paragraph (a) of this section to include fuel additives that are intended to be added to flammable liquid fuels for the sole purpose of improving engine performance, cleaning engine components, extending engine life, stabilizing fuel, preventing weather effects from fuel, or another purpose unrelated to creating heat or power. [88 FR 74346, Oct. 31, 2023, as amended at 91 FR 65969, Oct. 19, 2026]"
+  },
+  {
+   "id": "S2",
+   "claim": "Portable fuel container definition",
+   "section": "16 CFR 1461.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1461/section-1461.2",
+   "quote": "a portable fuel container is defined in the PFCSA as any container or vessel (including any spout, cap, and other closure mechanism or component of such container or vessel or any retrofit or aftermarket spout or component intended or reasonably anticipated to be for use with such container)— (a)(1) Intended for flammable liquid fuels with a flash point less than 140 degrees Fahrenheit, including gasoline, kerosene, diesel, ethanol, methanol, denatured alcohol, or biofuels; (2) That is a consumer product with a capacity of 5 gallons or less;"
+  },
+  {
+   "id": "S3",
+   "claim": "1461.2 amended Oct 19, 2026",
+   "section": "16 CFR 1461.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?issue_date%5Bgte%5D=2026-05-01",
+   "quote": "identifier 1461.2, name '§ 1461.2 Definition.', amendment_date 2026-10-19, substantive true"
+  }
+ ]
+}
