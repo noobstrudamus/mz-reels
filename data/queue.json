@@ -1563,5 +1563,30 @@
   },
   "src": "ig_20261104_gap_01",
   "family": null
+ },
+ {
+  "id": "20261104_deadline_02",
+  "kind": "reel",
+  "container_id": "17916370638541034",
+  "slot_local": "09:47",
+  "slot_utc": "2026-11-04T14:47:00Z",
+  "caption": "Selling a fuel stabilizer? The gas can rule usually isn't the one to check.\n16 CFR 1461.2 was updated on October 19, 2026.\nIt says CPSC does not read flammable liquid fuels to include additives used only to improve engine performance, clean engine parts, extend engine life or stabilize fuel.\nOther rules can still apply, so check the product before you list it.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+  "created_at": "2026-11-04T11:56:10Z",
+  "status": "pending",
+  "reel": "reels/20261104_deadline_02",
+  "date": "2026-11-04",
+  "pillar": "deadline",
+  "cta": "comment_finder",
+  "arms": {
+   "hook": "myth",
+   "opener": "slam",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "comment",
+   "slot": "0947"
+  },
+  "src": "ig_20261104_deadline_02",
+  "family": null
  }
 ]

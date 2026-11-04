@@ -1,0 +1,106 @@
+{
+ "topic": "Selling a fuel stabilizer? The gas can rule usually isn't the one to check.",
+ "hook_formula": "#22 Contrarian Flip (myth)",
+ "kicker": null,
+ "scenes": [
+  {
+   "type": "stamp",
+   "dur": 4.2,
+   "headline": "Fuel additive = gas can?",
+   "note": "Say a seller lists a fuel stabilizer bottle.",
+   "stamp": "MYTH",
+   "doc": "Additive listing"
+  },
+  {
+   "type": "compare",
+   "dur": 3.6,
+   "headline": "Updated Oct 19, 2026",
+   "note": "16 CFR 1461.2: portable fuel container definition.",
+   "left": {
+    "label": "Fuel can",
+    "value": "≤5 gal can"
+   },
+   "right": {
+    "label": "Additive",
+    "value": "Not fuel"
+   }
+  },
+  {
+   "type": "pair",
+   "dur": 4.2,
+   "headline": "Not flammable fuel",
+   "note": "Stabilizers and engine additives, per 1461.2(b).",
+   "bad": {
+    "label": "Gas can rule"
+   },
+   "good": {
+    "label": "Other rules"
+   }
+  },
+  {
+   "type": "checklist",
+   "dur": 3.9,
+   "headline": "Additive file check",
+   "note": "Say FUEL-24-STAB is a fuel stabilizer.",
+   "items": [
+    {
+     "name": "Product type",
+     "value": "fuel additive",
+     "ok": true
+    },
+    {
+     "name": "Part 1461",
+     "value": "usually not",
+     "ok": true
+    },
+    {
+     "name": "Other rules",
+     "value": "not checked",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "dur": 4.1,
+   "headline": "Which rules apply to you?",
+   "line1": "Comment M&Z.",
+   "line2": "We'll DM you the free CPSC finder.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "vo": [
+  "Fuel stabilizer? Part fourteen sixty-one usually isn't your rule.",
+  "The definition changed October nineteenth, twenty twenty-six.",
+  "CPSC doesn't read flammable liquid fuels to include stabilizers.",
+  "Other CPSC rules can still apply. Check which ones.",
+  "Comment M and Z, we'll DM you the free CPSC finder."
+ ],
+ "caption": "Selling a fuel stabilizer? The gas can rule usually isn't the one to check.\n16 CFR 1461.2 was updated on October 19, 2026.\nIt says CPSC does not read flammable liquid fuels to include additives used only to improve engine performance, clean engine parts, extend engine life or stabilize fuel.\nOther rules can still apply, so check the product before you list it.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?src=ig_20261104_deadline_02",
+ "search_keywords": "fuel stabilizer,portable fuel container",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Fuel additives (e.g. stabilizers) are not 'flammable liquid fuels' under the PFC definition; amended Oct 19, 2026",
+   "section": "16 CFR 1461.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1461/section-1461.2",
+   "quote": "(b) The Commission does not interpret the phrase “flammable liquid fuels” in the statutory definition of portable fuel container in paragraph (a) of this section to include fuel additives that are intended to be added to flammable liquid fuels for the sole purpose of improving engine performance, cleaning engine components, extending engine life, stabilizing fuel, preventing weather effects from fuel, or another purpose unrelated to creating heat or power. [88 FR 74346, Oct. 31, 2023, as amended at 91 FR 65969, Oct. 19, 2026]"
+  },
+  {
+   "id": "S2",
+   "claim": "Portable fuel container definition",
+   "section": "16 CFR 1461.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1461/section-1461.2",
+   "quote": "a portable fuel container is defined in the PFCSA as any container or vessel (including any spout, cap, and other closure mechanism or component of such container or vessel or any retrofit or aftermarket spout or component intended or reasonably anticipated to be for use with such container)— (a)(1) Intended for flammable liquid fuels with a flash point less than 140 degrees Fahrenheit, including gasoline, kerosene, diesel, ethanol, methanol, denatured alcohol, or biofuels; (2) That is a consumer product with a capacity of 5 gallons or less;"
+  },
+  {
+   "id": "S3",
+   "claim": "1461.2 amended Oct 19, 2026",
+   "section": "16 CFR 1461.2, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?issue_date%5Bgte%5D=2026-05-01",
+   "quote": "identifier 1461.2, name '§ 1461.2 Definition.', amendment_date 2026-10-19, substantive true"
+  }
+ ]
+}

@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Toy importers: CPC needs two factory details.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Fuel stabilizer? Part fourteen sixty-one usually isn't your rule.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "d226492cb2650242c78fd580934e5ece73cd8130"
+    "sha1": "f3cd34d07ec06a5dbd155b4b568117a09a3915e9"
   },
   "s2": {
-    "text": "First, when it was made. Month and year at least.",
-    "voice": "en-US-AndrewNeural",
+    "text": "The definition changed October nineteenth, twenty twenty-six.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "e1518d34c537a43e9f1c2405124acff9d5dec265"
+    "sha1": "2d7a5a9923a1c7f6c76d614da196c095b29efb20"
   },
   "s3": {
-    "text": "Second, where. The maker's name and full contact details.",
-    "voice": "en-US-AndrewNeural",
+    "text": "CPSC doesn't read flammable liquid fuels to include stabilizers.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "2334676cde3815c53ccbc868549637bbdc12dfd6"
+    "sha1": "55a680e053ce630c0c835e5e30e9f18e1bd24cec"
   },
   "s4": {
-    "text": "Say your CPC just says made in China. That's usually a gap.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Other CPSC rules can still apply. Check which ones.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "9700fdc916a1483f51d6cf86fc002031ea365cef"
+    "sha1": "155f55e72adbe6811a6f6436f660e43315b06dcd"
   },
   "s5": {
-    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Comment M and Z, we'll DM you the free CPSC finder.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "893552e679bf2d458edb051523858656086fa1cc"
+    "sha1": "a708743582beeb5880b98aedbee500a2e50ebce0"
   }
 }
