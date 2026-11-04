@@ -1600,7 +1600,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-04T11:57:06Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261104_story_01",
   "date": "2026-11-04",
   "pillar": "story_01",
@@ -1609,7 +1609,9 @@
    "slot": "1047"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18078258752738631",
+  "published_at": "2026-11-04T16:53:52Z"
  },
  {
   "id": "20261104_story_02",
@@ -1728,7 +1730,7 @@
   "caption": "Say a seller lists a fuel stabilizer and assumes the gas can rule covers it. Then she reads it.\n16 CFR 1461.2 changed on October 19, 2026.\nIt now says CPSC does not read \"flammable liquid fuels\" in the portable fuel container definition to include fuel additives meant only to improve engine performance, clean engine parts, extend engine life or stabilize fuel.\nOther rules can still apply, so she checks the product before she lists it.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
   "created_at": "2026-11-04T12:59:24Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261104_deadline_02",
   "date": "2026-11-04",
   "pillar": "deadline",
@@ -1742,6 +1744,9 @@
    "slot": "0947"
   },
   "src": "ig_20261104_deadline_02",
-  "family": null
+  "family": null,
+  "media_id": "17931838611422389",
+  "published_at": "2026-11-04T16:53:52Z",
+  "first_comment_id": "18126920491928204"
  }
 ]
