@@ -1,0 +1,35 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "CPC factory line",
+  "items": [
+   {
+    "name": "Factory name",
+    "ok": true
+   },
+   {
+    "name": "Month and year made",
+    "ok": false
+   },
+   {
+    "name": "Street, city, country",
+    "ok": false
+   },
+   {
+    "name": "Email and phone",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261104_gap_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "CPC gives month/year and full place of manufacture; first date for multi-day runs",
+   "section": "16 CFR 1110.11(a)(5)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(5) Provide the date (month and year, at a minimum) and place (including a manufacturer name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were manufactured, produced, or assembled. For manufacturing runs over a series of days, provide the initial date of manufacture (month and year, at a minimum)."
+  }
+ ]
+}
