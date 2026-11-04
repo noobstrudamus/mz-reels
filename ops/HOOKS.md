@@ -148,3 +148,25 @@ it's certified. The PDF doesn't say what you think." 60.8 OK. Skip rates were 87
 - `python3 .claude/skills/ig-caption/caption.py caption.txt --keywords "<2 search phrases>"`: no FAIL. Put
   the phrases a seller would type (e.g. "children's product certificate", "Amazon CPC") into the caption body
   as plain words. Line 1 should hold one concrete name or number (a rule number counts).
+
+## Best reel so far (2026-11-04 snapshot) — Mert: "keep going like this, tell it more as a story"
+
+| skip | avg watch | views | reel | first words |
+|---|---|---|---|---|
+| 33.9% | 6.8 s | 113 | 20261103_finder_01 | "Adult dresser? Part twelve sixty-one still applies." (myth / kicker / dossier + presenter) |
+| 100% | 1.4 s | 12 | 20261103_gap_02 | "Toy passed? CPC needs seven lab details." (question / slam) |
+
+What the winner did, and what every reel copies from now on (inside the plan's arms):
+1. **An everyday product most sellers think is "outside" the rules** (adult dresser), then the flip. Broad products
+   (home, furniture, garage, kitchen, outdoor) reach more people than certificate-field topics.
+2. **Tell it as a short story, not a list.** Scenes 1–4 follow one fictional seller and one fictional SKU:
+   - S1 setup + hook: the product and the belief ("Say a seller imports dressers for adult bedrooms").
+   - S2 the turn: what the rule actually says (the verified quote, with the date if it changed).
+   - S3 the stakes: who or what the rule protects / what goes wrong in the file. Only sourced facts, no invented
+     losses, fines or numbers.
+   - S4 the fix: the seller's file check (checklist), ending on the open item.
+   - S5 CTA.
+   VO uses story verbs ("she lists it", "then the notice comes", "here's the catch"), present tense, one seller from
+   start to end. Still framed as "Say a seller…" (scene 1 note or VO line 2), still fictional SKUs, still no
+   promises. The presenter is never named and never speaks as an M&Z expert.
+3. Keep the kicker frame short (product + "?"), and keep the length rule; the winner was 20 s.
