@@ -1781,5 +1781,30 @@
   },
   "src": "ig_20261105_myth_02",
   "family": null
+ },
+ {
+  "id": "20261105_deadline_01",
+  "kind": "reel",
+  "container_id": "17916533697541034",
+  "slot_local": "09:47",
+  "slot_utc": "2026-11-05T14:47:00Z",
+  "caption": "Wood stove importers: one CPSC paperwork step ended on September 21, 2026.\n16 CFR 1406.5, which had manufacturers and importers send CPSC copies of the stove notice and directions, was removed.\nThe consumer side stays: 16 CFR 1406.4 still requires a notice on the appliance with minimum clearances, floor protection and chimney type, plus directions.\nSay a seller stops the mailing. The label on the stove still has to be right.\nNot sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Not sure which rules apply? Comment M&Z and we'll DM you the free CPSC Finder.",
+  "created_at": "2026-11-05T11:57:52Z",
+  "status": "pending",
+  "reel": "reels/20261105_deadline_01",
+  "date": "2026-11-05",
+  "pillar": "deadline",
+  "cta": "comment_finder",
+  "arms": {
+   "hook": "pain_quote",
+   "opener": "slam",
+   "length": "long",
+   "voice": "ava",
+   "cta_mode": "comment",
+   "slot": "0947"
+  },
+  "src": "ig_20261105_deadline_01",
+  "family": null
  }
 ]

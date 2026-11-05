@@ -1,32 +1,32 @@
 {
   "s1": {
-    "text": "Adult hoodies have no CPSC rule? Wrong.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Wood stove label: still send CPSC one?",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "3c2c3f9889856c67fe5861a83f527e2e54c408a8"
+    "sha1": "372c1a7aee87aab003c529f95dd1cd981e5266dd"
   },
   "s2": {
-    "text": "Say a seller launches cotton fleece hoodies for adults. Part sixteen ten covers clothing textiles.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Say she's mailed copies for years. Since September twenty-first, twenty twenty-six, that section is gone.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "20db50c57bdac23f7c5de8954fc247594062a874"
+    "sha1": "1419e3be26f176dac7d620809af198db34d1e264"
   },
   "s3": {
-    "text": "Here's the catch. All-polyester fabric skips testing for guaranties. Cotton fleece doesn't.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Here's the catch. The notice on the stove itself still has to be there.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "b886db0b4d51d6d032a133467395a307ae53248b"
+    "sha1": "4e59cff200e2b6b1dee225217b61cf549c65cbc4"
   },
   "s4": {
-    "text": "So her G C C lists part sixteen ten, and she checks the fabric test.",
-    "voice": "en-US-AndrewNeural",
+    "text": "So she skips the mailing and checks her label: clearances, floor protection, chimney type.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "88e0031109c467e65343612d102b304c54905ea6"
+    "sha1": "c16e1fea0460fdc48c536432eb84ff7027cecdc5"
   },
   "s5": {
-    "text": "Free gap list? Comment M and Z, and we'll DM you the link.",
-    "voice": "en-US-AndrewNeural",
+    "text": "Comment M and Z, we'll DM you the free CPSC finder.",
+    "voice": "en-US-AvaNeural",
     "rate": "+6%",
-    "sha1": "f602f968378ca9acc4d272f440b297c4209a6261"
+    "sha1": "56672342193a8f658d2ead3d3c1870dc2555f502"
   }
 }

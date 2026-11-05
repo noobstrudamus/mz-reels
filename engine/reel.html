@@ -311,10 +311,10 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261105_myth_02",
-    "pillar": "myth",
-    "cta": "comment_gaplist",
-    "voice": "en-US-AndrewNeural",
+    "id": "20261105_deadline_01",
+    "pillar": "deadline",
+    "cta": "comment_finder",
+    "voice": "en-US-AvaNeural",
     "opener": "slam",
     "footnote": "Illustrative example. Not legal advice.",
     "look": "dossier",
@@ -323,56 +323,61 @@ const REEL = {
   "scenes": [
     {
       "type": "stamp",
-      "dur": 2.9,
-      "headline": "Adult hoodie, no rule?",
-      "note": "Say a seller launches cotton fleece hoodies for adults.",
-      "stamp": "MYTH",
-      "doc": "Hoodie GCC"
+      "dur": 3.1,
+      "headline": "Wood stove importers?",
+      "note": "Say a seller imports wood stoves for winter.",
+      "stamp": "CHANGED",
+      "doc": "Stove file"
     },
     {
       "type": "compare",
-      "dur": 5.8,
-      "headline": "16 CFR part 1610",
-      "note": "Flammability of clothing textiles, not just kids' wear.",
+      "dur": 6.7,
+      "headline": "Since Sept 21, 2026",
+      "note": "16 CFR 1406.5, copies to CPSC, was removed.",
       "left": {
-        "label": "Myth",
-        "value": "Kids only"
+        "label": "Before",
+        "value": "Send CPSC"
       },
       "right": {
-        "label": "Fact",
-        "value": "Adults too"
+        "label": "Now",
+        "value": "Removed"
       }
     },
     {
       "type": "pair",
-      "dur": 5.7,
-      "headline": "The testing catch",
-      "note": "1610.1(d): some fabrics are exempt from guaranty testing.",
+      "dur": 4,
+      "headline": "The label still stays",
+      "note": "16 CFR 1406.4: notice on the appliance + directions.",
       "bad": {
-        "label": "Fleece: test"
+        "label": "Skip label"
       },
       "good": {
-        "label": "Poly: exempt"
+        "label": "Label stays"
       }
     },
     {
       "type": "checklist",
-      "dur": 4.4,
-      "headline": "Her hoodie file",
-      "note": "Say HOOD-24-GRY is a cotton fleece hoodie.",
+      "dur": 5.9,
+      "headline": "Her stove file",
+      "note": "Say STOVE-24-BLK is a wood stove.",
       "items": [
         {
-          "name": "1610 on GCC",
-          "value": "not listed",
+          "name": "Copies to CPSC",
+          "value": "not needed",
+          "ok": true
+        },
+        {
+          "name": "Clearances",
+          "value": "check",
           "ok": false
         },
         {
-          "name": "Exempt fabric?",
-          "value": "no",
+          "name": "Floor protection",
+          "value": "check",
           "ok": false
         },
         {
-          "name": "Test basis",
+          "name": "Chimney type",
           "value": "check",
           "ok": false
         }
@@ -380,10 +385,10 @@ const REEL = {
     },
     {
       "type": "cta",
-      "dur": 4,
-      "headline": "Want a free gap list?",
+      "dur": 4.1,
+      "headline": "Which rules apply to you?",
       "line1": "Comment M&Z.",
-      "line2": "We'll DM you the link.",
+      "line2": "We'll DM you the free CPSC finder.",
       "url": "mzconsulting.agency"
     }
   ]
