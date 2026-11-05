@@ -1,0 +1,95 @@
+{
+ "topic": "POV: container of kids' toys held at customs; certificate data eFiled at entry",
+ "format": "scene",
+ "scene_script": "reels/sample_scene_port/scene.json",
+ "hook_formula": "POV story (first person)",
+ "vo": [
+  "My first container of kids' toys just hit the port.",
+  "Then customs. My broker: it's on hold, I need the certificate data.",
+  "I only have a lab report. Most imports now eFile certificate data at entry.",
+  "So I build it: product, each rule, factory, lab, records contact.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "scenes": [
+  {
+   "type": "scene",
+   "caps": [
+    "Day 1 at the port.",
+    "Say I'm a seller. My toys arrive in container KID-24-BLUE.",
+    ""
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "Then: customs.",
+    "The truck stops at the gate.",
+    ""
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "I have a lab report.",
+    "Most imports now eFile certificate data at entry.",
+    "16 CFR 1110.13(a)(1) · since July 8, 2026"
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "I build the certificate data.",
+    "From my file, for the entry filing.",
+    "16 CFR 1110.11(a)"
+   ]
+  },
+  {
+   "type": "cta",
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "caption": "POV: your toys reach the port, and then the truck stops at customs.\nFor most imports, certificate data is now eFiled when the entry is filed (16 CFR 1110.13(a)(1)).\nA lab report alone usually isn't the certificate. The data comes from your file: product ID, each rule, where and when it was made, the lab and test date, and a records contact.\nSay a seller has only the lab report. That's the gap to close first.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261105_blocked_03#contact",
+ "search_keywords": "children's product certificate,eFiling",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Imports: certificate data eFiled in ACE at entry",
+   "section": "16 CFR 1110.13(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "the finished product certifier must eFile the finished product certificate data elements required in § 1110.11 at the time of filing the entry, or the time of filing the entry and entry summary, if both are filed together, in ACE"
+  },
+  {
+   "id": "S2",
+   "claim": "Part 1110's eFiling text took effect July 8, 2026 (most imports; hedged 'most' because some entries, e.g. from Foreign Trade Zones, follow later)",
+   "section": "16 CFR part 1110, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1110",
+   "quote": "amendment_date 2026-07-08 for § 1110.13 'Certificate availability.' (and §§ 1110.1-1110.19)"
+  },
+  {
+   "id": "S4",
+   "claim": "Each certificate carries a product identifier",
+   "section": "16 CFR 1110.11(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier"
+  },
+  {
+   "id": "S5",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "S6",
+   "claim": "Certificate data: records contact, manufacture, test date and lab",
+   "section": "16 CFR 1110.11(a)(4)-(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(4) Identify and provide contact information ... for the individual maintaining records ... (5) Provide the date (month and year, at a minimum) and place ... where the finished product(s) were manufactured ... (6) Provide the most recent date and place(s) (including for each third party conformity assessment body ...) where the finished product(s) were tested"
+  }
+ ]
+}

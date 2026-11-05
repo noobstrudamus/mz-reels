@@ -1,0 +1,18 @@
+{
+ "id": "20261105_blocked_03",
+ "date": "2026-11-05",
+ "pillar": "blocked",
+ "cta": "gaplist",
+ "format": "scene",
+ "avatar": true,
+ "arms": {
+  "hook": "pain_quote",
+  "opener": "scene",
+  "length": "long",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "1047"
+ },
+ "family": null,
+ "note": "Mert 2026-11-05: publish this mise-en-scene sample first. Topic overlaps 20261028_deadline_02 (eFiling) within 14 days: published on Mert's explicit request."
+}
