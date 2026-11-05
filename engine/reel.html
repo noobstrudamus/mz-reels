@@ -174,6 +174,7 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 .ava .scene[data-type=stamp] .doc .dt { font-size: 19px; letter-spacing: 2px; }
 .ava .scene[data-type=stamp] .doc .ln { margin-bottom: 18px; }
 .ava .scene[data-type=stamp] .stamp { left: 224px; top: 290px; font-size: 70px; padding: 14px 26px 10px; border-width: 8px; }
+.ava .scene[data-type=stamp] .stamp.long { font-size: 60px; padding: 12px 20px 8px; }
 .dossier #kick .kk { font-stretch: 80%; text-shadow: 10px 10px 0 var(--ov); }
 .dossier #prog i { background: rgba(27,35,64,.18); border-radius: 0; }
 .dossier #prog i b { background: var(--ink); }
@@ -310,10 +311,10 @@ body.dossier { --paper: #efe4cb; --surface: #f8f0dd; --ink: #1b2340; --ink-2: #1
 /* REEL:BEGIN */
 const REEL = {
   "meta": {
-    "id": "20261104_deadline_02",
-    "pillar": "deadline",
-    "cta": "comment_finder",
-    "voice": "en-US-AvaNeural",
+    "id": "20261105_myth_02",
+    "pillar": "myth",
+    "cta": "comment_gaplist",
+    "voice": "en-US-AndrewNeural",
     "opener": "slam",
     "footnote": "Illustrative example. Not legal advice.",
     "look": "dossier",
@@ -322,67 +323,67 @@ const REEL = {
   "scenes": [
     {
       "type": "stamp",
-      "headline": "Fuel additive = gas can?",
-      "note": "Say a seller lists a fuel stabilizer and worries.",
+      "dur": 2.9,
+      "headline": "Adult hoodie, no rule?",
+      "note": "Say a seller launches cotton fleece hoodies for adults.",
       "stamp": "MYTH",
-      "doc": "Additive listing",
-      "dur": 4.2
+      "doc": "Hoodie GCC"
     },
     {
       "type": "compare",
-      "headline": "Then she reads 1461.2",
-      "note": "The portable fuel container definition.",
+      "dur": 5.8,
+      "headline": "16 CFR part 1610",
+      "note": "Flammability of clothing textiles, not just kids' wear.",
       "left": {
-        "label": "Fuel can",
-        "value": "≤5 gal can"
+        "label": "Myth",
+        "value": "Kids only"
       },
       "right": {
-        "label": "Additive",
-        "value": "Excluded"
-      },
-      "dur": 2.4
+        "label": "Fact",
+        "value": "Adults too"
+      }
     },
     {
       "type": "pair",
-      "headline": "Changed Oct 19, 2026",
-      "note": "1461.2(b): stabilizers aren't flammable liquid fuels.",
+      "dur": 5.7,
+      "headline": "The testing catch",
+      "note": "1610.1(d): some fabrics are exempt from guaranty testing.",
       "bad": {
-        "label": "Gas can rule"
+        "label": "Fleece: test"
       },
       "good": {
-        "label": "Other rules"
-      },
-      "dur": 6.3
+        "label": "Poly: exempt"
+      }
     },
     {
       "type": "checklist",
-      "headline": "Her file check",
-      "note": "Say FUEL-24-STAB is her stabilizer.",
+      "dur": 4.4,
+      "headline": "Her hoodie file",
+      "note": "Say HOOD-24-GRY is a cotton fleece hoodie.",
       "items": [
         {
-          "name": "Product type",
-          "value": "fuel additive",
-          "ok": true
+          "name": "1610 on GCC",
+          "value": "not listed",
+          "ok": false
         },
         {
-          "name": "Part 1461",
-          "value": "usually not",
-          "ok": true
+          "name": "Exempt fabric?",
+          "value": "no",
+          "ok": false
         },
         {
-          "name": "Other rules",
-          "value": "not checked",
+          "name": "Test basis",
+          "value": "check",
           "ok": false
         }
-      ],
-      "dur": 2.2
+      ]
     },
     {
       "type": "cta",
-      "dur": 4.1,
-      "headline": "Which rules apply to you?",
+      "dur": 4,
+      "headline": "Want a free gap list?",
       "line1": "Comment M&Z.",
-      "line2": "We'll DM you the free CPSC finder.",
+      "line2": "We'll DM you the link.",
       "url": "mzconsulting.agency"
     }
   ]
@@ -481,7 +482,7 @@ function topBlock(s) {
 const BUILD = {
   stamp: s => `${topBlock(s)}<div class="vis"><div class="doc">${s.doc ? `<div class="dt t" data-max="1">${esc(s.doc)}</div>` : '<div class="dt">&nbsp;</div>'}<div class="rule"></div>
       ${[92, 78, 86, 60, 88, 70, 54, 80].map(w => `<div class="ln" style="width:${w}%"></div>`).join('')}</div>
-      <div class="stamp t fit" data-max="1" data-fitw="700">${esc(s.stamp)}</div></div>`,
+      <div class="stamp t fit${(s.stamp || "").length > 6 ? " long" : ""}" data-max="1" data-fitw="700">${esc(s.stamp)}</div></div>`,
   compare: s => { const [a, b] = diffSpans(s.left.value, s.right.value); return `${topBlock(s)}<div class="vis">
       <div class="card ca" style="top:0;--bar:var(--red)"><div class="lb t" data-max="1">${esc(s.left.label)}</div><div class="vl t fit" data-max="1" data-fitw="760">${a}</div></div>
       <div class="card cb" style="top:316px;--bar:var(--accent)"><div class="lb t" data-max="1">${esc(s.right.label)}</div><div class="vl t fit" data-max="1" data-fitw="760">${b}</div></div>
