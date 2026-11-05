@@ -1,0 +1,40 @@
+{
+ "id": "sample_port",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Say her first container of kids' toys just reached the port.",
+  "The crane stops. Her broker: it's on hold, I need the certificate data.",
+  "She has a lab report. Most imports now eFile certificate data at entry.",
+  "So she builds it: product, each rule, factory, lab, records contact.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [
+  3.0,
+  4.0,
+  3.6,
+  4.0,
+  3.4
+ ],
+ "caps": [
+  [
+   "Day 1 at the port.",
+   "Say a seller's kids' toys arrive in container KID-24-BLUE.",
+   ""
+  ],
+  [
+   "Then the crane stops.",
+   "",
+   ""
+  ],
+  [
+   "She has a lab report.",
+   "Most imports now eFile certificate data at entry.",
+   "16 CFR 1110.13(a)(1) \u00b7 since July 8, 2026"
+  ],
+  [
+   "She builds the certificate data.",
+   "From her file, for the entry filing.",
+   "16 CFR 1110.11(a)"
+  ]
+ ]
+}

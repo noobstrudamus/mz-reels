@@ -1,0 +1,180 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Mise-en-scene reel template (Mert 2026-11-05): the story is acted out (port, crane, container, phone, desk)
+     instead of explained. Timeline is a pure function of t: window.reel.seek(t). Timings come from T (voice fit). -->
+<style>
+@font-face { font-family: 'Archivo'; src: url('../fonts/archivo-wdth.woff2'); font-weight: 100 900; }
+@font-face { font-family: 'Inter2'; src: url('../fonts/public-sans.woff2'); font-weight: 100 900; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0b1630; }
+#stage { position: absolute; inset: 0; }
+.cap { position: absolute; left: 70px; right: 70px; font-family: 'Archivo', sans-serif; color: #fff; font-weight: 850;
+  text-shadow: 0 6px 24px rgba(0,0,0,.55); letter-spacing: -1px; }
+#cap1 { top: 230px; font-size: 92px; line-height: 1.0; }
+#sub { position: absolute; left: 70px; right: 70px; top: 470px; font: 600 40px/1.25 'Inter2', sans-serif; color: #ffe7c2;
+  text-shadow: 0 3px 14px rgba(0,0,0,.6); }
+#brand { position: absolute; left: 70px; top: 120px; font: 800 34px 'Archivo'; color: #fff; letter-spacing: 1px; }
+#brand small { font: 700 20px 'Inter2'; letter-spacing: 4px; margin-left: 10px; opacity: .8; }
+#foot { position: absolute; left: 70px; bottom: 300px; font: 500 24px 'Inter2'; color: rgba(255,255,255,.75); }
+#hold { position: absolute; left: 540px; top: 760px; transform: translate(-50%,-50%) rotate(-8deg); font: 900 130px 'Archivo';
+  color: #ff3b3b; border: 12px solid #ff3b3b; border-radius: 18px; padding: 10px 40px 4px; background: rgba(20,0,0,.35); opacity: 0; }
+#phone { position: absolute; left: 140px; top: 1110px; width: 800px; height: 420px; background: #f4f6fb; border-radius: 46px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5); padding: 40px; box-sizing: border-box; opacity: 0; font-family: 'Inter2'; }
+#phone .who { font: 700 30px 'Inter2'; color: #56607a; }
+#phone .bub { margin-top: 22px; background: #2f6bff; color: #fff; border-radius: 34px 34px 34px 8px; padding: 30px 34px;
+  font: 600 44px/1.25 'Inter2'; }
+#laptop { position: absolute; left: 170px; top: 1080px; width: 740px; height: 470px; background: #0f172a; border: 18px solid #2b3245;
+  border-radius: 24px; box-sizing: border-box; padding: 34px 40px; opacity: 0; font-family: 'Inter2'; }
+#laptop h3 { margin: 0 0 18px; font: 800 36px 'Archivo'; color: #9fb6ff; letter-spacing: 1px; }
+#laptop .row { display: flex; justify-content: space-between; font: 600 34px 'Inter2'; color: #e6ebff; padding: 10px 0;
+  border-bottom: 2px solid #26304a; }
+#laptop .row b { color: #34d399; font-weight: 800; opacity: 0; }
+#cite { position: absolute; left: 70px; right: 70px; top: 650px; font: 700 30px 'Inter2'; color: #9fe1ff; opacity: 0; }
+#cta { position: absolute; inset: 0; opacity: 0; background: linear-gradient(#0b1630ee, #0b1630); }
+#cta .h { position: absolute; left: 70px; right: 70px; top: 520px; font: 900 110px/1.0 'Archivo'; color: #fff; letter-spacing: -2px; }
+#cta .l1 { position: absolute; left: 70px; top: 790px; font: 800 64px 'Archivo'; color: #ffd166; }
+#cta .l2 { position: absolute; left: 70px; right: 70px; top: 880px; font: 600 50px/1.25 'Inter2'; color: #e6ebff; }
+#cta .url { position: absolute; left: 70px; top: 1060px; font: 800 48px 'Archivo'; color: #0b1630; background: #ffd166;
+  border-radius: 60px; padding: 22px 44px; }
+#ava2 { position: absolute; }
+</style></head>
+<body>
+<div id="stage">
+<svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1630"/><stop offset=".45" stop-color="#3a2a5e"/><stop offset=".72" stop-color="#e0704a"/><stop offset="1" stop-color="#ffb35c"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c3a63"/><stop offset="1" stop-color="#0a1830"/></linearGradient>
+    <linearGradient id="office" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2238"/><stop offset="1" stop-color="#0c1120"/></linearGradient>
+    <radialGradient id="lamp" cx=".5" cy=".3" r=".6"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".55"/><stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <g id="port">
+    <rect width="1080" height="1920" fill="url(#sky)"/>
+    <circle id="sun" cx="780" cy="1180" r="120" fill="#ffd27a" opacity=".8"/>
+    <!-- far skyline -->
+    <path d="M0 1240 L0 1180 L60 1180 L60 1150 L120 1150 L120 1195 L210 1195 L210 1130 L250 1130 L250 1200 L340 1200 L340 1165 L420 1165 L420 1240 Z" fill="#2a2148" opacity=".8"/>
+    <rect y="1240" width="1080" height="680" fill="url(#sea)"/>
+    <g id="waves" stroke="#5c86c2" stroke-width="4" opacity=".35" fill="none"></g>
+    <!-- quay -->
+    <rect x="0" y="1460" width="1080" height="460" fill="#2b2f3a"/>
+    <rect x="0" y="1460" width="1080" height="16" fill="#f2c94c"/>
+    <!-- ship -->
+    <g id="ship">
+      <path d="M-20 1300 L760 1300 L720 1440 L20 1440 Z" fill="#7a1f2b"/>
+      <rect x="-20" y="1290" width="780" height="14" fill="#c9cbd3"/>
+      <rect x="600" y="1150" width="120" height="140" fill="#e9ecf2"/><rect x="612" y="1166" width="96" height="24" fill="#26304a"/>
+      <g id="stack"></g>
+    </g>
+    <!-- gantry crane -->
+    <g id="crane">
+      <rect x="150" y="760" width="26" height="700" fill="#e14b3b"/><rect x="430" y="760" width="26" height="700" fill="#e14b3b"/>
+      <rect x="90" y="740" width="900" height="40" fill="#e14b3b"/>
+      <path d="M176 780 L430 1000 M430 780 L176 1000" stroke="#b8392c" stroke-width="10"/>
+      <rect x="120" y="700" width="90" height="60" fill="#c43b2d"/>
+      <g id="trolley"><rect x="-40" y="782" width="80" height="34" fill="#333a4a"/>
+        <line id="cable" x1="-20" y1="816" x2="-20" y2="900" stroke="#1b1f29" stroke-width="5"/>
+        <line id="cable2" x1="20" y1="816" x2="20" y2="900" stroke="#1b1f29" stroke-width="5"/>
+      </g>
+      <circle id="beacon" cx="940" cy="728" r="16" fill="#ff3b3b"/>
+    </g>
+    <!-- the hero container -->
+    <g id="box"><rect x="-120" y="-56" width="240" height="112" rx="4" fill="#f2994a"/>
+      <g stroke="#d27a33" stroke-width="6"><line x1="-90" y1="-50" x2="-90" y2="50"/><line x1="-50" y1="-50" x2="-50" y2="50"/><line x1="-10" y1="-50" x2="-10" y2="50"/><line x1="30" y1="-50" x2="30" y2="50"/><line x1="70" y1="-50" x2="70" y2="50"/></g>
+      <rect x="-86" y="-22" width="172" height="44" fill="#fff" opacity=".92"/>
+      <text x="0" y="12" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="26" fill="#1b1f29">KID-24-BLUE</text>
+    </g>
+    <!-- truck -->
+    <g id="truck"><rect x="0" y="1560" width="300" height="20" fill="#20242e"/><rect x="300" y="1500" width="110" height="80" rx="10" fill="#2f6bff"/>
+      <circle cx="60" cy="1590" r="24" fill="#111"/><circle cx="250" cy="1590" r="24" fill="#111"/><circle cx="360" cy="1590" r="24" fill="#111"/></g>
+  </g>
+  <g id="desk" opacity="0">
+    <rect width="1080" height="1920" fill="url(#office)"/>
+    <rect x="0" y="1520" width="1080" height="400" fill="#3a2b22"/>
+    <ellipse cx="760" cy="900" rx="520" ry="700" fill="url(#lamp)"/>
+    <g id="pdf"><rect x="80" y="1380" width="220" height="150" rx="10" fill="#f4f6fb" transform="rotate(-6 190 1455)"/>
+      <text x="190" y="1470" text-anchor="middle" font-family="Inter" font-weight="800" font-size="30" fill="#c0392b" transform="rotate(-6 190 1455)">LAB REPORT</text></g>
+  </g>
+</svg>
+{{AVA}}
+<div id="brand">M&amp;Z <small>CONSULTING</small></div>
+<div class="cap" id="cap1"></div>
+<div id="sub"></div>
+<div id="cite"></div>
+<div id="hold">ON HOLD</div>
+<div id="phone"><div class="who">Broker · now</div><div class="bub">“It’s on hold. I need the certificate data.”</div></div>
+<div id="laptop"><h3>CERTIFICATE DATA</h3>
+  <div class="row">Product ID <b>✓</b></div><div class="row">Each rule <b>✓</b></div><div class="row">Made: date + place <b>✓</b></div>
+  <div class="row">Tested: lab + date <b>✓</b></div><div class="row">Records contact <b>✓</b></div></div>
+<div id="cta"><div class="h">Blocked right now?</div><div class="l1">Forward the notice.</div><div class="l2">Get your gap list in 24 hours.</div><div class="url">mzconsulting.agency</div></div>
+<div id="foot">Illustrative example. Not legal advice.</div>
+</div>
+<script>
+const T = {{TIMES}};          // scene starts [s0..s4] and total, from the voice fit
+const CAP = {{CAPS}};
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = x => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const outB = x => { x = cl(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const lerp = (a, b, p) => a + (b - a) * p;
+const seg = (t, a, b) => cl((t - a) / (b - a));
+// static stack of containers on the ship
+(() => { const cols = ['#2f6bff', '#27ae60', '#8e44ad', '#16a085', '#c0392b', '#2c3e50', '#d35400'];
+  let h = ''; for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) { if (r === 0 && c === 2) continue;
+    h += `<rect x="${40 + c * 112}" y="${1182 - r * 54 + 54}" width="108" height="52" fill="${cols[(r * 5 + c) % cols.length]}" stroke="#0003" stroke-width="3"/>`; }
+  $('stack').innerHTML = h;
+  let w = ''; for (let i = 0; i < 8; i++) w += `<path id="w${i}" d=""/>`; $('waves').innerHTML = w; })();
+const ava = $('ava2');
+function seek(t) {
+  const [s0, s1, s2, s3, s4, tot] = T;
+  // --- port world (scenes 0-1, and dimmed behind CTA)
+  const shipX = lerp(700, 0, ease(seg(t, 0, 2.8)));
+  $('ship').setAttribute('transform', `translate(${shipX} ${Math.sin(t * 1.6) * 4})`);
+  for (let i = 0; i < 8; i++) { const y = 1270 + i * 26, o = (t * 40 + i * 70) % 160;
+    let d = ''; for (let x = -160 + o; x < 1240; x += 160) d += `M${x} ${y} q40 -10 80 0 `; $('w' + i).setAttribute('d', d); }
+  // trolley goes over the box, cable drops, lifts, then stops (hold)
+  const boxHome = { x: 40 + 2 * 112 + 54 + shipX, y: 1236 + 26 };
+  const tx = lerp(1100, boxHome.x, ease(seg(t, 1.2, s1 + 0.4)));
+  const lift = ease(seg(t, s1 + 0.6, s1 + 2.2));                       // 0..1 lift up to y 1000
+    let bx = boxHome.x, by = lerp(boxHome.y, 1000, lift);
+  const shake = (t > s1 + 2.2 && t < s3) ? Math.sin(t * 40) * 2 * Math.max(0, 1 - (t - s1 - 2.2) * 2) : 0;
+  $('box').setAttribute('transform', `translate(${bx + shake} ${by})`);
+  $('trolley').setAttribute('transform', `translate(${tx} 0)`);
+  const cy = (t > s1 + 0.4 ? by - 56 : lerp(900, boxHome.y - 56, ease(seg(t, s1 + 0.1, s1 + 0.6))));
+  $('cable').setAttribute('y2', cy); $('cable2').setAttribute('y2', cy);
+  $('beacon').setAttribute('opacity', (t > s1 + 2.2) ? (Math.sin(t * 9) > 0 ? 1 : .2) : .25);
+  $('truck').setAttribute('transform', `translate(40 0)`);
+  // --- hold stamp + phone (scene 1)
+  const hp = seg(t, s1 + 2.2, s1 + 2.5);
+  $('hold').style.opacity = t < s2 ? hp : 0;
+  $('hold').style.transform = `translate(-50%,-50%) rotate(-8deg) scale(${lerp(1.8, 1, outB(hp))})`;
+  const pp = ease(seg(t, s1 + 2.7, s1 + 3.2));
+  $('phone').style.opacity = t < s2 ? pp : 0;
+  $('phone').style.transform = `translateY(${lerp(120, 0, pp)}px)`;
+  // --- desk (scenes 2-3)
+  const dk = t >= s2 && t < s4 + 0.4 ? (t < s4 ? ease(seg(t, s2, s2 + 0.35)) : 1 - ease(seg(t, s4, s4 + 0.4))) : 0;
+  $('desk').setAttribute('opacity', dk);
+  // presenter: on the quay in scenes 0-1 (watching), in the office in scene 2-3
+  if (t < s2) { ava.style.left = '590px'; ava.style.top = '1180px'; ava.style.width = '480px'; ava.style.height = '640px';
+    ava.style.opacity = ease(seg(t, 0.3, 0.9)); }
+  else if (t < s4 + 0.4) { ava.style.left = '560px'; ava.style.top = '760px'; ava.style.width = '500px'; ava.style.height = '667px';
+    ava.style.opacity = dk; }
+  else ava.style.opacity = 0;
+  const br = 1 + Math.sin(t * 2.2) * 0.006; const ab = ava.querySelector('#avaBody'); if (ab) ab.setAttribute('transform', `translate(210 560) scale(1 ${br}) translate(-210 -560)`);
+  const blink = (t % 3.4) > 3.27; const ae = ava.querySelector('#avaEyes'); if (ae) ae.setAttribute('transform', blink ? 'translate(0 208) scale(1 0.1) translate(0 -208)' : '');
+  $('laptop').style.opacity = t >= s3 ? ease(seg(t, s3, s3 + 0.35)) * (1 - ease(seg(t, s4, s4 + 0.4))) : 0;
+  const rows = document.querySelectorAll('#laptop .row b');
+  rows.forEach((b, i) => { b.style.opacity = seg(t, s3 + 0.5 + i * 0.45, s3 + 0.7 + i * 0.45); });
+  $('pdf').setAttribute('opacity', 1);
+  // --- captions
+  let k = 0; for (let i = 0; i < 4; i++) if (t >= [s0, s1, s2, s3][i]) k = i;
+  const c = CAP[k]; const cp = ease(seg(t, [s0, s1, s2, s3][k], [s0, s1, s2, s3][k] + 0.3));
+  $('cap1').textContent = c[0]; $('sub').textContent = c[1]; $('cite').textContent = c[2] || '';
+  $('cap1').style.opacity = cp; $('cap1').style.transform = `translateY(${lerp(30, 0, cp)}px)`; $('sub').style.opacity = cp;
+  $('cite').style.opacity = c[2] ? cp : 0;
+  // --- CTA (scene 4)
+  const ct = ease(seg(t, s4, s4 + 0.4));
+  $('cta').style.opacity = ct; $('cap1').style.opacity = cp * (1 - ct); $('sub').style.opacity = cp * (1 - ct);
+  $('cite').style.opacity = (c[2] ? cp : 0) * (1 - ct);
+}
+window.reel = { ready: document.fonts.ready.then(() => true), seek, info: () => ({ total: T[5] }) };
+seek(0);
+</script>
+</body></html>
