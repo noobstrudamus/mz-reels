@@ -1,7 +1,9 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<!-- Mise-en-scene reel template (Mert 2026-11-05): the story is acted out (port, crane, container, phone, desk)
-     instead of explained. Timeline is a pure function of t: window.reel.seek(t). Timings come from T (voice fit). -->
+<!-- Mise-en-scene reel template v2 (Mert 2026-11-05): acted story, first person. Port with workers + forklift,
+     crane lowers the container onto a truck, camera pans to the customs gate (barrier stays down), office, CTA.
+     The presenter moves: walk-in bob, two-part arms (shoulder + elbow), head tilt, blink, lip-sync from the voice.
+     Timeline is a pure function of t: window.reel.seek(t). T = scene starts + total; MOUTH = 30 fps mouth openness. -->
 <style>
 @font-face { font-family: 'Archivo'; src: url('../fonts/archivo-wdth.woff2'); font-weight: 100 900; }
 @font-face { font-family: 'Inter2'; src: url('../fonts/public-sans.woff2'); font-weight: 100 900; }
@@ -10,31 +12,27 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 .cap { position: absolute; left: 70px; right: 70px; font-family: 'Archivo', sans-serif; color: #fff; font-weight: 850;
   text-shadow: 0 6px 24px rgba(0,0,0,.55); letter-spacing: -1px; }
 #cap1 { top: 230px; font-size: 92px; line-height: 1.0; }
-#sub { position: absolute; left: 70px; right: 70px; top: 470px; font: 600 40px/1.25 'Inter2', sans-serif; color: #ffe7c2;
-  text-shadow: 0 3px 14px rgba(0,0,0,.6); }
+#sub { position: absolute; left: 70px; right: 70px; top: 450px; font: 600 40px/1.25 'Inter2', sans-serif; color: #ffe7c2; text-shadow: 0 3px 14px rgba(0,0,0,.6); }
+#cite { position: absolute; left: 70px; right: 70px; top: 610px; font: 700 30px 'Inter2'; color: #9fe1ff; opacity: 0; }
 #brand { position: absolute; left: 70px; top: 120px; font: 800 34px 'Archivo'; color: #fff; letter-spacing: 1px; }
 #brand small { font: 700 20px 'Inter2'; letter-spacing: 4px; margin-left: 10px; opacity: .8; }
-#foot { position: absolute; left: 70px; bottom: 300px; font: 500 24px 'Inter2'; color: rgba(255,255,255,.75); }
-#hold { position: absolute; left: 540px; top: 760px; transform: translate(-50%,-50%) rotate(-8deg); font: 900 130px 'Archivo';
-  color: #ff3b3b; border: 12px solid #ff3b3b; border-radius: 18px; padding: 10px 40px 4px; background: rgba(20,0,0,.35); opacity: 0; }
-#phone { position: absolute; left: 140px; top: 1110px; width: 800px; height: 420px; background: #f4f6fb; border-radius: 46px;
-  box-shadow: 0 30px 80px rgba(0,0,0,.5); padding: 40px; box-sizing: border-box; opacity: 0; font-family: 'Inter2'; }
-#phone .who { font: 700 30px 'Inter2'; color: #56607a; }
-#phone .bub { margin-top: 22px; background: #2f6bff; color: #fff; border-radius: 34px 34px 34px 8px; padding: 30px 34px;
-  font: 600 44px/1.25 'Inter2'; }
-#laptop { position: absolute; left: 170px; top: 1080px; width: 740px; height: 470px; background: #0f172a; border: 18px solid #2b3245;
-  border-radius: 24px; box-sizing: border-box; padding: 34px 40px; opacity: 0; font-family: 'Inter2'; }
-#laptop h3 { margin: 0 0 18px; font: 800 36px 'Archivo'; color: #9fb6ff; letter-spacing: 1px; }
-#laptop .row { display: flex; justify-content: space-between; font: 600 34px 'Inter2'; color: #e6ebff; padding: 10px 0;
-  border-bottom: 2px solid #26304a; }
+#foot { position: absolute; left: 70px; bottom: 270px; font: 500 24px 'Inter2'; color: rgba(255,255,255,.85); text-shadow: 0 2px 8px #000; }
+#hold { position: absolute; left: 380px; top: 650px; transform: translate(-50%,-50%) rotate(-8deg); font: 900 120px 'Archivo';
+  color: #ff3b3b; border: 12px solid #ff3b3b; border-radius: 18px; padding: 10px 36px 4px; background: rgba(20,0,0,.4); opacity: 0; }
+#phone { position: absolute; left: 60px; top: 800px; width: 600px; background: #f4f6fb; border-radius: 40px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5); padding: 32px; box-sizing: border-box; opacity: 0; font-family: 'Inter2'; }
+#phone .who { font: 700 28px 'Inter2'; color: #56607a; }
+#phone .bub { margin-top: 18px; background: #2f6bff; color: #fff; border-radius: 30px 30px 30px 8px; padding: 26px 30px; font: 600 40px/1.25 'Inter2'; }
+#laptop { position: absolute; left: 50px; top: 1080px; width: 620px; height: 440px; background: #0f172a; border: 16px solid #2b3245;
+  border-radius: 22px; box-sizing: border-box; padding: 28px 32px; opacity: 0; font-family: 'Inter2'; }
+#laptop h3 { margin: 0 0 12px; font: 800 32px 'Archivo'; color: #9fb6ff; letter-spacing: 1px; }
+#laptop .row { display: flex; justify-content: space-between; font: 600 30px 'Inter2'; color: #e6ebff; padding: 9px 0; border-bottom: 2px solid #26304a; }
 #laptop .row b { color: #34d399; font-weight: 800; opacity: 0; }
-#cite { position: absolute; left: 70px; right: 70px; top: 650px; font: 700 30px 'Inter2'; color: #9fe1ff; opacity: 0; }
-#cta { position: absolute; inset: 0; opacity: 0; background: linear-gradient(#0b1630ee, #0b1630); }
-#cta .h { position: absolute; left: 70px; right: 70px; top: 520px; font: 900 110px/1.0 'Archivo'; color: #fff; letter-spacing: -2px; }
-#cta .l1 { position: absolute; left: 70px; top: 790px; font: 800 64px 'Archivo'; color: #ffd166; }
-#cta .l2 { position: absolute; left: 70px; right: 70px; top: 880px; font: 600 50px/1.25 'Inter2'; color: #e6ebff; }
-#cta .url { position: absolute; left: 70px; top: 1060px; font: 800 48px 'Archivo'; color: #0b1630; background: #ffd166;
-  border-radius: 60px; padding: 22px 44px; }
+#cta { position: absolute; left: 0; right: 0; top: 0; height: 1300px; opacity: 0; }
+#cta .h { position: absolute; left: 70px; right: 70px; top: 330px; font: 900 112px/1.0 'Archivo'; color: #fff; letter-spacing: -2px; text-shadow: 0 6px 24px #000a; }
+#cta .l1 { position: absolute; left: 70px; top: 600px; font: 800 64px 'Archivo'; color: #ffd166; text-shadow: 0 4px 16px #000a; }
+#cta .l2 { position: absolute; left: 70px; right: 440px; top: 690px; font: 600 50px/1.25 'Inter2'; color: #fff; text-shadow: 0 4px 16px #000a; }
+#cta .url { position: absolute; left: 70px; top: 900px; font: 800 46px 'Archivo'; color: #0b1630; background: #ffd166; border-radius: 60px; padding: 22px 42px; }
 #ava2 { position: absolute; }
 </style></head>
 <body>
@@ -45,52 +43,77 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
     <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c3a63"/><stop offset="1" stop-color="#0a1830"/></linearGradient>
     <linearGradient id="office" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2238"/><stop offset="1" stop-color="#0c1120"/></linearGradient>
     <radialGradient id="lamp" cx=".5" cy=".3" r=".6"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".55"/><stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="flood" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#fff3c4" stop-opacity=".45"/><stop offset="1" stop-color="#fff3c4" stop-opacity="0"/></radialGradient>
   </defs>
-  <g id="port">
-    <rect width="1080" height="1920" fill="url(#sky)"/>
-    <circle id="sun" cx="780" cy="1180" r="120" fill="#ffd27a" opacity=".8"/>
-    <!-- far skyline -->
+  <rect width="1080" height="1920" fill="url(#sky)"/>
+  <g id="pan">
+    <!-- ===== PORT (x 0..1080) ===== -->
+    <circle cx="780" cy="1180" r="120" fill="#ffd27a" opacity=".8"/>
     <path d="M0 1240 L0 1180 L60 1180 L60 1150 L120 1150 L120 1195 L210 1195 L210 1130 L250 1130 L250 1200 L340 1200 L340 1165 L420 1165 L420 1240 Z" fill="#2a2148" opacity=".8"/>
-    <rect y="1240" width="1080" height="680" fill="url(#sea)"/>
+    <path d="M1180 1240 L1180 1170 L1300 1170 L1300 1120 L1380 1120 L1380 1190 L1500 1190 L1500 1150 L1600 1150 L1600 1240 Z" fill="#2a2148" opacity=".8"/>
+    <rect y="1240" width="2200" height="680" fill="url(#sea)"/>
     <g id="waves" stroke="#5c86c2" stroke-width="4" opacity=".35" fill="none"></g>
-    <!-- quay -->
-    <rect x="0" y="1460" width="1080" height="460" fill="#2b2f3a"/>
-    <rect x="0" y="1460" width="1080" height="16" fill="#f2c94c"/>
-    <!-- ship -->
+    <rect x="0" y="1460" width="2200" height="460" fill="#2b2f3a"/>
+    <rect x="0" y="1460" width="1080" height="14" fill="#f2c94c"/>
     <g id="ship">
       <path d="M-20 1300 L760 1300 L720 1440 L20 1440 Z" fill="#7a1f2b"/>
       <rect x="-20" y="1290" width="780" height="14" fill="#c9cbd3"/>
       <rect x="600" y="1150" width="120" height="140" fill="#e9ecf2"/><rect x="612" y="1166" width="96" height="24" fill="#26304a"/>
       <g id="stack"></g>
     </g>
-    <!-- gantry crane -->
     <g id="crane">
-      <rect x="150" y="760" width="26" height="700" fill="#e14b3b"/><rect x="430" y="760" width="26" height="700" fill="#e14b3b"/>
+      <rect x="150" y="760" width="26" height="720" fill="#e14b3b"/><rect x="430" y="760" width="26" height="720" fill="#e14b3b"/>
       <rect x="90" y="740" width="900" height="40" fill="#e14b3b"/>
       <path d="M176 780 L430 1000 M430 780 L176 1000" stroke="#b8392c" stroke-width="10"/>
       <rect x="120" y="700" width="90" height="60" fill="#c43b2d"/>
       <g id="trolley"><rect x="-40" y="782" width="80" height="34" fill="#333a4a"/>
         <line id="cable" x1="-20" y1="816" x2="-20" y2="900" stroke="#1b1f29" stroke-width="5"/>
-        <line id="cable2" x1="20" y1="816" x2="20" y2="900" stroke="#1b1f29" stroke-width="5"/>
-      </g>
-      <circle id="beacon" cx="940" cy="728" r="16" fill="#ff3b3b"/>
+        <line id="cable2" x1="20" y1="816" x2="20" y2="900" stroke="#1b1f29" stroke-width="5"/></g>
+      <circle id="beacon" cx="940" cy="728" r="16" fill="#ffb020"/>
     </g>
-    <!-- the hero container -->
+    <ellipse cx="300" cy="1470" rx="380" ry="120" fill="url(#flood)"/>
+    <g id="forklift"><rect x="-70" y="1560" width="110" height="60" rx="8" fill="#f2c94c"/><rect x="-60" y="1500" width="60" height="60" fill="none" stroke="#333" stroke-width="8"/>
+      <rect x="40" y="1480" width="10" height="140" fill="#444"/><rect x="50" y="1590" width="70" height="10" fill="#444"/>
+      <rect x="52" y="1550" width="64" height="40" fill="#a87b4f"/><circle cx="-40" cy="1625" r="20" fill="#111"/><circle cx="20" cy="1625" r="20" fill="#111"/></g>
+    <g id="workers"></g>
+    <!-- ===== CUSTOMS (x 1080..2160) ===== -->
+    <g transform="translate(1080 0)">
+      <rect x="330" y="1080" width="420" height="390" fill="#3b4256"/><rect x="330" y="1060" width="420" height="30" fill="#2a3042"/>
+      <rect x="350" y="1110" width="380" height="64" fill="#f4f6fb"/>
+      <text x="540" y="1156" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="40" fill="#1b2340" letter-spacing="2">CUSTOMS EXAM</text>
+      <g fill="#ffe7a8" opacity=".85"><rect x="360" y="1220" width="80" height="60"/><rect x="470" y="1220" width="80" height="60"/><rect x="580" y="1220" width="80" height="60"/></g>
+      <rect x="560" y="1330" width="140" height="140" fill="#1b2030"/>
+      <rect x="240" y="1330" width="80" height="140" fill="#d7dbe6"/><rect x="250" y="1345" width="60" height="50" fill="#8fb4ff"/>
+      <rect x="322" y="1440" width="16" height="90" fill="#9aa3b5"/>
+      <rect x="-100" y="1458" width="430" height="20" rx="6" fill="#fff"/>
+      <g fill="#e11d48"><rect x="-70" y="1458" width="40" height="20"/><rect x="10" y="1458" width="40" height="20"/><rect x="90" y="1458" width="40" height="20"/><rect x="170" y="1458" width="40" height="20"/><rect x="250" y="1458" width="40" height="20"/></g>
+      <circle id="gateLight" cx="330" cy="1420" r="16" fill="#ff3b3b"/>
+      <ellipse cx="380" cy="1470" rx="420" ry="110" fill="url(#flood)"/>
+      <g id="officer" transform="translate(470 1640)">
+        <line x1="0" y1="-60" x2="-8" y2="0" stroke="#111827" stroke-width="13" stroke-linecap="round"/><line x1="0" y1="-60" x2="8" y2="0" stroke="#111827" stroke-width="13" stroke-linecap="round"/>
+        <rect x="-18" y="-124" width="36" height="68" rx="10" fill="#1e3a8a"/><circle cx="0" cy="-140" r="15" fill="#a4704f"/>
+        <rect x="-18" y="-160" width="36" height="10" rx="3" fill="#111827"/>
+        <g id="clip"><rect x="14" y="-112" width="26" height="34" fill="#f4f6fb"/></g>
+      </g>
+      <g fill="#fff" opacity=".7"><rect x="0" y="1700" width="80" height="10"/><rect x="160" y="1700" width="80" height="10"/><rect x="320" y="1700" width="80" height="10"/><rect x="480" y="1700" width="80" height="10"/><rect x="640" y="1700" width="80" height="10"/><rect x="800" y="1700" width="80" height="10"/></g>
+    </g>
+    <!-- truck + hero container (moves across both worlds) -->
+    <g id="truck"><rect x="0" y="1560" width="300" height="20" fill="#20242e"/><rect x="300" y="1500" width="110" height="80" rx="10" fill="#2f6bff"/>
+      <rect x="350" y="1512" width="46" height="30" rx="4" fill="#bcd3ff"/>
+      <circle cx="60" cy="1590" r="24" fill="#111"/><circle cx="250" cy="1590" r="24" fill="#111"/><circle cx="360" cy="1590" r="24" fill="#111"/></g>
     <g id="box"><rect x="-120" y="-56" width="240" height="112" rx="4" fill="#f2994a"/>
       <g stroke="#d27a33" stroke-width="6"><line x1="-90" y1="-50" x2="-90" y2="50"/><line x1="-50" y1="-50" x2="-50" y2="50"/><line x1="-10" y1="-50" x2="-10" y2="50"/><line x1="30" y1="-50" x2="30" y2="50"/><line x1="70" y1="-50" x2="70" y2="50"/></g>
       <rect x="-86" y="-22" width="172" height="44" fill="#fff" opacity=".92"/>
-      <text x="0" y="12" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="26" fill="#1b1f29">KID-24-BLUE</text>
-    </g>
-    <!-- truck -->
-    <g id="truck"><rect x="0" y="1560" width="300" height="20" fill="#20242e"/><rect x="300" y="1500" width="110" height="80" rx="10" fill="#2f6bff"/>
-      <circle cx="60" cy="1590" r="24" fill="#111"/><circle cx="250" cy="1590" r="24" fill="#111"/><circle cx="360" cy="1590" r="24" fill="#111"/></g>
+      <text x="0" y="12" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="26" fill="#1b1f29">KID-24-BLUE</text></g>
   </g>
   <g id="desk" opacity="0">
     <rect width="1080" height="1920" fill="url(#office)"/>
-    <rect x="0" y="1520" width="1080" height="400" fill="#3a2b22"/>
-    <ellipse cx="760" cy="900" rx="520" ry="700" fill="url(#lamp)"/>
-    <g id="pdf"><rect x="80" y="1380" width="220" height="150" rx="10" fill="#f4f6fb" transform="rotate(-6 190 1455)"/>
-      <text x="190" y="1470" text-anchor="middle" font-family="Inter" font-weight="800" font-size="30" fill="#c0392b" transform="rotate(-6 190 1455)">LAB REPORT</text></g>
+    <rect x="0" y="1540" width="1080" height="380" fill="#3a2b22"/><rect x="0" y="1540" width="1080" height="14" fill="#4c3a2e"/>
+    <ellipse cx="760" cy="980" rx="520" ry="700" fill="url(#lamp)"/>
+    <g opacity=".5"><rect x="80" y="760" width="240" height="300" fill="#121a2e" stroke="#2c3a5c" stroke-width="8"/><line x1="200" y1="760" x2="200" y2="1060" stroke="#2c3a5c" stroke-width="6"/></g>
+    <rect x="960" y="1470" width="16" height="70" fill="#222"/><path d="M930 1470 L1010 1470 L990 1400 L950 1400 Z" fill="#e8c27a"/>
+    <g id="pdf"><rect x="760" y="1580" width="220" height="140" rx="10" fill="#f4f6fb" transform="rotate(5 870 1650)"/>
+      <text x="870" y="1665" text-anchor="middle" font-family="Inter2" font-weight="800" font-size="30" fill="#c0392b" transform="rotate(5 870 1650)">LAB REPORT</text></g>
   </g>
 </svg>
 {{AVA}}
@@ -99,7 +122,7 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 <div id="sub"></div>
 <div id="cite"></div>
 <div id="hold">ON HOLD</div>
-<div id="phone"><div class="who">Broker · now</div><div class="bub">“It’s on hold. I need the certificate data.”</div></div>
+<div id="phone"><div class="who">My broker · now</div><div class="bub">“It’s on hold. I need the certificate data.”</div></div>
 <div id="laptop"><h3>CERTIFICATE DATA</h3>
   <div class="row">Product ID <b>✓</b></div><div class="row">Each rule <b>✓</b></div><div class="row">Made: date + place <b>✓</b></div>
   <div class="row">Tested: lab + date <b>✓</b></div><div class="row">Records contact <b>✓</b></div></div>
@@ -107,72 +130,136 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 <div id="foot">Illustrative example. Not legal advice.</div>
 </div>
 <script>
-const T = {{TIMES}};          // scene starts [s0..s4] and total, from the voice fit
+const T = {{TIMES}};
 const CAP = {{CAPS}};
+const MOUTH = {{MOUTH}};
 const $ = id => document.getElementById(id);
 const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const ease = x => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
 const outB = x => { x = cl(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
 const lerp = (a, b, p) => a + (b - a) * p;
 const seg = (t, a, b) => cl((t - a) / (b - a));
-// static stack of containers on the ship
+// ---- build static props
 (() => { const cols = ['#2f6bff', '#27ae60', '#8e44ad', '#16a085', '#c0392b', '#2c3e50', '#d35400'];
   let h = ''; for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) { if (r === 0 && c === 2) continue;
-    h += `<rect x="${40 + c * 112}" y="${1182 - r * 54 + 54}" width="108" height="52" fill="${cols[(r * 5 + c) % cols.length]}" stroke="#0003" stroke-width="3"/>`; }
+    h += `<rect x="${40 + c * 112}" y="${1236 - r * 54}" width="108" height="52" fill="${cols[(r * 5 + c) % cols.length]}" stroke="#0003" stroke-width="3"/>`; }
   $('stack').innerHTML = h;
-  let w = ''; for (let i = 0; i < 8; i++) w += `<path id="w${i}" d=""/>`; $('waves').innerHTML = w; })();
+  let w = ''; for (let i = 0; i < 8; i++) w += `<path id="w${i}" d=""/>`; $('waves').innerHTML = w;
+  let k = ''; for (let i = 0; i < 4; i++) k += `<g id="wk${i}">
+      <line id="wk${i}a" x1="0" y1="-60" x2="-6" y2="0" stroke="#1f2a44" stroke-width="12" stroke-linecap="round"/>
+      <line id="wk${i}b" x1="0" y1="-60" x2="6" y2="0" stroke="#1f2a44" stroke-width="12" stroke-linecap="round"/>
+      <rect x="-17" y="-122" width="34" height="66" rx="10" fill="#ff7a1a"/><rect x="-17" y="-96" width="34" height="7" fill="#e8f0ff"/>
+      <line id="wk${i}c" x1="-14" y1="-116" x2="-24" y2="-70" stroke="#ff7a1a" stroke-width="10" stroke-linecap="round"/>
+      <line id="wk${i}d" x1="14" y1="-116" x2="24" y2="-70" stroke="#ff7a1a" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="0" cy="-138" r="15" fill="${['#c98e6b', '#8d5a3b', '#e0b190', '#6b4429'][i]}"/>
+      <path d="M-18 -142 Q0 -166 18 -142 Z" fill="#ffd400"/><rect x="-20" y="-144" width="40" height="5" fill="#ffd400"/></g>`;
+  $('workers').innerHTML = k; })();
+// x0, x1, y, period(s), phase ; worker 3 is the signalman with wands
+const WK = [[520, 900, 1600, 7, 0], [980, 640, 1670, 9, 2], [200, 430, 1720, 8, 4], [720, 720, 1540, 1, 0]];
+function legs(i, ph, amp) { const s = Math.sin(ph) * amp;
+  $(`wk${i}a`).setAttribute('x2', -6 + s); $(`wk${i}b`).setAttribute('x2', 6 - s);
+  $(`wk${i}c`).setAttribute('x2', -24 - s * .6); $(`wk${i}d`).setAttribute('x2', 24 + s * .6); }
+// ---- presenter rig
 const ava = $('ava2');
+const G = id => ava.querySelector('#' + id);
+const rig = { armL: G('armL'), foreL: G('foreL'), armR: G('armR'), foreR: G('foreR'), head: G('avaHead'), hairB: G('avaHairB'),
+  body: G('avaBody'), eyes: G('avaEyes'), mouth: G('mouthIn'), lip: G('lipLow'), phone: G('phoneR') };
+function rot(el, a, x, y) { if (el) el.setAttribute('transform', `rotate(${a.toFixed(2)} ${x} ${y})`); }
+const P = {
+  idle:   { aL: 3, fL: 4, aR: -3, fR: -4, h: 0, ph: 0 },
+  point:  { aL: 64, fL: 26, aR: -6, fR: -10, h: -6, ph: 0 },
+  phone:  { aL: 5, fL: 8, aR: -24, fR: -128, h: 8, ph: 1 },
+  palms:  { aL: 36, fL: 60, aR: -36, fR: -60, h: -3, ph: 0 },
+  laptop: { aL: 48, fL: 34, aR: -8, fR: -14, h: -8, ph: 0 },
+  wave:   { aL: 5, fL: 8, aR: -66, fR: -112, h: 5, ph: 0 },
+};
+const mix = (a, b, k) => { const o = {}; for (const key in a) o[key] = lerp(a[key], b[key], k); return o; };
+function pose(p, t, talk) {
+  const w = Math.sin(t * 2.3) * talk, w2 = Math.sin(t * 3.1 + 1) * talk;
+  rot(rig.armL, p.aL + w * 5, 104, 380); rot(rig.foreL, p.fL + w2 * 10, 92, 522);
+  rot(rig.armR, p.aR - w2 * 5, 316, 380); rot(rig.foreR, p.fR - w * 10, 328, 522);
+  const h = p.h + Math.sin(t * 1.7) * 2.4 * (0.4 + talk) + Math.sin(t * 5.3) * 1.2 * talk;
+  rot(rig.head, h, 210, 300); rot(rig.hairB, h, 210, 300);
+  if (rig.phone) rig.phone.setAttribute('opacity', p.ph > .5 ? 1 : 0);
+}
 function seek(t) {
   const [s0, s1, s2, s3, s4, tot] = T;
-  // --- port world (scenes 0-1, and dimmed behind CTA)
-  const shipX = lerp(700, 0, ease(seg(t, 0, 2.8)));
+  const f = Math.min(MOUTH.length - 1, Math.max(0, Math.round(t * 30))); const talk = MOUTH[f] || 0;
+  // camera: port -> customs whip pan at s1
+  const pan = ease(seg(t, s1, s1 + 1.0));
+  $('pan').setAttribute('transform', `translate(${(-1080 * pan).toFixed(1)} 0)`);
+  // ship docks; waves
+  const shipX = lerp(700, 0, ease(seg(t, 0, 2.2)));
   $('ship').setAttribute('transform', `translate(${shipX} ${Math.sin(t * 1.6) * 4})`);
   for (let i = 0; i < 8; i++) { const y = 1270 + i * 26, o = (t * 40 + i * 70) % 160;
-    let d = ''; for (let x = -160 + o; x < 1240; x += 160) d += `M${x} ${y} q40 -10 80 0 `; $('w' + i).setAttribute('d', d); }
-  // trolley goes over the box, cable drops, lifts, then stops (hold)
-  const boxHome = { x: 40 + 2 * 112 + 54 + shipX, y: 1236 + 26 };
-  const tx = lerp(1100, boxHome.x, ease(seg(t, 1.2, s1 + 0.4)));
-  const lift = ease(seg(t, s1 + 0.6, s1 + 2.2));                       // 0..1 lift up to y 1000
-    let bx = boxHome.x, by = lerp(boxHome.y, 1000, lift);
-  const shake = (t > s1 + 2.2 && t < s3) ? Math.sin(t * 40) * 2 * Math.max(0, 1 - (t - s1 - 2.2) * 2) : 0;
-  $('box').setAttribute('transform', `translate(${bx + shake} ${by})`);
+    let d = ''; for (let x = -160 + o; x < 2240; x += 160) d += `M${x} ${y} q40 -10 80 0 `; $('w' + i).setAttribute('d', d); }
+  // crane: pick the box off the ship and set it on the truck before s1
+  const home = { x: 40 + 2 * 112 + 54 + shipX, y: 1262 };
+  const truckX0 = 70, onTruck = { x: truckX0 + 150, y: 1500 };
+  const a1 = ease(seg(t, 0.6, 1.5)), aDn = ease(seg(t, 1.5, 1.9)), aUp = ease(seg(t, 1.9, 2.5)),
+        aMv = ease(seg(t, 2.5, s1 - 0.6)), aLo = ease(seg(t, s1 - 0.6, s1 - 0.1));
+  const loaded = t >= s1 - 0.1;
+  const drive = ease(seg(t, s1 + 0.05, s1 + 1.9));
+  const truckX = lerp(truckX0, 1080 - 40, drive);
+  let bx, by, tx, cy;
+  if (loaded) { bx = truckX + 150; by = 1500; tx = onTruck.x; cy = lerp(1444, 900, ease(seg(t, s1 - 0.1, s1 + 0.6))); }
+  else { bx = lerp(home.x, onTruck.x, aMv); by = lerp(lerp(home.y, 1020, aUp), onTruck.y, aLo);
+    tx = t < 1.5 ? lerp(1000, home.x, a1) : bx; cy = t < 1.9 ? lerp(900, home.y - 56, aDn) : by - 56; }
+  const stopShake = (t > s1 + 1.9 && t < s1 + 2.4) ? Math.sin(t * 50) * 3 * (1 - seg(t, s1 + 1.9, s1 + 2.4)) : 0;
+  $('box').setAttribute('transform', `translate(${bx + stopShake} ${by})`);
+  $('truck').setAttribute('transform', `translate(${truckX + stopShake} 0)`);
   $('trolley').setAttribute('transform', `translate(${tx} 0)`);
-  const cy = (t > s1 + 0.4 ? by - 56 : lerp(900, boxHome.y - 56, ease(seg(t, s1 + 0.1, s1 + 0.6))));
   $('cable').setAttribute('y2', cy); $('cable2').setAttribute('y2', cy);
-  $('beacon').setAttribute('opacity', (t > s1 + 2.2) ? (Math.sin(t * 9) > 0 ? 1 : .2) : .25);
-  $('truck').setAttribute('transform', `translate(40 0)`);
-  // --- hold stamp + phone (scene 1)
-  const hp = seg(t, s1 + 2.2, s1 + 2.5);
+  $('beacon').setAttribute('opacity', Math.sin(t * 7) > 0 ? 1 : .3);
+  // dock workers walk; signalman waves wands while the crane moves
+  WK.forEach((w, i) => { const [x0, x1, y, per, ph] = w; const el = $('wk' + i);
+    if (i === 3) { el.setAttribute('transform', `translate(${x0} ${y})`); const s = Math.sin(t * 5) * 40;
+      $(`wk3c`).setAttribute('x2', -40); $(`wk3c`).setAttribute('y2', -150 + s); $(`wk3d`).setAttribute('x2', 40); $(`wk3d`).setAttribute('y2', -150 - s);
+      $(`wk3a`).setAttribute('x2', -6); $(`wk3b`).setAttribute('x2', 6); return; }
+    const u = ((t + ph) % per) / per, pp = u < .5 ? u * 2 : 2 - u * 2, x = lerp(x0, x1, ease(pp));
+    const dir = (u < .5) === (x1 > x0) ? 1 : -1;
+    el.setAttribute('transform', `translate(${x} ${y - Math.abs(Math.sin(t * 9 + i)) * 4}) scale(${dir} 1)`);
+    legs(i, t * 9 + i, 16); });
+  $('forklift').setAttribute('transform', `translate(${lerp(820, 620, (Math.sin(t * 0.7) + 1) / 2)} 0)`);
+  // customs gate: barrier stays down, light flashes, officer checks the clipboard
+  $('gateLight').setAttribute('opacity', t > s1 + 1.9 && Math.sin(t * 9) > 0 ? 1 : .35);
+  $('clip').setAttribute('transform', `rotate(${Math.sin(t * 2) * 8} 27 -95)`);
+  const hp = seg(t, s1 + 2.0, s1 + 2.3);
   $('hold').style.opacity = t < s2 ? hp : 0;
   $('hold').style.transform = `translate(-50%,-50%) rotate(-8deg) scale(${lerp(1.8, 1, outB(hp))})`;
-  const pp = ease(seg(t, s1 + 2.7, s1 + 3.2));
+  const pp = ease(seg(t, s1 + 2.4, s1 + 2.9));
   $('phone').style.opacity = t < s2 ? pp : 0;
-  $('phone').style.transform = `translateY(${lerp(120, 0, pp)}px)`;
-  // --- desk (scenes 2-3)
+  $('phone').style.transform = `translateY(${lerp(100, 0, pp)}px)`;
+  // office
   const dk = t >= s2 && t < s4 + 0.4 ? (t < s4 ? ease(seg(t, s2, s2 + 0.35)) : 1 - ease(seg(t, s4, s4 + 0.4))) : 0;
   $('desk').setAttribute('opacity', dk);
-  // presenter: on the quay in scenes 0-1 (watching), in the office in scene 2-3
-  if (t < s2) { ava.style.left = '590px'; ava.style.top = '1180px'; ava.style.width = '480px'; ava.style.height = '640px';
-    ava.style.opacity = ease(seg(t, 0.3, 0.9)); }
-  else if (t < s4 + 0.4) { ava.style.left = '560px'; ava.style.top = '760px'; ava.style.width = '500px'; ava.style.height = '667px';
-    ava.style.opacity = dk; }
-  else ava.style.opacity = 0;
-  const br = 1 + Math.sin(t * 2.2) * 0.006; const ab = ava.querySelector('#avaBody'); if (ab) ab.setAttribute('transform', `translate(210 560) scale(1 ${br}) translate(-210 -560)`);
-  const blink = (t % 3.4) > 3.27; const ae = ava.querySelector('#avaEyes'); if (ae) ae.setAttribute('transform', blink ? 'translate(0 208) scale(1 0.1) translate(0 -208)' : '');
   $('laptop').style.opacity = t >= s3 ? ease(seg(t, s3, s3 + 0.35)) * (1 - ease(seg(t, s4, s4 + 0.4))) : 0;
-  const rows = document.querySelectorAll('#laptop .row b');
-  rows.forEach((b, i) => { b.style.opacity = seg(t, s3 + 0.5 + i * 0.45, s3 + 0.7 + i * 0.45); });
-  $('pdf').setAttribute('opacity', 1);
-  // --- captions
-  let k = 0; for (let i = 0; i < 4; i++) if (t >= [s0, s1, s2, s3][i]) k = i;
-  const c = CAP[k]; const cp = ease(seg(t, [s0, s1, s2, s3][k], [s0, s1, s2, s3][k] + 0.3));
+  document.querySelectorAll('#laptop .row b').forEach((b, i) => { b.style.opacity = seg(t, s3 + 0.5 + i * 0.45, s3 + 0.7 + i * 0.45); });
+  // presenter: placement + pose per scene
+  let X, Y, S, ps, bob = 0;
+  if (t < s1) { const wk = ease(seg(t, 0, 1.5)); X = lerp(1140, 610, wk); bob = wk < 1 ? Math.abs(Math.sin(t * 9)) * 12 : 0;
+    Y = 1170; S = 480; ps = mix(P.idle, P.point, ease(seg(t, 1.5, 2.0))); }
+  else if (t < s2) { X = lerp(610, 720, pan); Y = lerp(1170, 1270, pan); S = lerp(480, 380, pan); ps = mix(P.point, P.phone, ease(seg(t, s1 + 1.4, s1 + 2.1))); }
+  else if (t < s3) { X = 560; Y = 860; S = 520; ps = mix(P.idle, P.palms, ease(seg(t, s2 + 0.4, s2 + 0.9))); }
+  else if (t < s4) { X = 610; Y = 860; S = 520; ps = mix(P.palms, P.laptop, ease(seg(t, s3, s3 + 0.5))); }
+  else { X = 640; Y = 1160; S = 460; ps = mix(P.idle, P.wave, ease(seg(t, s4 + 0.3, s4 + 0.8)));
+    ps.fR += Math.sin(t * 10) * 16 * seg(t, s4 + 0.8, s4 + 1.0); }
+  const vis = t < s2 ? ease(seg(t, 0.05, 0.4)) : (t < s4 ? ease(seg(t, s2, s2 + 0.3)) : ease(seg(t, s4, s4 + 0.35)));
+  ava.style.left = X + 'px'; ava.style.top = (Y - bob) + 'px'; ava.style.width = S + 'px'; ava.style.height = (S * 4 / 3) + 'px'; ava.style.opacity = vis;
+  pose(ps, t, talk > .08 ? .55 + talk * .6 : .12);
+  const breath = 1 + Math.sin(t * 2.2) * 0.006;
+  rig.body && rig.body.setAttribute('transform', `translate(210 560) scale(1 ${breath.toFixed(4)}) translate(-210 -560)`);
+  const blink = (t % 3.4) > 3.27; rig.eyes && rig.eyes.setAttribute('transform', blink ? 'translate(0 208) scale(1 0.1) translate(0 -208)' : '');
+  const open = talk > .06 ? talk : 0;
+  rig.mouth && rig.mouth.setAttribute('ry', (open * 10).toFixed(2));
+  rig.lip && rig.lip.setAttribute('transform', `translate(0 ${(open * 7).toFixed(2)})`);
+  // captions + CTA
+  const st = [s0, s1, s2, s3]; let k = 0; for (let i = 0; i < 4; i++) if (t >= st[i]) k = i;
+  const c = CAP[k]; const cp = ease(seg(t, st[k], st[k] + 0.3)); const ct = ease(seg(t, s4, s4 + 0.4));
   $('cap1').textContent = c[0]; $('sub').textContent = c[1]; $('cite').textContent = c[2] || '';
-  $('cap1').style.opacity = cp; $('cap1').style.transform = `translateY(${lerp(30, 0, cp)}px)`; $('sub').style.opacity = cp;
-  $('cite').style.opacity = c[2] ? cp : 0;
-  // --- CTA (scene 4)
-  const ct = ease(seg(t, s4, s4 + 0.4));
-  $('cta').style.opacity = ct; $('cap1').style.opacity = cp * (1 - ct); $('sub').style.opacity = cp * (1 - ct);
+  $('cap1').style.opacity = cp * (1 - ct); $('cap1').style.transform = `translateY(${lerp(30, 0, cp)}px)`; $('sub').style.opacity = cp * (1 - ct);
   $('cite').style.opacity = (c[2] ? cp : 0) * (1 - ct);
+  $('cta').style.opacity = ct;
 }
 window.reel = { ready: document.fonts.ready.then(() => true), seek, info: () => ({ total: T[5] }) };
 seek(0);

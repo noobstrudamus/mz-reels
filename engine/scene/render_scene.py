@@ -40,9 +40,20 @@ def main(argv):
         starts.append(round(t, 2)); t += max(d + 0.25, m)
     total = round(t + 0.25, 2)
     times = [0.0] + starts[1:] + [total]
+    sr = 48000; n = int(total * sr)
+    voice = np.zeros(n)
+    for st, i in zip(starts, range(5)):
+        x = BA.read_wav(out / f"s{i + 1}.wav")
+        a = int(st * sr); voice[a:a + x.size] += x[: max(0, n - a)]
+    # lip-sync: RMS per video frame -> 0..1 openness, lightly smoothed
+    hop = sr // FPS
+    rms = np.array([np.sqrt(np.mean(voice[i:i + hop] ** 2)) for i in range(0, n, hop)])
+    mouth = np.clip(rms / (np.percentile(rms[rms > 1e-4], 90) + 1e-9), 0, 1) if (rms > 1e-4).any() else rms
+    mouth = np.convolve(mouth, [0.25, 0.5, 0.25], "same")
     html = (HERE / "scene.html").read_text()
-    ava = (HERE / "_ava.svg").read_text()
-    page_html = html.replace("{{AVA}}", ava).replace("{{TIMES}}", json.dumps(times)).replace("{{CAPS}}", json.dumps(s["caps"]))
+    ava = (HERE / "_ava2.svg").read_text()
+    page_html = (html.replace("{{AVA}}", ava).replace("{{TIMES}}", json.dumps(times)).replace("{{CAPS}}", json.dumps(s["caps"]))
+                 .replace("{{MOUTH}}", json.dumps([round(float(v), 3) for v in mouth])))
     page = out / "page.html"
     page.write_text(page_html.replace("../fonts/", (ENGINE / "fonts").as_uri() + "/"))
     print(f"lines {[round(d, 2) for d in durs]} | starts {starts} | total {total}s")
@@ -61,11 +72,6 @@ def main(argv):
         for f in range(int(total * FPS)):
             pg.evaluate(f"reel.seek({f / FPS})"); enc.stdin.write(pg.screenshot(type="jpeg", quality=95))
         enc.stdin.close(); enc.wait(); b.close()
-    sr = 48000; n = int(total * sr)
-    voice = np.zeros(n)
-    for st, i in zip(starts, range(5)):
-        x = BA.read_wav(out / f"s{i + 1}.wav"); x = x if x.ndim == 1 else x.mean(axis=0)
-        a = int(st * sr); voice[a:a + x.size] += x[: max(0, n - a)]
     env = np.convolve(np.abs(voice) > 0.02, np.ones(sr // 10) / (sr // 10), "same")
     mus = BA.music(total)[:, :n] * BA.db(BA.MUSIC_DB) * (BA.db(BA.DUCK_DB) ** np.clip(env * 3, 0, 1))
     fx = np.zeros((2, n))
