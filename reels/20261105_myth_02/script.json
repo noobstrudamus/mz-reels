@@ -5,7 +5,7 @@
  "scenes": [
   {
    "type": "stamp",
-   "dur": 2.9,
+   "dur": 3.4,
    "headline": "Adult hoodie, no rule?",
    "note": "Say a seller launches cotton fleece hoodies for adults.",
    "stamp": "MYTH",
@@ -13,7 +13,7 @@
   },
   {
    "type": "compare",
-   "dur": 5.8,
+   "dur": 5.3,
    "headline": "16 CFR part 1610",
    "note": "Flammability of clothing textiles, not just kids' wear.",
    "left": {
@@ -27,7 +27,7 @@
   },
   {
    "type": "pair",
-   "dur": 5.7,
+   "dur": 5.9,
    "headline": "The testing catch",
    "note": "1610.1(d): some fabrics are exempt from guaranty testing.",
    "bad": {
@@ -39,7 +39,7 @@
   },
   {
    "type": "checklist",
-   "dur": 4.4,
+   "dur": 4.8,
    "headline": "Her hoodie file",
    "note": "Say HOOD-24-GRY is a cotton fleece hoodie.",
    "items": [
@@ -62,7 +62,7 @@
   },
   {
    "type": "cta",
-   "dur": 4,
+   "dur": 4.1,
    "headline": "Want a free gap list?",
    "line1": "Comment M&Z.",
    "line2": "We'll DM you the link.",
@@ -71,7 +71,7 @@
  ],
  "vo": [
   "Adult hoodies have no CPSC rule? Wrong.",
-  "Say a seller launches cotton fleece hoodies for adults. Part sixteen ten covers clothing textiles.",
+  "Say she launches cotton fleece hoodies. Part sixteen ten covers clothing textiles.",
   "Here's the catch. All-polyester fabric skips testing for guaranties. Cotton fleece doesn't.",
   "So her G C C lists part sixteen ten, and she checks the fabric test.",
   "Free gap list? Comment M and Z, and we'll DM you the link."

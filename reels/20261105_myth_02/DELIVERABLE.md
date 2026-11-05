@@ -1,6 +1,6 @@
 # Reel 20261105_myth_02: Selling adult hoodies? The clothing flammability rule still covers them.
 
-Slot 08:47 America/New_York. Arms: hook myth, opener slam, length long, voice andrew, cta_mode comment.
+Slot 08:47 America/New_York. Arms: hook myth, opener slam, length long, voice ava, cta_mode comment.
 
 ## Caption
 Selling adult hoodies? The clothing flammability rule still covers them.
@@ -28,12 +28,12 @@ https://mzconsulting.agency/?src=ig_20261105_myth_02#contact
 ## QA
 | check | result |
 |---|---|
-| Duration | PASS — 22.8 s (long) |
+| Duration | PASS — 23.5 s (long) |
 | Voice fit | PASS — voice.py ALL OK |
 | Stills | PASS — frames 0, 0.5, each scene, last frame viewed (contact sheet) |
 | Safe zone / limits | PASS — render.py QA |
 | CTA set | PASS — comment_gaplist set verbatim; last VO line says it |
-| Truth gate | FAIL (fixable) -> fixed: doc Hoodie GCC, checklist 1610 on GCC, VO4 says her GCC lists part 1610, pair label Poly: exempt (batch adversarial verifier, eCFR 2026-10-30) |
+| Truth gate | FAIL (fixable) -> fixed: doc Hoodie GCC, checklist 1610 on GCC, VO4 says her GCC lists part 1610, pair label Poly: exempt; re-voiced with Ava 2026-11-05 (female presenter), VO2 shortened to fit 24 s (batch adversarial verifier, eCFR 2026-10-30) |
 | Topic not repeated (14 days + today) | PASS |
 | Opener / hook | slam / myth (#22 Contrarian Flip (myth)) |
 | Hook score | PASS — 63.2 for "Adult hoodies have no CPSC rule? Wrong." (scored with digits; VO spells numbers out: "Adult hoodies have no CPSC rule? Wrong.") |
