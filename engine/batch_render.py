@@ -33,6 +33,11 @@ def main(argv):
          "opener": meta["arms"].get("opener", "classic"), "footnote": "Illustrative example. Not legal advice.",
          "look": meta.get("look") or json.loads((REPO / "config" / "settings.json").read_text()).get("reel_look", "classic"),
          "avatar": bool(meta.get("avatar", json.loads((REPO / "config" / "settings.json").read_text()).get("reel_avatar", False)))}
+    if m["avatar"] and meta["arms"].get("voice") != "ava":
+        # Mert 2026-11-05: the presenter is a woman, so the voice must match (female voice whenever the avatar is on)
+        meta["arms"]["voice"] = "ava"
+        (d / "meta.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False))
+        m["voice"] = voices["ava"]
     if m["opener"] == "kicker" and script.get("kicker"):
         m["kicker"] = script["kicker"]
     save_reel({"meta": m, "scenes": script["scenes"]})
