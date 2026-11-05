@@ -1,0 +1,56 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "Wood stove label",
+  "items": [
+   {
+    "name": "Copies to CPSC: not needed",
+    "ok": true
+   },
+   {
+    "name": "Minimum clearances",
+    "ok": false
+   },
+   {
+    "name": "Floor protection",
+    "ok": false
+   },
+   {
+    "name": "Chimney type",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261105_deadline_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Before: importers sent CPSC copies of the notice",
+   "section": "16 CFR 1406.5 as of 2026-09-20 (eCFR point-in-time)",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-20/title-16.xml?section=1406.5",
+   "quote": "Manufacturers, including importers, of coal and wood burning appliances as defined in § 1406.3(a) shall provide to the Commission the following performance and technical data related to performance and safety. (a) Written notice. Manufacturers shall provide to the Commission copies of the written notice required by § 1406.4(a)."
+  },
+  {
+   "id": "S2",
+   "claim": "§ 1406.5 removed effective Sept 21, 2026",
+   "section": "16 CFR part 1406, eCFR version history",
+   "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1406",
+   "quote": "identifier 1406.5, name '§ 1406.5 Performance and technical data to be furnished to the Commission.', amendment_date 2026-09-21, removed true (amendment published at 91 FR 46267, July 23, 2026)"
+  },
+  {
+   "id": "S3",
+   "claim": "Notice on the appliance (clearances, floor protection, chimney) + directions still required",
+   "section": "16 CFR 1406.4(a)(1), (b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1406/section-1406.4",
+   "quote": "(a) Written notice on appliance. (1) The appliance shall bear a legible notice containing the following performance and technical data. (i) Appropriate minimum clearances from unprotected combustibles to avoid the occurrence of fire. ... (ii) Type and dimensions of floor protection, if necessary to protect combustible floors. (iii) Proper type(s) of chimney and chimney connector to be used with the appliance. ... (b) Directions. All appliances covered by this rule shall be accompanied by directions that include the following technical and performance information:"
+  },
+  {
+   "id": "S4",
+   "claim": "Part 1406: importers of wood stoves give consumers a notification",
+   "section": "16 CFR 1406.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1406/section-1406.1",
+   "quote": "This part requires manufacturers, including importers, of coal and wood burning appliances, as defined in § 1406.3(a), to provide consumers with a specified notification concerning the installation, operation, and maintenance of the appliances."
+  }
+ ]
+}
