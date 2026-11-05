@@ -1939,5 +1939,30 @@
   "src": "ig_20261105_myth_02",
   "family": null,
   "note": "Mert 2026-11-05: queue cleared; switching to mise-en-scene reels (engine/scene)"
+ },
+ {
+  "id": "20261105_blocked_03",
+  "kind": "reel",
+  "container_id": "17916548439541034",
+  "slot_local": "10:47",
+  "slot_utc": "2026-11-05T15:47:00Z",
+  "caption": "POV: your toys reach the port, and then the truck stops at customs.\nFor imported toys and other certified products, certificate data is now eFiled when the entry is filed (16 CFR 1110.13(a)(1)).\nA lab report alone usually isn't the certificate. The data includes: product ID, each rule, who certifies, where and when it was made, the lab and test date, and a records contact.\nSay a seller has only the lab report. That's the gap to close first.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+  "created_at": "2026-11-05T13:55:52Z",
+  "status": "pending",
+  "reel": "reels/20261105_blocked_03",
+  "date": "2026-11-05",
+  "pillar": "blocked",
+  "cta": "gaplist",
+  "arms": {
+   "hook": "pain_quote",
+   "opener": "scene",
+   "length": "long",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "1047"
+  },
+  "src": "ig_20261105_blocked_03",
+  "family": null
  }
 ]

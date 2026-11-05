@@ -4,9 +4,9 @@
  "scene_script": "reels/sample_scene_port/scene.json",
  "hook_formula": "POV story (first person)",
  "vo": [
-  "My first container of kids' toys just hit the port.",
+  "Day 1: my first container of kids' toys hits the port.",
   "Then customs. My broker: it's on hold, I need the certificate data.",
-  "I only have a lab report. Most imports now eFile certificate data at entry.",
+  "I only have a lab report. Imported toys now need certificate data eFiled at entry.",
   "So I build it: product, each rule, factory, lab, records contact.",
   "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
  ],
@@ -31,7 +31,7 @@
    "type": "scene",
    "caps": [
     "I have a lab report.",
-    "Most imports now eFile certificate data at entry.",
+    "Imported toys: certificate data eFiled at entry.",
     "16 CFR 1110.13(a)(1) · since July 8, 2026"
    ]
   },
@@ -51,10 +51,10 @@
    "url": "mzconsulting.agency"
   }
  ],
- "caption": "POV: your toys reach the port, and then the truck stops at customs.\nFor most imports, certificate data is now eFiled when the entry is filed (16 CFR 1110.13(a)(1)).\nA lab report alone usually isn't the certificate. The data comes from your file: product ID, each rule, where and when it was made, the lab and test date, and a records contact.\nSay a seller has only the lab report. That's the gap to close first.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "POV: your toys reach the port, and then the truck stops at customs.\nFor imported toys and other certified products, certificate data is now eFiled when the entry is filed (16 CFR 1110.13(a)(1)).\nA lab report alone usually isn't the certificate. The data includes: product ID, each rule, who certifies, where and when it was made, the lab and test date, and a records contact.\nSay a seller has only the lab report. That's the gap to close first.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
  "tracking_link": "https://mzconsulting.agency/?src=ig_20261105_blocked_03#contact",
- "search_keywords": "children's product certificate,eFiling",
+ "search_keywords": "certificate data,imported toys",
  "sources": [
   {
    "id": "S1",
@@ -65,7 +65,7 @@
   },
   {
    "id": "S2",
-   "claim": "Part 1110's eFiling text took effect July 8, 2026 (most imports; hedged 'most' because some entries, e.g. from Foreign Trade Zones, follow later)",
+   "claim": "Part 1110 (incl. the 1110.13 eFiling text) amended July 8, 2026; no later effective-date note",
    "section": "16 CFR part 1110, eCFR version history",
    "source_url": "https://www.ecfr.gov/api/versioner/v1/versions/title-16.json?part=1110",
    "quote": "amendment_date 2026-07-08 for § 1110.13 'Certificate availability.' (and §§ 1110.1-1110.19)"

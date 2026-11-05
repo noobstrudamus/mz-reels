@@ -37,7 +37,7 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 #cta .l1 { position: absolute; left: 70px; top: 600px; font: 800 64px 'Archivo'; color: #ffd166; text-shadow: 0 4px 16px #000a; }
 #cta .l2 { position: absolute; left: 70px; right: 440px; top: 690px; font: 600 50px/1.25 'Inter2'; color: #fff; text-shadow: 0 4px 16px #000a; }
 #cta .url { position: absolute; left: 70px; top: 900px; font: 800 46px 'Archivo'; color: #0b1630; background: #ffd166; border-radius: 60px; padding: 22px 42px; }
-#ava2 { position: absolute; z-index: 5; }
+#ava2 { position: absolute; z-index: 5; overflow: visible; }
 #foot, #brand { z-index: 6; }
 </style></head>
 <body>
@@ -247,7 +247,7 @@ function seek(t) {
   else if (t < s2) { X = lerp(610, 720, pan); Y = lerp(1170, 1270, pan); S = lerp(480, 380, pan); ps = mix(P.point, P.phone, ease(seg(t, s1 + 1.4, s1 + 2.1))); }
   else if (t < s3) { X = 560; Y = 860; S = 520; ps = mix(P.idle, P.palms, ease(seg(t, s2 + 0.4, s2 + 0.9))); }
   else if (t < s4) { X = 610; Y = 860; S = 520; ps = mix(P.palms, P.laptop, ease(seg(t, s3, s3 + 0.5))); }
-  else { X = 590; Y = 1160; S = 460; ps = mix(P.idle, P.wave, ease(seg(t, s4 + 0.3, s4 + 0.8)));
+  else { X = 540; Y = 1160; S = 460; ps = mix(P.idle, P.wave, ease(seg(t, s4 + 0.3, s4 + 0.8)));
     ps.fR += Math.sin(t * 10) * 16 * seg(t, s4 + 0.8, s4 + 1.0); }
   const vis = t < s2 ? ease(seg(t, 0.05, 0.4)) : (t < s4 ? ease(seg(t, s2, s2 + 0.3)) : ease(seg(t, s4, s4 + 0.35)));
   ava.style.left = X + 'px'; ava.style.top = (Y - bob) + 'px'; ava.style.width = S + 'px'; ava.style.height = (S * 4 / 3) + 'px'; ava.style.opacity = vis;
