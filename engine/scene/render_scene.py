@@ -53,7 +53,7 @@ def main(argv):
     html = (HERE / "scene.html").read_text()
     ava = (HERE / "_ava2.svg").read_text()
     page_html = (html.replace("{{AVA}}", ava).replace("{{TIMES}}", json.dumps(times)).replace("{{CAPS}}", json.dumps(s["caps"]))
-                 .replace("{{MOUTH}}", json.dumps([round(float(v), 3) for v in mouth])))
+                 .replace("{{PROPS}}", json.dumps(s.get("props", {}))).replace("{{MOUTH}}", json.dumps([round(float(v), 3) for v in mouth])))
     page = out / "page.html"
     page.write_text(page_html.replace("../fonts/", (ENGINE / "fonts").as_uri() + "/"))
     print(f"lines {[round(d, 2) for d in durs]} | starts {starts} | total {total}s")

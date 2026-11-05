@@ -266,6 +266,19 @@ function seek(t) {
   $('cite').style.opacity = (c[2] ? cp : 0) * (1 - ct);
   $('cta').style.opacity = ct;
 }
+// ---- per-reel props (scene.json "props"); defaults are the port/customs sample
+const PROPS = Object.assign({ box: 'KID-24-BLUE', hold: 'ON HOLD', phoneWho: 'My broker · now',
+  phoneMsg: '“It’s on hold. I need the certificate data.”', laptopTitle: 'CERTIFICATE DATA',
+  rows: ['Product ID', 'Each rule', 'Made: date + place', 'Tested: lab + date', 'Records contact'], doc: 'LAB REPORT',
+  gate: 'CUSTOMS EXAM', cta: ['Blocked right now?', 'Forward the notice.', 'Get your gap list in 24 hours.', 'mzconsulting.agency'] }, {{PROPS}});
+(() => { document.querySelectorAll('#box text').forEach(e => e.textContent = PROPS.box); $('hold').textContent = PROPS.hold;
+  document.querySelector('#phone .who').textContent = PROPS.phoneWho; document.querySelector('#phone .bub').textContent = PROPS.phoneMsg;
+  document.querySelector('#laptop h3').textContent = PROPS.laptopTitle;
+  document.querySelectorAll('#laptop .row').forEach((r, i) => { r.firstChild.textContent = (PROPS.rows[i] || '') + ' '; });
+  document.querySelectorAll('#pdf text').forEach(e => e.textContent = PROPS.doc);
+  document.querySelectorAll('#pan text').forEach(e => { if (e.textContent === 'CUSTOMS EXAM') e.textContent = PROPS.gate; });
+  const c = document.querySelector('#cta'); c.querySelector('.h').textContent = PROPS.cta[0]; c.querySelector('.l1').textContent = PROPS.cta[1];
+  c.querySelector('.l2').textContent = PROPS.cta[2]; c.querySelector('.url').textContent = PROPS.cta[3]; })();
 window.reel = { ready: document.fonts.ready.then(() => true), seek, info: () => ({ total: T[5] }) };
 seek(0);
 </script>

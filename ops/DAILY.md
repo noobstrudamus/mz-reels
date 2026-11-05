@@ -88,3 +88,24 @@ Commit `stories/<id>/` and `data/` after each.
 ## 6. Finish
 Notify Mert in one short message: reels queued / held (with reasons), stories queued, the brake note if any.
 Never commit an mp4.
+
+## Reel format: mise-en-scene (default since 2026-11-05, Mert)
+Mert: "from now on make videos like this" (reels/sample_scene_port, published as 20261105_blocked_03). Every reel is an
+acted, first-person story, not an explainer. `config/settings.json` `reel_format: "scene"`.
+- Template: `engine/scene/scene.html` (port with workers + forklift → crane sets the container on a truck → pan to a
+  generic customs gate, barrier stays down → office/desk with laptop checklist → flat end card with the CTA set and the
+  brand card). The presenter (engine/scene/_ava2.svg) walks, gestures with two-part arms, tilts her head, blinks and
+  lip-syncs to the voice. Female presenter = female voice (en-US-AvaNeural), always.
+- Per reel write `reels/<id>/scene.json`: {id, voice, vo[5] (first person, scene 1 or caption 1 frames it as
+  "Say I'm a seller…"), caps[4] ([headline, sub, cite]), min_dur[5], props {box, hold, phoneWho, phoneMsg,
+  laptopTitle, rows[5], doc, gate, cta[4] (exact CTA set)}}. The story must fit the topic; when a topic needs a set the
+  template lacks (warehouse, store shelf, home, retailer meeting), add it to scene.html as a new world group and keep
+  the timeline a pure function of t. Never draw a real agency seal, Amazon/CPSC/UL logos or a real port name.
+- Render: `cd engine/scene && python3 render_scene.py ../../reels/<id>/scene.json --stills ...` (LOOK at every still),
+  then without --stills → `engine/build/scene_<id>.mp4`. Total 18–24 s (shorten VO lines when over).
+- Same gates as before (verbatim sources + one adversarial verifier, hookscore on line 1, caption lint), then
+  `python3 ops/publish.py prepare --reel <id> --video engine/build/scene_<id>.mp4 --live`.
+- Iterate from the numbers (Mert: "change the start, the end, whatever the stats say"): each morning read
+  `ops/metrics.py show`; when a scene reel's skip rate is worse than the last 3, change the first 2 s (set, first line,
+  first motion) of the next one; when watch time drops mid-reel, cut the slowest beat. Record what changed in
+  DELIVERABLE.md.
