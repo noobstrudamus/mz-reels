@@ -6,7 +6,7 @@
  "vo": [
   "Day 1: the factory swore my toys were certified.",
   "Then customs. My broker: this certificate names the factory.",
-  "The catch? For imports, the importer is usually the certifier. Me.",
+  "The catch? For imports, the importer of record certifies. Usually, me.",
   "So I build mine: product, each rule, factory, lab, records contact.",
   "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
  ],
@@ -30,8 +30,8 @@
   {
    "type": "scene",
    "caps": [
-    "Myth: the factory certifies.",
-    "Fact: for imports, the importer is the certifier.",
+    "Myth: the factory's PDF covers me.",
+    "Fact: for imports, the importer of record certifies.",
     "16 CFR 1110.7(a)"
    ]
   },
@@ -51,7 +51,7 @@
    "url": "mzconsulting.agency"
   }
  ],
- "caption": "\"The factory says it's certified.\" Here's why that's usually not the end of it.\nFor a product made outside the US, 16 CFR 1110.7(a) says the importer is the finished product certifier, unless a specific rule says otherwise.\nSo the children's product certificate should name you, the importer, plus the product, each rule, where and when it was made, the lab and test date, and a records contact.\nSay a seller only has the factory's PDF. That's the first gap to close.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "\"The factory says it's certified.\" Here's why that's usually not the end of it.\nFor a product made outside the US, 16 CFR 1110.7(a) says the importer is the finished product certifier, unless a specific rule says otherwise.\nSo the children's product certificate should name the importer of record (usually you), plus the product, each rule, where and when it was made, the lab and test date, and a records contact.\nSay a seller only has the factory's PDF. That's the first gap to close.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
  "tracking_link": "https://mzconsulting.agency/?src=ig_20261106_myth_01#contact",
  "search_keywords": "children's product certificate,importer",
