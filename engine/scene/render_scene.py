@@ -35,10 +35,10 @@ def main(argv):
             tts(line, w, voice=s["voice"]); key.write_text(line + s["voice"])
         durs.append(wav_duration(w))
     gaps = s.get("min_dur", [0] * 5)
-    starts, t = [], 0.25
+    starts, t = [], 0.15
     for d, m in zip(durs, gaps):
         starts.append(round(t, 2)); t += max(d + 0.25, m)
-    total = round(t + 0.25, 2)
+    total = round(t + 0.15, 2)
     times = [0.0] + starts[1:] + [total]
     sr = 48000; n = int(total * sr)
     voice = np.zeros(n)
