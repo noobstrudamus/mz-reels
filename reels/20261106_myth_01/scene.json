@@ -1,0 +1,52 @@
+{
+ "id": "20261106_myth_01",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Day 1: the factory swore my toys were certified.",
+  "Then customs. My broker: whose certificate is this? It names the factory.",
+  "Here's the catch. For imported products, the importer is usually the certifier. That's me.",
+  "So I build my own: product, each rule, factory, lab, records contact.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [
+  3.0,
+  4.0,
+  3.6,
+  4.0,
+  3.4
+ ],
+ "caps": [
+  [
+   "Day 1 at the port.",
+   "Say I'm a seller. The factory says my toys are certified.",
+   ""
+  ],
+  [
+   "Then: customs.",
+   "The truck stops at the gate.",
+   ""
+  ],
+  [
+   "Myth: the factory certifies.",
+   "Fact: for imports, the importer is the certifier.",
+   "16 CFR 1110.7(a)"
+  ],
+  [
+   "I build my own certificate.",
+   "Me as certifier, plus the data from my file.",
+   "16 CFR 1110.11(a)"
+  ]
+ ],
+ "props": {
+  "doc": "FACTORY CERT",
+  "phoneMsg": "“Whose certificate is this? It names the factory.”",
+  "laptopTitle": "MY CERTIFICATE",
+  "rows": [
+   "Certifier: importer",
+   "Each rule",
+   "Made: date + place",
+   "Tested: lab + date",
+   "Records contact"
+  ]
+ }
+}

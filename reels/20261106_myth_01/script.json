@@ -1,0 +1,95 @@
+{
+ "topic": "POV myth: the factory certifies imported toys; fact: the importer is the certifier (1110.7(a))",
+ "format": "scene",
+ "scene_script": "reels/20261106_myth_01/scene.json",
+ "hook_formula": "POV story + myth",
+ "vo": [
+  "Day 1: the factory swore my toys were certified.",
+  "Then customs. My broker: whose certificate is this? It names the factory.",
+  "Here's the catch. For imported products, the importer is usually the certifier. That's me.",
+  "So I build my own: product, each rule, factory, lab, records contact.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "scenes": [
+  {
+   "type": "scene",
+   "caps": [
+    "Day 1 at the port.",
+    "Say I'm a seller. The factory says my toys are certified.",
+    ""
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "Then: customs.",
+    "The truck stops at the gate.",
+    ""
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "Myth: the factory certifies.",
+    "Fact: for imports, the importer is the certifier.",
+    "16 CFR 1110.7(a)"
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "I build my own certificate.",
+    "Me as certifier, plus the data from my file.",
+    "16 CFR 1110.11(a)"
+   ]
+  },
+  {
+   "type": "cta",
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "caption": "\"The factory says it's certified.\" Here's why that's usually not the end of it.\nFor a product made outside the US, 16 CFR 1110.7(a) says the importer is the finished product certifier, unless a specific rule says otherwise.\nSo the children's product certificate should name you, the importer, plus the product, each rule, where and when it was made, the lab and test date, and a records contact.\nSay a seller only has the factory's PDF. That's the first gap to close.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261106_myth_01#contact",
+ "search_keywords": "children's product certificate,importer",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "On imports the importer is the certifier",
+   "section": "16 CFR 1110.7(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.7",
+   "quote": "Except as otherwise provided in a specific rule, ban, standard, or regulation enforced by CPSC, for a finished product manufactured outside of the United States that must be accompanied by a certificate as set forth in § 1110.5, the importer, as defined in this part, is the finished product certifier"
+  },
+  {
+   "id": "S2",
+   "claim": "Certificate names the finished product certifier",
+   "section": "16 CFR 1110.11(a)(3)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(3) Identify the finished product certifier that is certifying compliance of the finished product"
+  },
+  {
+   "id": "S3",
+   "claim": "Each certificate carries a product identifier",
+   "section": "16 CFR 1110.11(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier"
+  },
+  {
+   "id": "S4",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "S5",
+   "claim": "Certificate data: records contact, manufacture, test date and lab",
+   "section": "16 CFR 1110.11(a)(4)-(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(4) Identify and provide contact information ... for the individual maintaining records ... (5) Provide the date (month and year, at a minimum) and place ... where the finished product(s) were manufactured ... (6) Provide the most recent date and place(s) (including for each third party conformity assessment body ...) where the finished product(s) were tested"
+  }
+ ]
+}

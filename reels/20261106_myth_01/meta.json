@@ -1,0 +1,17 @@
+{
+ "id": "20261106_myth_01",
+ "date": "2026-11-06",
+ "pillar": "myth",
+ "cta": "gaplist",
+ "format": "scene",
+ "avatar": true,
+ "arms": {
+  "hook": "myth",
+  "opener": "scene",
+  "length": "long",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "1547"
+ },
+ "family": null
+}
