@@ -2021,5 +2021,30 @@
   "src": "ig_20261113_myth_01",
   "family": null,
   "error": "ERROR: HTTP 400 code=None/None: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
+ },
+ {
+  "id": "20261113_myth_01",
+  "kind": "reel",
+  "container_id": "17917989594541034",
+  "slot_local": "13:47",
+  "slot_utc": "2026-11-13T18:47:00Z",
+  "caption": "POV: your adult hoodies land, and you thought clothing for grown-ups had no CPSC rule.\n16 CFR part 1610 sets flammability tests for clothing textiles, with a few exceptions like most hats, short gloves and footwear.\nPlain surface fabrics of 2.6 oz per square yard or more, and fabrics made entirely of acrylic, modacrylic, nylon, olefin, polyester or wool, are exempt from testing to support guaranties. A raised-fiber cotton fleece isn't on that list.\nSay a seller's GCC skips part 1610. That's the gap to close first.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+  "created_at": "2026-11-13T16:14:49Z",
+  "status": "pending",
+  "reel": "reels/20261113_myth_01",
+  "date": "2026-11-13",
+  "pillar": "myth",
+  "cta": "gaplist",
+  "arms": {
+   "hook": "consequence",
+   "opener": "scene",
+   "length": "long",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "1347"
+  },
+  "src": "ig_20261113_myth_01",
+  "family": null
  }
 ]

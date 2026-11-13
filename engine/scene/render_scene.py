@@ -88,7 +88,7 @@ def main(argv):
     BA.loudnorm(out / "mix.wav", out / "mix_norm.wav")
     final = ENGINE / "build" / f"scene_{s['id']}.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(out / "video.mp4"), "-i", str(out / "mix_norm.wav"), "-c:v", "copy",
-                    "-c:a", "aac", "-b:a", "192k", "-shortest", str(final)], check=True)
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(final)], check=True)
     print("->", final)
     return 0
 

@@ -40,5 +40,7 @@ https://mzconsulting.agency/?src=ig_20261113_myth_01#contact
 | Truth gate | PASS — independent verifier, eCFR 2026-10-30 (1610.1, 1110.5, 1110.11); 1110.3 added for GCC |
 | Topic not repeated (14 days) | PASS — 20261105_myth_02 was cancelled before publishing |
 | Hook score | PASS — 77.8 for "Day 1: my adult hoodies hit the port. No CPSC rule, right?" |
-| Caption lint | FIX |
+| Caption lint | FIX (soft: search phrase "16 CFR 1610" written as "16 CFR part 1610"; not a gate) |
 | Human score (caption) | 75.1 PASS |
+
+Upload note: first container failed at IG processing (ProcessingFailedError); re-muxed with +faststart and re-prepared, container FINISHED. render_scene.py now writes +faststart by default.
