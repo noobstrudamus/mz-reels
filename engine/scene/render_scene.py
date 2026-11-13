@@ -89,7 +89,10 @@ def main(argv):
     BA.loudnorm(out / "mix.wav", out / "mix_norm.wav")
     final = ENGINE / "build" / f"scene_{s['id']}.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(out / "video.mp4"), "-i", str(out / "mix_norm.wav"), "-c:v", "copy",
-                    "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(final)], check=True)
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", str(out / "muxed.mp4")], check=True)
+    # second pass: plain stream copy with +faststart. Twice (2026-11-13) the direct mux failed IG processing
+    # (ProcessingFailedError) and this re-mux of the same streams was accepted; if prepare still fails, re-run it once.
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(out / "muxed.mp4"), "-c", "copy", "-movflags", "+faststart", str(final)], check=True)
     print("->", final)
     return 0
 
