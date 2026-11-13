@@ -1,0 +1,18 @@
+{
+ "id": "20261113_finder_02",
+ "date": "2026-11-13",
+ "pillar": "finder",
+ "cta": "finder",
+ "format": "scene",
+ "avatar": true,
+ "world": "factory_call",
+ "arms": {
+  "hook": "question",
+  "opener": "scene",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "0947"
+ },
+ "family": "electrical"
+}

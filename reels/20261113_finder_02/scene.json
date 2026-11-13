@@ -1,0 +1,63 @@
+{
+ "id": "20261113_finder_02",
+ "world": "factory_call",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "My factory says my hair dryers are certified. Does that cover me?",
+  "Then I open the PDF. Different model number. Not my product.",
+  "And hair dryers are on a C P S C list. No built-in immersion protection is a substantial product hazard.",
+  "So before I order, I check which rules apply to my exact product.",
+  "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
+ ],
+ "min_dur": [
+  3.0,
+  3.4,
+  3.6,
+  3.0,
+  3.4
+ ],
+ "caps": [
+  [
+   "“It’s certified.”",
+   "Say I'm a seller. My factory swears the hair dryers are fine.",
+   ""
+  ],
+  [
+   "Then I read the PDF.",
+   "It names a different model.",
+   ""
+  ],
+  [
+   "Hair dryers: on a CPSC list.",
+   "No immersion protection = substantial product hazard.",
+   "16 CFR 1120.3(a)"
+  ],
+  [
+   "I check before I order.",
+   "Which rules apply to my exact product?",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "DRY-24-PNK",
+  "open": "late",
+  "hold": "MISMATCH",
+  "gate": "CERTIFICATE",
+  "doc": "FACTORY PDF",
+  "phoneMsg": "“Different model. This isn’t my hair dryer.”",
+  "laptopTitle": "BEFORE I ORDER",
+  "rows": [
+   "My exact model",
+   "Which rules apply",
+   "Immersion protection",
+   "Report names my model",
+   "Records on file"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ }
+}

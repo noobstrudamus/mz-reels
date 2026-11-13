@@ -1,0 +1,45 @@
+{
+ "topic": "POV finder: factory says the hair dryers are 'certified'; hand-supported hair dryers are on the CPSC substantial product hazard list (16 CFR 1120.3(a))",
+ "format": "scene",
+ "scene_script": "reels/20261113_finder_02/scene.json",
+ "world": "factory_call",
+ "hook_formula": "#16 Verbatim Question (question)",
+ "vo": [
+  "My factory says my hair dryers are certified. Does that cover me?",
+  "Then I open the PDF. Different model number. Not my product.",
+  "And hair dryers are on a C P S C list. No built-in immersion protection is a substantial product hazard.",
+  "So before I order, I check which rules apply to my exact product.",
+  "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
+ ],
+ "scenes": [],
+ "caption": "POV: the factory says \"it's certified\" and sends a PDF for a different model.\nHand-held hair dryers sit on a CPSC list in 16 CFR 1120.3(a): without built-in immersion protection, they're deemed a substantial product hazard.\nUnder 16 CFR 1120.1, products on that list are refused entry into the United States.\nSay a seller only has the factory's word. Checking which rules apply to the exact product comes first.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=electrical&src=ig_20261113_finder_02",
+ "search_keywords": "hair dryers,CPSC",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Hand-supported hair dryers without integral immersion protection are deemed substantial product hazards",
+   "section": "16 CFR 1120.3(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1120/section-1120.3",
+   "quote": "The following products or class of products shall be deemed to be substantial product hazards under section 15(a)(2) of the CPSA: (a) Hand-supported hair dryers that do not provide integral immersion protection in compliance with the requirements of section 5 of UL 859, or section 6 of UL 1727 (incorporated by reference, see § 1120.4).",
+   "as_of": "2026-11-10"
+  },
+  {
+   "id": "S2",
+   "claim": "A hand-supported hair dryer is a hand-held electric hair dryer",
+   "section": "16 CFR 1120.2(b)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1120/section-1120.2",
+   "quote": "Hand-supported hair dryer means an electrical appliance, intended to be held with one hand during use, which creates a flow of air over or through a self-contained heating element for the purpose of drying hair.",
+   "as_of": "2026-11-10"
+  },
+  {
+   "id": "S3",
+   "claim": "Products on the 1120.3 list are refused entry into the United States",
+   "section": "16 CFR 1120.1",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1120/section-1120.1",
+   "quote": "The listed products are subject to the reporting requirements of section 15(b) of the CPSA and to the recall provisions of section 15(c) and (d) of the CPSA, and shall be refused entry into the United States under section 17(a)(4) of the CPSA.",
+   "as_of": "2026-11-10"
+  }
+ ]
+}
