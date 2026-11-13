@@ -3,10 +3,10 @@
  "world": "factory_call",
  "voice": "en-US-AvaNeural",
  "vo": [
-  "My factory says my hair dryers are certified. Does that cover me?",
-  "Then I open the PDF. Different model number. Not my product.",
-  "And hair dryers are on a C P S C list. No built-in immersion protection is a substantial product hazard.",
-  "So before I order, I check which rules apply to my exact product.",
+  "Factory says it's certified. Are you actually covered?",
+  "Then I open the PDF. Different model. Not mine.",
+  "And hair dryers without built-in immersion protection? A substantial product hazard.",
+  "So I check which rules apply before I order.",
   "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
  ],
  "min_dur": [
