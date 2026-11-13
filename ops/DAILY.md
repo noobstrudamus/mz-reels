@@ -109,3 +109,20 @@ acted, first-person story, not an explainer. `config/settings.json` `reel_format
   `ops/metrics.py show`; when a scene reel's skip rate is worse than the last 3, change the first 2 s (set, first line,
   first motion) of the next one; when watch time drops mid-reel, cut the slowest beat. Record what changed in
   DELIVERABLE.md.
+
+### Vary the story world every reel (Mert, 2026-11-13: "one format, not the same video every time; the port is only one of the events")
+The format (acted first-person story, moving presenter, flat end card) stays. The EVENT and the SET must change:
+- Never reuse a story world from the previous 4 reels. Record it in meta.json as `"world": "<name>"` and check
+  reels/*/meta.json before writing. Used so far: `port_customs` (20261105_blocked_03, 20261106_myth_01, 20261113_myth_01),
+  so the port is off limits for the next 4 reels.
+- Worlds to draw from (add more; each is a different event a seller actually lives through):
+  `listing_takedown` (home desk at night, phone buzzes, listing goes grey on a generic marketplace screen),
+  `warehouse_inbound` (fulfillment dock refuses the pallets, cartons pile up), `retailer_meeting` (buyer's office, the
+  item can't be set up, shelf stays empty), `lab_report` (test bench, report comes back with findings, launch calendar),
+  `factory_call` (video call with the factory, "certified" PDF on screen), `broker_email` (broker asks for certificate
+  data, clock running, storage fees meter), `launch_day` (packing table, ads running, sales counter stops),
+  `customer_return` (doorstep delivery, complaint message, recall-style notice), `port_customs`.
+- A new world means a new set in engine/scene (new world group or a new scene_<world>.html sharing the presenter rig,
+  captions and end card); different opening shot, different props, different middle beat. Also vary the first 2 s
+  (where she is, what moves first) and the camera move between sets; only the end card stays the same.
+- No real brand UI or logos in any set (generic marketplace/retailer screens only).

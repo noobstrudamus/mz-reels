@@ -47,7 +47,7 @@ Fri  Myth vs fact, e.g. "A test report is not a certificate."    CTA: Gap list
 Sat  Finder demo: a different product family.                    CTA: Finder (family link)
 Sun  Cost of waiting: held container, suppressed ASIN, Q4.       CTA: Gap list
 
-## PRODUCTION (always use engine/ — never design from scratch; since 2026-11-05 the default format is the acted mise-en-scene reel in engine/scene, see ops/DAILY.md)
+## PRODUCTION (always use engine/ — never design from scratch; since 2026-11-05 the default format is the acted mise-en-scene reel in engine/scene with a different story world every reel, never the port twice in a row, see ops/DAILY.md)
 1. Edit ONLY the REEL object in reel.html. Keep the scene order: stamp, compare, pair, checklist, cta.
 2. Write vo.txt: 5 lines, one per scene, US English, conversational, numbers as words, ~3 words per second.
 3. Voice: if Mert has recorded the lines (voice/s1.wav … s5.wav), use his recordings. Otherwise run voice.py.
