@@ -5,7 +5,7 @@
  "vo": [
   "Factory says it's certified. Are you actually covered?",
   "Then I open the PDF. Different model. Not mine.",
-  "And hair dryers without built-in immersion protection? A substantial product hazard.",
+  "And hand-held hair dryers without built-in immersion protection? Deemed a substantial product hazard.",
   "So I check which rules apply before I order.",
   "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
  ],
@@ -19,7 +19,7 @@
  "caps": [
   [
    "“It’s certified.”",
-   "Say I'm a seller. My factory swears the hair dryers are fine.",
+   "Say I'm a seller. My factory swears the hair dryer is fine.",
    ""
   ],
   [
@@ -28,8 +28,8 @@
    ""
   ],
   [
-   "Hair dryers: on a CPSC list.",
-   "No immersion protection = substantial product hazard.",
+   "A CPSC list names hair dryers.",
+   "Hand-held, no immersion protection: deemed a hazard.",
    "16 CFR 1120.3(a)"
   ],
   [

@@ -2049,5 +2049,31 @@
   "media_id": "17918110050499614",
   "published_at": "2026-11-13T19:32:33Z",
   "first_comment_id": "18120034963998828"
+ },
+ {
+  "id": "20261113_finder_02",
+  "kind": "reel",
+  "container_id": "17918040198541034",
+  "slot_local": "09:47",
+  "slot_utc": "2026-11-13T21:56:57Z",
+  "caption": "POV: the factory says \"it's certified\" and sends a PDF for a different model.\n16 CFR 1120.3(a) lists hand-held hair dryers without built-in immersion protection as a substantial product hazard.\nUnder 16 CFR 1120.1, the listed products are refused entry into the United States.\nSay a seller only has the factory's word. Checking which rules apply to the exact product comes first.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-11-13T21:56:57Z",
+  "status": "failed",
+  "reel": "reels/20261113_finder_02",
+  "date": "2026-11-13",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "question",
+   "opener": "scene",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "0947"
+  },
+  "src": "ig_20261113_finder_02",
+  "family": "electrical",
+  "error": "ERROR: HTTP 400 code=None/None: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
  }
 ]
