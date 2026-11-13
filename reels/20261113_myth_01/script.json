@@ -1,0 +1,109 @@
+{
+ "topic": "POV myth: adult hoodies have no CPSC rule; fact: 16 CFR 1610 covers clothing textiles (scene remake of unpublished 20261105_myth_02)",
+ "format": "scene",
+ "scene_script": "reels/20261113_myth_01/scene.json",
+ "hook_formula": "POV story + myth",
+ "vo": [
+  "Day 1: my adult hoodies hit the port. No CPSC rule, right?",
+  "Then customs. My broker: where's the G C C for the hoodies?",
+  "The catch? Part sixteen ten covers clothing textiles. Adults too.",
+  "So my G C C lists part sixteen ten, and I check how the fleece was tested.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "scenes": [
+  {
+   "type": "scene",
+   "caps": [
+    "Day 1 at the port.",
+    "Say I'm a seller. My adult cotton fleece hoodies arrive.",
+    ""
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "Then: customs.",
+    "The truck stops at the gate.",
+    ""
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "Myth: adult clothes have no rule.",
+    "Fact: 16 CFR part 1610 covers clothing textiles.",
+    "16 CFR 1610.1(b), (e)"
+   ]
+  },
+  {
+   "type": "scene",
+   "caps": [
+    "I fix my GCC.",
+    "Part 1610 listed, fabric test checked.",
+    "16 CFR 1110.11(a)(2) · 1610.1(d)"
+   ]
+  },
+  {
+   "type": "cta",
+   "headline": "Blocked right now?",
+   "line1": "Forward the notice.",
+   "line2": "Get your gap list in 24 hours.",
+   "url": "mzconsulting.agency"
+  }
+ ],
+ "caption": "POV: your adult hoodies land, and you thought clothing for grown-ups had no CPSC rule.\n16 CFR part 1610 sets flammability tests for clothing textiles, with a few exceptions like most hats, short gloves and footwear.\nPlain surface fabrics of 2.6 oz per square yard or more, and fabrics made entirely of acrylic, modacrylic, nylon, olefin, polyester or wool, are exempt from testing to support guaranties. A raised-fiber cotton fleece isn't on that list.\nSay a seller's GCC skips part 1610. That's the gap to close first.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261113_myth_01#contact",
+ "search_keywords": "clothing flammability,16 CFR 1610",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Part 1610 covers clothing textiles; exceptions for some hats, gloves ≤14 in, footwear, interlinings",
+   "section": "16 CFR 1610.1(b), (c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1610/section-1610.1",
+   "quote": "(b) Scope. The Standard provides methods of testing the flammability of clothing and textiles intended to be used for clothing, establishes three classes of flammability, sets forth the requirements which textiles shall meet to be classified, and warns against the use of those textiles which have burning characteristics unsuitable for clothing. ... (c) Specific exceptions. This standard shall not apply to: (1) Hats, provided they do not constitute or form part of a covering for the neck, face, or shoulders when worn by individuals; (2) Gloves, provided they are not more than 14 inches in length and are not affixed to or do not form an integral part of another garment; (3) Footwear, provided it does not consist of hosiery in whole or part and is not affixed to or does not form an integral part of another garment; (4) Interlining fabrics,"
+  },
+  {
+   "id": "S2",
+   "claim": "Guaranty-testing exemption: plain ≥2.6 oz/yd², or entirely acrylic/modacrylic/nylon/olefin/polyester/wool",
+   "section": "16 CFR 1610.1(d)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1610/section-1610.1",
+   "quote": "persons and firms issuing an initial guaranty of any of the following types of fabrics, or of products made entirely from one or more of these fabrics, are exempt from any requirement for testing to support guaranties of those fabrics: (1) Plain surface fabrics, regardless of fiber content, weighing 2.6 ounces per square yard or more; and (2) All fabrics, both plain surface and raised-fiber surface textiles, regardless of weight, made entirely from any of the following fibers or entirely from combination of the following fibers: acrylic, modacrylic, nylon, olefin, polyester, wool."
+  },
+  {
+   "id": "S3",
+   "claim": "Applies to garments finished for consumer use",
+   "section": "16 CFR 1610.1(e)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1610/section-1610.1",
+   "quote": "The requirements of this part 1610 shall apply to textile fabric or related material in a form or state ready for use in an article of wearing apparel, including garments and costumes finished for consumer use."
+  },
+  {
+   "id": "S4",
+   "claim": "Products subject to a CPSC-enforced rule need a certificate",
+   "section": "16 CFR 1110.5",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.5",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate."
+  },
+  {
+   "id": "S5",
+   "claim": "Every applicable rule listed separately",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations."
+  },
+  {
+   "id": "S6",
+   "claim": "Each certificate carries a product identifier",
+   "section": "16 CFR 1110.11(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier"
+  },
+  {
+   "id": "S7",
+   "claim": "Certificate data: records contact, manufacture, test date and lab",
+   "section": "16 CFR 1110.11(a)(4)-(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(4) Identify and provide contact information ... for the individual maintaining records ... (5) Provide the date (month and year, at a minimum) and place ... where the finished product(s) were manufactured ... (6) Provide the most recent date and place(s) (including for each third party conformity assessment body ...) where the finished product(s) were tested"
+  }
+ ]
+}

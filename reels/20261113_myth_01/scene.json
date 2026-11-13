@@ -1,0 +1,53 @@
+{
+ "id": "20261113_myth_01",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Day 1: my adult hoodies hit the port. No CPSC rule, right?",
+  "Then customs. My broker: where's the G C C for the hoodies?",
+  "The catch? Part sixteen ten covers clothing textiles. Adults too.",
+  "So my G C C lists part sixteen ten, and I check how the fleece was tested.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [
+  3.0,
+  4.0,
+  3.6,
+  4.0,
+  3.4
+ ],
+ "caps": [
+  [
+   "Day 1 at the port.",
+   "Say I'm a seller. My adult cotton fleece hoodies arrive.",
+   ""
+  ],
+  [
+   "Then: customs.",
+   "The truck stops at the gate.",
+   ""
+  ],
+  [
+   "Myth: adult clothes have no rule.",
+   "Fact: 16 CFR part 1610 covers clothing textiles.",
+   "16 CFR 1610.1(b), (e)"
+  ],
+  [
+   "I fix my GCC.",
+   "Part 1610 listed, fabric test checked.",
+   "16 CFR 1110.11(a)(2) · 1610.1(d)"
+  ]
+ ],
+ "props": {
+  "box": "HOOD-24-GRY",
+  "doc": "FABRIC TEST",
+  "phoneMsg": "“Where’s the GCC for the hoodies?”",
+  "laptopTitle": "MY GCC",
+  "rows": [
+   "Product ID",
+   "Part 1610 listed",
+   "Fleece: test basis",
+   "Made: date + place",
+   "Records contact"
+  ]
+ }
+}
