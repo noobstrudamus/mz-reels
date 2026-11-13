@@ -2,7 +2,7 @@
 
   python3 render_scene.py <script.json> [--stills 0 3 8 ...]
 
-script.json: {"id", "voice", "vo": [5 lines], "caps": [[headline, sub, cite] x4]}
+script.json: {"id", "world", "voice", "vo": [5 lines], "caps": [[headline, sub, cite] x4], "props": {...}}
 Voice: edge TTS (voice.tts). Timeline: scene k starts when VO line k starts; each line gets +0.35 s air.
 Output: build/scene_<id>.mp4 (video + voice + music + whoosh/pop cues, -14 LUFS).
 """
@@ -50,7 +50,8 @@ def main(argv):
     rms = np.array([np.sqrt(np.mean(voice[i:i + hop] ** 2)) for i in range(0, n, hop)])
     mouth = np.clip(rms / (np.percentile(rms[rms > 1e-4], 90) + 1e-9), 0, 1) if (rms > 1e-4).any() else rms
     mouth = np.convolve(mouth, [0.25, 0.5, 0.25], "same")
-    html = (HERE / "scene.html").read_text()
+    world = s.get("world") or "port_customs"          # port_customs = scene.html; every other world lives in worlds.html
+    html = (HERE / ("scene.html" if world == "port_customs" else "worlds.html")).read_text().replace("{{WORLD}}", json.dumps(world))
     ava = (HERE / "_ava2.svg").read_text()
     page_html = (html.replace("{{AVA}}", ava).replace("{{TIMES}}", json.dumps(times)).replace("{{CAPS}}", json.dumps(s["caps"]))
                  .replace("{{PROPS}}", json.dumps(s.get("props", {}))).replace("{{MOUTH}}", json.dumps([round(float(v), 3) for v in mouth])))

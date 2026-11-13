@@ -1,0 +1,450 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Mise-en-scene worlds (Mert 2026-11-13: "one format, different events; the port is only one of them").
+     Same presenter rig, captions, overlays and flat end card as scene.html, but the story world is picked by
+     {{WORLD}}: listing_takedown, warehouse_inbound, retailer_meeting, lab_report, factory_call, broker_email,
+     launch_day, customer_return. Each world = 3 sets (A scene 1, B scene 2, C scenes 3-4), its own A->B and B->C
+     transition, its own presenter side and opening. Timeline is a pure function of t: window.reel.seek(t).
+     No real brand UI, logos, seals or place names in any set. -->
+<style>
+@font-face { font-family: 'Archivo'; src: url('../fonts/archivo-wdth.woff2'); font-weight: 100 900; }
+@font-face { font-family: 'Inter2'; src: url('../fonts/public-sans.woff2'); font-weight: 100 900; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0b1630; }
+#stage { position: absolute; inset: 0; }
+#scrim { position: absolute; left: 0; right: 0; top: 0; height: 900px; background: linear-gradient(rgba(6,10,24,.92), rgba(6,10,24,.72) 62%, rgba(6,10,24,0)); z-index: 2; }
+.cap { position: absolute; left: 70px; right: 70px; font-family: 'Archivo', sans-serif; color: #fff; font-weight: 850;
+  text-shadow: 0 6px 24px rgba(0,0,0,.55); letter-spacing: -1px; z-index: 6; }
+#cap1 { top: 230px; font-size: 92px; line-height: 1.0; }
+#sub { position: absolute; left: 70px; right: 70px; top: 450px; font: 600 40px/1.25 'Inter2', sans-serif; color: #ffe7c2; text-shadow: 0 3px 14px rgba(0,0,0,.6); z-index: 6; }
+#cite { position: absolute; left: 70px; right: 70px; top: 610px; font: 700 30px 'Inter2'; color: #9fe1ff; opacity: 0; z-index: 6; }
+#brand { position: absolute; left: 70px; top: 120px; font: 800 34px 'Archivo'; color: #fff; letter-spacing: 1px; z-index: 6; }
+#brand small { font: 700 20px 'Inter2'; letter-spacing: 4px; margin-left: 10px; opacity: .8; }
+#foot { position: absolute; left: 70px; bottom: 270px; font: 500 24px 'Inter2'; color: rgba(255,255,255,.9); text-shadow: 0 2px 8px #000; z-index: 6; }
+#hold { position: absolute; left: 380px; top: 720px; transform: translate(-50%,-50%) rotate(-8deg); font: 900 120px 'Archivo'; white-space: nowrap;
+  color: #ff3b3b; border: 12px solid #ff3b3b; border-radius: 18px; padding: 10px 36px 4px; background: rgba(20,0,0,.55); opacity: 0; z-index: 4; }
+#phone { position: absolute; left: 60px; top: 860px; width: 600px; background: #f4f6fb; border-radius: 40px; z-index: 4;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5); padding: 32px; box-sizing: border-box; opacity: 0; font-family: 'Inter2'; }
+#phone .who { font: 700 28px 'Inter2'; color: #56607a; }
+#phone .bub { margin-top: 18px; background: #2f6bff; color: #fff; border-radius: 30px 30px 30px 8px; padding: 26px 30px; font: 600 40px/1.25 'Inter2'; }
+#laptop { position: absolute; left: 50px; top: 1080px; width: 620px; height: 440px; background: #0f172a; border: 16px solid #2b3245; z-index: 4;
+  border-radius: 22px; box-sizing: border-box; padding: 28px 32px; opacity: 0; font-family: 'Inter2'; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+#laptop h3 { margin: 0 0 12px; font: 800 32px 'Archivo'; color: #9fb6ff; letter-spacing: 1px; }
+#laptop .row { display: flex; justify-content: space-between; font: 600 30px 'Inter2'; color: #e6ebff; padding: 9px 0; border-bottom: 2px solid #26304a; }
+#laptop .row b { color: #34d399; font-weight: 800; opacity: 0; }
+#cta { position: absolute; inset: 0; opacity: 0; z-index: 7; background: linear-gradient(#0b1630, #13224a 60%, #0b1630); }
+#cta .card { position: absolute; left: 70px; width: 520px; top: 1110px; background: #f3e9d2; border-radius: 22px; padding: 30px 34px; box-sizing: border-box;
+  box-shadow: 10px 10px 0 #ffd166; font-family: 'Inter2'; }
+#cta .card b { display: block; font: 900 26px 'Archivo'; letter-spacing: 5px; color: #1b2340; margin-bottom: 14px; }
+#cta .card span { font: 600 34px/1.3 'Inter2'; color: #1b2340; }
+#cta .h { position: absolute; left: 70px; right: 70px; top: 330px; font: 900 112px/1.0 'Archivo'; color: #fff; letter-spacing: -2px; text-shadow: 0 6px 24px #000a; }
+#cta .l1 { position: absolute; left: 70px; top: 600px; font: 800 64px 'Archivo'; color: #ffd166; text-shadow: 0 4px 16px #000a; }
+#cta .l2 { position: absolute; left: 70px; right: 440px; top: 690px; font: 600 50px/1.25 'Inter2'; color: #fff; text-shadow: 0 4px 16px #000a; }
+#cta .url { position: absolute; left: 70px; top: 900px; font: 800 46px 'Archivo'; color: #0b1630; background: #ffd166; border-radius: 60px; padding: 22px 42px; }
+#ava2 { position: absolute; z-index: 8; overflow: visible; }
+#brand.top, #foot.top { z-index: 9; }
+</style></head>
+<body>
+<div id="stage">
+<svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs><clipPath id="clipB"><circle id="irisB" cx="540" cy="1300" r="3000"/></clipPath><clipPath id="clipC"><circle id="irisC" cx="540" cy="1300" r="3000"/></clipPath></defs>
+  <g id="setA"></g><g id="wrapB" clip-path="url(#clipB)"><g id="setB"></g></g><g id="wrapC" clip-path="url(#clipC)"><g id="setC"></g></g>
+</svg>
+<div id="scrim"></div>
+{{AVA}}
+<div id="brand" class="top">M&amp;Z <small>CONSULTING</small></div>
+<div class="cap" id="cap1"></div>
+<div id="sub"></div>
+<div id="cite"></div>
+<div id="hold"></div>
+<div id="phone"><div class="who"></div><div class="bub"></div></div>
+<div id="laptop"><h3></h3><div class="row">a <b>✓</b></div><div class="row">a <b>✓</b></div><div class="row">a <b>✓</b></div><div class="row">a <b>✓</b></div><div class="row">a <b>✓</b></div></div>
+<div id="cta"><div class="h"></div><div class="l1"></div><div class="l2"></div><div class="url"></div><div class="card"><b>M&amp;Z CONSULTING</b><span>It’s almost never the product. It’s the file.</span></div></div>
+<div id="foot" class="top">Illustrative example. Not legal advice.</div>
+</div>
+<script>
+const T = {{TIMES}};
+const CAP = {{CAPS}};
+const MOUTH = {{MOUTH}};
+const WORLD = {{WORLD}};
+const RAW = {{PROPS}};
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = x => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const outB = x => { x = cl(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const lerp = (a, b, p) => a + (b - a) * p;
+const seg = (t, a, b) => cl((t - a) / (b - a));
+const at = (id, k, v) => { const e = $(id); if (e) e.setAttribute(k, v); };
+const mv = (id, x, y, sx = 1, sy = sx, r = 0) => at(id, 'transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(1)}) scale(${sx} ${sy})`);
+const op = (id, v) => at(id, 'opacity', cl(v).toFixed(3));
+// ---------- drawing helpers (flat shapes only; all text generic)
+const R = (x, y, w, h, f, rx = 0, extra = '') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${f}" ${extra}/>`;
+const C = (x, y, r, f, extra = '') => `<circle cx="${x}" cy="${y}" r="${r}" fill="${f}" ${extra}/>`;
+const TX = (x, y, s, size, f, o = {}) => `<text x="${x}" y="${y}" text-anchor="${o.a || 'middle'}" font-family="${o.font || 'Archivo'}" font-weight="${o.w || 800}" font-size="${size}" fill="${f}" ${o.ls ? `letter-spacing="${o.ls}"` : ''} ${o.cls ? `class="${o.cls}"` : ''} ${o.id ? `id="${o.id}"` : ''}>${s}</text>`;
+const GR = (id, c1, c2) => `<defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs>`;
+const BG = (id, c1, c2) => GR(id, c1, c2) + R(0, 0, 1080, 1920, `url(#${id})`);
+// small person, origin at the feet, ~155 px tall at scale 1
+const person = (id, shirt, skin, extra = '', legs = '#1f2a44') => `<g id="${id}">
+  <line id="${id}a" x1="0" y1="-60" x2="-7" y2="0" stroke="${legs}" stroke-width="13" stroke-linecap="round"/><line id="${id}b" x1="0" y1="-60" x2="7" y2="0" stroke="${legs}" stroke-width="13" stroke-linecap="round"/>
+  <rect x="-18" y="-124" width="36" height="68" rx="10" fill="${shirt}"/>
+  <line id="${id}c" x1="-14" y1="-116" x2="-24" y2="-70" stroke="${shirt}" stroke-width="10" stroke-linecap="round"/><line id="${id}d" x1="14" y1="-116" x2="24" y2="-70" stroke="${shirt}" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="0" cy="-140" r="15" fill="${skin}"/>${extra}</g>`;
+const walk = (id, ph, amp = 16) => { const s = Math.sin(ph) * amp; at(id + 'a', 'x2', -7 + s); at(id + 'b', 'x2', 7 - s); at(id + 'c', 'x2', -24 - s * .6); at(id + 'd', 'x2', 24 + s * .6); };
+const carton = (w, h, label = true) => `<rect x="${-w / 2}" y="${-h}" width="${w}" height="${h}" fill="#c99a62" stroke="#8a6a3f" stroke-width="4"/><rect x="${-w / 2}" y="${-h}" width="${w}" height="${h * .16}" fill="#b98850"/><line x1="0" y1="${-h}" x2="0" y2="${-h * .84}" stroke="#8a6a3f" stroke-width="4"/>` +
+  (label ? R(-w * .36, -h * .62, w * .72, h * .34, '#fff') + TX(0, -h * .38, '', Math.min(26, w * .11), '#1b1f29', { cls: 'p-box' }) : '');
+// the place where she fixes the file (scenes 3-4); one variant per world
+function fixSet(o) {
+  let s = BG('fx' + o.k, o.wall[0], o.wall[1]);
+  const wx = o.winX ?? 90;
+  if (o.win === 'sun') s += R(wx, 780, 300, 360, '#ffe9b8', 8) + C(wx + 190, 900, 60, '#ffb347') + R(wx, 780, 300, 360, 'none', 8, 'stroke="#f7f2e6" stroke-width="14"') + R(wx + 143, 780, 14, 360, '#f7f2e6');
+  if (o.win === 'moon') s += R(wx, 780, 300, 360, '#101c40', 8) + C(wx + 200, 880, 44, '#f4f1d0') + C(wx + 80, 860, 4, '#fff') + C(wx + 120, 1010, 4, '#fff') + R(wx, 780, 300, 360, 'none', 8, 'stroke="#3a4670" stroke-width="14"') + R(wx + 143, 780, 14, 360, '#3a4670');
+  if (o.win === 'city') { s += R(wx, 780, 360, 360, '#27406e', 8); for (let i = 0; i < 6; i++) s += R(wx + 14 + i * 58, 960 - (i * 53 % 130), 46, 180 + (i * 53 % 130), '#16223f') + R(wx + 24 + i * 58, 990 - (i * 53 % 130), 10, 14, '#ffd27a'); s += R(wx, 780, 360, 360, 'none', 8, 'stroke="#55617f" stroke-width="14"'); }
+  if (o.win === 'shelves') for (let r = 0; r < 3; r++) { s += R(wx - 30, 900 + r * 170, 520, 14, '#55607a'); for (let c = 0; c < 5; c++) s += R(wx - 10 + c * 98, 900 + r * 170 - 70 - (c * 7 + r * 11) % 30, 84, 70 + (c * 7 + r * 11) % 30, ['#c99a62', '#b98850', '#d6aa72'][(r + c) % 3], 2); }
+  if (o.win === 'board') { s += R(wx, 780, 420, 320, '#f4f6fb', 10, 'stroke="#8792ad" stroke-width="10"'); for (let i = 0; i < 4; i++) s += R(wx + 30 + i * 96, 820 + (i % 2) * 120, 76, 76, ['#ffd166', '#ff8fa3', '#8ecae6', '#b7e4c7'][i], 4); }
+  if (o.win === 'calendar') { s += R(wx, 780, 320, 340, '#f4f6fb', 10) + R(wx, 780, 320, 70, '#e14b3b', 10); for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) s += R(wx + 26 + c * 56, 880 + r * 56, 40, 40, r === 2 && c === 3 ? '#ffd166' : '#dfe4ef', 6); }
+  s += `<ellipse cx="${o.lampX || 800}" cy="1100" rx="460" ry="620" fill="${o.glow || '#ffd9a0'}" opacity=".16"/>`;
+  s += R(0, 1540, 1080, 380, o.desk) + R(0, 1540, 1080, 14, o.deskTop || '#ffffff22');
+  const ix = o.itemX || 800;
+  if (o.item === 'mug') s += R(ix, 1450, 90, 96, '#f4f6fb', 10) + `<path d="M${ix + 90} 1470 q46 4 0 56" stroke="#f4f6fb" stroke-width="12" fill="none"/><path id="steam1" d="" stroke="#fff" stroke-width="6" fill="none" opacity=".5" stroke-linecap="round"/><path id="steam2" d="" stroke="#fff" stroke-width="6" fill="none" opacity=".35" stroke-linecap="round"/>`;
+  if (o.item === 'plant') s += R(ix, 1460, 90, 84, '#c2643c', 8) + `<path d="M${ix + 45} 1460 q-70 -90 -20 -150 q30 60 20 150 q40 -110 80 -110 q0 80 -80 110" fill="#2f9e6b"/>`;
+  if (o.item === 'binders') for (let i = 0; i < 4; i++) s += R(ix + i * 52, 1340, 46, 200, ['#2f6bff', '#e14b3b', '#27ae60', '#f2c94c'][i], 4) + R(ix + 10 + i * 52, 1370, 26, 50, '#fff', 3);
+  if (o.item === 'boxes') s += `<g transform="translate(${ix + 70} 1540)">${carton(150, 110)}</g><g transform="translate(${ix + 150} 1432) scale(.8)">${carton(140, 100, false)}</g>`;
+  if (o.item === 'lamp') s += R(ix + 40, 1470, 16, 70, '#222') + `<path d="M${ix} 1470 L${ix + 96} 1470 L${ix + 74} 1396 L${ix + 22} 1396 Z" fill="#e8c27a"/>`;
+  if (o.item === 'monitors') s += R(ix - 20, 1300, 250, 170, '#0f172a', 10, 'stroke="#2b3245" stroke-width="10"') + R(ix + 90, 1470, 30, 70, '#2b3245') + R(ix, 1330, 120, 12, '#9fb6ff') + R(ix, 1360, 180, 12, '#3a4670') + R(ix, 1390, 150, 12, '#3a4670');
+  s += `<g id="pdf" transform="rotate(${o.docR ?? 5} ${o.docX || 870} 1760)">${R((o.docX || 870) - 110, 1690, 220, 140, '#f4f6fb', 10)}${TX(o.docX || 870, 1773, '', 28, '#c0392b', { cls: 'p-doc', font: 'Inter2' })}</g>`;
+  return s;
+}
+function steam(t, x) { for (let i = 1; i <= 2; i++) { const p = (t * .5 + i * .5) % 1, y = 1440 - p * 90; at('steam' + i, 'd', `M${x + 20 + i * 22} ${y} q14 -18 0 -36 q-14 -18 0 -36`); op('steam' + i, .55 * (1 - p)); } }
+
+// ---------- worlds
+const W = {};
+// 1. the listing is pulled: night desk -> zoom into the listing page -> kitchen table next morning
+W.listing_takedown = {
+  side: 'R', tr: ['zoom', 'fade'], focus: [370, 1300], open: 'late',
+  d: { hold: 'REMOVED', gate: 'Listing removed', phoneWho: 'Marketplace notice · 11:42 pm', phoneMsg: '“Your listing was removed. Compliance documents needed.”', doc: 'NOTICE' },
+  A: () => BG('lt1', '#18204a', '#0a0e22') + R(80, 780, 320, 300, '#0d1b3d', 8) + C(300, 860, 40, '#f4f1d0') + C(318, 846, 36, '#0d1b3d') +
+    [[120, 830], [180, 960], [250, 1010], [350, 990], [140, 1030], [210, 870]].map((p, i) => C(p[0], p[1], 4, '#fff', `id="st${i}"`)).join('') +
+    R(80, 780, 320, 300, 'none', 8, 'stroke="#3a4670" stroke-width="14"') + R(233, 780, 14, 300, '#3a4670') +
+    `<ellipse id="glowA" cx="370" cy="1300" rx="430" ry="330" fill="#7fb0ff" opacity=".22"/>` +
+    R(0, 1560, 1080, 360, '#3a2b22') + R(0, 1560, 1080, 14, '#4c3a2e') +
+    R(110, 1130, 520, 360, '#0f172a', 16, 'stroke="#2b3245" stroke-width="14"') + R(70, 1490, 600, 26, '#2b3245', 8) + R(140, 1160, 460, 300, '#eef1f6', 6) +
+    R(160, 1180, 150, 150, '#dfe4ef', 8) + `<g transform="translate(235 1318) scale(.8)">${carton(130, 110)}</g>` + R(330, 1186, 240, 20, '#1b2340', 4) + R(330, 1220, 180, 14, '#9aa3b5', 4) + R(330, 1250, 110, 26, '#27ae60', 6) +
+    R(330, 1296, 150, 44, '#ff9d2e', 22) + TX(405, 1327, 'Buy now', 22, '#1b1f29', { font: 'Inter2' }) + C(560, 1436, 10, '#27ae60', 'id="live"') + TX(540, 1444, 'LIVE', 22, '#27ae60', { a: 'end', font: 'Inter2' }) +
+    `<g id="ph"><rect x="-50" y="-96" width="100" height="192" rx="18" fill="#111827" stroke="#56607a" stroke-width="5"/><rect id="phs" x="-40" y="-82" width="80" height="164" rx="10" fill="#1b2340"/><rect id="phn" x="-34" y="-70" width="68" height="40" rx="8" fill="#ff3b3b"/></g>` +
+    `<g id="buzz" stroke="#ffd166" stroke-width="7" fill="none" stroke-linecap="round"><path d="M-80 -40 q-18 40 0 80"/><path d="M80 -40 q18 40 0 80"/><path d="M-106 -60 q-28 60 0 120"/><path d="M106 -60 q28 60 0 120"/></g>`,
+  B: () => R(0, 0, 1080, 1920, '#e9edf4') + R(0, 900, 1080, 110, '#1b2340') + TX(70, 972, 'marketplace', 44, '#fff', { a: 'start', w: 900 }) + R(420, 925, 560, 60, '#fff', 30) + C(940, 955, 16, '#9aa3b5') +
+    `<g id="page">` + R(50, 1050, 980, 640, '#fff', 20) + R(90, 1090, 330, 330, '#dfe4ef', 14) + `<g transform="translate(255 1390) scale(1.7)">${carton(130, 110)}</g>` +
+    R(460, 1100, 500, 34, '#1b2340', 6) + R(460, 1154, 380, 24, '#9aa3b5', 6) + [0, 1, 2, 3, 4].map(i => `<path d="M${470 + i * 44} 1206 l10 22 l24 2 l-18 16 l6 24 l-22 -13 l-22 13 l6 -24 l-18 -16 l24 -2 z" fill="#ffb020" transform="translate(${470 + i * 44} 1226) scale(.6) translate(${-470 - i * 44} -1226)"/>`).join('') +
+    R(460, 1290, 200, 54, '#27ae60', 8, 'id="price"') + R(460, 1370, 330, 80, '#ff9d2e', 40, 'id="buy"') + TX(625, 1424, 'Buy now', 36, '#1b1f29', { font: 'Inter2' }) +
+    R(90, 1470, 880, 20, '#dfe4ef', 6) + R(90, 1510, 760, 20, '#dfe4ef', 6) + R(90, 1550, 820, 20, '#dfe4ef', 6) + `</g>` +
+    R(50, 1050, 980, 640, '#8b93a5', 20, 'id="grey" opacity="0"') +
+    `<g id="ban">` + R(90, 1180, 620, 110, '#c0392b', 16) + C(150, 1235, 30, '#fff') + TX(150, 1252, '!', 50, '#c0392b', { w: 900 }) + TX(200, 1252, '', 46, '#fff', { a: 'start', cls: 'p-gate' }) + `</g>` +
+    `<path id="cur" d="M0 0 L0 54 L14 42 L24 66 L34 62 L24 38 L42 38 Z" fill="#111827" stroke="#fff" stroke-width="4"/>`,
+  C: () => fixSet({ k: 1, wall: ['#f0c98a', '#d99a5b'], win: 'sun', desk: '#7a4b2e', item: 'mug', itemX: 130, docX: 300, docR: -5, glow: '#fff3c4', lampX: 300 }),
+  tick(t, s) {
+    for (let i = 0; i < 6; i++) op('st' + i, .5 + .5 * Math.sin(t * 3 + i * 1.7));
+    const bz = t > 0.5 && t < s[1] ? 1 : 0, sh = bz && (t % 1.1) < .6 ? Math.sin(t * 70) * 5 : 0;
+    mv('ph', 780 + sh, 1480, 1, 1, -8 + sh * .6); mv('buzz', 780, 1480, 1, 1, -8); op('buzz', bz && (t % 1.1) < .6 ? 1 : 0);
+    op('phn', t > 0.5 ? 1 : 0); op('glowA', .2 + .05 * Math.sin(t * 2)); op('live', Math.sin(t * 6) > 0 ? 1 : .3);
+    const k = ease(seg(t, s[1] + 1.5, s[1] + 2.0)); op('grey', k * .62);
+    mv('ban', 0, lerp(-60, 0, outB(seg(t, s[1] + 1.5, s[1] + 1.9)))); op('ban', seg(t, s[1] + 1.5, s[1] + 1.7));
+    const cp = ease(seg(t, s[1] + 0.5, s[1] + 1.4)); mv('cur', lerp(900, 640, cp), lerp(1640, 1420, cp));
+    steam(t, 130);
+  }
+};
+// 2. inbound refused: truck backs into the dock -> pan inside, the receiving line stops -> stockroom office
+W.warehouse_inbound = {
+  side: 'L', tr: ['pan', 'up'], open: 'walk',
+  d: { hold: 'REFUSED', gate: 'RECEIVING', phoneWho: 'Inbound team · now', phoneMsg: '“We can’t receive these. The compliance file is incomplete.”', doc: 'INBOUND' },
+  A: () => BG('wi1', '#6fb6e0', '#d8eefb') + `<g id="cl1">${C(0, 0, 50, '#fff')}${C(60, 10, 60, '#fff')}${C(130, 0, 46, '#fff')}</g><g id="cl2">${C(0, 0, 40, '#fff')}${C(50, 8, 50, '#fff')}${C(110, 0, 36, '#fff')}</g>` +
+    R(0, 1000, 1080, 560, '#aab3c5') + R(0, 980, 1080, 30, '#7d879c') + R(60, 1040, 620, 90, '#1b2340', 8) + TX(370, 1102, 'FULFILLMENT CENTER', 46, '#fff', { ls: 2 }) +
+    [0, 1, 2].map(i => R(120 + i * 320, 1210, 240, 350, '#3b4256', 6) + [0, 1, 2, 3, 4, 5].map(j => R(120 + i * 320, 1230 + j * 56, 240, 6, '#2a3042')).join('') + R(110 + i * 320, 1560, 260, 26, '#f2c94c') + TX(240 + i * 320, 1190, `DOCK ${i + 1}`, 30, '#1b2340')).join('') +
+    R(0, 1586, 1080, 334, '#3a3f4b') + [0, 1, 2, 3, 4].map(i => R(40 + i * 230, 1760, 120, 12, '#fff', 0, 'opacity=".6"')).join('') +
+    `<g id="trk">` + R(0, 1300, 420, 250, '#f4f6fb', 8) + R(0, 1300, 420, 250, 'none', 8, 'stroke="#c9cfdd" stroke-width="6"') + R(420, 1400, 130, 150, '#2f6bff', 14) + R(450, 1420, 80, 56, '#bcd3ff', 6) +
+    R(-10, 1550, 570, 22, '#20242e') + C(80, 1590, 40, '#111') + C(180, 1590, 40, '#111') + C(470, 1590, 40, '#111') + C(80, 1590, 16, '#888') + C(180, 1590, 16, '#888') + C(470, 1590, 16, '#888') +
+    C(8, 1320, 14, '#ffb020', 'id="rev"') + `<g transform="translate(210 1500) scale(1.25)">${carton(170, 110)}</g></g>`,
+  B: () => BG('wi2', '#2a3142', '#161b28') + R(0, 1000, 1080, 16, '#3d475e') + [0, 1, 2].map(i => `<path d="M${180 + i * 360} 1016 l-70 120 l140 0 z" fill="#fff3c4" opacity=".1"/>` + R(160 + i * 360, 1000, 40, 22, '#fff3c4')).join('') +
+    R(650, 1040, 380, 96, '#f4f6fb', 10) + TX(840, 1106, '', 50, '#1b2340', { cls: 'p-gate', ls: 2 }) + C(600, 1088, 26, '#ff3b3b', 'id="bea"') +
+    R(0, 1500, 1080, 40, '#56607a') + `<g id="roll"></g>` + [80, 400, 720, 1000].map(x => R(x, 1540, 22, 150, '#3d475e')).join('') + R(0, 1690, 1080, 230, '#20242e') +
+    [0, 1, 2, 3, 4].map(i => `<g id="ct${i}">${carton(170, 130)}</g>`).join('') +
+    `<g id="scn">${person('wk', '#ff7a1a', '#8d5a3b', '<path d="M-18 -144 Q0 -168 18 -144 Z" fill="#ffd400"/>')}</g>` + `<path id="beam" d="" fill="#ff3b3b" opacity=".5"/>`,
+  C: () => fixSet({ k: 2, wall: ['#34405c', '#1b2233'], win: 'shelves', winX: 560, desk: '#4a5268', item: 'lamp', itemX: 840, docX: 800, lampX: 800 }),
+  tick(t, s) {
+    mv('cl1', (t * 14) % 1300 - 200, 800); mv('cl2', (t * 9 + 600) % 1300 - 200, 900);
+    const bk = ease(seg(t, 0.2, 2.6)); mv('trk', lerp(1100, 500, bk), Math.sin(t * 30) * (bk < 1 ? 1.5 : 0)); op('rev', bk < 1 && Math.sin(t * 12) > 0 ? 1 : .25);
+    const stop = s[1] + 1.6, run = Math.min(t, stop) - s[1];
+    let h = ''; const off = (run * 220) % 60; for (let x = -60 + off; x < 1100; x += 60) h += C(x, 1520, 13, '#8792ad') + `<line x1="${x}" y1="1520" x2="${x + 13 * Math.cos(run * 9)}" y2="${1520 + 13 * Math.sin(run * 9)}" stroke="#2a3142" stroke-width="4"/>`;
+    $('roll').innerHTML = h;
+    for (let i = 0; i < 5; i++) { const x = -260 - i * 230 + Math.max(0, run) * 220 + 520; const j = t > stop ? Math.sin((t - stop) * 40) * 6 * (1 - seg(t, stop, stop + .4)) : 0; mv('ct' + i, x + j, 1500); }
+    op('bea', t > stop ? (Math.sin(t * 10) > 0 ? 1 : .2) : .15);
+    mv('scn', 860, 1840, 2.2); const scan = t > s[1] + .6 && t < stop + .3; at('wkd', 'x2', scan ? -40 : 24); at('wkd', 'y2', scan ? -110 : -70);
+    at('beam', 'd', scan ? `M772 1600 L${640 + Math.sin(t * 12) * 30} 1440 L${690 + Math.sin(t * 12) * 30} 1440 Z` : '');
+  }
+};
+// 3. the buyer cannot set the item: meeting room -> iris to the store aisle with one empty slot -> cafe table
+W.retailer_meeting = {
+  side: 'R', tr: ['iris', 'pan'], focus: [330, 1330], open: 'pop',
+  d: { hold: 'NOT SET', gate: 'ITEM NOT SET UP', phoneWho: 'Retail buyer · today', phoneMsg: '“I can’t set the item up until the certificate is on file.”', doc: 'VENDOR FORM' },
+  A: () => BG('rm1', '#2b3350', '#1a2038') + R(60, 760, 960, 480, '#f2a65a', 10) + GR('rm1s', '#3a5a9c', '#f6b06a') + R(60, 760, 960, 480, 'url(#rm1s)', 10) + C(700, 1150, 70, '#ffe3a3', 'opacity=".9"') +
+    [0, 1, 2, 3, 4, 5, 6, 7].map(i => { const h = 150 + (i * 97 % 190), x = 80 + i * 118; let w = R(x, 1240 - h, 100, h, '#1b2440'); for (let r = 0; r < Math.floor(h / 44); r++) w += R(x + 16, 1240 - h + 16 + r * 44, 18, 20, '#ffd27a', 0, `id="lw${i}_${r}"`) + R(x + 58, 1240 - h + 16 + r * 44, 18, 20, (i + r) % 3 ? '#ffd27a' : '#2a3558'); return w; }).join('') +
+    `<g id="plane"><path d="M0 0 l60 -8 l-14 -22 l10 0 l26 22 l30 -4 q10 4 0 10 l-112 12 z" fill="#f4f6fb"/></g>` +
+    R(60, 760, 960, 480, 'none', 10, 'stroke="#55617f" stroke-width="16"') + R(376, 760, 12, 480, '#55617f') + R(692, 760, 12, 480, '#55617f') +
+    `<g id="buyer"><rect x="-90" y="-250" width="180" height="270" rx="50" fill="#3d5a80"/><rect x="-24" y="-250" width="48" height="150" fill="#f4f6fb"/><path d="M-10 -250 L10 -250 L16 -150 L0 -130 L-16 -150 Z" fill="#c0392b"/>
+      <g id="bhead"><circle cx="0" cy="-310" r="62" fill="#c98e6b"/><path d="M-62 -320 Q-60 -386 0 -382 Q60 -386 62 -320 Q30 -350 0 -346 Q-30 -350 -62 -320 Z" fill="#2b2b2b"/><circle cx="-22" cy="-306" r="6" fill="#1b1f29"/><circle cx="22" cy="-306" r="6" fill="#1b1f29"/><path d="M-18 -274 q18 3 36 0" stroke="#7a3b2e" stroke-width="5" fill="none"/></g>
+      <g id="barm"><rect x="60" y="-200" width="44" height="170" rx="22" fill="#3d5a80"/><circle cx="82" cy="-28" r="24" fill="#c98e6b"/></g></g>` +
+    R(0, 1500, 1080, 60, '#8a5a3a') + R(0, 1560, 1080, 360, '#6b4429') + `<g id="smp">${carton(190, 150)}</g>` + R(150, 1474, 170, 26, '#f4f6fb', 4, 'transform="rotate(-4 235 1487)"'),
+  B: () => BG('rm2', '#f2f5fa', '#dfe5ee') + R(0, 1640, 1080, 280, '#cfd6e2') + [0, 1, 2, 3, 4, 5].map(i => R(i * 200 - 20, 1640, 4, 280, '#b9c2d2')).join('') +
+    R(30, 930, 1020, 40, '#e14b3b', 8) + TX(540, 962, 'AISLE 7', 30, '#fff', { ls: 4 }) +
+    [0, 1, 2].map(r => R(30, 1180 + r * 220, 1020, 22, '#8792ad') + [0, 1, 2, 3, 4, 5].map(c => (r === 1 && c === 1) ? '' : R(52 + c * 168, 1180 + r * 220 - 170 + ((c * 5 + r * 3) % 3) * 14, 140, 170 - ((c * 5 + r * 3) % 3) * 14, ['#2f6bff', '#27ae60', '#f2c94c', '#8e44ad', '#e67e22', '#16a085'][(c + r * 2) % 6], 8) + R(72 + c * 168, 1180 + r * 220 - 110, 100, 40, '#ffffffcc', 4)).join('') +
+      [0, 1, 2, 3, 4, 5].map(c => R(72 + c * 168, 1184 + r * 220, 100, 26, '#fff', 3)).join('')).join('') + R(30, 970, 22, 670, '#8792ad') + R(1028, 970, 22, 670, '#8792ad') +
+    R(220, 1240, 140, 160, 'none', 8, 'id="gap" stroke="#e14b3b" stroke-width="8" stroke-dasharray="18 12"') + `<g id="tag">` + R(160, 1400, 262, 60, '#ffd166', 6) + TX(291, 1442, '', 27, '#1b1f29', { cls: 'p-gate' }) + `</g>` +
+    `<g id="cart"><path d="M0 0 L30 0 L60 130 L220 130 L250 30 L48 30" stroke="#56607a" stroke-width="12" fill="none" stroke-linejoin="round"/><path d="M70 60 L236 60 M76 95 L228 95 M110 30 L110 130 M160 30 L160 130 M205 30 L205 130" stroke="#56607a" stroke-width="5"/><circle cx="90" cy="170" r="20" fill="#111"/><circle cx="200" cy="170" r="20" fill="#111"/></g>`,
+  C: () => fixSet({ k: 3, wall: ['#5b3a2e', '#2e1d17'], win: 'board', desk: '#c9a27a', deskTop: '#e2c19b', item: 'mug', itemX: 130, docX: 300, docR: -5, glow: '#ffcf8a', lampX: 300 }),
+  tick(t, s) {
+    mv('plane', 100 + t * 90, 860 - t * 12, .8); mv('buyer', 330, 1500, 1.25); at('bhead', 'transform', `rotate(${Math.sin(t * 2.2) * 5} 0 -250)`);
+    at('barm', 'transform', `rotate(${-18 + Math.sin(t * 1.4) * 10} 82 -200)`); mv('smp', 560, 1500 - Math.max(0, Math.sin(seg(t, .5, 1.3) * Math.PI)) * 30, 1);
+    for (let i = 0; i < 8; i++) op(`lw${i}_0`, (Math.floor(t * 1.5 + i * 1.3) % 5) ? 1 : .2);
+    op('gap', .5 + .5 * Math.sin(t * 8)); mv('tag', 0, 0, 1, 1, 0); at('tag', 'transform', `rotate(${Math.sin(t * 3) * 3} 291 1400)`);
+    mv('cart', lerp(1150, -320, seg(t, s[1] + .2, s[2])), 1470, 1);
+    steam(t, 130);
+  }
+};
+// 4. the lab finds something: test bench -> the report prints (slide up) -> studio desk with the launch calendar
+W.lab_report = {
+  side: 'L', tr: ['up', 'iris'], focus: [740, 1300], open: 'walk',
+  d: { hold: 'FINDINGS', gate: 'TEST REPORT', phoneWho: 'Test lab · 4:10 pm', phoneMsg: '“Report attached. There are findings on two items.”', doc: 'RETEST' },
+  A: () => BG('lr1', '#dfe9ee', '#b9cbd4') + R(520, 800, 500, 90, '#1b2340', 10) + TX(770, 862, 'TEST BENCH 3', 44, '#fff', { ls: 2 }) + R(0, 1500, 1080, 50, '#f4f6fb') + R(0, 1550, 1080, 370, '#7f93a1') +
+    R(560, 980, 30, 520, '#56607a') + R(900, 980, 30, 520, '#56607a') + R(540, 950, 410, 44, '#3d475e', 8) + R(520, 1480, 450, 24, '#3d475e') +
+    `<g id="pist">` + R(-26, 0, 52, 240, '#aab3c5') + R(-90, 240, 180, 34, '#e14b3b', 6) + `</g>` + `<g id="samp" transform="translate(745 1480)">${carton(200, 140)}</g>` +
+    C(480, 1130, 76, '#f4f6fb', 'stroke="#3d475e" stroke-width="10"') + `<line id="ndl" x1="480" y1="1130" x2="480" y2="1074" stroke="#e14b3b" stroke-width="8" stroke-linecap="round"/>` + C(480, 1130, 10, '#3d475e') +
+    [0, 1].map(i => `<path d="M${1000 - i * 0} ${1500} z"/>`).join('') +
+    `<path d="M980 1500 L980 1400 L964 1370 L1036 1370 L1020 1400 L1020 1500 Z" fill="#cfe8ff" stroke="#56607a" stroke-width="5" opacity=".0"/>` +
+    `<g id="tech">${person('tc', '#f4f6fb', '#e0b190', '<rect x="-17" y="-150" width="34" height="12" rx="6" fill="#3b2a1e"/><rect x="18" y="-104" width="30" height="40" fill="#8ecae6" stroke="#3d475e" stroke-width="3"/>')}</g>`,
+  B: () => BG('lr2', '#2a3142', '#161b28') + `<g transform="translate(440 250)">` + R(60, 900, 520, 150, '#56607a', 20) + R(60, 900, 520, 40, '#3d475e', 20) + C(520, 990, 12, '#34d399', 'id="pled"') + R(110, 1030, 420, 20, '#161b28', 6) +
+    `<g id="pg">` + R(130, 0, 380, 560, '#fff', 4) + R(160, 30, 320, 50, '#1b2340', 4) + TX(320, 66, '', 30, '#fff', { cls: 'p-gate', ls: 1 }) +
+    [0, 1, 2, 3, 4, 5].map(i => R(160, 110 + i * 68, 200, 18, '#9aa3b5', 4) + (i === 2 || i === 4 ? `<g id="fx${i}"><circle cx="446" cy="${119 + i * 68}" r="24" fill="#e14b3b"/><path d="M${436} ${109 + i * 68} l20 20 m0 -20 l-20 20" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>` : C(446, 119 + i * 68, 22, '#34d399') + `<path d="M${436} ${119 + i * 68} l8 8 l14 -16" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>`)).join('') + `</g>` +
+    R(60, 1040, 520, 26, '#3d475e', 6) + `</g>` +
+    `<g id="cal" transform="translate(-440 105) scale(.75)">` + R(640, 1100, 380, 470, '#f4f6fb', 14) + R(640, 1100, 380, 90, '#e14b3b', 14) + TX(830, 1162, 'LAUNCH', 46, '#fff', { ls: 4 }) + C(720, 1100, 14, '#3d475e') + C(940, 1100, 14, '#3d475e') +
+    [0, 1, 2, 3].map(r => [0, 1, 2, 3, 4].map(c => R(668 + c * 68, 1220 + r * 82, 52, 62, '#dfe4ef', 8, `id="dy${r * 5 + c}"`)).join('')).join('') + `<circle id="ring" cx="898" cy="1415" r="46" fill="none" stroke="#e14b3b" stroke-width="9"/>` + `<path id="xday" d="" stroke="#1b2340" stroke-width="8" stroke-linecap="round"/></g>` + R(0, 1700, 1080, 220, '#20242e'),
+  C: () => fixSet({ k: 4, wall: ['#e8ecf5', '#c3cbe0'], win: 'calendar', winX: 640, desk: '#f4f6fb', deskTop: '#c3cbe0', item: 'boxes', itemX: 600, docX: 900, glow: '#ffffff', lampX: 800 }),
+  tick(t, s) {
+    const pz = (Math.sin(t * 3.2) + 1) / 2; mv('pist', 745, 994 + pz * 84); at('samp', 'transform', `translate(745 1480) scale(1 ${1 - pz * .05})`);
+    at('ndl', 'transform', `rotate(${-70 + pz * 140 + Math.sin(t * 20) * 3} 480 1130)`); mv('tech', 960, 1840, 2.3); at('tcd', 'y2', -84 + Math.sin(t * 3) * 6);
+    const pr = ease(seg(t, s[1] + .3, s[1] + 1.7)); at('pg', 'transform', `translate(0 ${lerp(480, 1050, pr)})`);
+    op('pled', Math.sin(t * 14) > 0 ? 1 : .3); for (const i of [2, 4]) at('fx' + i, 'transform', `translate(446 ${119 + i * 68}) scale(${outB(seg(t, s[1] + 1.7 + (i - 2) * .12, s[1] + 2.0 + (i - 2) * .12))}) translate(-446 ${-119 - i * 68})`);
+    let d = ''; const n = Math.floor(cl((t - s[1] - .6) / .28, 0, 13)); for (let i = 0; i < n; i++) { const x = 668 + (i % 5) * 68, y = 1220 + Math.floor(i / 5) * 82; d += `M${x + 8} ${y + 10} l36 42 m0 -42 l-36 42 `; } at('xday', 'd', d);
+    at('ring', 'stroke-width', 9 + Math.sin(t * 8) * 3);
+  }
+};
+// 5. "it is certified": video call with the factory -> zoom into the PDF they sent -> desk with two monitors
+W.factory_call = {
+  side: 'R', tr: ['zoom', 'up'], focus: [420, 1250], open: 'pop',
+  d: { hold: 'MISMATCH', gate: 'CERTIFICATE', phoneWho: 'Me, reading the PDF', phoneMsg: '“Different model. Different rule. This isn’t my product.”', doc: 'FACTORY PDF', say: '“It’s certified. No problem!”' },
+  A: () => R(0, 0, 1080, 1920, '#10131c') + R(50, 800, 980, 760, '#27406e', 30) + GR('fc1', '#3b5480', '#1c2c4c') + R(50, 800, 980, 760, 'url(#fc1)', 30) +
+    [0, 1, 2].map(i => R(110 + i * 300, 860, 200, 150, '#8fb4ff', 8, 'opacity=".35"')).join('') + R(50, 1330, 980, 50, '#56607a') + `<g id="belt"></g>` + R(50, 1380, 980, 180, '#20283c', 0) + R(50, 1500, 980, 60, '#20283c', 30) +
+    `<g id="rep"><rect x="-110" y="-240" width="220" height="300" rx="60" fill="#2f9e6b"/><g id="rhead"><circle cx="0" cy="-310" r="66" fill="#e0b190"/><path d="M-66 -320 Q-62 -392 0 -386 Q62 -392 66 -320 Q34 -356 0 -352 Q-34 -356 -66 -320 Z" fill="#1b1f29"/><circle cx="-24" cy="-306" r="6" fill="#1b1f29"/><circle cx="24" cy="-306" r="6" fill="#1b1f29"/><path id="rmouth" d="M-20 -276 q20 16 40 0" stroke="#7a3b2e" stroke-width="6" fill="#7a3b2e"/>
+      <path d="M-70 -320 Q-74 -400 0 -400 Q74 -400 70 -320" stroke="#111827" stroke-width="10" fill="none"/><rect x="-84" y="-330" width="26" height="46" rx="10" fill="#111827"/></g>
+      <g id="rarm"><rect x="84" y="-210" width="46" height="170" rx="23" fill="#2f9e6b"/><circle cx="107" cy="-216" r="26" fill="#e0b190"/><rect x="92" y="-268" width="14" height="46" rx="7" fill="#e0b190"/></g></g>` +
+    R(80, 1470, 330, 60, '#000', 12, 'opacity=".55"') + TX(100, 1512, 'Factory · Sales', 32, '#fff', { a: 'start', font: 'Inter2', w: 700 }) +
+    `<g id="say">` + R(430, 1010, 560, 130, '#fff', 30) + `<path d="M470 1140 l-30 46 l70 -46 z" fill="#fff"/>` + TX(710, 1090, '', 38, '#1b2340', { cls: 'p-say', font: 'Inter2' }) + `</g>` +
+    R(600, 1180, 440, 560, '#0b1630', 26, 'stroke="#fff" stroke-width="6"') +
+    [0, 1, 2].map(i => C(180 + i * 120, 1660, 46, i === 2 ? '#e11d48' : '#2b3245')).join('') + R(152, 1650, 56, 20, '#fff', 10) + R(280, 1638, 40, 44, '#fff', 8) + R(396, 1652, 48, 16, '#fff', 8) + C(980, 760, 12, '#e11d48', 'id="rec"') + TX(950, 772, 'REC', 28, '#fff', { a: 'end', font: 'Inter2' }),
+  B: () => R(0, 0, 1080, 1920, '#56607a') + R(0, 900, 1080, 80, '#2b3245') + TX(60, 954, 'factory_certificate.pdf', 34, '#fff', { a: 'start', font: 'Inter2', w: 600 }) +
+    R(90, 1010, 660, 760, '#fff', 6) + TX(420, 1090, '', 50, '#1b2340', { cls: 'p-gate', ls: 4 }) + R(170, 1120, 500, 6, '#1b2340') +
+    C(640, 1640, 60, '#ffd166') + [0, 1, 2, 3, 4, 5, 6, 7].map(i => `<path d="M640 1640 l-12 -78 l24 0 z" fill="#ffd166" transform="rotate(${i * 45} 640 1640)"/>`).join('') + C(640, 1640, 40, '#f2b632') +
+    [0, 1, 2, 3, 4, 5].map(i => i === 2 ? '' : R(150, 1170 + i * 70, 150, 20, '#9aa3b5', 4) + R(330, 1170 + i * 70, 300 - (i * 37 % 110), 20, '#cfd6e2', 4)).join('') +
+    `<g id="bad">` + R(140, 1296, 560, 56, '#ffe1e1', 6, 'id="badbg"') + TX(150, 1336, 'Model:  OTHER-01', 34, '#c0392b', { a: 'start', font: 'Inter2' }) + `</g>` +
+    `<g id="mag"><circle cx="0" cy="0" r="92" fill="#bcd3ff" opacity=".28"/><circle cx="0" cy="0" r="92" fill="none" stroke="#1b2340" stroke-width="14"/><rect x="62" y="62" width="30" height="120" rx="12" fill="#1b2340" transform="rotate(-45 77 77)"/></g>`,
+  C: () => fixSet({ k: 5, wall: ['#1d2a44', '#0f1626'], win: 'city', desk: '#2f3b57', item: 'monitors', itemX: 110, docX: 300, docR: -5, glow: '#8fb4ff', lampX: 300 }),
+  tick(t, s) {
+    let h = ''; const o = (t * 160) % 200; for (let x = -200 + o; x < 1000; x += 200) if (x > 20 && x < 900) h += `<g transform="translate(${x + 70} 1330) scale(.75)">${carton(130, 100, false)}</g>`; $('belt').innerHTML = h;
+    mv('rep', 300, 1500, 1); at('rhead', 'transform', `rotate(${Math.sin(t * 2.6) * 6} 0 -250)`); at('rarm', 'transform', `rotate(${Math.sin(t * 5) * 8} 107 -40)`);
+    at('rmouth', 'd', `M-20 -276 q20 ${8 + Math.abs(Math.sin(t * 11)) * 18} 40 0`);
+    const sp = outB(seg(t, .5, .9)); at('say', 'transform', `translate(710 1075) scale(${sp}) translate(-710 -1075)`); op('rec', Math.sin(t * 5) > 0 ? 1 : .2);
+    const mp = ease(seg(t, s[1] + .5, s[1] + 1.6)); mv('mag', lerp(560, 300, mp) + Math.sin(t * 2) * 8, lerp(1140, 1324, mp));
+    op('badbg', t > s[1] + 1.6 ? .6 + .4 * Math.sin(t * 9) : 0);
+  }
+};
+// 6. the broker's email: inbox with a clock -> pan to the yard where the days count up -> desk with binders
+W.broker_email = {
+  side: 'L', tr: ['pan', 'fade'], open: 'late',
+  d: { hold: 'WAITING', gate: 'STORAGE DAY', phoneWho: 'Customs broker · 9:02 am', phoneMsg: '“I need the certificate data to file the entry.”', doc: 'ENTRY DATA', say: 'Certificate data needed' },
+  A: () => R(0, 0, 1080, 1920, '#eef1f6') + R(0, 900, 1080, 100, '#1b2340') + TX(60, 966, 'Inbox', 46, '#fff', { a: 'start', w: 900 }) + C(250, 950, 26, '#e11d48', 'id="badge"') + TX(250, 962, '1', 32, '#fff') +
+    `<g id="oldm">` + [0, 1, 2, 3, 4].map(i => R(40, 1030 + i * 132, 1000, 116, '#fff', 14) + C(100, 1088 + i * 132, 30, ['#8ecae6', '#b7e4c7', '#ffd166', '#cdb4db', '#ffc8a2'][i]) + R(150, 1058 + i * 132, 260 + (i * 61 % 120), 20, '#9aa3b5', 6) + R(150, 1096 + i * 132, 520 - (i * 83 % 200), 16, '#cfd6e2', 6)).join('') + `</g>` +
+    `<g id="newm">` + R(40, 1030, 1000, 116, '#fff', 14, 'stroke="#2f6bff" stroke-width="6"') + C(100, 1088, 30, '#2f6bff') + TX(150, 1078, 'Customs broker', 32, '#1b2340', { a: 'start' }) + TX(150, 1120, '', 30, '#c0392b', { a: 'start', cls: 'p-say', font: 'Inter2' }) + C(990, 1088, 12, '#e11d48') + `</g>` +
+    `<g id="clk">` + C(0, 0, 110, '#fff', 'stroke="#1b2340" stroke-width="12"') + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(i => `<line x1="0" y1="-92" x2="0" y2="-78" stroke="#1b2340" stroke-width="6" transform="rotate(${i * 30})"/>`).join('') +
+    `<line id="hh" x1="0" y1="0" x2="0" y2="-50" stroke="#1b2340" stroke-width="10" stroke-linecap="round"/><line id="mh" x1="0" y1="0" x2="0" y2="-80" stroke="#e11d48" stroke-width="7" stroke-linecap="round"/>` + C(0, 0, 9, '#1b2340') + `</g>`,
+  B: () => BG('be2', '#2c2550', '#e0704a') + C(820, 1230, 110, '#ffd27a', 'opacity=".85"') + R(0, 1620, 1080, 300, '#2b2f3a') + R(0, 1620, 1080, 12, '#f2c94c') +
+    [0, 1, 2].map(r => [0, 1, 2, 3].map(c => (r === 2 && c > 1) ? '' : R(40 + c * 262 + (r % 2) * 0, 1500 - r * 126, 250, 118, ['#2f6bff', '#27ae60', '#8e44ad', '#c0392b', '#16a085', '#d35400'][(r * 4 + c) % 6], 4, 'stroke="#0004" stroke-width="4"') + [0, 1, 2, 3, 4, 5].map(k => `<line x1="${70 + c * 262 + k * 38}" y1="${1508 - r * 126}" x2="${70 + c * 262 + k * 38}" y2="${1610 - r * 126}" stroke="#0003" stroke-width="5"/>`).join('')).join('')).join('') +
+    `<g id="hero" transform="translate(826 1500)">` + R(0, 0, 250, 118, '#f2994a', 4, 'stroke="#0004" stroke-width="4"') + R(40, 34, 170, 46, '#fff') + TX(125, 67, '', 26, '#1b1f29', { cls: 'p-box' }) + `<g id="lock"><path d="M-16 0 v-22 a16 16 0 0 1 32 0 v22" stroke="#e9ecf2" stroke-width="9" fill="none"/><rect x="-26" y="0" width="52" height="42" rx="8" fill="#ffd166"/></g></g>` +
+    `<g transform="translate(-390 60)">` + R(600, 1060, 16, 200, '#3d475e') + `<g id="meter">` + R(430, 880, 360, 200, '#111827', 16, 'stroke="#ffd166" stroke-width="8"') + TX(610, 940, '', 32, '#ffd166', { cls: 'p-gate', ls: 3 }) + TX(610, 1050, '1', 110, '#ff3b3b', { id: 'dayn', w: 900 }) + `</g></g>` +
+    R(980, 1000, 14, 620, '#3d475e') + `<path d="M987 1010 l-200 300 l400 0 z" fill="#fff3c4" opacity=".12"/>` + `<g id="gull"><path d="M-30 0 q15 -22 30 0 q15 -22 30 0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/></g>`,
+  C: () => fixSet({ k: 6, wall: ['#3d5a50', '#1c2b26'], win: 'moon', winX: 660, desk: '#5a4632', item: 'binders', itemX: 800, docX: 800, lampX: 800 }),
+  tick(t, s) {
+    const np = outB(seg(t, .5, 1.0)); at('newm', 'transform', `translate(0 ${lerp(-180, 0, np)})`); op('newm', seg(t, .5, .7)); at('oldm', 'transform', `translate(0 ${132 * ease(seg(t, .5, 1.0))})`);
+    op('badge', t > .5 ? (Math.sin(t * 8) > -0.3 ? 1 : .4) : 0); mv('clk', 860, 1560 + Math.sin(t * 2) * 4, 1); at('mh', 'transform', `rotate(${t * 240})`); at('hh', 'transform', `rotate(${t * 20 + 60})`);
+    const day = 1 + Math.floor(cl((t - s[1] - .8) / .55, 0, 8)); const e = $('dayn'); if (e) e.textContent = day;
+    const fl = (t - s[1] - .8) / .55; at('dayn', 'transform', `translate(610 1012) scale(1 ${fl > 0 && fl < 8 ? .6 + .4 * cl((fl % 1) * 4) : 1}) translate(-610 -1012)`);
+    at('lock', 'transform', `translate(125 -40) rotate(${Math.sin(t * 9) * (t > s[1] + 1.6 ? 9 : 0)})`); mv('gull', (t * 60) % 1300 - 100, 1120 + Math.sin(t * 3) * 20, 1);
+  }
+};
+// 7. launch day: packing table with bunting -> iris into the dashboard where the line drops -> quiet table
+W.launch_day = {
+  side: 'R', tr: ['iris', 'fade'], focus: [360, 1320], open: 'walk',
+  d: { hold: 'PAUSED', gate: 'Listing paused', phoneWho: 'Seller dashboard · 10:14 am', phoneMsg: '“Listing paused. Safety documents requested.”', doc: 'LAUNCH PLAN' },
+  A: () => BG('ld1', '#3b3f7a', '#232650') + `<path d="M0 800 Q270 900 540 820 Q810 740 1080 830" stroke="#fff" stroke-width="5" fill="none"/>` +
+    [0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => { const x = 40 + i * 122, y = 812 + (i < 4 ? i * 14 : (8 - i) * 6) + (i === 4 ? 6 : 0); return `<path id="fl${i}" d="M${x} ${y} l70 0 l-35 80 z" fill="${['#ffd166', '#ff6b6b', '#4ecdc4', '#f4f6fb'][i % 4]}"/>`; }).join('') +
+    `<g id="ban1">` + R(70, 980, 560, 120, '#ffd166', 16) + TX(350, 1062, 'LAUNCH DAY', 64, '#1b2340', { w: 900, ls: 3 }) + `</g>` +
+    `<g id="bl1"><ellipse cx="0" cy="0" rx="52" ry="66" fill="#ff6b6b"/><path d="M0 66 q-14 60 6 130" stroke="#fff" stroke-width="4" fill="none"/></g><g id="bl2"><ellipse cx="0" cy="0" rx="46" ry="58" fill="#4ecdc4"/><path d="M0 58 q12 60 -6 120" stroke="#fff" stroke-width="4" fill="none"/></g>` +
+    R(0, 1500, 1080, 46, '#c9a27a') + R(0, 1546, 1080, 374, '#8a5a3a') + `<g id="pk"></g>` +
+    `<g id="tape"><rect x="-50" y="-30" width="100" height="44" rx="10" fill="#e14b3b"/><circle cx="-36" cy="-46" r="30" fill="#c99a62" stroke="#8a6a3f" stroke-width="8"/><rect x="30" y="10" width="30" height="50" rx="8" fill="#1b2340"/></g>`,
+  B: () => R(0, 0, 1080, 1920, '#0f172a') + R(0, 900, 1080, 90, '#1b2340') + TX(60, 960, 'Seller dashboard', 40, '#fff', { a: 'start' }) +
+    R(40, 1020, 1000, 560, '#17223c', 24) + TX(80, 1090, 'Sales today', 38, '#9fb6ff', { a: 'start', font: 'Inter2' }) + [0, 1, 2, 3].map(i => R(80, 1160 + i * 100, 920, 3, '#26304a')).join('') +
+    `<path id="chart" d="" stroke="#34d399" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle id="dot" r="16" fill="#34d399"/>` +
+    R(560, 1700, 480, 100, '#17223c', 24) + C(620, 1750, 16, '#34d399', 'id="adled"') + TX(660, 1764, 'Ads: still running', 36, '#e6ebff', { a: 'start', font: 'Inter2', w: 700 }) +
+    `<g id="stat">` + R(40, 1700, 480, 100, '#7f1d1d', 24, 'id="statbg"') + TX(280, 1764, '', 38, '#fff', { cls: 'p-gate', font: 'Inter2' }) + `</g>`,
+  C: () => fixSet({ k: 7, wall: ['#3b3f7a', '#232650'], win: 'board', winX: 80, desk: '#8a5a3a', deskTop: '#c9a27a', item: 'boxes', itemX: 60, docX: 340, docR: -5, glow: '#ffd9a0', lampX: 300 }),
+  tick(t, s) {
+    for (let i = 0; i < 9; i++) { const x = 40 + i * 122 + 35, y = 812 + (i < 4 ? i * 14 : (8 - i) * 6); at('fl' + i, 'transform', `rotate(${Math.sin(t * 3 + i) * 7} ${x} ${y})`); }
+    at('ban1', 'transform', `rotate(${Math.sin(t * 1.3) * 1.5} 350 980)`); mv('bl1', 800 + Math.sin(t * 1.2) * 14, 1130 + Math.sin(t * 1.9) * 16, 1); mv('bl2', 930 + Math.sin(t * 1.5 + 1) * 12, 1220 + Math.sin(t * 1.6) * 14, 1);
+    let h = ''; const o = (t * 150) % 240; for (let x = -240 + o; x < 1200; x += 240) h += `<g transform="translate(${x} 1500)">${carton(170, 120)}</g>`; $('pk').innerHTML = h;
+    mv('tape', 330 + Math.sin(t * 6) * 60, 1370 - Math.abs(Math.sin(t * 6)) * 16, 1, 1, Math.sin(t * 6) * 8);
+    const pts = [[80, 1470], [200, 1440], [320, 1400], [440, 1330], [560, 1260], [660, 1190], [700, 1470], [820, 1470], [1000, 1470]];
+    const u = seg(t, s[1] + .3, s[1] + 2.2) * (pts.length - 1), n = Math.floor(u), f = u - n; let d = `M${pts[0][0]} ${pts[0][1]}`; for (let i = 1; i <= n; i++) d += ` L${pts[i][0]} ${pts[i][1]}`;
+    let cx = pts[n][0], cy = pts[n][1]; if (n < pts.length - 1) { cx = lerp(pts[n][0], pts[n + 1][0], f); cy = lerp(pts[n][1], pts[n + 1][1], f); d += ` L${cx} ${cy}`; }
+    at('chart', 'd', d); at('dot', 'cx', cx); at('dot', 'cy', cy); const dead = u > 6; at('chart', 'stroke', dead ? '#ff3b3b' : '#34d399'); at('dot', 'fill', dead ? '#ff3b3b' : '#34d399');
+    op('adled', Math.sin(t * 7) > 0 ? 1 : .25); const sp = outB(seg(t, s[1] + 1.7, s[1] + 2.1)); at('stat', 'transform', `translate(280 1750) scale(${sp}) translate(-280 -1750)`);
+  }
+};
+// 8. after the sale: doorstep delivery -> slide up into the customer's living room, the box goes back -> desk
+W.customer_return = {
+  side: 'L', tr: ['up', 'pan'], open: 'late',
+  d: { hold: 'RETURNED', gate: 'RETURN', phoneWho: 'Customer message · 7:30 pm', phoneMsg: '“Is this tested? I can’t find any safety information.”', doc: 'COMPLAINT' },
+  A: () => BG('cr1', '#f7b58a', '#ffe1b8') + C(200, 1010, 90, '#fff3c4', 'opacity=".9"') + `<path d="M430 1120 L740 900 L1050 1120 Z" fill="#a8483a"/>` + R(470, 1120, 540, 460, '#f4ead8') + R(800, 1180, 150, 150, '#8ecae6', 6, 'stroke="#fff" stroke-width="10"') + R(870, 1180, 10, 150, '#fff') +
+    R(560, 1260, 170, 320, '#2f6f5e', 8, 'id="door"') + C(700, 1430, 10, '#ffd166') + R(520, 1580, 250, 26, '#c9b79a') + R(0, 1606, 1080, 314, '#6fae6a') + `<path d="M560 1606 L730 1606 L900 1920 L380 1920 Z" fill="#d9cfbd"/>` +
+    [0, 1, 2].map(i => C(70 + i * 90, 1560 + (i % 2) * 14, 70, '#4f9a52')).join('') + R(0, 1600, 300, 20, '#6fae6a') +
+    `<g id="van">` + R(0, 0, 300, 170, '#f4f6fb', 14) + R(300, 50, 110, 120, '#f4f6fb', 14) + R(320, 66, 70, 50, '#8ecae6', 6) + R(40, 50, 180, 60, '#2f6bff', 8) + TX(130, 92, 'PARCELS', 30, '#fff') + C(80, 180, 34, '#111') + C(330, 180, 34, '#111') + C(80, 180, 14, '#888') + C(330, 180, 14, '#888') + `</g>` +
+    `<g id="cour">${person('cu', '#2f6bff', '#8d5a3b', '<rect x="-17" y="-158" width="34" height="12" rx="4" fill="#1b2340"/>')}</g>` + `<g id="parc">${carton(150, 110)}</g>`,
+  B: () => BG('cr2', '#5a4a6e', '#33293f') + R(600, 940, 300, 330, '#f7b58a', 8, 'stroke="#fff" stroke-width="12"') + R(744, 940, 12, 330, '#fff') + R(0, 1620, 1080, 300, '#7a5a44') + `<ellipse cx="480" cy="1700" rx="420" ry="70" fill="#c96f5a"/>` +
+    R(520, 1330, 520, 230, '#3d7a8a', 40) + R(490, 1420, 580, 200, '#4a94a6', 40) + R(560, 1380, 150, 110, '#ffd166', 20) +
+    R(130, 1560, 380, 26, '#c9a27a') + R(160, 1586, 20, 90, '#8a5a3a') + R(460, 1586, 20, 90, '#8a5a3a') + R(60, 1010, 14, 610, '#222') + `<path d="M10 1010 L124 1010 L100 920 L34 920 Z" fill="#ffe7a8"/><ellipse cx="67" cy="1100" rx="200" ry="260" fill="#ffe7a8" opacity=".14"/>` +
+    `<g id="cust"><rect x="-70" y="-190" width="140" height="210" rx="46" fill="#e67e22"/><g id="chead"><circle cx="0" cy="-240" r="52" fill="#8d5a3b"/><path d="M-52 -250 Q-50 -304 0 -300 Q50 -304 52 -250 Q26 -274 0 -272 Q-26 -274 -52 -250 Z" fill="#111827"/><circle cx="-18" cy="-238" r="5" fill="#111"/><circle cx="18" cy="-238" r="5" fill="#111"/><path d="M-16 -212 q16 -10 32 0" stroke="#3b1f14" stroke-width="5" fill="none"/></g></g>` +
+    `<g id="qm">${TX(0, 0, '?', 110, '#ffd166', { w: 900 })}</g><g id="qm2">${TX(0, 0, '?', 80, '#ffd166', { w: 900 })}</g>` +
+    `<g id="rbox">${carton(210, 150)}<g id="rlab">${R(-80, -150, 160, 50, '#e11d48', 6)}${TX(0, -114, '', 30, '#fff', { cls: 'p-gate', ls: 2 })}</g></g>`,
+  C: () => fixSet({ k: 8, wall: ['#2b3350', '#141a2e'], win: 'moon', winX: 650, desk: '#3a2b22', deskTop: '#4c3a2e', item: 'plant', itemX: 880, docX: 780, lampX: 800 }),
+  tick(t, s) {
+    const vin = ease(seg(t, 0, 1.2)), vout = ease(seg(t, 2.6, 3.8)); mv('van', lerp(-460, 20, vin) + vout * 1300, 1660 + Math.sin(t * 30) * (vin < 1 || vout > 0 ? 1.5 : 0), 1);
+    const go = ease(seg(t, 1.2, 2.1)), back = ease(seg(t, 2.2, 2.7)); const cx = lerp(lerp(200, 600, go), 240, back), cy = lerp(lerp(1800, 1640, go), 1800, back), sc = lerp(lerp(1.5, 1.05, go), 1.5, back);
+    mv('cour', cx, cy, sc * (back > 0 && back < 1 ? -1 : 1), sc); walk('cu', t * 10, (go > 0 && go < 1) || (back > 0 && back < 1) ? 16 : 0); op('cour', 1 - seg(t, 2.7, 2.9));
+    if (go < 1) mv('parc', cx + 46 * sc, cy - 70 * sc, sc * .6); else mv('parc', 660, 1580, .7);
+    at('door', 'transform', `translate(560 0) scale(${1 - .5 * ease(seg(t, s[1] - .9, s[1] - .3))} 1) translate(-560 0)`);
+    mv('cust', 790, 1570, 1); at('chead', 'transform', `rotate(${Math.sin(t * 2) * 6 - 6} 0 -190)`);
+    mv('qm', 930 + Math.sin(t * 3) * 8, 1330 - ((t * 40) % 60), 1); op('qm', 1 - ((t * 40) % 60) / 60); mv('qm2', 650, 1350 - ((t * 40 + 30) % 60), 1); op('qm2', 1 - ((t * 40 + 30) % 60) / 60);
+    const lab = outB(seg(t, s[1] + 1.5, s[1] + 1.9)); at('rlab', 'transform', `translate(0 -125) scale(${lab}) translate(0 125)`);
+    mv('rbox', 560, 1700, 1);
+  }
+};
+
+// ---------- presenter rig (same as scene.html)
+const ava = $('ava2');
+const G = id => ava.querySelector('#' + id);
+const rig = { armL: G('armL'), foreL: G('foreL'), armR: G('armR'), foreR: G('foreR'), head: G('avaHead'), hairB: G('avaHairB'),
+  body: G('avaBody'), eyes: G('avaEyes'), mouth: G('mouthIn'), lip: G('lipLow'), phone: G('phoneR') };
+function rot(el, a, x, y) { if (el) el.setAttribute('transform', `rotate(${a.toFixed(2)} ${x} ${y})`); }
+const P = {
+  idle:   { aL: 3, fL: 4, aR: -3, fR: -4, h: 0, ph: 0 },
+  point:  { aL: 64, fL: 26, aR: -6, fR: -10, h: -6, ph: 0 },
+  phone:  { aL: 5, fL: 8, aR: -24, fR: -128, h: 8, ph: 1 },
+  palms:  { aL: 36, fL: 60, aR: -36, fR: -60, h: -3, ph: 0 },
+  laptop: { aL: 48, fL: 34, aR: -8, fR: -14, h: -8, ph: 0 },
+  wave:   { aL: 5, fL: 8, aR: -66, fR: -112, h: 5, ph: 0 },
+  shock:  { aL: 20, fL: 120, aR: -20, fR: -120, h: 4, ph: 0 },
+};
+const mix = (a, b, k) => { const o = {}; for (const key in a) o[key] = lerp(a[key], b[key], k); return o; };
+function pose(p, t, talk) {
+  const w = Math.sin(t * 2.3) * talk, w2 = Math.sin(t * 3.1 + 1) * talk;
+  rot(rig.armL, p.aL + w * 5, 104, 380); rot(rig.foreL, p.fL + w2 * 10, 92, 522);
+  rot(rig.armR, p.aR - w2 * 5, 316, 380); rot(rig.foreR, p.fR - w * 10, 328, 522);
+  const h = p.h + Math.sin(t * 1.7) * 2.4 * (0.4 + talk) + Math.sin(t * 5.3) * 1.2 * talk;
+  rot(rig.head, h, 210, 300); rot(rig.hairB, h, 210, 300);
+  if (rig.phone) rig.phone.setAttribute('opacity', p.ph > .5 ? 1 : 0);
+}
+// ---------- build
+const Wd = W[WORLD] || W.listing_takedown;
+const PROPS = Object.assign({ box: 'KID-24-BLUE', laptopTitle: 'CERTIFICATE DATA', say: '',
+  rows: ['Product ID', 'Each rule', 'Made: date + place', 'Tested: lab + date', 'Records contact'],
+  cta: ['Blocked right now?', 'Forward the notice.', 'Get your gap list in 24 hours.', 'mzconsulting.agency'], open: Wd.open, pose2: null }, Wd.d, RAW);
+$('setA').innerHTML = Wd.A(); $('setB').innerHTML = Wd.B(); $('setC').innerHTML = Wd.C();
+(() => { const fill = (c, v) => document.querySelectorAll('.' + c).forEach(e => e.textContent = v);
+  fill('p-box', PROPS.box); fill('p-gate', PROPS.gate); fill('p-doc', PROPS.doc); fill('p-say', PROPS.say);
+  const h = $('hold'); h.textContent = PROPS.hold; h.style.fontSize = Math.min(120, Math.floor(820 / Math.max(6, PROPS.hold.length))) + 'px';
+  document.querySelector('#phone .who').textContent = PROPS.phoneWho; document.querySelector('#phone .bub').textContent = PROPS.phoneMsg;
+  document.querySelector('#laptop h3').textContent = PROPS.laptopTitle;
+  document.querySelectorAll('#laptop .row').forEach((r, i) => { r.firstChild.textContent = (PROPS.rows[i] || '') + ' '; });
+  const c = $('cta'); c.querySelector('.h').textContent = PROPS.cta[0]; c.querySelector('.l1').textContent = PROPS.cta[1];
+  c.querySelector('.l2').textContent = PROPS.cta[2]; c.querySelector('.url').textContent = PROPS.cta[3];
+  const L = Wd.side === 'L';                       // presenter on the left -> overlays on the right
+  $('hold').style.left = (L ? 700 : 380) + 'px'; $('phone').style.left = (L ? 420 : 60) + 'px'; $('laptop').style.left = (L ? 410 : 50) + 'px';
+  if (L) document.querySelector('#phone .bub').style.borderRadius = '30px 30px 8px 30px'; })();
+function trans(kind, pOut, pIn, id, wrapId, iris, focus) {      // pIn: how far this set has come in; pOut: how far it has left
+  let tf = '', o = 1;
+  if (pIn < 1) { if (kind[0] === 'pan') tf = `translate(${1080 * (1 - pIn)} 0)`; else if (kind[0] === 'up') tf = `translate(0 ${1920 * (1 - pIn)})`;
+    else if (kind[0] === 'iris') { at(iris, 'cx', focus[0]); at(iris, 'cy', focus[1]); at(iris, 'r', pIn * 1900); o = pIn > 0 ? 1 : 0; }
+    else o = pIn;
+    if (pIn <= 0) o = 0; }
+  else if (iris) at(iris, 'r', 3000);
+  if (pOut > 0) { if (kind[1] === 'pan') tf = `translate(${-1080 * pOut} 0)`; else if (kind[1] === 'up') tf = `translate(0 ${-1920 * pOut})`;
+    else if (kind[1] === 'zoom') { const z = 1 + pOut * 2.2; tf = `translate(${focus[0]} ${focus[1]}) scale(${z}) translate(${-focus[0]} ${-focus[1]})`; o = 1 - pOut * pOut; }
+    if (pOut >= 1) o = 0; }
+  at(id, 'transform', tf); op(wrapId || id, o);
+}
+function seek(t) {
+  const [s0, s1, s2, s3, s4, tot] = T;
+  const f = Math.min(MOUTH.length - 1, Math.max(0, Math.round(t * 30))); const talk = MOUTH[f] || 0;
+  const p1 = ease(seg(t, s1, s1 + 0.8)), p2 = ease(seg(t, s2, s2 + 0.6)), fc = Wd.focus || [540, 1300];
+  trans([null, Wd.tr[0]], p1, 1, 'setA', null, null, fc);
+  trans([Wd.tr[0], Wd.tr[1]], p2, p1, 'setB', 'wrapB', 'irisB', fc);
+  trans([Wd.tr[1], null], 0, p2, 'setC', 'wrapC', 'irisC', fc);
+  Wd.tick(t, T);
+  // overlays
+  const hp = seg(t, s1 + 1.9, s1 + 2.2);
+  $('hold').style.opacity = t < s2 ? hp : 0;
+  $('hold').style.transform = `translate(-50%,-50%) rotate(-8deg) scale(${lerp(1.8, 1, outB(hp))})`;
+  const pp = ease(seg(t, s1 + 2.3, s1 + 2.8));
+  $('phone').style.opacity = t < s2 ? pp : 0; $('phone').style.transform = `translateY(${lerp(100, 0, pp)}px)`;
+  $('laptop').style.opacity = t >= s3 ? ease(seg(t, s3, s3 + 0.35)) * (1 - ease(seg(t, s4, s4 + 0.4))) : 0;
+  document.querySelectorAll('#laptop .row b').forEach((b, i) => { b.style.opacity = seg(t, s3 + 0.5 + i * 0.45, s3 + 0.7 + i * 0.45); });
+  // presenter: mirrored placement when the world puts her on the left
+  const L = Wd.side === 'L', mx = (x, s) => L ? 1080 - x - s : x;
+  let X, Y, S, ps, bob = 0, vis = 1;
+  const reactPose = P[PROPS.pose2 || 'phone'];
+  if (t < s1) { S = 470; Y = 1180; const tx = 600;
+    if (PROPS.open === 'walk') { const wk = ease(seg(t, 0, 1.4)); X = lerp(1140, tx, wk); bob = wk < 1 ? Math.abs(Math.sin(t * 9)) * 12 : 0; vis = ease(seg(t, 0.05, 0.4)); }
+    else if (PROPS.open === 'late') { const up = outB(seg(t, 0.9, 1.5)); X = tx; Y = lerp(1900, 1180, up); vis = seg(t, 0.9, 1.0); }
+    else { X = tx; const k = outB(seg(t, 0.05, 0.5)); S = lerp(380, 470, k); Y = lerp(1300, 1180, k); X = tx + (470 - S) / 2; vis = seg(t, 0.05, 0.25); }
+    ps = mix(P.idle, P.point, ease(seg(t, 1.5, 2.0))); }
+  else if (t < s2) { X = lerp(600, 700, p1); Y = lerp(1180, 1280, p1); S = lerp(470, 380, p1); ps = mix(P.point, reactPose, ease(seg(t, s1 + 1.5, s1 + 2.1))); }
+  else if (t < s3) { X = lerp(700, 590, p2); Y = lerp(1280, 1040, p2); S = lerp(380, 480, p2); ps = mix(reactPose, P.palms, ease(seg(t, s2 + 0.4, s2 + 0.9))); }
+  else if (t < s4) { X = lerp(590, 640, ease(seg(t, s3, s3 + .4))); Y = 1040; S = 480; ps = mix(P.palms, P.laptop, ease(seg(t, s3, s3 + 0.5))); }
+  else { X = 540; Y = 1160; S = 460; ps = mix(P.idle, P.wave, ease(seg(t, s4 + 0.3, s4 + 0.8))); ps.fR += Math.sin(t * 10) * 16 * seg(t, s4 + 0.8, s4 + 1.0); vis = ease(seg(t, s4, s4 + 0.35)); }
+  const endCard = t >= s4, flip = L && !endCard;
+  ava.style.left = (endCard ? X : mx(X, S)) + 'px'; ava.style.top = (Y - bob) + 'px'; ava.style.width = S + 'px'; ava.style.height = (S * 4 / 3) + 'px'; ava.style.opacity = vis;
+  ava.style.transform = flip ? 'scaleX(-1)' : 'none';
+  pose(ps, t, talk > .08 ? .55 + talk * .6 : .12);
+  const breath = 1 + Math.sin(t * 2.2) * 0.006;
+  rig.body && rig.body.setAttribute('transform', `translate(210 560) scale(1 ${breath.toFixed(4)}) translate(-210 -560)`);
+  const blink = (t % 3.4) > 3.27; rig.eyes && rig.eyes.setAttribute('transform', blink ? 'translate(0 208) scale(1 0.1) translate(0 -208)' : '');
+  const open = talk > .06 ? talk : 0;
+  rig.mouth && rig.mouth.setAttribute('ry', (open * 10).toFixed(2));
+  rig.lip && rig.lip.setAttribute('transform', `translate(0 ${(open * 7).toFixed(2)})`);
+  // captions + end card
+  const st = [s0, s1, s2, s3]; let k = 0; for (let i = 0; i < 4; i++) if (t >= st[i]) k = i;
+  const c = CAP[k]; const cp = ease(seg(t, st[k], st[k] + 0.3)); const ct = ease(seg(t, s4, s4 + 0.4));
+  $('cap1').textContent = c[0]; $('sub').textContent = c[1]; $('cite').textContent = c[2] || '';
+  $('cap1').style.opacity = cp * (1 - ct); $('cap1').style.transform = `translateY(${lerp(30, 0, cp)}px)`; $('sub').style.opacity = cp * (1 - ct);
+  $('cite').style.opacity = (c[2] ? cp : 0) * (1 - ct);
+  $('cta').style.opacity = ct;
+}
+window.reel = { ready: document.fonts.ready.then(() => true), seek, info: () => ({ total: T[5], world: WORLD }) };
+seek(0);
+</script>
+</body></html>

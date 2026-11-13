@@ -122,7 +122,161 @@ The format (acted first-person story, moving presenter, flat end card) stays. Th
   `factory_call` (video call with the factory, "certified" PDF on screen), `broker_email` (broker asks for certificate
   data, clock running, storage fees meter), `launch_day` (packing table, ads running, sales counter stops),
   `customer_return` (doorstep delivery, complaint message, recall-style notice), `port_customs`.
-- A new world means a new set in engine/scene (new world group or a new scene_<world>.html sharing the presenter rig,
-  captions and end card); different opening shot, different props, different middle beat. Also vary the first 2 s
+- The worlds below are already drawn (engine/scene/worlds.html). A further new world = a new entry in its `W` registry
+  (sets A/B/C + tick); different opening shot, different props, different middle beat. Also vary the first 2 s
   (where she is, what moves first) and the camera move between sets; only the end card stays the same.
 - No real brand UI or logos in any set (generic marketplace/retailer screens only).
+
+### Story worlds and the 2-month drawing schedule (Mert, 2026-11-13: "draw them all, decide what is drawn each day for the next two months, save it in DAILY.md; whichever is next gets drawn and published")
+All nine worlds are drawn. `port_customs` renders from engine/scene/scene.html, the other eight from
+engine/scene/worlds.html; set `"world": "<name>"` in scene.json and meta.json and render_scene.py picks the template.
+- `listing_takedown`: night at the desk, the phone buzzes, the listing goes grey
+- `warehouse_inbound`: truck backs into the dock, the receiving line stops, cartons refused
+- `retailer_meeting`: buyer meeting, then the store aisle with one empty slot
+- `lab_report`: test bench, the report prints with findings, launch calendar runs out
+- `factory_call`: video call "it is certified", then zoom into the PDF that names another model
+- `broker_email`: broker email lands, clock runs, storage days count up in the yard
+- `launch_day`: launch-day packing table, then the sales line drops flat on the dashboard
+- `customer_return`: doorstep delivery, the customer asks "is this tested?", the box comes back
+- `port_customs`: ship docks, crane, truck stops at the customs gate (engine/scene/scene.html)
+
+Each world has three sets (scene 1 = the event starts, scene 2 = the block, with the red stamp + message bubble,
+scenes 3-4 = where she fixes the file, with the checklist panel), its own transition and presenter side, then the same
+flat end card. Per-reel props: box (SKU), hold (stamp, <= 8 chars), gate (the sign/banner inside set B), phoneWho,
+phoneMsg, say (speech bubble / email subject in factory_call and broker_email), doc, laptopTitle, rows[5], cta[4],
+open (`walk` she walks in, `late` the set plays first and she rises in at 0.9 s, `pop` she is already there),
+pose2 (`phone` or `shock`, her reaction in scene 2).
+
+**How to use the table.** For reel k of today take the row with today's date and that reel number: the world and the
+opening are fixed by the table, the pillar comes from the calendar (`strategy.py plan` gives the same pillar; hook,
+length, CTA mode and slot still come from the plan). Write the first-person story for THAT event; the topic must fit
+it and pass the usual truth gate. If a reel is held or a day is missed, do not shift the table: the next reel simply
+takes its own row. If the numbers say a world works clearly better or worse (3+ reels each), swap rows inside the
+same week but keep the rule "no world from the previous 4 reels", and note the swap in DELIVERABLE.md. When the
+table runs out (after 2027-01-13), extend it with the same rule, ordered by skip rate of each world so far.
+
+| date | reel | pillar | world | opening |
+|---|---|---|---|---|
+| 2026-11-13 Fri | 2 | finder | `factory_call` | late |
+| 2026-11-14 Sat | 1 | finder | `launch_day` | pop |
+| 2026-11-14 Sat | 2 | cost | `warehouse_inbound` | walk |
+| 2026-11-15 Sun | 1 | cost | `broker_email` | late |
+| 2026-11-15 Sun | 2 | blocked | `listing_takedown` | pop |
+| 2026-11-16 Mon | 1 | blocked | `retailer_meeting` | walk |
+| 2026-11-16 Mon | 2 | finder | `lab_report` | late |
+| 2026-11-17 Tue | 1 | finder | `customer_return` | pop |
+| 2026-11-17 Tue | 2 | gap | `factory_call` | walk |
+| 2026-11-18 Wed | 1 | gap | `warehouse_inbound` | late |
+| 2026-11-18 Wed | 2 | deadline | `port_customs` | pop |
+| 2026-11-19 Thu | 1 | deadline | `launch_day` | walk |
+| 2026-11-19 Thu | 2 | myth | `listing_takedown` | late |
+| 2026-11-20 Fri | 1 | myth | `lab_report` | pop |
+| 2026-11-20 Fri | 2 | finder | `retailer_meeting` | walk |
+| 2026-11-21 Sat | 1 | finder | `customer_return` | late |
+| 2026-11-21 Sat | 2 | cost | `broker_email` | pop |
+| 2026-11-22 Sun | 1 | cost | `warehouse_inbound` | walk |
+| 2026-11-22 Sun | 2 | blocked | `port_customs` | late |
+| 2026-11-23 Mon | 1 | blocked | `listing_takedown` | pop |
+| 2026-11-23 Mon | 2 | finder | `factory_call` | walk |
+| 2026-11-24 Tue | 1 | finder | `launch_day` | late |
+| 2026-11-24 Tue | 2 | gap | `lab_report` | pop |
+| 2026-11-25 Wed | 1 | gap | `retailer_meeting` | walk |
+| 2026-11-25 Wed | 2 | deadline | `port_customs` | late |
+| 2026-11-26 Thu | 1 | deadline | `factory_call` | pop |
+| 2026-11-26 Thu | 2 | myth | `customer_return` | walk |
+| 2026-11-27 Fri | 1 | myth | `listing_takedown` | late |
+| 2026-11-27 Fri | 2 | finder | `launch_day` | pop |
+| 2026-11-28 Sat | 1 | finder | `lab_report` | walk |
+| 2026-11-28 Sat | 2 | cost | `broker_email` | late |
+| 2026-11-29 Sun | 1 | cost | `warehouse_inbound` | pop |
+| 2026-11-29 Sun | 2 | blocked | `retailer_meeting` | walk |
+| 2026-11-30 Mon | 1 | blocked | `port_customs` | late |
+| 2026-11-30 Mon | 2 | finder | `factory_call` | pop |
+| 2026-12-01 Tue | 1 | finder | `customer_return` | walk |
+| 2026-12-01 Tue | 2 | gap | `lab_report` | late |
+| 2026-12-02 Wed | 1 | gap | `broker_email` | pop |
+| 2026-12-02 Wed | 2 | deadline | `launch_day` | walk |
+| 2026-12-03 Thu | 1 | deadline | `retailer_meeting` | late |
+| 2026-12-03 Thu | 2 | myth | `listing_takedown` | pop |
+| 2026-12-04 Fri | 1 | myth | `factory_call` | walk |
+| 2026-12-04 Fri | 2 | finder | `customer_return` | late |
+| 2026-12-05 Sat | 1 | finder | `lab_report` | pop |
+| 2026-12-05 Sat | 2 | cost | `warehouse_inbound` | walk |
+| 2026-12-06 Sun | 1 | cost | `port_customs` | late |
+| 2026-12-06 Sun | 2 | blocked | `broker_email` | pop |
+| 2026-12-07 Mon | 1 | blocked | `retailer_meeting` | walk |
+| 2026-12-07 Mon | 2 | finder | `launch_day` | late |
+| 2026-12-08 Tue | 1 | finder | `factory_call` | pop |
+| 2026-12-08 Tue | 2 | gap | `lab_report` | walk |
+| 2026-12-09 Wed | 1 | gap | `warehouse_inbound` | late |
+| 2026-12-09 Wed | 2 | deadline | `port_customs` | pop |
+| 2026-12-10 Thu | 1 | deadline | `retailer_meeting` | walk |
+| 2026-12-10 Thu | 2 | myth | `listing_takedown` | late |
+| 2026-12-11 Fri | 1 | myth | `customer_return` | pop |
+| 2026-12-11 Fri | 2 | finder | `launch_day` | walk |
+| 2026-12-12 Sat | 1 | finder | `factory_call` | late |
+| 2026-12-12 Sat | 2 | cost | `broker_email` | pop |
+| 2026-12-13 Sun | 1 | cost | `warehouse_inbound` | walk |
+| 2026-12-13 Sun | 2 | blocked | `port_customs` | late |
+| 2026-12-14 Mon | 1 | blocked | `retailer_meeting` | pop |
+| 2026-12-14 Mon | 2 | finder | `lab_report` | walk |
+| 2026-12-15 Tue | 1 | finder | `customer_return` | late |
+| 2026-12-15 Tue | 2 | gap | `factory_call` | pop |
+| 2026-12-16 Wed | 1 | gap | `broker_email` | walk |
+| 2026-12-16 Wed | 2 | deadline | `launch_day` | late |
+| 2026-12-17 Thu | 1 | deadline | `port_customs` | pop |
+| 2026-12-17 Thu | 2 | myth | `listing_takedown` | walk |
+| 2026-12-18 Fri | 1 | myth | `lab_report` | late |
+| 2026-12-18 Fri | 2 | finder | `retailer_meeting` | pop |
+| 2026-12-19 Sat | 1 | finder | `customer_return` | walk |
+| 2026-12-19 Sat | 2 | cost | `warehouse_inbound` | late |
+| 2026-12-20 Sun | 1 | cost | `broker_email` | pop |
+| 2026-12-20 Sun | 2 | blocked | `port_customs` | walk |
+| 2026-12-21 Mon | 1 | blocked | `listing_takedown` | late |
+| 2026-12-21 Mon | 2 | finder | `factory_call` | pop |
+| 2026-12-22 Tue | 1 | finder | `launch_day` | walk |
+| 2026-12-22 Tue | 2 | gap | `lab_report` | late |
+| 2026-12-23 Wed | 1 | gap | `retailer_meeting` | pop |
+| 2026-12-23 Wed | 2 | deadline | `port_customs` | walk |
+| 2026-12-24 Thu | 1 | deadline | `factory_call` | late |
+| 2026-12-24 Thu | 2 | myth | `customer_return` | pop |
+| 2026-12-25 Fri | 1 | myth | `listing_takedown` | walk |
+| 2026-12-25 Fri | 2 | finder | `launch_day` | late |
+| 2026-12-26 Sat | 1 | finder | `lab_report` | pop |
+| 2026-12-26 Sat | 2 | cost | `warehouse_inbound` | walk |
+| 2026-12-27 Sun | 1 | cost | `broker_email` | late |
+| 2026-12-27 Sun | 2 | blocked | `retailer_meeting` | pop |
+| 2026-12-28 Mon | 1 | blocked | `port_customs` | walk |
+| 2026-12-28 Mon | 2 | finder | `factory_call` | late |
+| 2026-12-29 Tue | 1 | finder | `customer_return` | pop |
+| 2026-12-29 Tue | 2 | gap | `lab_report` | walk |
+| 2026-12-30 Wed | 1 | gap | `warehouse_inbound` | late |
+| 2026-12-30 Wed | 2 | deadline | `launch_day` | pop |
+| 2026-12-31 Thu | 1 | deadline | `retailer_meeting` | walk |
+| 2026-12-31 Thu | 2 | myth | `listing_takedown` | late |
+| 2027-01-01 Fri | 1 | myth | `factory_call` | pop |
+| 2027-01-01 Fri | 2 | finder | `customer_return` | walk |
+| 2027-01-02 Sat | 1 | finder | `lab_report` | late |
+| 2027-01-02 Sat | 2 | cost | `broker_email` | pop |
+| 2027-01-03 Sun | 1 | cost | `port_customs` | walk |
+| 2027-01-03 Sun | 2 | blocked | `warehouse_inbound` | late |
+| 2027-01-04 Mon | 1 | blocked | `retailer_meeting` | pop |
+| 2027-01-04 Mon | 2 | finder | `launch_day` | walk |
+| 2027-01-05 Tue | 1 | finder | `factory_call` | late |
+| 2027-01-05 Tue | 2 | gap | `lab_report` | pop |
+| 2027-01-06 Wed | 1 | gap | `broker_email` | walk |
+| 2027-01-06 Wed | 2 | deadline | `port_customs` | late |
+| 2027-01-07 Thu | 1 | deadline | `retailer_meeting` | pop |
+| 2027-01-07 Thu | 2 | myth | `listing_takedown` | walk |
+| 2027-01-08 Fri | 1 | myth | `customer_return` | late |
+| 2027-01-08 Fri | 2 | finder | `launch_day` | pop |
+| 2027-01-09 Sat | 1 | finder | `factory_call` | walk |
+| 2027-01-09 Sat | 2 | cost | `warehouse_inbound` | late |
+| 2027-01-10 Sun | 1 | cost | `broker_email` | pop |
+| 2027-01-10 Sun | 2 | blocked | `port_customs` | walk |
+| 2027-01-11 Mon | 1 | blocked | `retailer_meeting` | late |
+| 2027-01-11 Mon | 2 | finder | `lab_report` | pop |
+| 2027-01-12 Tue | 1 | finder | `customer_return` | walk |
+| 2027-01-12 Tue | 2 | gap | `factory_call` | late |
+| 2027-01-13 Wed | 1 | gap | `warehouse_inbound` | pop |
+| 2027-01-13 Wed | 2 | deadline | `launch_day` | walk |
