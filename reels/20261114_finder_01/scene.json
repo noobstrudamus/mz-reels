@@ -3,15 +3,15 @@
  "world": "launch_day",
  "voice": "en-US-AvaNeural",
  "vo": [
-  "Holiday lights have no safety rule? Launch day proved me wrong.",
-  "Orders climb. Then my listing is paused. Safety documents requested.",
-  "A C P S C list names plug-in seasonal lights. Missing wire size, strain relief, or overcurrent protection? Deemed a substantial product hazard.",
+  "Holiday lights, no rule? Launch day proved me wrong.",
+  "Then: listing paused. Safety documents requested.",
+  "Plug-in seasonal lights sit on a C P S C list: wire size, strain relief, overcurrent protection.",
   "So I check which rules apply before the next launch.",
   "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
  ],
  "min_dur": [
   3.0,
-  4.0,
+  3.4,
   3.6,
   3.0,
   3.4
@@ -29,7 +29,7 @@
   ],
   [
    "Myth: lights have no rule.",
-   "Fact: a CPSC list names plug-in seasonal lights.",
+   "Fact: a CPSC list names 120-volt plug-in seasonal lights.",
    "16 CFR 1120.3(c)"
   ],
   [

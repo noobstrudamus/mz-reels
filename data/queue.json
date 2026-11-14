@@ -2103,5 +2103,56 @@
   "media_id": "18650263552008344",
   "published_at": "2026-11-13T21:58:36Z",
   "first_comment_id": "18147988147605968"
+ },
+ {
+  "id": "20261114_finder_01",
+  "kind": "reel",
+  "container_id": "17918141634541034",
+  "slot_local": "08:47",
+  "slot_utc": "2026-11-14T13:47:00Z",
+  "caption": "Launch day, orders coming in, and the listing gets paused over safety documents.\n16 CFR 1120.3(c) lists plug-in seasonal and decorative lights that lack minimum wire size, sufficient strain relief or overcurrent protection as a substantial product hazard.\nBattery, solar and low-voltage sets fall outside that definition.\nSay a seller never checked which rules cover holiday lights. That check comes before the launch.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-11-14T11:55:04Z",
+  "status": "failed",
+  "reel": "reels/20261114_finder_01",
+  "date": "2026-11-14",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "myth",
+   "opener": "scene",
+   "length": "long",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "0847"
+  },
+  "src": "ig_20261114_finder_01",
+  "family": "electrical",
+  "error": "ERROR: HTTP 400 code=None/None: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
+ },
+ {
+  "id": "20261114_finder_01",
+  "kind": "reel",
+  "container_id": "17918141745541034",
+  "slot_local": "08:47",
+  "slot_utc": "2026-11-14T13:47:00Z",
+  "caption": "Launch day, orders coming in, and the listing gets paused over safety documents.\n16 CFR 1120.3(c) lists plug-in seasonal and decorative lights that lack minimum wire size, sufficient strain relief or overcurrent protection as a substantial product hazard.\nBattery, solar and low-voltage sets fall outside that definition.\nSay a seller never checked which rules cover holiday lights. That check comes before the launch.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-11-14T11:55:39Z",
+  "status": "pending",
+  "reel": "reels/20261114_finder_01",
+  "date": "2026-11-14",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "myth",
+   "opener": "scene",
+   "length": "long",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "0847"
+  },
+  "src": "ig_20261114_finder_01",
+  "family": "electrical"
  }
 ]
