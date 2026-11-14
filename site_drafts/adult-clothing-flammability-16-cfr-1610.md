@@ -14,8 +14,8 @@ And 16 CFR 1610.1(e): "The requirements of this part 1610 shall apply to textile
 
 ## Exceptions and testing exemptions
 
-- 1610.1(c) lists specific exceptions, such as most hats, gloves and footwear (read the list for the exact wording).
-- 1610.1(d) exempts some fabrics from testing to support guaranties, including plain surface fabrics of 2.6 ounces per square yard or more, and fabrics made entirely of acrylic, modacrylic, nylon, olefin, polyester or wool. A raised-fiber cotton fleece is not on that list.
+- 1610.1(c) excludes hats, gloves and footwear under specific conditions (for example, gloves no longer than 14 inches), and interlining fabrics. Read the list for the exact wording.
+- 1610.1(d) exempts some fabrics from testing to support guaranties, including plain surface fabrics of 2.6 ounces per square yard or more, and fabrics made entirely of acrylic, modacrylic, nylon, olefin, polyester or wool. A raised-fiber cotton fleece is not on that list. This is only an exemption from testing to support guaranties; not being exempt does not mean a fabric fails.
 
 ## What that means for the paperwork
 
@@ -23,8 +23,8 @@ And 16 CFR 1610.1(e): "The requirements of this part 1610 shall apply to textile
 - For adult clothing, that is a General Certificate of Conformity (GCC), defined in 16 CFR 1110.3.
 - 16 CFR 1110.11(a)(2): the certificate "must identify separately all applicable rules." An adult-apparel GCC that skips part 1610 has a gap.
 
-Not sure which rules apply? Run the product through the free [CPSC Finder](https://mzconsulting.agency/cpsc-compliance-finder?family=apparel). No account needed.
-Already blocked? [Forward the notice](https://mzconsulting.agency/#contact) and get your gap list in 24 hours.
+Not sure which rules apply? Run the product through the free [CPSC Finder](https://mzconsulting.agency/cpsc-compliance-finder?family=apparel&src=blog_1610). No account needed.
+Already blocked? [Forward the notice](https://mzconsulting.agency/?src=blog_1610#contact) and get your gap list in 24 hours.
 
 *Illustrative information, not legal advice.*
 
