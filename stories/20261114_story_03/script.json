@@ -1,0 +1,60 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "Small rug GCC",
+  "items": [
+   {
+    "name": "Product ID",
+    "ok": true
+   },
+   {
+    "name": "Part 1631 listed",
+    "ok": false
+   },
+   {
+    "name": "Test basis",
+    "ok": false
+   },
+   {
+    "name": "Records contact",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261114_cost_02",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Part 1631 applies to all types of small carpets and rugs regardless of fiber",
+   "section": "16 CFR 1631.2(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1631",
+   "quote": "This Standard provides a test method to determine the surface flammability of small carpets and rugs when exposed to a standard small source of ignition under carefully prescribed draft-protected conditions. It is applicable to all types of small carpets and rugs used as floor covering materials regardless of their method of fabrication or whether they are made of natural or synthetic fibers or films, or combinations of, or substitutes for these.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S2",
+   "claim": "Finished products subject to a rule enforced by CPSC must be accompanied by a certificate",
+   "section": "16 CFR 1110.5",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110",
+   "quote": "Finished products subject to a consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any other law enforced by the Commission, which are imported for consumption or warehousing, or are distributed in commerce, must be accompanied by a finished product certificate.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S3",
+   "claim": "The certificate cites each rule the product is certified to",
+   "section": "16 CFR 1110.11(a)(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S4",
+   "claim": "GCC is the certificate for general-use (non-children's) products",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110",
+   "quote": "Children's Product Certificate (CPC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA, 15 U.S.C. 2063, and part 1107 of this chapter. ... General Certificate of Conformity (GCC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(1) of the CPSA, 15 U.S.C. 2063(a)(1).",
+   "as_of": "2026-11-12"
+  }
+ ]
+}

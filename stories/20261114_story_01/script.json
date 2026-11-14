@@ -1,0 +1,28 @@
+{
+ "frame": {
+  "type": "promo",
+  "tag": "New reel",
+  "headline": "Holiday lights, no rule?",
+  "stamp": "MYTH",
+  "line": "A CPSC list names 120-volt plug-in seasonal lights. New reel on our profile."
+ },
+ "from_reel": "reels/20261114_finder_01",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Seasonal and decorative lighting products lacking minimum wire size, sufficient strain relief or overcurrent protection are deemed substantial product hazards",
+   "section": "16 CFR 1120.3(c)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1120",
+   "quote": "The following products or class of products shall be deemed to be substantial product hazards under section 15(a)(2) of the CPSA: [...] (c) Seasonal and decorative lighting products that lack one or more of the following characteristics in conformance with requirements in sections 6, 7, 15, 71, 79, and SB15 of UL 588 (incorporated by reference, see § 1120.4): (1) Minimum wire size requirements in section 6 of UL 588; (2) Sufficient strain relief requirements in sections 15, 71, 79, and SB15 of UL 588; or (3) Overcurrent protection requirements in section 7 of UL 588.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S2",
+   "claim": "Scope: portable, plug-connected, temporary-use, nominal 120 volt; battery, solar and low-voltage products are outside",
+   "section": "16 CFR 1120.2(d)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1120",
+   "quote": "Seasonal and decorative lighting product means portable, plug-connected, temporary-use lighting products and accessories that have a nominal 120 volt input voltage rating. Lighting products within the scope of the rule are factory-assembled with push-in, midget- or miniature-screw base lampholders connected in series or with candelabra- or intermediate-screw base lampholders connected in parallel, directly across the 120 volt input. Such lighting products include lighted decorative outfits, such as stars, wreathes, candles without shades, light sculptures, blow-molded (plastic) figures, and animated figures. Lighting products outside the scope of the rule include: Battery-operated products; solar-powered products; products that operate from a transformer or low-voltage power supply; flexible lighting products incorporating non-replaceable series and series/parallel connected lamps enclosed within a flexible polymeric tube or extrusion; and portable electric lamps that are used to illuminate seasonal decorations.",
+   "as_of": "2026-11-12"
+  }
+ ]
+}
