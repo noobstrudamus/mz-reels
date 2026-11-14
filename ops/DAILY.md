@@ -69,6 +69,9 @@ python3 ops/publish.py prepare --reel <id> --video engine/reel_final.mp4 --live
 ```
 (uploads the video and queues it for the slot; publish.yml publishes it. Writes are off while settings.auto_publish is false.)
 
+If `prepare` prints FAILED with ProcessingFailedError, run the same command once more: on 2026-11-13/14 three first uploads
+failed at Instagram's processing and the identical file was accepted on the retry. A second failure is a real HOLD.
+
 After each `prepare`: commit `reels/<id>/` and `data/` (`git pull --rebase` first) and push to main.
 
 ## 5. Stories (settings.stories_per_day, slots settings.story_slots)
