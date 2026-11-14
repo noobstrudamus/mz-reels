@@ -39,6 +39,10 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 #cta .url { position: absolute; left: 70px; top: 900px; font: 800 46px 'Archivo'; color: #0b1630; background: #ffd166; border-radius: 60px; padding: 22px 42px; }
 #ava2 { position: absolute; z-index: 5; overflow: visible; }
 #foot, #brand { z-index: 6; }
+#offer { position: absolute; left: 70px; top: 1480px; max-width: 940px; z-index: 9; flex-wrap: wrap; row-gap: 4px; display: flex; align-items: center; gap: 18px;
+  background: #ffd166; color: #0b1630; border-radius: 26px; padding: 18px 26px; box-shadow: 0 10px 30px rgba(0,0,0,.35); font-family: 'Inter2'; }
+#offer b { font: 900 42px 'Archivo'; letter-spacing: -.5px; white-space: nowrap; }
+#offer span { font: 700 28px/1.2 'Inter2'; }
 </style></head>
 <body>
 <div id="stage">
@@ -132,6 +136,7 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
   <div class="row">Product ID <b>✓</b></div><div class="row">Each rule <b>✓</b></div><div class="row">Made: date + place <b>✓</b></div>
   <div class="row">Tested: lab + date <b>✓</b></div><div class="row">Records contact <b>✓</b></div></div>
 <div id="cta"><div class="h">Blocked right now?</div><div class="l1">Forward the notice.</div><div class="l2">Get your gap list in 24 hours.</div><div class="url">mzconsulting.agency</div><div class="card"><b>M&amp;Z CONSULTING</b><span>It’s almost never the product. It’s the file.</span></div></div>
+<div id="offer"><b></b><span></span></div>
 <div id="foot">Illustrative example. Not legal advice.</div>
 </div>
 <script>
@@ -265,6 +270,7 @@ function seek(t) {
   $('cap1').style.opacity = cp * (1 - ct); $('cap1').style.transform = `translateY(${lerp(30, 0, cp)}px)`; $('sub').style.opacity = cp * (1 - ct);
   $('cite').style.opacity = (c[2] ? cp : 0) * (1 - ct);
   $('cta').style.opacity = ct;
+  $('offer').style.opacity = 1 - ct;
 }
 // ---- per-reel props (scene.json "props"); defaults are the port/customs sample
 const PROPS = Object.assign({ box: 'KID-24-BLUE', hold: 'ON HOLD', phoneWho: 'My broker · now',
@@ -278,7 +284,12 @@ const PROPS = Object.assign({ box: 'KID-24-BLUE', hold: 'ON HOLD', phoneWho: 'My
   document.querySelectorAll('#pdf text').forEach(e => e.textContent = PROPS.doc);
   document.querySelectorAll('#pan text').forEach(e => { if (e.textContent === 'CUSTOMS EXAM') e.textContent = PROPS.gate; });
   const c = document.querySelector('#cta'); c.querySelector('.h').textContent = PROPS.cta[0]; c.querySelector('.l1').textContent = PROPS.cta[1];
-  c.querySelector('.l2').textContent = PROPS.cta[2]; c.querySelector('.url').textContent = PROPS.cta[3]; })();
+  c.querySelector('.l2').textContent = PROPS.cta[2]; c.querySelector('.url').textContent = PROPS.cta[3];
+  { // the reel's own CTA-set wording, never a new offer phrase: finder -> line1, gap list -> line2, comment -> line1 + line2
+    const o = $('offer'), c = PROPS.cta, cm = /comment/i.test(c[1]), fr = /^free/i.test(c[1]);
+    o.querySelector('b').textContent = (fr || cm ? c[1] : c[2]).replace(/\.$/, '');
+    o.querySelector('span').textContent = cm ? c[2] : c[3]; }
+  })();
 window.reel = { ready: document.fonts.ready.then(() => true), seek, info: () => ({ total: T[5] }) };
 seek(0);
 </script>

@@ -575,7 +575,7 @@ def report(week_end, cfg=None):
     accts = [r for r in leads.rows("metrics.jsonl")
              if r.get("kind") == "account" and lo <= str(r.get("date") or "") <= hi]
     if accts:
-        keys = ["reach", "profile_views", "website_clicks", "accounts_engaged", "follower_count"]
+        keys = ["reach", "profile_links_taps", "profile_views", "website_clicks", "accounts_engaged", "follower_count"]
         md += ["", "## Account (daily)", "", "| day | " + " | ".join(keys) + " |", "|---" * (len(keys) + 1) + "|"]
         md += [f"| {a['date']} | " + " | ".join(_cell(a.get(k)) for k in keys) + " |" for a in sorted(accts, key=lambda a: a["date"])]
     pill = defaultdict(Counter)

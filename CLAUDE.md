@@ -38,7 +38,7 @@ Use their own words as hooks:
   Compliance On File (monthly), white-label for brokers and law firms.
 Core line: "It's almost never the product. It's the file."
 
-## CONTENT CALENDAR (since 2026-10-29, Mert: 2 reels + 5 stories a day, focus on the best-performing reels and on cutting skip rate; reel k follows the calendar of day+k, see ops/DAILY.md)
+## CONTENT CALENDAR (since 2026-11-15: 1 reel + 5 stories a day, Mert approved after the 2026-11-14 reach analysis; before that 2 reels/day since 2026-10-29, focus on the best-performing reels and on cutting skip rate; reel k follows the calendar of day+k, see ops/DAILY.md)
 Mon  Blocked story: one pain quote above, explained.            CTA: Gap list
 Tue  Finder demo: "Which rules apply to your [toy]?"             CTA: Finder (family link)
 Wed  Gap of the week: one of the 6 common gaps on the site.      CTA: Gap list

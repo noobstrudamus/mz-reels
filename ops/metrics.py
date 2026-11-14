@@ -53,8 +53,10 @@ FEED = {"views": "views", "reach": "reach", "saved": "saved", "shares": "shares"
         "follows": "follows", "reposts": "reposts"}
 MEDIA_FIELDS = ["views", "reach", "saved", "shares", "comments", "likes", "total_interactions", "avg_watch_time_ms",
                 "profile_visits", "follows", "total_watch_time_ms", "skip_rate", "reposts"]
-ACCOUNT = ["reach", "profile_views", "website_clicks", "accounts_engaged", "views"]     # snapshot fields
-ACCOUNT_REQUEST = ["reach", "accounts_engaged", "views"]                                # still in the API
+ACCOUNT = ["reach", "profile_views", "website_clicks", "accounts_engaged", "views", "profile_links_taps"]  # snapshot fields
+ACCOUNT_REQUEST = ["reach", "accounts_engaged", "views", "profile_links_taps"]          # still in the API
+# profile_links_taps (taps on the bio link / contact buttons) is the bio-click measure since website_clicks went away;
+# verified live 2026-11-14 (period=day, metric_type=total_value).
 TRANSIENT_CODES = set(ig.RETRY_CODES) | {80006}          # 80006: Messenger/IG inbox rate limit
 DM_BACKFILL_DAYS = 3                                     # complete days a late run may still count
 ACCOUNT_LAG_DAYS = 2              # Meta: insights can lag up to 48 h, and a day is written once: wait until it settles

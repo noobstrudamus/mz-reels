@@ -1,7 +1,7 @@
 # Daily reel run (the scheduled routine follows this exactly)
 
 Runs every day at 06:47 America/New_York (catch-up firings later in the day continue it).
-Goal: settings.reels_per_day verified reels (2 since 2026-10-29, was 10 on 2026-10-28; halved automatically by the strategy's
+Goal: settings.reels_per_day verified reels (1 since 2026-11-15 after the 2026-11-14 analysis: reach, not format, is the bottleneck; 2 from 2026-10-29, was 10 on 2026-10-28; halved automatically by the strategy's
 brake when reach per reel collapses) and settings.stories_per_day stories (5), each queued for its own slot.
 GitHub Actions (publish.yml) publishes them; the session's safety-net trigger dispatches it hourly.
 
@@ -108,6 +108,13 @@ acted, first-person story, not an explainer. `config/settings.json` `reel_format
   then without --stills → `engine/build/scene_<id>.mp4`. Total 18–24 s (shorten VO lines when over).
 - Same gates as before (verbatim sources + one adversarial verifier, hookscore on line 1, caption lint), then
   `python3 ops/publish.py prepare --reel <id> --video engine/build/scene_<id>.mp4 --live`.
+- Offer on screen from frame 0 (since 2026-11-14): average watch time is 1-7 s and the end card starts at ~17 s, so the
+  templates show an offer band (#offer) from the first frame until the end card. It is filled from the reel's own CTA set
+  (finder: "Free CPSC finder" + url; gap list: "Get your gap list in 24 hours" + url; comment: "Comment M&Z." + line 2),
+  never a new offer phrase. Check it in the 0 s and 0.5 s stills.
+- Fit the duration BEFORE the verifier: run `render_scene.py ... --stills 0` (prints the total without rendering), cut VO
+  lines until total <= 24 s, THEN send the final text to the verifier. Any wording change after the verifier passed it
+  goes back to the verifier (on 2026-11-13/14 lines were shortened after the pass).
 - Iterate from the numbers (Mert: "change the start, the end, whatever the stats say"): each morning read
   `ops/metrics.py show`; when a scene reel's skip rate is worse than the last 3, change the first 2 s (set, first line,
   first motion) of the next one; when watch time drops mid-reel, cut the slowest beat. Record what changed in
@@ -150,136 +157,74 @@ phoneMsg, say (speech bubble / email subject in factory_call and broker_email), 
 open (`walk` she walks in, `late` the set plays first and she rises in at 0.9 s, `pop` she is already there),
 pose2 (`phone` or `shock`, her reaction in scene 2).
 
-**How to use the table.** For reel k of today take the row with today's date and that reel number: the world and the
+**How to use the table.** One reel a day since 2026-11-15 (Mert approved the plan to cut volume to 1 reel/day). Take the row with today's date: the world and the
 opening are fixed by the table, the pillar comes from the calendar (`strategy.py plan` gives the same pillar; hook,
 length, CTA mode and slot still come from the plan). Write the first-person story for THAT event; the topic must fit
 it and pass the usual truth gate. If a reel is held or a day is missed, do not shift the table: the next reel simply
 takes its own row. If the numbers say a world works clearly better or worse (3+ reels each), swap rows inside the
 same week but keep the rule "no world from the previous 4 reels", and note the swap in DELIVERABLE.md. When the
-table runs out (after 2027-01-13), extend it with the same rule, ordered by skip rate of each world so far.
+table runs out (after 2027-01-14), extend it with the same rule, ordered by skip rate of each world so far.
 
-| date | reel | pillar | world | opening |
-|---|---|---|---|---|
-| 2026-11-13 Fri | 2 | finder | `factory_call` | late |
-| 2026-11-14 Sat | 1 | finder | `launch_day` | pop |
-| 2026-11-14 Sat | 2 | cost | `warehouse_inbound` | walk |
-| 2026-11-15 Sun | 1 | cost | `broker_email` | late |
-| 2026-11-15 Sun | 2 | blocked | `listing_takedown` | pop |
-| 2026-11-16 Mon | 1 | blocked | `retailer_meeting` | walk |
-| 2026-11-16 Mon | 2 | finder | `lab_report` | late |
-| 2026-11-17 Tue | 1 | finder | `customer_return` | pop |
-| 2026-11-17 Tue | 2 | gap | `factory_call` | walk |
-| 2026-11-18 Wed | 1 | gap | `warehouse_inbound` | late |
-| 2026-11-18 Wed | 2 | deadline | `port_customs` | pop |
-| 2026-11-19 Thu | 1 | deadline | `launch_day` | walk |
-| 2026-11-19 Thu | 2 | myth | `listing_takedown` | late |
-| 2026-11-20 Fri | 1 | myth | `lab_report` | pop |
-| 2026-11-20 Fri | 2 | finder | `retailer_meeting` | walk |
-| 2026-11-21 Sat | 1 | finder | `customer_return` | late |
-| 2026-11-21 Sat | 2 | cost | `broker_email` | pop |
-| 2026-11-22 Sun | 1 | cost | `warehouse_inbound` | walk |
-| 2026-11-22 Sun | 2 | blocked | `port_customs` | late |
-| 2026-11-23 Mon | 1 | blocked | `listing_takedown` | pop |
-| 2026-11-23 Mon | 2 | finder | `factory_call` | walk |
-| 2026-11-24 Tue | 1 | finder | `launch_day` | late |
-| 2026-11-24 Tue | 2 | gap | `lab_report` | pop |
-| 2026-11-25 Wed | 1 | gap | `retailer_meeting` | walk |
-| 2026-11-25 Wed | 2 | deadline | `port_customs` | late |
-| 2026-11-26 Thu | 1 | deadline | `factory_call` | pop |
-| 2026-11-26 Thu | 2 | myth | `customer_return` | walk |
-| 2026-11-27 Fri | 1 | myth | `listing_takedown` | late |
-| 2026-11-27 Fri | 2 | finder | `launch_day` | pop |
-| 2026-11-28 Sat | 1 | finder | `lab_report` | walk |
-| 2026-11-28 Sat | 2 | cost | `broker_email` | late |
-| 2026-11-29 Sun | 1 | cost | `warehouse_inbound` | pop |
-| 2026-11-29 Sun | 2 | blocked | `retailer_meeting` | walk |
-| 2026-11-30 Mon | 1 | blocked | `port_customs` | late |
-| 2026-11-30 Mon | 2 | finder | `factory_call` | pop |
-| 2026-12-01 Tue | 1 | finder | `customer_return` | walk |
-| 2026-12-01 Tue | 2 | gap | `lab_report` | late |
-| 2026-12-02 Wed | 1 | gap | `broker_email` | pop |
-| 2026-12-02 Wed | 2 | deadline | `launch_day` | walk |
-| 2026-12-03 Thu | 1 | deadline | `retailer_meeting` | late |
-| 2026-12-03 Thu | 2 | myth | `listing_takedown` | pop |
-| 2026-12-04 Fri | 1 | myth | `factory_call` | walk |
-| 2026-12-04 Fri | 2 | finder | `customer_return` | late |
-| 2026-12-05 Sat | 1 | finder | `lab_report` | pop |
-| 2026-12-05 Sat | 2 | cost | `warehouse_inbound` | walk |
-| 2026-12-06 Sun | 1 | cost | `port_customs` | late |
-| 2026-12-06 Sun | 2 | blocked | `broker_email` | pop |
-| 2026-12-07 Mon | 1 | blocked | `retailer_meeting` | walk |
-| 2026-12-07 Mon | 2 | finder | `launch_day` | late |
-| 2026-12-08 Tue | 1 | finder | `factory_call` | pop |
-| 2026-12-08 Tue | 2 | gap | `lab_report` | walk |
-| 2026-12-09 Wed | 1 | gap | `warehouse_inbound` | late |
-| 2026-12-09 Wed | 2 | deadline | `port_customs` | pop |
-| 2026-12-10 Thu | 1 | deadline | `retailer_meeting` | walk |
-| 2026-12-10 Thu | 2 | myth | `listing_takedown` | late |
-| 2026-12-11 Fri | 1 | myth | `customer_return` | pop |
-| 2026-12-11 Fri | 2 | finder | `launch_day` | walk |
-| 2026-12-12 Sat | 1 | finder | `factory_call` | late |
-| 2026-12-12 Sat | 2 | cost | `broker_email` | pop |
-| 2026-12-13 Sun | 1 | cost | `warehouse_inbound` | walk |
-| 2026-12-13 Sun | 2 | blocked | `port_customs` | late |
-| 2026-12-14 Mon | 1 | blocked | `retailer_meeting` | pop |
-| 2026-12-14 Mon | 2 | finder | `lab_report` | walk |
-| 2026-12-15 Tue | 1 | finder | `customer_return` | late |
-| 2026-12-15 Tue | 2 | gap | `factory_call` | pop |
-| 2026-12-16 Wed | 1 | gap | `broker_email` | walk |
-| 2026-12-16 Wed | 2 | deadline | `launch_day` | late |
-| 2026-12-17 Thu | 1 | deadline | `port_customs` | pop |
-| 2026-12-17 Thu | 2 | myth | `listing_takedown` | walk |
-| 2026-12-18 Fri | 1 | myth | `lab_report` | late |
-| 2026-12-18 Fri | 2 | finder | `retailer_meeting` | pop |
-| 2026-12-19 Sat | 1 | finder | `customer_return` | walk |
-| 2026-12-19 Sat | 2 | cost | `warehouse_inbound` | late |
-| 2026-12-20 Sun | 1 | cost | `broker_email` | pop |
-| 2026-12-20 Sun | 2 | blocked | `port_customs` | walk |
-| 2026-12-21 Mon | 1 | blocked | `listing_takedown` | late |
-| 2026-12-21 Mon | 2 | finder | `factory_call` | pop |
-| 2026-12-22 Tue | 1 | finder | `launch_day` | walk |
-| 2026-12-22 Tue | 2 | gap | `lab_report` | late |
-| 2026-12-23 Wed | 1 | gap | `retailer_meeting` | pop |
-| 2026-12-23 Wed | 2 | deadline | `port_customs` | walk |
-| 2026-12-24 Thu | 1 | deadline | `factory_call` | late |
-| 2026-12-24 Thu | 2 | myth | `customer_return` | pop |
-| 2026-12-25 Fri | 1 | myth | `listing_takedown` | walk |
-| 2026-12-25 Fri | 2 | finder | `launch_day` | late |
-| 2026-12-26 Sat | 1 | finder | `lab_report` | pop |
-| 2026-12-26 Sat | 2 | cost | `warehouse_inbound` | walk |
-| 2026-12-27 Sun | 1 | cost | `broker_email` | late |
-| 2026-12-27 Sun | 2 | blocked | `retailer_meeting` | pop |
-| 2026-12-28 Mon | 1 | blocked | `port_customs` | walk |
-| 2026-12-28 Mon | 2 | finder | `factory_call` | late |
-| 2026-12-29 Tue | 1 | finder | `customer_return` | pop |
-| 2026-12-29 Tue | 2 | gap | `lab_report` | walk |
-| 2026-12-30 Wed | 1 | gap | `warehouse_inbound` | late |
-| 2026-12-30 Wed | 2 | deadline | `launch_day` | pop |
-| 2026-12-31 Thu | 1 | deadline | `retailer_meeting` | walk |
-| 2026-12-31 Thu | 2 | myth | `listing_takedown` | late |
-| 2027-01-01 Fri | 1 | myth | `factory_call` | pop |
-| 2027-01-01 Fri | 2 | finder | `customer_return` | walk |
-| 2027-01-02 Sat | 1 | finder | `lab_report` | late |
-| 2027-01-02 Sat | 2 | cost | `broker_email` | pop |
-| 2027-01-03 Sun | 1 | cost | `port_customs` | walk |
-| 2027-01-03 Sun | 2 | blocked | `warehouse_inbound` | late |
-| 2027-01-04 Mon | 1 | blocked | `retailer_meeting` | pop |
-| 2027-01-04 Mon | 2 | finder | `launch_day` | walk |
-| 2027-01-05 Tue | 1 | finder | `factory_call` | late |
-| 2027-01-05 Tue | 2 | gap | `lab_report` | pop |
-| 2027-01-06 Wed | 1 | gap | `broker_email` | walk |
-| 2027-01-06 Wed | 2 | deadline | `port_customs` | late |
-| 2027-01-07 Thu | 1 | deadline | `retailer_meeting` | pop |
-| 2027-01-07 Thu | 2 | myth | `listing_takedown` | walk |
-| 2027-01-08 Fri | 1 | myth | `customer_return` | late |
-| 2027-01-08 Fri | 2 | finder | `launch_day` | pop |
-| 2027-01-09 Sat | 1 | finder | `factory_call` | walk |
-| 2027-01-09 Sat | 2 | cost | `warehouse_inbound` | late |
-| 2027-01-10 Sun | 1 | cost | `broker_email` | pop |
-| 2027-01-10 Sun | 2 | blocked | `port_customs` | walk |
-| 2027-01-11 Mon | 1 | blocked | `retailer_meeting` | late |
-| 2027-01-11 Mon | 2 | finder | `lab_report` | pop |
-| 2027-01-12 Tue | 1 | finder | `customer_return` | walk |
-| 2027-01-12 Tue | 2 | gap | `factory_call` | late |
-| 2027-01-13 Wed | 1 | gap | `warehouse_inbound` | pop |
-| 2027-01-13 Wed | 2 | deadline | `launch_day` | walk |
+| date | pillar | world | opening |
+|---|---|---|---|
+| 2026-11-15 Sun | cost | `broker_email` | walk |
+| 2026-11-16 Mon | blocked | `listing_takedown` | late |
+| 2026-11-17 Tue | finder | `lab_report` | pop |
+| 2026-11-18 Wed | gap | `retailer_meeting` | walk |
+| 2026-11-19 Thu | deadline | `customer_return` | late |
+| 2026-11-20 Fri | myth | `port_customs` | pop |
+| 2026-11-21 Sat | finder | `factory_call` | walk |
+| 2026-11-22 Sun | cost | `launch_day` | late |
+| 2026-11-23 Mon | blocked | `warehouse_inbound` | pop |
+| 2026-11-24 Tue | finder | `broker_email` | walk |
+| 2026-11-25 Wed | gap | `listing_takedown` | late |
+| 2026-11-26 Thu | deadline | `lab_report` | pop |
+| 2026-11-27 Fri | myth | `retailer_meeting` | walk |
+| 2026-11-28 Sat | finder | `customer_return` | late |
+| 2026-11-29 Sun | cost | `port_customs` | pop |
+| 2026-11-30 Mon | blocked | `factory_call` | walk |
+| 2026-12-01 Tue | finder | `launch_day` | late |
+| 2026-12-02 Wed | gap | `warehouse_inbound` | pop |
+| 2026-12-03 Thu | deadline | `broker_email` | walk |
+| 2026-12-04 Fri | myth | `listing_takedown` | late |
+| 2026-12-05 Sat | finder | `lab_report` | pop |
+| 2026-12-06 Sun | cost | `retailer_meeting` | walk |
+| 2026-12-07 Mon | blocked | `customer_return` | late |
+| 2026-12-08 Tue | finder | `port_customs` | pop |
+| 2026-12-09 Wed | gap | `factory_call` | walk |
+| 2026-12-10 Thu | deadline | `launch_day` | late |
+| 2026-12-11 Fri | myth | `warehouse_inbound` | pop |
+| 2026-12-12 Sat | finder | `broker_email` | walk |
+| 2026-12-13 Sun | cost | `listing_takedown` | late |
+| 2026-12-14 Mon | blocked | `lab_report` | pop |
+| 2026-12-15 Tue | finder | `retailer_meeting` | walk |
+| 2026-12-16 Wed | gap | `customer_return` | late |
+| 2026-12-17 Thu | deadline | `port_customs` | pop |
+| 2026-12-18 Fri | myth | `factory_call` | walk |
+| 2026-12-19 Sat | finder | `launch_day` | late |
+| 2026-12-20 Sun | cost | `warehouse_inbound` | pop |
+| 2026-12-21 Mon | blocked | `broker_email` | walk |
+| 2026-12-22 Tue | finder | `listing_takedown` | late |
+| 2026-12-23 Wed | gap | `lab_report` | pop |
+| 2026-12-24 Thu | deadline | `retailer_meeting` | walk |
+| 2026-12-25 Fri | myth | `customer_return` | late |
+| 2026-12-26 Sat | finder | `port_customs` | pop |
+| 2026-12-27 Sun | cost | `factory_call` | walk |
+| 2026-12-28 Mon | blocked | `launch_day` | late |
+| 2026-12-29 Tue | finder | `warehouse_inbound` | pop |
+| 2026-12-30 Wed | gap | `broker_email` | walk |
+| 2026-12-31 Thu | deadline | `listing_takedown` | late |
+| 2027-01-01 Fri | myth | `lab_report` | pop |
+| 2027-01-02 Sat | finder | `retailer_meeting` | walk |
+| 2027-01-03 Sun | cost | `customer_return` | late |
+| 2027-01-04 Mon | blocked | `port_customs` | pop |
+| 2027-01-05 Tue | finder | `factory_call` | walk |
+| 2027-01-06 Wed | gap | `launch_day` | late |
+| 2027-01-07 Thu | deadline | `warehouse_inbound` | pop |
+| 2027-01-08 Fri | myth | `broker_email` | walk |
+| 2027-01-09 Sat | finder | `listing_takedown` | late |
+| 2027-01-10 Sun | cost | `lab_report` | pop |
+| 2027-01-11 Mon | blocked | `retailer_meeting` | walk |
+| 2027-01-12 Tue | finder | `customer_return` | late |
+| 2027-01-13 Wed | gap | `port_customs` | pop |
+| 2027-01-14 Thu | deadline | `factory_call` | walk |
