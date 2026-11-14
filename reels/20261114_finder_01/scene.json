@@ -1,0 +1,62 @@
+{
+ "id": "20261114_finder_01",
+ "world": "launch_day",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Myth: plug-in holiday lights have no C P S C rule.",
+  "Launch day. Orders climb. Then my listing is paused. Safety documents requested.",
+  "The catch? A C P S C list names plug-in seasonal lights. Missing wire size, strain relief, or overcurrent protection? Deemed a substantial product hazard.",
+  "So before the next launch, I check which rules apply to my exact product.",
+  "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
+ ],
+ "min_dur": [
+  3.0,
+  4.0,
+  3.6,
+  3.0,
+  3.4
+ ],
+ "caps": [
+  [
+   "Launch day.",
+   "Say I'm a seller. My plug-in holiday lights go live.",
+   ""
+  ],
+  [
+   "Then: paused.",
+   "My dashboard asks for safety documents.",
+   ""
+  ],
+  [
+   "Myth: lights have no rule.",
+   "Fact: a CPSC list names plug-in seasonal lights.",
+   "16 CFR 1120.3(c)"
+  ],
+  [
+   "I check before launch.",
+   "Which rules apply to my exact product?",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "LITE-24-WRM",
+  "open": "pop",
+  "hold": "PAUSED",
+  "gate": "Listing paused",
+  "doc": "LAUNCH PLAN",
+  "laptopTitle": "BEFORE I LAUNCH",
+  "rows": [
+   "My exact product",
+   "Which rules apply",
+   "Wire size",
+   "Strain relief",
+   "Overcurrent protection"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ }
+}

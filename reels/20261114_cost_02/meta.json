@@ -1,0 +1,18 @@
+{
+ "id": "20261114_cost_02",
+ "date": "2026-11-14",
+ "pillar": "cost",
+ "cta": "gaplist",
+ "format": "scene",
+ "avatar": true,
+ "world": "warehouse_inbound",
+ "arms": {
+  "hook": "myth",
+  "opener": "scene",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "0947"
+ },
+ "family": null
+}

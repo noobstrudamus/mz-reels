@@ -1,0 +1,56 @@
+{
+ "id": "20261114_cost_02",
+ "world": "warehouse_inbound",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Myth: small rugs have no flammability rule.",
+  "My pallets reach the fulfillment center. Refused. The compliance file is incomplete.",
+  "The catch? Part sixteen thirty-one covers small carpets and rugs. My G C C never listed it.",
+  "Every day they sit, I lose Q four sales. So I fix the file first.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [
+  3.0,
+  4.0,
+  3.6,
+  3.6,
+  3.4
+ ],
+ "caps": [
+  [
+   "Myth: rugs have no rule.",
+   "Say I'm a seller. My small rugs ship for Q4.",
+   ""
+  ],
+  [
+   "Then: refused.",
+   "The inbound team won't receive my pallets.",
+   ""
+  ],
+  [
+   "Fact: part 1631.",
+   "It covers small carpets and rugs, any fiber.",
+   "16 CFR 1631.2(a)"
+  ],
+  [
+   "I fix my GCC first.",
+   "Part 1631 listed. Test basis on file.",
+   "16 CFR 1110.11(a)(2)"
+  ]
+ ],
+ "props": {
+  "box": "RUG-24-GRY",
+  "open": "walk",
+  "hold": "REFUSED",
+  "gate": "RECEIVING",
+  "doc": "INBOUND",
+  "laptopTitle": "MY GCC",
+  "rows": [
+   "Product ID",
+   "Part 1631 listed",
+   "Test basis",
+   "Made: date + place",
+   "Records contact"
+  ]
+ }
+}

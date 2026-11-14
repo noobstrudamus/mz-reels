@@ -1,0 +1,18 @@
+{
+ "id": "20261114_finder_01",
+ "date": "2026-11-14",
+ "pillar": "finder",
+ "cta": "finder",
+ "format": "scene",
+ "avatar": true,
+ "world": "launch_day",
+ "arms": {
+  "hook": "myth",
+  "opener": "scene",
+  "length": "long",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "0847"
+ },
+ "family": "electrical"
+}
