@@ -2295,5 +2295,30 @@
   "family": null,
   "media_id": "18125990960281574",
   "published_at": "2026-11-14T21:53:38Z"
+ },
+ {
+  "id": "20261115_cost",
+  "kind": "reel",
+  "container_id": "17918332500541034",
+  "slot_local": "14:47",
+  "slot_utc": "2026-11-15T19:47:00Z",
+  "caption": "Say your customs broker asks for an English certificate while the shipment waits in storage.\n16 CFR 1110.9(a): an eFiled certificate must be in English, and every other certificate must be in English too. It may also carry the same content in another language.\nSay a seller's factory sent the certificate in Chinese only. An English version comes first; every day without it can add storage costs.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+  "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+  "created_at": "2026-11-15T11:51:46Z",
+  "status": "pending",
+  "reel": "reels/20261115_cost",
+  "date": "2026-11-15",
+  "pillar": "cost",
+  "cta": "gaplist",
+  "arms": {
+   "hook": "consequence",
+   "opener": "scene",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "1447"
+  },
+  "src": "ig_20261115_cost",
+  "family": null
  }
 ]
