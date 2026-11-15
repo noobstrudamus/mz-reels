@@ -1,0 +1,19 @@
+{
+ "frame": {
+  "type": "myth",
+  "tag": "Myth vs fact",
+  "myth": "Any language works if the content is right.",
+  "fact": "16 CFR 1110.9(a): certificates must be in English."
+ },
+ "from_reel": "reels/20261115_cost",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Certificates must be in English; other languages may be added with the same content",
+   "section": "16 CFR 1110.9(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.9",
+   "quote": "An eFiled finished product certificate must be in the English language. All other certificates, including hard copy and electronic certificates, must be in the English language and may also contain the same content in any other language.",
+   "as_of": "2026-11-12"
+  }
+ ]
+}
