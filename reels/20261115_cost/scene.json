@@ -1,0 +1,58 @@
+{
+ "id": "20261115_cost",
+ "world": "broker_email",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Day four in storage. My certificate? Chinese only.",
+  "My broker: I can't file with this.",
+  "The rule: certificates must be in English. Other languages can be added.",
+  "Every day costs me storage. So English first.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [
+  3.0,
+  2.6,
+  3.4,
+  3.0,
+  3.4
+ ],
+ "caps": [
+  [
+   "Day 4 in storage.",
+   "Say I'm a seller. My certificate is Chinese only.",
+   ""
+  ],
+  [
+   "Then: my broker.",
+   "“I can’t file with this.”",
+   ""
+  ],
+  [
+   "Rule: English.",
+   "Other languages may be added, same content.",
+   "16 CFR 1110.9(a)"
+  ],
+  [
+   "English first.",
+   "Every storage day costs me.",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "HOME-24-GRY",
+  "open": "walk",
+  "hold": "WAITING",
+  "gate": "STORAGE DAY",
+  "say": "Certificate in English?",
+  "doc": "ENTRY DATA",
+  "phoneMsg": "“I can’t file with this. Is there an English version?”",
+  "laptopTitle": "MY CERTIFICATE",
+  "rows": [
+   "In English",
+   "Product ID",
+   "Each rule",
+   "Made: date + place",
+   "Tested: lab + date"
+  ]
+ }
+}

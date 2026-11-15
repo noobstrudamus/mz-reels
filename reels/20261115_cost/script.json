@@ -1,0 +1,29 @@
+{
+ "topic": "POV cost of waiting: shipment in storage, certificate only in Chinese, broker can't file; 16 CFR 1110.9(a) English requirement",
+ "format": "scene",
+ "scene_script": "reels/20261115_cost/scene.json",
+ "world": "broker_email",
+ "hook_formula": "consequence (end state first)",
+ "vo": [
+  "Day four in storage. My certificate? Chinese only.",
+  "My broker: I can't file with this.",
+  "The rule: certificates must be in English. Other languages can be added.",
+  "Every day costs me storage. So English first.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "scenes": [],
+ "caption": "Your customs broker can't file because the certificate isn't in English, and the shipment sits in storage.\n16 CFR 1110.9(a): an eFiled certificate must be in English, and every other certificate must be in English too. It may also carry the same content in another language.\nSay a seller's factory sent the certificate in Chinese only. An English version comes first; every day without it can add storage costs.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261115_cost#contact",
+ "search_keywords": "customs broker,in English",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Certificates must be in English; other languages may be added with the same content",
+   "section": "16 CFR 1110.9(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.9",
+   "quote": "An eFiled finished product certificate must be in the English language. All other certificates, including hard copy and electronic certificates, must be in the English language and may also contain the same content in any other language.",
+   "as_of": "2026-11-12"
+  }
+ ]
+}
