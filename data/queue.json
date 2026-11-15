@@ -2330,7 +2330,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-15T11:52:41Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261115_story_01",
   "date": "2026-11-15",
   "pillar": "story_01",
@@ -2339,7 +2339,9 @@
    "slot": "1047"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18113779016236848",
+  "published_at": "2026-11-15T15:53:13Z"
  },
  {
   "id": "20261115_story_02",
