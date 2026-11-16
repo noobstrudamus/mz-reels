@@ -1,0 +1,53 @@
+{
+ "topic": "POV blocked: listing removed although the seller sent the lab report twice; a certificate has its own content (1110.11(a): certifier, records contact)",
+ "format": "scene",
+ "scene_script": "reels/20261116_blocked/scene.json",
+ "world": "listing_takedown",
+ "hook_formula": "consequence (end state first) + pain quote",
+ "vo": [
+  "Sent the lab report twice? Your listing can still get removed.",
+  "Then the same notice again: compliance documents needed.",
+  "The catch? A certificate has its own content: who certifies, and who keeps the records.",
+  "So I build the certificate.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "scenes": [],
+ "caption": "You sent the lab report twice and your listing's still down? You're not alone in that loop.\nYour certificate has its own required content under 16 CFR 1110.11(a). Besides the product and each rule, it has to name who's certifying (name, address, email, phone) and the person who keeps the records.\nSay a seller only has the lab report. Building the certificate itself is usually the step that's missing.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261116_blocked#contact",
+ "search_keywords": "lab report,certificate",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Each certificate must identify the certifier with contact details",
+   "section": "16 CFR 1110.11(a)(3)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(3) Identify the finished product certifier that is certifying compliance of the finished product(s), as set forth in § 1110.7, including the party's name, street address, city, state or province, country or administrative region, electronic mail (email) address, and telephone number.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S2",
+   "claim": "Each certificate must identify the individual maintaining records",
+   "section": "16 CFR 1110.11(a)(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(4) Identify and provide contact information (consisting, at a minimum, of the individual's name, street address, city, state or province, country or administrative region, email address, and telephone number) for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S3",
+   "claim": "Certificate content requirements: product and each rule",
+   "section": "16 CFR 1110.11(a)(1)-(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(a) Content requirements. Each finished product certificate must: (1) Identify the finished product(s) covered by the certificate. Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier, along with a sufficient description to match the finished product to the certificate. Finished product certificates may also include other identifiers, such as lot number, model style, and model color, that may assist with product identification. (2) State each consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any law enforced by the Commission, to which the finished product(s) are being certified. Finished product certificates must identify separately all applicable rules, bans, standards, or regulations.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S4",
+   "claim": "Certificate gives date and place of manufacture and of testing",
+   "section": "16 CFR 1110.11(a)(5)-(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(5) Provide the date (month and year, at a minimum) and place (including a manufacturer name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were manufactured, produced, or assembled. For manufacturing runs over a series of days, provide the initial date of manufacture (month and year, at a minimum). (6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested",
+   "as_of": "2026-11-12"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "id": "20261116_blocked",
+ "date": "2026-11-16",
+ "pillar": "blocked",
+ "cta": "gaplist",
+ "format": "scene",
+ "avatar": true,
+ "world": "listing_takedown",
+ "arms": {
+  "hook": "consequence",
+  "opener": "scene",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "1047"
+ },
+ "family": null
+}

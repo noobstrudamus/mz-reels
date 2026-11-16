@@ -1,0 +1,55 @@
+{
+ "id": "20261116_blocked",
+ "world": "listing_takedown",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Sent the lab report twice? Your listing can still get removed.",
+  "Then the same notice again: compliance documents needed.",
+  "The catch? A certificate has its own content: who certifies, and who keeps the records.",
+  "So I build the certificate.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [
+  3.0,
+  3.0,
+  3.4,
+  2.6,
+  3.4
+ ],
+ "caps": [
+  [
+   "Lab report sent. Twice.",
+   "Say I'm a seller. My listing still gets removed.",
+   ""
+  ],
+  [
+   "Same notice. Again.",
+   "“Compliance documents needed.”",
+   ""
+  ],
+  [
+   "What a certificate names.",
+   "Who certifies it. Who keeps the records.",
+   "16 CFR 1110.11(a)(3), (4)"
+  ],
+  [
+   "I build the certificate.",
+   "Each required element, filled in.",
+   "16 CFR 1110.11(a)"
+  ]
+ ],
+ "props": {
+  "box": "HOME-24-WHT",
+  "open": "late",
+  "hold": "REMOVED",
+  "doc": "LAB REPORT",
+  "laptopTitle": "MY CERTIFICATE",
+  "rows": [
+   "Product ID",
+   "Each rule",
+   "Certifier: name, address",
+   "Records contact",
+   "Made + tested: date, place"
+  ]
+ }
+}
