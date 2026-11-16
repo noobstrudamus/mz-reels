@@ -2495,7 +2495,7 @@
   "caption": "Sent the lab report twice and the listing's still down?\nYour certificate has its own required content under 16 CFR 1110.11(a). Besides the product and each rule, it has to name who's certifying (name, address, email, phone) and the person who keeps the records.\nSay a seller only has the lab report. In that case, the certificate itself is the missing piece.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
   "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
   "created_at": "2026-11-16T11:55:50Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261116_blocked",
   "date": "2026-11-16",
   "pillar": "blocked",
@@ -2509,7 +2509,10 @@
    "slot": "1047"
   },
   "src": "ig_20261116_blocked",
-  "family": null
+  "family": null,
+  "media_id": "18130418437864071",
+  "published_at": "2026-11-16T21:55:33Z",
+  "first_comment_id": "18140223688654345"
  },
  {
   "id": "20261116_story_01",
@@ -2520,7 +2523,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-16T11:56:52Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261116_story_01",
   "date": "2026-11-16",
   "pillar": "story_01",
@@ -2529,7 +2532,9 @@
    "slot": "1047"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18131867101851864",
+  "published_at": "2026-11-16T21:55:33Z"
  },
  {
   "id": "20261116_story_02",
@@ -2540,7 +2545,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-16T11:57:26Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261116_story_02",
   "date": "2026-11-16",
   "pillar": "story_02",
@@ -2549,7 +2554,9 @@
    "slot": "1247"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18022724024953921",
+  "published_at": "2026-11-16T21:55:33Z"
  },
  {
   "id": "20261116_story_03",
@@ -2560,7 +2567,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-16T11:57:55Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261116_story_03",
   "date": "2026-11-16",
   "pillar": "story_03",
@@ -2569,7 +2576,9 @@
    "slot": "1447"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18135317824743534",
+  "published_at": "2026-11-16T21:55:33Z"
  },
  {
   "id": "20261116_story_04",
@@ -2580,7 +2589,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-16T11:58:26Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261116_story_04",
   "date": "2026-11-16",
   "pillar": "story_04",
@@ -2589,7 +2598,9 @@
    "slot": "1547"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "17892276597686059",
+  "published_at": "2026-11-16T21:55:33Z"
  },
  {
   "id": "20261116_story_05",
@@ -2600,7 +2611,7 @@
   "caption": "",
   "first_comment": "",
   "created_at": "2026-11-16T11:58:56Z",
-  "status": "pending",
+  "status": "published",
   "reel": "stories/20261116_story_05",
   "date": "2026-11-16",
   "pillar": "story_05",
@@ -2609,6 +2620,8 @@
    "slot": "1647"
   },
   "src": null,
-  "family": null
+  "family": null,
+  "media_id": "18096576956682924",
+  "published_at": "2026-11-16T21:55:33Z"
  }
 ]
