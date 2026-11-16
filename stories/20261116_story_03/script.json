@@ -1,0 +1,60 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "Your certificate",
+  "items": [
+   {
+    "name": "Product ID",
+    "ok": true
+   },
+   {
+    "name": "Each rule",
+    "ok": true
+   },
+   {
+    "name": "Certifier contact",
+    "ok": false
+   },
+   {
+    "name": "Records contact",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261116_blocked",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Each certificate must identify the certifier with contact details",
+   "section": "16 CFR 1110.11(a)(3)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(3) Identify the finished product certifier that is certifying compliance of the finished product(s), as set forth in § 1110.7, including the party's name, street address, city, state or province, country or administrative region, electronic mail (email) address, and telephone number.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S2",
+   "claim": "Each certificate must identify the individual maintaining records",
+   "section": "16 CFR 1110.11(a)(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(4) Identify and provide contact information (consisting, at a minimum, of the individual's name, street address, city, state or province, country or administrative region, email address, and telephone number) for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S3",
+   "claim": "Certificate content requirements: product and each rule",
+   "section": "16 CFR 1110.11(a)(1)-(2)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(a) Content requirements. Each finished product certificate must: (1) Identify the finished product(s) covered by the certificate. Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier, along with a sufficient description to match the finished product to the certificate. Finished product certificates may also include other identifiers, such as lot number, model style, and model color, that may assist with product identification. (2) State each consumer product safety rule under the CPSA, or similar rule, ban, standard, or regulation under any law enforced by the Commission, to which the finished product(s) are being certified. Finished product certificates must identify separately all applicable rules, bans, standards, or regulations.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S4",
+   "claim": "Certificate gives date and place of manufacture and of testing",
+   "section": "16 CFR 1110.11(a)(5)-(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(5) Provide the date (month and year, at a minimum) and place (including a manufacturer name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were manufactured, produced, or assembled. For manufacturing runs over a series of days, provide the initial date of manufacture (month and year, at a minimum). (6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested",
+   "as_of": "2026-11-12"
+  }
+ ]
+}
