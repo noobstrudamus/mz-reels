@@ -36,3 +36,5 @@ https://mzconsulting.agency/?src=ig_20261116_blocked#contact
 | Hook score | PASS — 79.4 "Sent the lab report twice? Your listing can still get removed." |
 | Caption lint | READY |
 | Human score (caption) | 58.1 REVIEW |
+
+Upload note: two uploads of the rendered file failed Instagram processing (ProcessingFailedError); a re-encode (crf 20, gop 60, aac 128k/44.1k, faststart) was accepted, container FINISHED.

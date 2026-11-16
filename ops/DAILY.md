@@ -70,7 +70,10 @@ python3 ops/publish.py prepare --reel <id> --video engine/reel_final.mp4 --live
 (uploads the video and queues it for the slot; publish.yml publishes it. Writes are off while settings.auto_publish is false.)
 
 If `prepare` prints FAILED with ProcessingFailedError, run the same command once more: on 2026-11-13/14 three first uploads
-failed at Instagram's processing and the identical file was accepted on the retry. A second failure is a real HOLD.
+failed at Instagram's processing and the identical file was accepted on the retry. If the retry fails too, re-encode once
+(`ffmpeg -i in.mp4 -c:v libx264 -crf 20 -profile:v high -level 4.0 -pix_fmt yuv420p -r 30 -g 60 -c:a aac -b:a 128k -ar 44100
+-ac 2 -movflags +faststart out.mp4`), wait two minutes and prepare that file (2026-11-16: two identical uploads failed, the
+re-encode was accepted). A third failure is a real HOLD.
 
 After each `prepare`: commit `reels/<id>/` and `data/` (`git pull --rebase` first) and push to main.
 
