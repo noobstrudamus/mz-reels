@@ -1,0 +1,64 @@
+{
+ "id": "20261117_finder",
+ "world": "lab_report",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Lead paint rules? Only for house paint, right?",
+  "Then the lab report: findings on my painted toy.",
+  "Part thirteen oh three bans toys with lead-containing paint.",
+  "So I check the rules first.",
+  "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
+ ],
+ "min_dur": [
+  3.0,
+  3.4,
+  3.4,
+  2.6,
+  3.4
+ ],
+ "caps": [
+  [
+   "Myth: only house paint.",
+   "Say I'm a seller. My painted wooden toys ship soon.",
+   ""
+  ],
+  [
+   "Then: lab findings.",
+   "My painted toy's report comes back.",
+   ""
+  ],
+  [
+   "Fact: toys too.",
+   "Paint over 0.009% lead: banned on kids' toys.",
+   "16 CFR 1303.1(a)"
+  ],
+  [
+   "I check first.",
+   "Which rules apply to my exact toy?",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "TOY-24-RED",
+  "open": "pop",
+  "hold": "FINDINGS",
+  "gate": "TEST REPORT",
+  "phoneWho": "Test lab · 4:10 pm",
+  "phoneMsg": "“Findings on the paint. Report attached.”",
+  "doc": "RETEST",
+  "laptopTitle": "BEFORE I ORDER",
+  "rows": [
+   "My exact toy",
+   "Which rules apply",
+   "Paint: lead limit",
+   "Test basis",
+   "Records on file"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ }
+}
