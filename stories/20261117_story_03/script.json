@@ -1,0 +1,44 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "Painted toy file",
+  "items": [
+   {
+    "name": "Which rules apply",
+    "ok": false
+   },
+   {
+    "name": "Paint: lead limit",
+    "ok": false
+   },
+   {
+    "name": "Test basis",
+    "ok": false
+   },
+   {
+    "name": "Records on file",
+    "ok": true
+   }
+  ]
+ },
+ "from_reel": "reels/20261117_finder",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Toys and other articles for children bearing lead-containing paint are banned hazardous products",
+   "section": "16 CFR 1303.1(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1303/section-1303.1",
+   "quote": "The following consumer products are also declared to be banned hazardous products: (1) Toys and other articles intended for use by children that bear “lead-containing paint”.",
+   "as_of": "2026-11-13"
+  },
+  {
+   "id": "S2",
+   "claim": "Lead-containing paint: lead over 0.009 percent (reduced from 0.06) of the nonvolatile content or dried film",
+   "section": "16 CFR 1303.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1303/section-1303.1",
+   "quote": "paint and similar surface-coating materials for consumer use that contain lead or lead compounds and in which the lead content (calculated as lead metal) is in excess of 0.06 percent (0.06 percent is reduced to 0.009 percent effective August 14, 2009 as mandated by Congress in section 101(f) of the Consumer Product Safety Improvement Act of 2008, Pub. L. 110-314) of the weight of the total nonvolatile content of the paint or the weight of the dried paint film (which paint and similar surface-coating materials are referred to hereafter as “lead-containing paint”)",
+   "as_of": "2026-11-13"
+  }
+ ]
+}
