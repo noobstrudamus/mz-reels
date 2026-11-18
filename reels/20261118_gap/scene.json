@@ -3,7 +3,7 @@
  "world": "retailer_meeting",
  "voice": "en-US-AvaNeural",
  "vo": [
-  "One certificate for all your SKUs? Your buyer may say no.",
+  "One certificate for five different products? Your buyer may say no.",
   "My buyer won't set the item. One certificate, five products.",
   "The rule: each certificate must describe only one product.",
   "So I split it: one certificate per product.",
@@ -18,7 +18,7 @@
  ],
  "caps": [
   [
-   "One certificate, 5 SKUs?",
+   "One certificate, 5 products?",
    "Say I'm a seller. My retail buyer reviews my file.",
    ""
   ],
@@ -46,9 +46,9 @@
   "doc": "VENDOR FORM",
   "laptopTitle": "MY CERTIFICATES",
   "rows": [
-   "SKU 1: own certificate",
-   "SKU 2: own certificate",
-   "SKU 3: own certificate",
+   "Product 1: own certificate",
+   "Product 2: own certificate",
+   "Product 3: own certificate",
    "Each rule listed",
    "Records contact"
   ],

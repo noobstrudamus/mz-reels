@@ -5,14 +5,14 @@
  "world": "retailer_meeting",
  "hook_formula": "#16 Verbatim Question (question)",
  "vo": [
-  "One certificate for all your SKUs? Your buyer may say no.",
+  "One certificate for five different products? Your buyer may say no.",
   "My buyer won't set the item. One certificate, five products.",
   "The rule: each certificate must describe only one product.",
   "So I split it: one certificate per product.",
   "Want a free gap list? Comment M and Z. We'll DM you the link."
  ],
  "scenes": [],
- "caption": "One certificate covering your whole product line? That's a gap.\n16 CFR 1110.13(a) says a finished product certificate must accompany each product or shipment that has to be certified, and each certificate must describe only one product.\nSay a seller sends a buyer one PDF listing five SKUs. Splitting it into one certificate per product is the fix.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "caption": "One certificate covering your whole product line? That's a gap.\n16 CFR 1110.13(a) says a finished product certificate must accompany each product or shipment that has to be certified, and each certificate must describe only one product.\nSay a seller sends a buyer one PDF listing five SKUs. Splitting it into one certificate per product is usually the fix.\nWant a free gap list? Comment M&Z and we'll DM you the link.\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
  "pinned_comment": "Want a free gap list? Comment M&Z and we'll DM you the link.",
  "tracking_link": "https://mzconsulting.agency/?src=ig_20261118_gap#contact",
  "dm_link": "https://mzconsulting.agency/?src=ig_20261118_gap_dm#contact",
@@ -25,6 +25,14 @@
    "section": "16 CFR 1110.13(a)",
    "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
    "quote": "A finished product certificate must accompany each finished product or finished product shipment required to be certified pursuant to § 1110.5. Each finished product certificate must describe only one product.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S2",
+   "claim": "Certificates list each applicable rule and a records contact",
+   "section": "16 CFR 1110.11(a)(2), (a)(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations. [...] (4) Identify and provide contact information (consisting, at a minimum, of the individual's name, street address, city, state or province, country or administrative region, email address, and telephone number) for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier.",
    "as_of": "2026-11-12"
   }
  ]
