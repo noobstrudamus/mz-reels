@@ -1,0 +1,28 @@
+{
+ "frame": {
+  "type": "promo",
+  "tag": "New reel",
+  "headline": "One certificate, 5 products?",
+  "stamp": "NOT SET",
+  "line": "Each certificate describes one product. New reel on our profile."
+ },
+ "from_reel": "reels/20261118_gap",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "A certificate must accompany each product or shipment; each certificate must describe only one product",
+   "section": "16 CFR 1110.13(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.13",
+   "quote": "A finished product certificate must accompany each finished product or finished product shipment required to be certified pursuant to § 1110.5. Each finished product certificate must describe only one product.",
+   "as_of": "2026-11-12"
+  },
+  {
+   "id": "S2",
+   "claim": "Certificates list each applicable rule and a records contact",
+   "section": "16 CFR 1110.11(a)(2), (a)(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations. [...] (4) Identify and provide contact information (consisting, at a minimum, of the individual's name, street address, city, state or province, country or administrative region, email address, and telephone number) for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier.",
+   "as_of": "2026-11-12"
+  }
+ ]
+}
