@@ -1,0 +1,62 @@
+{
+ "id": "20261118_gap",
+ "world": "retailer_meeting",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "One certificate for all your SKUs? Your buyer may say no.",
+  "My buyer won't set the item. One certificate, five products.",
+  "The rule: each certificate must describe only one product.",
+  "So I split it: one certificate per product.",
+  "Want a free gap list? Comment M and Z. We'll DM you the link."
+ ],
+ "min_dur": [
+  3.0,
+  3.4,
+  3.4,
+  3.0,
+  3.4
+ ],
+ "caps": [
+  [
+   "One certificate, 5 SKUs?",
+   "Say I'm a seller. My retail buyer reviews my file.",
+   ""
+  ],
+  [
+   "Then: not set up.",
+   "“One certificate lists five products.”",
+   ""
+  ],
+  [
+   "Rule: one product each.",
+   "Each certificate must describe only one product.",
+   "16 CFR 1110.13(a)"
+  ],
+  [
+   "I split it.",
+   "One certificate per product.",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "HOME-24-SET",
+  "open": "walk",
+  "phoneWho": "Retail buyer · today",
+  "phoneMsg": "“Your certificate lists five products. I need one per item.”",
+  "doc": "VENDOR FORM",
+  "laptopTitle": "MY CERTIFICATES",
+  "rows": [
+   "SKU 1: own certificate",
+   "SKU 2: own certificate",
+   "SKU 3: own certificate",
+   "Each rule listed",
+   "Records contact"
+  ],
+  "cta": [
+   "Want a free gap list?",
+   "Comment M&Z.",
+   "We'll DM you the link.",
+   "mzconsulting.agency"
+  ]
+ }
+}

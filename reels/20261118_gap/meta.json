@@ -1,0 +1,18 @@
+{
+ "id": "20261118_gap",
+ "date": "2026-11-18",
+ "pillar": "gap",
+ "cta": "comment_gaplist",
+ "format": "scene",
+ "avatar": true,
+ "world": "retailer_meeting",
+ "arms": {
+  "hook": "question",
+  "opener": "scene",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "comment",
+  "slot": "1347"
+ },
+ "family": null
+}
