@@ -16,4 +16,4 @@ hour before these comparisons went through):
   relevant to sellers today.
 
 No stories today: stories may only repeat a verified reel published the same day.
-Next: 2026-11-20 (myth, `customer_return` world) runs as scheduled.
+Next: the 2026-11-20 reel runs from its own row of the schedule in ops/DAILY.md.
