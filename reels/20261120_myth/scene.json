@@ -3,23 +3,23 @@
  "world": "port_customs",
  "voice": "en-US-AvaNeural",
  "vo": [
-  "Shipping small parcels? The certificate rule still names you.",
-  "Then customs. Parcels on hold. My broker asks for the certificate data.",
-  "The rule names de minimis shipments too. The certificate data still gets eFiled at entry.",
-  "Shipping by mail? The data goes into C P S C's Product Registry before arrival.",
+  "Does de minimis skip your certificate? Not if your product needs one.",
+  "Say customs holds them. My broker asks for the certificate data.",
+  "De minimis doesn't skip it. The data still gets eFiled at entry.",
+  "Imported by mail? The data goes into C P S C's Product Registry before arrival.",
   "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
  ],
  "min_dur": [
   3.0,
-  3.6,
-  3.6,
-  3.6,
+  3.0,
+  3.0,
+  3.0,
   3.4
  ],
  "caps": [
   [
-   "Small parcels?",
-   "Say I'm a seller. I ship under de minimis.",
+   "De minimis = no certificate?",
+   "Say I'm a seller. I ship small parcels.",
    ""
   ],
   [
@@ -29,11 +29,11 @@
   ],
   [
    "Myth: small = exempt.",
-   "Fact: de minimis shipments are named too.",
+   "Fact: de minimis isn't a certificate exemption.",
    "16 CFR 1110.13(a)(1)"
   ],
   [
-   "By mail?",
+   "Imported by mail?",
    "Data into CPSC's Product Registry before arrival.",
    "16 CFR 1110.13(a)(1)"
   ]
