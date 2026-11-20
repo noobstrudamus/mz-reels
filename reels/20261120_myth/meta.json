@@ -1,0 +1,18 @@
+{
+ "id": "20261120_myth",
+ "date": "2026-11-20",
+ "pillar": "myth",
+ "cta": "gaplist",
+ "format": "scene",
+ "avatar": true,
+ "world": "port_customs",
+ "arms": {
+  "hook": "consequence",
+  "opener": "scene",
+  "length": "long",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "1047"
+ },
+ "family": null
+}
