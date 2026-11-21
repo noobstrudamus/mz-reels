@@ -1,0 +1,37 @@
+{
+ "topic": "POV finder pain quote: 'the factory says it's certified' but the PDF is a GCC with in-house testing; children's products need third-party testing (1107.20(a)) and a CPC (1110.3)",
+ "format": "scene",
+ "scene_script": "reels/20261121_finder/scene.json",
+ "world": "factory_call",
+ "hook_formula": "pain quote (playbook: 'The factory says it's certified. The PDF doesn't say what they think it says.')",
+ "vo": [
+  "Say the factory says it's certified. The PDF doesn't say what you think.",
+  "Then I open the PDF. General certificate. In-house test.",
+  "Kids' products need third-party lab testing and a children's product certificate.",
+  "So I check which rules apply first.",
+  "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
+ ],
+ "scenes": [],
+ "caption": "\"It's certified,\" says the factory. Then the PDF turns out to be a general certificate backed by an in-house test.\nFor a children's product, 16 CFR 1107.20(a) has manufacturers send samples to a third party conformity assessment body for testing to support certification.\nAnd the certificate for a children's product is a Children's Product Certificate (CPC), not a General Certificate of Conformity (16 CFR 1110.3).\nSay a seller only has the factory's GCC for kids' backpacks. Checking which rules apply is the first step.\nFree CPSC Finder, no account: link in bio\n#amazonseller #cpsc #productcompliance #importing #privatelabel",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=childrens_product&src=ig_20261121_finder",
+ "search_keywords": "children's product certificate,third party",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Children's products: samples to a third party conformity assessment body for testing to support certification",
+   "section": "16 CFR 1107.20(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1107/section-1107.20",
+   "quote": "(a) Manufacturers must submit a sufficient number of samples of a children's product, or samples that are identical in all material respects to the children's product, to a third party conformity assessment body for testing to support certification.",
+   "as_of": "2026-11-19"
+  },
+  {
+   "id": "S2",
+   "claim": "CPC is the certificate for children's products; GCC for general-use (section 14(a)(1))",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "quote": "Children's Product Certificate (CPC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA, 15 U.S.C. 2063, and part 1107 of this chapter. ... General Certificate of Conformity (GCC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(1) of the CPSA, 15 U.S.C. 2063(a)(1).",
+   "as_of": "2026-11-12"
+  }
+ ]
+}

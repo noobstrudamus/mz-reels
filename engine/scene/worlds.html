@@ -243,7 +243,7 @@ W.lab_report = {
 // 5. "it is certified": video call with the factory -> zoom into the PDF they sent -> desk with two monitors
 W.factory_call = {
   side: 'R', tr: ['zoom', 'up'], focus: [420, 1250], open: 'pop',
-  d: { hold: 'MISMATCH', gate: 'CERTIFICATE', phoneWho: 'Me, reading the PDF', phoneMsg: '“Different model. Different rule. This isn’t my product.”', doc: 'FACTORY PDF', say: '“It’s certified. No problem!”' },
+  d: { bad: 'Model:  OTHER-01', hold: 'MISMATCH', gate: 'CERTIFICATE', phoneWho: 'Me, reading the PDF', phoneMsg: '“Different model. Different rule. This isn’t my product.”', doc: 'FACTORY PDF', say: '“It’s certified. No problem!”' },
   A: () => R(0, 0, 1080, 1920, '#10131c') + R(50, 800, 980, 760, '#27406e', 30) + GR('fc1', '#3b5480', '#1c2c4c') + R(50, 800, 980, 760, 'url(#fc1)', 30) +
     [0, 1, 2].map(i => R(110 + i * 300, 860, 200, 150, '#8fb4ff', 8, 'opacity=".35"')).join('') + R(50, 1330, 980, 50, '#56607a') + `<g id="belt"></g>` + R(50, 1380, 980, 180, '#20283c', 0) + R(50, 1500, 980, 60, '#20283c', 30) +
     `<g id="rep"><rect x="-110" y="-240" width="220" height="300" rx="60" fill="#2f9e6b"/><g id="rhead"><circle cx="0" cy="-310" r="66" fill="#e0b190"/><path d="M-66 -320 Q-62 -392 0 -386 Q62 -392 66 -320 Q34 -356 0 -352 Q-34 -356 -66 -320 Z" fill="#1b1f29"/><circle cx="-24" cy="-306" r="6" fill="#1b1f29"/><circle cx="24" cy="-306" r="6" fill="#1b1f29"/><path id="rmouth" d="M-20 -276 q20 16 40 0" stroke="#7a3b2e" stroke-width="6" fill="#7a3b2e"/>
@@ -257,7 +257,7 @@ W.factory_call = {
     R(90, 1010, 660, 760, '#fff', 6) + TX(420, 1090, '', 50, '#1b2340', { cls: 'p-gate', ls: 4 }) + R(170, 1120, 500, 6, '#1b2340') +
     C(640, 1640, 60, '#ffd166') + [0, 1, 2, 3, 4, 5, 6, 7].map(i => `<path d="M640 1640 l-12 -78 l24 0 z" fill="#ffd166" transform="rotate(${i * 45} 640 1640)"/>`).join('') + C(640, 1640, 40, '#f2b632') +
     [0, 1, 2, 3, 4, 5].map(i => i === 2 ? '' : R(150, 1170 + i * 70, 150, 20, '#9aa3b5', 4) + R(330, 1170 + i * 70, 300 - (i * 37 % 110), 20, '#cfd6e2', 4)).join('') +
-    `<g id="bad">` + R(140, 1296, 560, 56, '#ffe1e1', 6, 'id="badbg"') + TX(150, 1336, 'Model:  OTHER-01', 34, '#c0392b', { a: 'start', font: 'Inter2' }) + `</g>` +
+    `<g id="bad">` + R(140, 1296, 560, 56, '#ffe1e1', 6, 'id="badbg"') + TX(150, 1336, '', 34, '#c0392b', { a: 'start', font: 'Inter2', cls: 'p-bad' }) + `</g>` +
     `<g id="mag"><circle cx="0" cy="0" r="92" fill="#bcd3ff" opacity=".28"/><circle cx="0" cy="0" r="92" fill="none" stroke="#1b2340" stroke-width="14"/><rect x="62" y="62" width="30" height="120" rx="12" fill="#1b2340" transform="rotate(-45 77 77)"/></g>`,
   C: () => fixSet({ k: 5, wall: ['#1d2a44', '#0f1626'], win: 'city', desk: '#2f3b57', item: 'monitors', itemX: 110, docX: 300, docR: -5, glow: '#8fb4ff', lampX: 300 }),
   tick(t, s) {
@@ -380,7 +380,7 @@ const PROPS = Object.assign({ box: 'KID-24-BLUE', laptopTitle: 'CERTIFICATE DATA
   cta: ['Blocked right now?', 'Forward the notice.', 'Get your gap list in 24 hours.', 'mzconsulting.agency'], open: Wd.open, pose2: null }, Wd.d, RAW);
 $('setA').innerHTML = Wd.A(); $('setB').innerHTML = Wd.B(); $('setC').innerHTML = Wd.C();
 (() => { const fill = (c, v) => document.querySelectorAll('.' + c).forEach(e => e.textContent = v);
-  fill('p-box', PROPS.box); fill('p-gate', PROPS.gate); fill('p-doc', PROPS.doc); fill('p-say', PROPS.say);
+  fill('p-box', PROPS.box); fill('p-gate', PROPS.gate); fill('p-doc', PROPS.doc); fill('p-say', PROPS.say); fill('p-bad', PROPS.bad || '');
   const h = $('hold'); h.textContent = PROPS.hold; h.style.fontSize = Math.min(120, Math.floor(820 / Math.max(6, PROPS.hold.length))) + 'px';
   document.querySelector('#phone .who').textContent = PROPS.phoneWho; document.querySelector('#phone .bub').textContent = PROPS.phoneMsg;
   document.querySelector('#laptop h3').textContent = PROPS.laptopTitle;

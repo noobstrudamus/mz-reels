@@ -1,0 +1,66 @@
+{
+ "id": "20261121_finder",
+ "world": "factory_call",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Say the factory says it's certified. The PDF doesn't say what you think.",
+  "Then I open the PDF. General certificate. In-house test.",
+  "Kids' products need third-party lab testing and a children's product certificate.",
+  "So I check which rules apply first.",
+  "Not sure which rules apply? Free C P S C finder. See which rules apply. No account needed."
+ ],
+ "min_dur": [
+  3.0,
+  3.0,
+  3.4,
+  2.6,
+  3.4
+ ],
+ "caps": [
+  [
+   "“It's certified.”",
+   "Say I'm a seller. Kids' backpacks, and the factory's PDF.",
+   ""
+  ],
+  [
+   "Then I read it.",
+   "General certificate. In-house test.",
+   ""
+  ],
+  [
+   "Kids' products: third party.",
+   "Lab testing, then a children's product certificate.",
+   "16 CFR 1107.20(a) · 1110.3"
+  ],
+  [
+   "I check first.",
+   "Which rules apply to my kids' backpack?",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "BAG-24-KID",
+  "open": "walk",
+  "hold": "MISMATCH",
+  "gate": "CERTIFICATE",
+  "bad": "Type: General (GCC)",
+  "doc": "FACTORY PDF",
+  "say": "“It's certified. No problem!”",
+  "phoneWho": "Me, reading the PDF",
+  "phoneMsg": "“General certificate. In-house test. Not what a kids' product needs.”",
+  "laptopTitle": "BEFORE I ORDER",
+  "rows": [
+   "Kids' product?",
+   "Which rules apply",
+   "Third-party lab",
+   "Children's product cert.",
+   "Records on file"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ }
+}
