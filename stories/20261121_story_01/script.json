@@ -1,0 +1,28 @@
+{
+ "frame": {
+  "type": "promo",
+  "tag": "New reel",
+  "headline": "“It's certified.”",
+  "stamp": "CHECK",
+  "line": "The factory's PDF may not be a CPC. New reel on our profile."
+ },
+ "from_reel": "reels/20261121_finder",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Children's products: samples to a third party conformity assessment body for testing to support certification",
+   "section": "16 CFR 1107.20(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1107/section-1107.20",
+   "quote": "(a) Manufacturers must submit a sufficient number of samples of a children's product, or samples that are identical in all material respects to the children's product, to a third party conformity assessment body for testing to support certification.",
+   "as_of": "2026-11-19"
+  },
+  {
+   "id": "S2",
+   "claim": "CPC is the certificate for children's products; GCC for general-use (section 14(a)(1))",
+   "section": "16 CFR 1110.3",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.3",
+   "quote": "Children's Product Certificate (CPC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA, 15 U.S.C. 2063, and part 1107 of this chapter. ... General Certificate of Conformity (GCC) means a certificate of compliance for a finished product issued pursuant to section 14(a)(1) of the CPSA, 15 U.S.C. 2063(a)(1).",
+   "as_of": "2026-11-12"
+  }
+ ]
+}
