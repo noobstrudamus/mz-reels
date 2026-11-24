@@ -1,0 +1,36 @@
+{
+ "frame": {
+  "type": "promo",
+  "tag": "New reel",
+  "headline": "Button batteries?",
+  "stamp": "CHECK",
+  "line": "Not just a toy rule. New reel on our profile today."
+ },
+ "from_reel": "reels/20261124_finder",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Part 1263 sets performance and labeling requirements for consumer products containing button cell or coin batteries (not limited to toys)",
+   "section": "16 CFR 1263.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1263/section-1263.1",
+   "quote": "As required by Reese's Law (15 U.S.C 2056e, Pub. L. 117-171), this part establishes performance and labeling requirements for consumer products containing button cell or coin batteries to prevent child access to batteries during reasonably foreseeable use and misuse of the consumer product.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S2",
+   "claim": "Products designed to use such batteries count, even if the batteries are sold separately",
+   "section": "16 CFR 1263.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1263/section-1263.2",
+   "quote": "Consumer product containing button cell or coin batteries means a consumer product containing or designed to use one or more button cell or coin batteries, regardless of whether such batteries are intended to be replaced by the consumer or are included with the product or sold separately.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S3",
+   "claim": "Warning labels on packaging, product and instructions; battery packaging labels",
+   "section": "16 CFR 1263.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1263/section-1263.1",
+   "quote": "This part also establishes warning label requirements for packaging of consumer products containing button cell or coin batteries, these consumer products, and instructions and manuals accompanying these consumer products.",
+   "as_of": "2026-11-18"
+  }
+ ]
+}
