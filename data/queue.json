@@ -3201,5 +3201,30 @@
   "family": null,
   "media_id": "17957723868036299",
   "published_at": "2026-11-21T23:50:13Z"
+ },
+ {
+  "id": "20261124_finder",
+  "kind": "reel",
+  "container_id": "17919706794541034",
+  "slot_local": "16:47",
+  "slot_utc": "2026-11-24T21:47:00Z",
+  "caption": "Button battery rules only for toys? Look again.\nCPSC's Part 1263 covers consumer products that contain or are designed to use button or coin batteries. Like a remote with a coin cell.\nBatteries sold separately? Still counts.\nSo before the broker asks, check which rules apply to your product.\nFree CPSC Finder, no account: link in bio\n#cpsc #productcompliance #amazonseller #importing",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-11-24T11:53:32Z",
+  "status": "pending",
+  "reel": "reels/20261124_finder",
+  "date": "2026-11-24",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "myth",
+   "opener": "kicker",
+   "length": "short",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "1647"
+  },
+  "src": "ig_20261124_finder",
+  "family": "battery_product"
  }
 ]

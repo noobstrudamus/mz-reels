@@ -1,0 +1,18 @@
+{
+ "id": "20261124_finder",
+ "date": "2026-11-24",
+ "pillar": "finder",
+ "cta": "finder",
+ "format": "scene",
+ "avatar": true,
+ "world": "broker_email",
+ "arms": {
+  "hook": "myth",
+  "opener": "kicker",
+  "length": "short",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "1647"
+ },
+ "family": "battery_product"
+}

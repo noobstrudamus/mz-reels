@@ -1,0 +1,65 @@
+{
+ "id": "20261124_finder",
+ "world": "broker_email",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Button batteries? Not just a toy rule.",
+  "My broker asks about my remote's battery.",
+  "Part twelve sixty-three covers consumer products containing button or coin batteries.",
+  "Even if the batteries are sold separately.",
+  "Not sure which rules apply? Free C P S C finder. No account needed."
+ ],
+ "min_dur": [
+  3.0,
+  2.8,
+  4.2,
+  2.6,
+  4.0
+ ],
+ "caps": [
+  [
+   "Button batteries?",
+   "Say I'm a seller. A TV remote with a coin battery.",
+   ""
+  ],
+  [
+   "The broker asks.",
+   "Which rule covers the button battery?",
+   ""
+  ],
+  [
+   "Not a toy-only rule.",
+   "Performance and label rules for products with them.",
+   "16 CFR 1263.1(a)"
+  ],
+  [
+   "Even sold separately.",
+   "Products designed to use them count too.",
+   "16 CFR 1263.2"
+  ]
+ ],
+ "props": {
+  "box": "RMT-24-BLK",
+  "open": "walk",
+  "hold": "WAITING",
+  "gate": "STORAGE DAY",
+  "doc": "ENTRY DATA",
+  "say": "Which rule covers it?",
+  "phoneWho": "Customs broker · 9:02 am",
+  "phoneMsg": "“Which rule covers the button battery in the remote?”",
+  "laptopTitle": "BEFORE I SHIP",
+  "rows": [
+   "Button battery?",
+   "Which rules apply",
+   "Performance",
+   "Warning labels",
+   "Package labels"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ }
+}

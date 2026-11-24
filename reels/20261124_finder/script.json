@@ -1,0 +1,87 @@
+{
+ "id": "20261124_finder",
+ "format": "scene",
+ "world": "broker_email",
+ "vo": [
+  "Button batteries? Not just a toy rule.",
+  "My broker asks about my remote's battery.",
+  "Part twelve sixty-three covers consumer products containing button or coin batteries.",
+  "Even if the batteries are sold separately.",
+  "Not sure which rules apply? Free C P S C finder. No account needed."
+ ],
+ "caps": [
+  [
+   "Button batteries?",
+   "Say I'm a seller. A TV remote with a coin battery.",
+   ""
+  ],
+  [
+   "The broker asks.",
+   "Which rule covers the button battery?",
+   ""
+  ],
+  [
+   "Not a toy-only rule.",
+   "Performance and label rules for products with them.",
+   "16 CFR 1263.1(a)"
+  ],
+  [
+   "Even sold separately.",
+   "Products designed to use them count too.",
+   "16 CFR 1263.2"
+  ]
+ ],
+ "props": {
+  "box": "RMT-24-BLK",
+  "open": "walk",
+  "hold": "WAITING",
+  "gate": "STORAGE DAY",
+  "doc": "ENTRY DATA",
+  "say": "Which rule covers it?",
+  "phoneWho": "Customs broker · 9:02 am",
+  "phoneMsg": "“Which rule covers the button battery in the remote?”",
+  "laptopTitle": "BEFORE I SHIP",
+  "rows": [
+   "Button battery?",
+   "Which rules apply",
+   "Performance",
+   "Warning labels",
+   "Package labels"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ },
+ "caption": "Button battery rules only for toys? Look again.\nCPSC's Part 1263 covers consumer products that contain or are designed to use button or coin batteries. Like a remote with a coin cell.\nBatteries sold separately? Still counts.\nSo before the broker asks, check which rules apply to your product.\nFree CPSC Finder, no account: link in bio\n#cpsc #productcompliance #amazonseller #importing",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=battery_product&src=ig_20261124_finder",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Part 1263 sets performance and labeling requirements for consumer products containing button cell or coin batteries (not limited to toys)",
+   "section": "16 CFR 1263.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1263/section-1263.1",
+   "quote": "As required by Reese's Law (15 U.S.C 2056e, Pub. L. 117-171), this part establishes performance and labeling requirements for consumer products containing button cell or coin batteries to prevent child access to batteries during reasonably foreseeable use and misuse of the consumer product.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S2",
+   "claim": "Products designed to use such batteries count, even if the batteries are sold separately",
+   "section": "16 CFR 1263.2",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1263/section-1263.2",
+   "quote": "Consumer product containing button cell or coin batteries means a consumer product containing or designed to use one or more button cell or coin batteries, regardless of whether such batteries are intended to be replaced by the consumer or are included with the product or sold separately.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S3",
+   "claim": "Warning labels on packaging, product and instructions; battery packaging labels",
+   "section": "16 CFR 1263.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1263/section-1263.1",
+   "quote": "This part also establishes warning label requirements for packaging of consumer products containing button cell or coin batteries, these consumer products, and instructions and manuals accompanying these consumer products.",
+   "as_of": "2026-11-18"
+  }
+ ]
+}
