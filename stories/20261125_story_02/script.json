@@ -4,7 +4,7 @@
   "tag": "The rule",
   "quote": "along with a sufficient description to match the finished product to the certificate",
   "cite": "16 CFR 1110.11(a)(1)",
-  "line": "Plus at least one unique ID: model, SKU, GTIN or UPC."
+  "line": "Plus at least one unique ID, like a model, SKU or UPC."
  },
  "from_reel": "reels/20261125_gap",
  "sources": [
