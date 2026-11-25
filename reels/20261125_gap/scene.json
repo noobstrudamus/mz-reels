@@ -1,0 +1,61 @@
+{
+ "id": "20261125_gap",
+ "world": "listing_takedown",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Same template answer? Check your certificate first.",
+  "Say I'm a seller. My listing's down. Same reply every time.",
+  "So I open my certificate. Desk lamp. No model. No SKU.",
+  "Each certificate needs a unique ID, like a model or SKU, plus a matching description.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [
+  3.0,
+  3.6,
+  4.4,
+  5.6,
+  4.6
+ ],
+ "caps": [
+  [
+   "Same template answer?",
+   "Say I'm a seller. My listing is down. Same reply again.",
+   ""
+  ],
+  [
+   "The same reply.",
+   "Compliance documents needed. Again.",
+   ""
+  ],
+  [
+   "“Desk lamp.” That's it.",
+   "No model. No SKU. On my certificate.",
+   ""
+  ],
+  [
+   "A unique ID is required.",
+   "Model, SKU, UPC or similar, plus a matching description.",
+   "16 CFR 1110.11(a)(1)"
+  ]
+ ],
+ "props": {
+  "box": "LMP-24-WHT",
+  "open": "late",
+  "hold": "REMOVED",
+  "doc": "CERTIFICATE",
+  "laptopTitle": "MY CERTIFICATE",
+  "rows": [
+   "Model or SKU",
+   "Matching description",
+   "Each rule listed",
+   "Certifier",
+   "Records contact"
+  ],
+  "cta": [
+   "Blocked right now?",
+   "Forward the notice.",
+   "Get your gap list in 24 hours.",
+   "mzconsulting.agency"
+  ]
+ }
+}

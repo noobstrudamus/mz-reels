@@ -1,0 +1,19 @@
+{
+ "id": "20261125_gap",
+ "date": "2026-11-25",
+ "pillar": "gap",
+ "cta": "gaplist",
+ "format": "scene",
+ "avatar": true,
+ "world": "listing_takedown",
+ "arms": {
+  "hook": "pain_quote",
+  "opener": "kicker",
+  "length": "long",
+  "voice": "ava",
+  "cta_mode": "playbook",
+  "slot": "1247"
+ },
+ "voice_note": "plan arm was andrew; female presenter = female Ava voice (Mert rule, ops/DAILY.md), logged as ava",
+ "family": null
+}

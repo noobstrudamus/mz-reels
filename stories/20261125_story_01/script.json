@@ -1,0 +1,28 @@
+{
+ "frame": {
+  "type": "promo",
+  "tag": "New reel",
+  "headline": "Same template answer?",
+  "stamp": "CHECK",
+  "line": "Check your certificate first. New reel on our profile today."
+ },
+ "from_reel": "reels/20261125_gap",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "A finished product certificate must identify the product with at least one unique identifier (GTIN, model number, SKU, UPC, etc.) plus a sufficient description to match the product to the certificate",
+   "section": "16 CFR 1110.11(a)(1)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(1) Identify the finished product(s) covered by the certificate. Finished product certificates must contain at least one of the following unique identifiers: global trade item number (GTIN), model number, registered number, serial number, stock keeping number (SKU), universal product code (UPC), or alternate identifier, along with a sufficient description to match the finished product to the certificate.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S2",
+   "claim": "Checklist: each rule listed separately; certifier identified; records contact",
+   "section": "16 CFR 1110.11(a)(2)-(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "Finished product certificates must identify separately all applicable rules, bans, standards, or regulations. (3) Identify the finished product certifier that is certifying compliance of the finished product(s) ... (4) Identify and provide contact information ... for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier.",
+   "as_of": "2026-11-18"
+  }
+ ]
+}
