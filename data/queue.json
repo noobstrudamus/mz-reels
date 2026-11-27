@@ -3487,7 +3487,7 @@
   "caption": "Your buyer asked for the certificate. Did you send the lab report?\nSay I import TBL-24-OAK. Under 16 CFR 1110.7(a), when an imported product needs a certificate, the importer is the one who must issue it.\nThe lab report still matters. The certificate has to say where and when the product was tested, and by which lab.\nBut the lab doesn't sign it for you.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#importing #productcompliance #cpsc #amazonseller",
   "first_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
   "created_at": "2026-11-27T11:52:52Z",
-  "status": "pending",
+  "status": "published",
   "reel": "reels/20261127_myth",
   "date": "2026-11-27",
   "pillar": "myth",
@@ -3501,7 +3501,10 @@
    "slot": "1347"
   },
   "src": "ig_20261127_myth",
-  "family": null
+  "family": null,
+  "media_id": "18418609399089106",
+  "published_at": "2026-11-27T18:53:26Z",
+  "first_comment_id": "18155576803556160"
  },
  {
   "id": "20261127_story_01",
