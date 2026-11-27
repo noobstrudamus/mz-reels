@@ -1,0 +1,28 @@
+{
+ "id": "20261127_myth",
+ "world": "retailer_meeting",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Who issues your certificate? Not the lab.",
+  "Say I'm importing. My buyer wants the certificate. I send the lab report.",
+  "But for imports that need one, the importer must issue the certificate.",
+  "So I issue my own.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [3.0, 3.8, 3.8, 2.2, 4.6],
+ "caps": [
+  ["Who issues your certificate?", "Say I'm importing. My buyer wants the certificate.", ""],
+  ["I send the lab report.", "A test report from the lab.", ""],
+  ["The importer issues it.", "For imports that need a certificate.", "16 CFR 1110.7(a)"],
+  ["So I issue my own.", "With where and when it was tested, and by which lab.", "16 CFR 1110.11(a)(6)"]
+ ],
+ "props": {
+  "box": "TBL-24-OAK",
+  "open": "walk",
+  "hold": "NOT SET",
+  "doc": "LAB REPORT",
+  "laptopTitle": "MY CERTIFICATE",
+  "rows": ["Issued by: importer", "Product ID", "Each rule listed", "Tested: date, place, lab", "Records contact"],
+  "cta": ["Blocked right now?", "Forward the notice.", "Get your gap list in 24 hours.", "mzconsulting.agency"]
+ }
+}

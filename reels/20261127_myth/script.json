@@ -1,0 +1,83 @@
+{
+ "id": "20261127_myth",
+ "format": "scene",
+ "world": "retailer_meeting",
+ "vo": [
+  "Who issues your certificate? Not the lab.",
+  "Say I'm importing. My buyer wants the certificate. I send the lab report.",
+  "But for imports that need one, the importer must issue the certificate.",
+  "So I issue my own.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "caps": [
+  [
+   "Who issues your certificate?",
+   "Say I'm importing. My buyer wants the certificate.",
+   ""
+  ],
+  [
+   "I send the lab report.",
+   "A test report from the lab.",
+   ""
+  ],
+  [
+   "The importer issues it.",
+   "For imports that need a certificate.",
+   "16 CFR 1110.7(a)"
+  ],
+  [
+   "So I issue my own.",
+   "With where and when it was tested, and by which lab.",
+   "16 CFR 1110.11(a)(6)"
+  ]
+ ],
+ "props": {
+  "box": "TBL-24-OAK",
+  "open": "walk",
+  "hold": "NOT SET",
+  "doc": "LAB REPORT",
+  "laptopTitle": "MY CERTIFICATE",
+  "rows": [
+   "Issued by: importer",
+   "Product ID",
+   "Each rule listed",
+   "Tested: date, place, lab",
+   "Records contact"
+  ],
+  "cta": [
+   "Blocked right now?",
+   "Forward the notice.",
+   "Get your gap list in 24 hours.",
+   "mzconsulting.agency"
+  ]
+ },
+ "caption": "Your buyer asked for the certificate. Did you send the lab report?\nSay I import TBL-24-OAK. Under 16 CFR 1110.7(a), when an imported product needs a certificate, the importer is the one who must issue it.\nThe lab report still matters. The certificate has to say where and when the product was tested, and by which lab.\nBut the lab doesn't sign it for you.\nBlocked right now? Forward the notice, gap list in 24h: link in bio\n#importing #productcompliance #cpsc #amazonseller",
+ "pinned_comment": "Blocked right now? Forward the notice, gap list in 24h: link in bio",
+ "tracking_link": "https://mzconsulting.agency/?src=ig_20261127_myth#contact",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "For an imported finished product that must be accompanied by a certificate, the importer is the finished product certifier that must issue the certificate",
+   "section": "16 CFR 1110.7(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.7",
+   "quote": "(a) Imports. Except as otherwise provided in a specific rule, ban, standard, or regulation enforced by CPSC, for a finished product manufactured outside of the United States that must be accompanied by a certificate as set forth in § 1110.5, the importer, as defined in this part, is the finished product certifier that must issue a finished product certificate that meets the requirements of this part.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S2",
+   "claim": "The certificate must give the date and place of testing, including the testing lab's name and contact details",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested for compliance with the rule(s), ban(s), standard(s), or regulation(s) cited in § 1110.11(a)(4).",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S3",
+   "claim": "Checklist rows: product ID, each rule listed, records contact",
+   "section": "16 CFR 1110.11(a)(1),(2),(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(1) Identify the finished product(s) covered by the certificate. ... (2) State each consumer product safety rule ... (4) Identify and provide contact information ... for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier.",
+   "as_of": "2026-11-18"
+  }
+ ]
+}

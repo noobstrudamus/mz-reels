@@ -1,0 +1,36 @@
+{
+ "frame": {
+  "type": "rule",
+  "tag": "The rule",
+  "quote": "the importer, as defined in this part, is the finished product certifier that must issue a finished product certificate",
+  "cite": "16 CFR 1110.7(a)",
+  "line": "For imports that need a certificate."
+ },
+ "from_reel": "reels/20261127_myth",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "For an imported finished product that must be accompanied by a certificate, the importer is the finished product certifier that must issue the certificate",
+   "section": "16 CFR 1110.7(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.7",
+   "quote": "(a) Imports. Except as otherwise provided in a specific rule, ban, standard, or regulation enforced by CPSC, for a finished product manufactured outside of the United States that must be accompanied by a certificate as set forth in § 1110.5, the importer, as defined in this part, is the finished product certifier that must issue a finished product certificate that meets the requirements of this part.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S2",
+   "claim": "The certificate must give the date and place of testing, including the testing lab's name and contact details",
+   "section": "16 CFR 1110.11(a)(6)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(6) Provide the most recent date and place(s) (including for each third party conformity assessment body or other party on whose testing the finished product certificate depends, the name, street address, city, state or province, country or administrative region, email address, and telephone number) where the finished product(s) were tested for compliance with the rule(s), ban(s), standard(s), or regulation(s) cited in § 1110.11(a)(4).",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S3",
+   "claim": "Checklist rows: product ID, each rule listed, records contact",
+   "section": "16 CFR 1110.11(a)(1),(2),(4)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1110/section-1110.11",
+   "quote": "(1) Identify the finished product(s) covered by the certificate. ... (2) State each consumer product safety rule ... (4) Identify and provide contact information ... for the individual maintaining records listed in § 1110.17 on behalf of the finished product certifier.",
+   "as_of": "2026-11-18"
+  }
+ ]
+}
