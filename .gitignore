@@ -7,3 +7,4 @@ __pycache__/
 .env
 *.mp4
 data/*.tmp
+research/*/*.json
