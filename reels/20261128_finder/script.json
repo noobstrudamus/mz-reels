@@ -1,0 +1,78 @@
+{
+ "id": "20261128_finder",
+ "format": "scene",
+ "world": "customer_return",
+ "vo": [
+  "Buyer won't set your kids' robe yet?",
+  "Say I sell a kids' robe, size four. I thought robes were just clothing.",
+  "But the children's sleepwear standard names robes, up to size six X, when they're meant mainly for sleeping.",
+  "So I check which rules apply before it ships.",
+  "Not sure which rules apply? Free C P S C finder. No account needed."
+ ],
+ "caps": [
+  [
+   "Kids' robe on hold?",
+   "Say I'm a seller. My buyer won't set the item yet.",
+   ""
+  ],
+  [
+   "“It's just clothing.”",
+   "A kids' robe, size 4. Sold for bedtime.",
+   ""
+  ],
+  [
+   "Robes can be sleepwear.",
+   "Up to size 6X, if worn mainly for sleeping.",
+   "16 CFR 1615.1(a)"
+  ],
+  [
+   "I check first.",
+   "Which rules apply to my kids' robe?",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "RBE-24-KID",
+  "open": "late",
+  "hold": "ON HOLD",
+  "gate": "NOT SET UP",
+  "doc": "SIZE 4 ROBE",
+  "phoneWho": "Retail buyer · 9:15 am",
+  "phoneMsg": "“I can’t set the kids’ robe until the compliance file is in.”",
+  "laptopTitle": "BEFORE IT SHIPS",
+  "rows": [
+   "Kids' robe, size 4",
+   "Sleepwear? Check",
+   "Which rules apply",
+   "Each rule listed",
+   "Records on file"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ },
+ "caption": "Kids sleepwear rules on a robe? Your buyer may be right to wait.\nSay I sell RBE-24-KID, a size 4 robe. 16 CFR 1615.1(a) names robes as children's sleepwear, up to size 6X, when they're meant mainly for sleeping or related activities.\nThat's the 0 through 6X sleepwear flammability standard, not just general clothing.\nSo before it ships, I check which rules apply.\nFree CPSC Finder, no account: link in bio\n#cpsc #productcompliance #privatelabel #amazonseller",
+ "pinned_comment": "Free CPSC Finder, no account: link in bio",
+ "tracking_link": "https://mzconsulting.agency/cpsc-compliance-finder?family=apparel&src=ig_20261128_finder",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Children's sleepwear (up to size 6X) includes robes intended to be worn primarily for sleeping or related activities, with listed exceptions",
+   "section": "16 CFR 1615.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1615/section-1615.1",
+   "quote": "(a) Children's Sleepwear means any product of wearing apparel up to and including size 6X, such as nightgowns, pajamas, or similar or related items, such as robes, intended to be worn primarily for sleeping or activities related to sleeping, except: (1) Diapers and underwear; (2) “Infant garments,” as defined by section 1615.1(c), below; and (3) “Tight-fitting garments,” as defined by section 1615.1(o), below.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S2",
+   "claim": "Part 1615 is the flammability standard for children's sleepwear sizes 0 through 6X",
+   "section": "16 CFR part 1615 (heading)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1615",
+   "quote": "Part 1615—Standard for the Flammability of Children's Sleepwear: Sizes 0 Through 6X (FF 3-71)",
+   "as_of": "2026-11-18"
+  }
+ ]
+}

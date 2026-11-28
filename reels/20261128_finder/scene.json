@@ -1,0 +1,64 @@
+{
+ "id": "20261128_finder",
+ "world": "customer_return",
+ "voice": "en-US-AvaNeural",
+ "vo": [
+  "Buyer won't set your kids' robe yet?",
+  "Say I sell a kids' robe, size four. I thought robes were just clothing.",
+  "But the children's sleepwear standard names robes, up to size six X, when they're meant mainly for sleeping.",
+  "So I check which rules apply before it ships.",
+  "Not sure which rules apply? Free C P S C finder. No account needed."
+ ],
+ "min_dur": [
+  3.4,
+  4.6,
+  6.0,
+  3.2,
+  4.8
+ ],
+ "caps": [
+  [
+   "Kids' robe on hold?",
+   "Say I'm a seller. My buyer won't set the item yet.",
+   ""
+  ],
+  [
+   "“It's just clothing.”",
+   "A kids' robe, size 4. Sold for bedtime.",
+   ""
+  ],
+  [
+   "Robes can be sleepwear.",
+   "Up to size 6X, if worn mainly for sleeping.",
+   "16 CFR 1615.1(a)"
+  ],
+  [
+   "I check first.",
+   "Which rules apply to my kids' robe?",
+   ""
+  ]
+ ],
+ "props": {
+  "box": "RBE-24-KID",
+  "open": "late",
+  "hold": "ON HOLD",
+  "gate": "NOT SET UP",
+  "doc": "SIZE 4 ROBE",
+  "phoneWho": "Retail buyer · 9:15 am",
+  "phoneMsg": "“I can’t set the kids’ robe until the compliance file is in.”",
+  "laptopTitle": "BEFORE IT SHIPS",
+  "rows": [
+   "Kids' robe, size 4",
+   "Sleepwear? Check",
+   "Which rules apply",
+   "Each rule listed",
+   "Records on file"
+  ],
+  "cta": [
+   "Not sure which rules apply?",
+   "Free CPSC finder.",
+   "See which rules apply. No account needed.",
+   "mzconsulting.agency"
+  ]
+ }
+}

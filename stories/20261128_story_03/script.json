@@ -1,0 +1,44 @@
+{
+ "frame": {
+  "type": "check",
+  "tag": "Check yours",
+  "headline": "Kids' robe, size 0-6X",
+  "items": [
+   {
+    "name": "Meant for sleeping?",
+    "ok": false
+   },
+   {
+    "name": "Size up to 6X?",
+    "ok": false
+   },
+   {
+    "name": "Which rules apply",
+    "ok": false
+   },
+   {
+    "name": "Records on file",
+    "ok": false
+   }
+  ]
+ },
+ "from_reel": "reels/20261128_finder",
+ "sources": [
+  {
+   "id": "S1",
+   "claim": "Children's sleepwear (up to size 6X) includes robes intended to be worn primarily for sleeping or related activities, with listed exceptions",
+   "section": "16 CFR 1615.1(a)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1615/section-1615.1",
+   "quote": "(a) Children's Sleepwear means any product of wearing apparel up to and including size 6X, such as nightgowns, pajamas, or similar or related items, such as robes, intended to be worn primarily for sleeping or activities related to sleeping, except: (1) Diapers and underwear; (2) “Infant garments,” as defined by section 1615.1(c), below; and (3) “Tight-fitting garments,” as defined by section 1615.1(o), below.",
+   "as_of": "2026-11-18"
+  },
+  {
+   "id": "S2",
+   "claim": "Part 1615 is the flammability standard for children's sleepwear sizes 0 through 6X",
+   "section": "16 CFR part 1615 (heading)",
+   "source_url": "https://www.ecfr.gov/current/title-16/part-1615",
+   "quote": "Part 1615—Standard for the Flammability of Children's Sleepwear: Sizes 0 Through 6X (FF 3-71)",
+   "as_of": "2026-11-18"
+  }
+ ]
+}
