@@ -92,7 +92,7 @@ lab.parent = hero; lab.matrix_parent_inverse = hero.matrix_world.inverted()
 for f, z in ((F(0), 9.5), (F(t[0] + 1.0), 1.295), (F(t[0] + 1.15), 1.42), (F(t[0] + 1.3), 1.295)):
     hero.location.z = z; hero.keyframe_insert("location", index=2, frame=f)
 
-# beacon on a pole: red blinking until the certificate is fixed, then steady green
+# beacon on a pole: red blinking until the certificate is fixed, then steady amber (no release implied)
 pole = box("pole", (3.9, 4.3, 1.4), (0.08, 0.08, 2.8), M["steel"])
 bpy.ops.mesh.primitive_uv_sphere_add(radius=0.2, location=(3.9, 4.3, 2.95)); lamp = bpy.context.object
 bpy.ops.object.shade_smooth(); lamp.data.materials.append(beacon)
@@ -103,11 +103,11 @@ while f < F(fix):
     bsdf.inputs["Emission Strength"].default_value = 30.0 if on else 1.0
     bsdf.inputs["Emission Strength"].keyframe_insert("default_value", frame=f)
     f += int(FPS * 0.35); on = not on
-for fr, col, st in ((F(fix) - 1, (1.0, 0.08, 0.05), 1.0), (F(fix), (0.1, 1.0, 0.3), 25.0), (F(t[-1]), (0.1, 1.0, 0.3), 25.0)):
+for fr, col, st in ((F(fix) - 1, (1.0, 0.08, 0.05), 1.0), (F(fix), (1.0, 0.55, 0.05), 12.0), (F(t[-1]), (1.0, 0.55, 0.05), 12.0)):
     bsdf.inputs["Emission Color"].default_value = (*col, 1); bsdf.inputs["Emission Color"].keyframe_insert("default_value", frame=fr)
     bsdf.inputs["Emission Strength"].default_value = st; bsdf.inputs["Emission Strength"].keyframe_insert("default_value", frame=fr)
 bpy.ops.object.light_add(type="POINT", location=(3.9, 4.0, 2.95)); bl = bpy.context.object; bl.data.shadow_soft_size = 0.2
-for fr, col, en in ((F(0.2), (1, 0.1, 0.05), 120), (F(fix) - 1, (1, 0.1, 0.05), 120), (F(fix), (0.1, 1, 0.3), 120)):
+for fr, col, en in ((F(0.2), (1, 0.1, 0.05), 120), (F(fix) - 1, (1, 0.1, 0.05), 120), (F(fix), (1, 0.55, 0.05), 60)):
     bl.data.color = col; bl.data.energy = en
     bl.data.keyframe_insert("color", frame=fr); bl.data.keyframe_insert("energy", frame=fr)
 
