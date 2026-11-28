@@ -231,3 +231,12 @@ table runs out (after 2027-01-14), extend it with the same rule, ordered by skip
 | 2027-01-12 Tue | finder | `customer_return` | late |
 | 2027-01-13 Wed | gap | `port_customs` | pop |
 | 2027-01-14 Thu | deadline | `factory_call` | walk |
+
+## Research + 3D tools (added 2026-11-28, Mert)
+- Social research: `.claude/skills/` now has the ScrapeCreators skills (outlier-post-finder, trend-discovery, comment-mining,
+  competitor-social-research, transcript-intelligence, ...). The API key is a network secret on this environment for
+  api.scrapecreators.com (send header `x-api-key: proxy-injected`; the proxy fills in the real key). Credits are limited
+  (90 left on 2026-11-28): one research pass a week, before the Sunday report. Latest: research/social_20261128/REPORT.md.
+- Blender: `pip install bpy` (Blender 5.3, headless, Cycles CPU). Blender skills are in `.claude/skills/` (rendering,
+  lighting, materials, camera-cinematography, ...). Example 3D B-roll: `python3 engine/blender/fixture_test.py OUT [--anim]`
+  (generic test fixture + bead, 1080x1920; still ~1 min, 60-frame clip ~1 h on CPU). No real logos, seals or place names.
