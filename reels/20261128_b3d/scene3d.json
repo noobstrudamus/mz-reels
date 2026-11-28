@@ -1,0 +1,22 @@
+{
+ "id": "20261128_b3d",
+ "format": "blender3d",
+ "voice": "en-US-AvaNeural",
+ "sku": "BAG-24-KID",
+ "vo": [
+  "Container on hold? Check who issued the certificate.",
+  "Say I import kids' backpacks. The factory sends me its own certificate.",
+  "But for imports that need one, the importer must issue the certificate.",
+  "So I issue my own, with where and when it was tested.",
+  "Blocked right now? Forward the notice. Get your gap list in twenty-four hours."
+ ],
+ "min_dur": [3.6, 4.4, 4.6, 4.0, 4.8],
+ "caps": [
+  ["Container on hold?", "Check who issued the certificate.", ""],
+  ["“Factory certified.”", "Say I import kids' backpacks.", ""],
+  ["The importer issues it.", "For imports that need a certificate.", "16 CFR 1110.7(a)"],
+  ["So I issue my own.", "With where and when it was tested, and by which lab.", "16 CFR 1110.11(a)(6)"]
+ ],
+ "cta": ["Blocked right now?", "Forward the notice.", "Get your gap list in 24 hours.", "mzconsulting.agency"],
+ "offer": "Get your gap list in 24 hours"
+}
