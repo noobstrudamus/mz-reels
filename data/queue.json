@@ -3615,5 +3615,56 @@
   "family": null,
   "media_id": "18132876988836206",
   "published_at": "2026-11-27T21:52:59Z"
+ },
+ {
+  "id": "20261128_finder",
+  "kind": "reel",
+  "container_id": "17920261323541034",
+  "slot_local": "12:47",
+  "slot_utc": "2026-11-28T17:47:00Z",
+  "caption": "Kids sleepwear rules on a robe? Your buyer may be right to wait.\nSay I sell RBE-24-KID, a size 4 robe. 16 CFR 1615.1(a) names robes as children's sleepwear, up to size 6X, when they're meant mainly for sleeping or related activities.\nThat's the 0 through 6X sleepwear flammability standard, on top of general clothing rules.\nSo before it ships, I check which rules apply.\nFree CPSC Finder, no account: link in bio\n#cpsc #productcompliance #privatelabel #amazonseller",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-11-28T11:52:27Z",
+  "status": "failed",
+  "reel": "reels/20261128_finder",
+  "date": "2026-11-28",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "pain_quote",
+   "opener": "kicker",
+   "length": "long",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "1247"
+  },
+  "src": "ig_20261128_finder",
+  "family": "apparel",
+  "error": "ERROR: HTTP 400 code=None/None: {'debug_info': {'retriable': False, 'type': 'ProcessingFailedError', 'message': 'Request processing failed'}}"
+ },
+ {
+  "id": "20261128_finder",
+  "kind": "reel",
+  "container_id": "17920261332541034",
+  "slot_local": "12:47",
+  "slot_utc": "2026-11-28T17:47:00Z",
+  "caption": "Kids sleepwear rules on a robe? Your buyer may be right to wait.\nSay I sell RBE-24-KID, a size 4 robe. 16 CFR 1615.1(a) names robes as children's sleepwear, up to size 6X, when they're meant mainly for sleeping or related activities.\nThat's the 0 through 6X sleepwear flammability standard, on top of general clothing rules.\nSo before it ships, I check which rules apply.\nFree CPSC Finder, no account: link in bio\n#cpsc #productcompliance #privatelabel #amazonseller",
+  "first_comment": "Free CPSC Finder, no account: link in bio",
+  "created_at": "2026-11-28T11:53:04Z",
+  "status": "pending",
+  "reel": "reels/20261128_finder",
+  "date": "2026-11-28",
+  "pillar": "finder",
+  "cta": "finder",
+  "arms": {
+   "hook": "pain_quote",
+   "opener": "kicker",
+   "length": "long",
+   "voice": "ava",
+   "cta_mode": "playbook",
+   "slot": "1247"
+  },
+  "src": "ig_20261128_finder",
+  "family": "apparel"
  }
 ]
